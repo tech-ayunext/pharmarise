@@ -46,7 +46,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="w-[42%] ml-5 max-md:w-full max-md:ml-0">
+        <div className="w-[47%] ml-5 max-md:w-full max-md:ml-0">
           <div className="flex flex-col relative min-h-[632px] grow px-[74px] max-md:max-w-full max-md:mt-[7px]">
             <img
               src="/images/Blue_back.svg"
@@ -55,7 +55,7 @@ const About = () => {
             />
             <img
               src="/images/Person.png"
-              className="aspect-[0.68] object-contain w-full z-10 mt-[-120px] max-md:max-w-full"
+              className="aspect-[0.68] object-contain w-full scale-110 z-10 mt-[-108px] ml-[53px] max-md:max-w-full"
               alt="Company representative"
             />
           </div>

@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section className="h-full w-full relative overflow-hidden" id="home">
       {/* Left section with background */}
-      <div className="relative w-[982px] h-[738px]">
+      <div className="relative w-[982px] h-[738px] z-10">
         <img
           src="/images/Hero_background.png"
           className="absolute inset-0 h-full w-full object-cover"
@@ -74,12 +74,11 @@ const Hero = () => {
 
       {/* Right section with video (absolute positioning) */}
       <div
-        className="absolute w-[709px] h-[501px] rounded-xl shadow-lg overflow-hidden"
+        className="absolute w-[709px] h-[501px] rounded-xl overflow-hidden "
         style={{ left: "823px", right: "13px", top: "188px", bottom: "49px" }}
       >
         <video
-          src="/images/PR products update 9 aug.mp4"
-          
+          src="/images/PR PRODUCT all.mp4"
           className="w-full h-full object-cover"
           autoPlay
           muted

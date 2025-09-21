@@ -2,7 +2,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation } from "swiper/modules"; // ✅ Correct for v10+
+import { Navigation, Autoplay } from "swiper/modules"; // ✅ Correct for v10+
 
 const Innovations = () => {
   const images = [
@@ -25,12 +25,16 @@ const Innovations = () => {
 
       <div className="w-full flex justify-center mt-[175px]">
         <Swiper
-          modules={[Navigation]}
-          slidesPerView={3} // show main + partial sides
-          spaceBetween={20}
-          centeredSlides={true} // center the main slide
+          modules={[Navigation, Autoplay]} // ✅ include Autoplay
+          slidesPerView={3}
+          spaceBetween={50}
+          centeredSlides={true}
           navigation
           loop
+          autoplay={{
+            delay: 2000, // 3 seconds between slides
+            disableOnInteraction: false, // keep autoplay after user interaction
+          }}
           breakpoints={{
             768: { slidesPerView: 3 },
             1024: { slidesPerView: 3 },
@@ -39,15 +43,15 @@ const Innovations = () => {
           {images.map((src, index) => (
             <SwiperSlide key={index}>
               {({ isActive }) => (
-                <img
-                  src={src}
-                  alt={`Product ${index + 1}`}
-                  className={`rounded-lg shadow-lg object-contain transition-all duration-300 ${
-                    isActive
-                      ? "w-[573px] h-[218.81px]" // main image
-                      : "w-[313px] h-[119px] opacity-50" // side images
-                  }`}
-                />
+                <div className="flex justify-center items-center">
+                  <img
+                    src={src}
+                    alt={`Product ${index + 1}`}
+                    className={`rounded-lg object-contain transition-transform duration-300 w-[313px] h-[219px] ${
+                      isActive ? "scale-150" : "scale-100 opacity-50"
+                    }`}
+                  />
+                </div>
               )}
             </SwiperSlide>
           ))}
