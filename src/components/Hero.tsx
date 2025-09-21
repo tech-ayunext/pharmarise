@@ -28,17 +28,17 @@ const Hero = () => {
 
         {/* Product 1 */}
         <img
-          src="/images/Product1.png"
+          src="/images/CobalFine.png"
           alt="Product 1"
-          className="absolute w-[250px] h-[102px]"
+          className="absolute w-[250px] h-[102px] rounded-2xl"
           style={{ left: "54px", top: "230px" }}
         />
 
         {/* Product 2 */}
         <img
-          src="/images/Product2.png"
+          src="/images/Garci.png"
           alt="Product 2"
-          className="absolute w-[250px] h-[102px]"
+          className="absolute w-[250px] h-[102px] rounded-2xl"
           style={{ left: "349px", top: "230px" }}
         />
 
