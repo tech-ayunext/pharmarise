@@ -8,8 +8,8 @@ const Innovations = () => {
   const images = [
     "/images/Product1.png",
     "/images/Product2.png",
-    "/images/Product1.png",
-    "/images/Product2.png",
+    "/images/Product3.png",
+    "/images/Product4.png",
   ];
   return (
     <section
@@ -25,6 +25,7 @@ const Innovations = () => {
 
       <div className="w-full flex justify-center mt-[175px]">
         <Swiper
+          initialSlide={0}
           modules={[Navigation, Autoplay]} // ✅ include Autoplay
           slidesPerView={3}
           spaceBetween={50}
