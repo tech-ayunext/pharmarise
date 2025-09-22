@@ -17,28 +17,38 @@ const Innovations = () => {
       id="innovations"
     >
       <h2
-        className="absolute text-[60px] font-bold leading-normal tracking-[-1.8px] text-[#0D4A8D] text-center font-['Red_Hat_Text']"
-        style={{ left: "122px", right: "942px", height: "79px" }}
+        className="text-[30px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold leading-normal tracking-[-1.8px] text-[#0D4A8D] font-['Red_Hat_Text']
+  text-center lg:text-left px-4 sm:px-8 lg:px-0 lg:ml-[122px]"
       >
         Our Innovations
       </h2>
 
-      <div className="w-full flex justify-center mt-[175px]">
+      <div className="w-full flex justify-center mt-[100px] sm:mt-[125px] md:mt-[150px] lg:mt-[175px] px-4 relative">
         <Swiper
           initialSlide={0}
-          modules={[Navigation, Autoplay]} // ✅ include Autoplay
-          slidesPerView={3}
-          spaceBetween={50}
+          modules={[Navigation, Autoplay]}
+          slidesPerView={1}
+          spaceBetween={20}
           centeredSlides={true}
           navigation
           loop
           autoplay={{
-            delay: 2000, // 3 seconds between slides
-            disableOnInteraction: false, // keep autoplay after user interaction
+            delay: 2000,
+            disableOnInteraction: false,
           }}
           breakpoints={{
-            768: { slidesPerView: 3 },
-            1024: { slidesPerView: 3 },
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 30,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 50,
+            },
           }}
         >
           {images.map((src, index) => (
@@ -48,7 +58,7 @@ const Innovations = () => {
                   <img
                     src={src}
                     alt={`Product ${index + 1}`}
-                    className={`rounded-lg object-contain transition-transform duration-300 w-[313px] h-[219px] ${
+                    className={`rounded-lg object-contain transition-transform duration-300 w-[200px] h-[140px] sm:w-[250px] sm:h-[175px] md:w-[280px] md:h-[196px] lg:w-[313px] lg:h-[219px] ${
                       isActive ? "scale-150" : "scale-100 opacity-50"
                     }`}
                   />
@@ -57,13 +67,33 @@ const Innovations = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+
+        {/* Add Tailwind classes for small navigation buttons on mobile */}
+        <style>{`
+          .swiper-button-prev,
+          .swiper-button-next {
+            color: #0d4a8d; /* button color */
+          }
+          @media (max-width: 640px) {
+            .swiper-button-prev,
+            .swiper-button-next {
+              width: 20px;
+              height: 20px;
+              top: 45%; /* vertical center */
+            }
+            .swiper-button-prev::after,
+            .swiper-button-next::after {
+              font-size: 14px; /* smaller arrow */
+            }
+          }
+        `}</style>
       </div>
 
-      <h3 className="text-[rgba(190,38,35,1)] text-[28px] leading-[50px] self-center mt-[102px] max-md:mt-10">
+      <h3 className="text-[rgba(190,38,35,1)] text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] leading-[30px] sm:leading-[40px] md:leading-[45px] lg:leading-[50px] self-center mt-[60px] sm:mt-[80px] md:mt-[90px] lg:mt-[102px] max-md:mt-10 px-4">
         Description
       </h3>
 
-      <p className="w-[1331px] h-[211px] text-[22px] font-medium leading-[39px] text-center mx-auto mt-[5px]">
+      <p className="w-full max-w-[1331px] text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-medium leading-[24px] sm:leading-[28px] md:leading-[32px] lg:leading-[39px] text-center mx-auto mt-[5px] px-4 sm:px-8 lg:px-0">
         A unique natural nutritional supplement for the first-time in India
         containing Garcinia Cambogia with added advantage of Salacia Reticulata
         as compared to other marketed Garcinia products. Salacia along with

@@ -22,6 +22,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        mulish: ['Mulish', 'sans-serif'],
+        'red-hat-text': ['"Red Hat Text"', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
