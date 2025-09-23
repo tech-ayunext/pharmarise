@@ -44,14 +44,15 @@ const Header = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
+         
           <a
-            href="#home"
+            href="/"
             className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
           >
             Home
           </a>
           <a
-            href="#about"
+            href="/new-about"
             className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
           >
             About
@@ -65,7 +66,7 @@ const Header = () => {
             />
           </div>
           <a
-            href="#contact"
+            href="/#contact"
             className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
           >
             Contact
