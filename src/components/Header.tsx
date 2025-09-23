@@ -52,7 +52,7 @@ const Header = () => {
             Home
           </a>
           <a
-            href="/new-about"
+            href="/New-about"
             className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
           >
             About
