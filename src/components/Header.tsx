@@ -36,15 +36,16 @@ const Header = () => {
       {/* Main navigation */}
       <nav className="bg-white z-10 flex w-full items-center justify-between px-5 md:px-[37px] py-[13px] relative">
         {/* Logo */}
-        <img
-          src="/images/PharmaRise logo.png"
-          className="w-[160px] md:w-[204px] object-contain"
-          alt="PharmaRise logo"
-        />
+        <a href="/">
+          <img
+            src="/images/PharmaRise logo.png"
+            className="w-[160px] md:w-[204px] object-contain cursor-pointer"
+            alt="PharmaRise logo"
+          />
+        </a>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-
           <a
             href="/"
             className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
@@ -87,7 +88,6 @@ const Header = () => {
             ☰
           </button>
         </div>
-
 
         {/* Mobile Dropdown */}
         {menuOpen && (
