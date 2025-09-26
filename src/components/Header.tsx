@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-slate-100">
+    <header className="bg-slate-100 relative z-50">
       {/* Top contact bar */}
       <div className="bg-[rgba(13,74,141,1)] flex w-full items-center justify-between px-[20px] md:px-[50px] py-[7px]">
         <div className="flex items-center gap-2 text-white text-xs font-normal">
@@ -44,7 +44,7 @@ const Header = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-         
+
           <a
             href="/"
             className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
@@ -74,7 +74,7 @@ const Header = () => {
         </div>
 
         {/* Enquire Button (desktop + mobile) */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 relative z-20">
           <button className="bg-[rgba(190,38,35,1)] text-xs md:text-sm text-white font-semibold px-4 py-2 rounded-md hover:bg-opacity-90 transition-all">
             Enquire Now
           </button>
@@ -88,33 +88,38 @@ const Header = () => {
           </button>
         </div>
 
+
         {/* Mobile Dropdown */}
         {menuOpen && (
           <div className="absolute top-full left-0 w-full bg-white flex flex-col items-start gap-4 p-5 shadow-md md:hidden">
-            <a
-              href="#home"
+            <Link
+              to="/"
               className="text-[rgba(13,74,141,1)] text-lg font-medium"
+              onClick={() => setMenuOpen(false)}
             >
               Home
-            </a>
-            <a
-              href="#about"
+            </Link>
+            <Link
+              to="/New-about"
               className="text-[rgba(13,74,141,1)] text-lg font-medium"
+              onClick={() => setMenuOpen(false)}
             >
               About
-            </a>
-            <a
-              href="#product"
+            </Link>
+            <Link
+              to="/product"
               className="text-[rgba(13,74,141,1)] text-lg font-medium"
+              onClick={() => setMenuOpen(false)}
             >
               Product
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              to="/#contact"
               className="text-[rgba(13,74,141,1)] text-lg font-medium"
+              onClick={() => setMenuOpen(false)}
             >
               Contact
-            </a>
+            </Link>
           </div>
         )}
       </nav>
