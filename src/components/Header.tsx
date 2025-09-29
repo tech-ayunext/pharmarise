@@ -4,7 +4,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-slate-100 relative z-50">
+    <header className="bg-slate-100 relative z-50  ">
       {/* Top contact bar */}
       <div className="bg-[rgba(13,74,141,1)] flex w-full items-center justify-between px-[20px] md:px-[50px] py-[7px]">
         <div className="flex items-center gap-2 text-white text-xs font-normal">
@@ -34,7 +34,7 @@ const Header = () => {
       </div>
 
       {/* Main navigation */}
-      <nav className="bg-white z-10 flex w-full items-center justify-between px-5 md:px-[37px] py-[13px] relative">
+      <nav className="bg-[#F5F5FF] z-10 flex w-full items-center justify-between px-5 md:px-[37px] py-[13px] relative">
         {/* Logo */}
         <a href="/">
           <img

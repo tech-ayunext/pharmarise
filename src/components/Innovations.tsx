@@ -23,7 +23,7 @@ const Innovations = () => {
         Our Innovations
       </h2>
 
-      <div className="w-full flex justify-center mt-[100px] sm:mt-[125px] md:mt-[150px] lg:mt-[175px] px-4 relative">
+      <div className="w-full flex justify-center mt-[70px] sm:mt-[125px] md:mt-[150px] lg:mt-[175px] px-4 relative">
         <Swiper
           initialSlide={0}
           modules={[Navigation, Autoplay]}
