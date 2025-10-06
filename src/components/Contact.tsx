@@ -47,10 +47,15 @@ const Contact = () => {
               </div>
 
               {/* Right side - Message textarea */}
-              <div className="w-full sm:w-auto relative">
+              <div className="w-full sm:w-auto relative  ">
                 {/* Blurred background / border effect */}
                 <div
-                  className="absolute top-[-10px] sm:top-[-15px] left-[-10px] sm:left-[-15px] right-[-10px] sm:right-[-15px] bottom-[-10px] sm:bottom-[-15px] rounded-[24px] sm:rounded-[30px]"
+                  className="absolute 
+                    top-[-8px] sm:top-[-15px] 
+                    left-[-8px] sm:left-[-15px] 
+                    right-[-1px] sm:right-[-15px] 
+                    bottom-[-1px] sm:bottom-[-15px] 
+                    rounded-[13px] sm:rounded-[30px]"
                   style={{
                     border: "0.947px solid rgba(255, 255, 255, 0.25)",
                     background: "rgba(255, 255, 255, 0.36)",
@@ -62,15 +67,16 @@ const Contact = () => {
                 {/* Actual textarea */}
                 <textarea
                   placeholder="Message....."
-                  className="w-[95%] sm:w-[300px] md:w-[400px] lg:w-[496px] /* Changed from w-full */
-                    h-[70px] sm:h-[100px] lg:h-[115px] /* Changed from h-[80px] */
-                    p-3 sm:p-4 text-[14px] sm:text-[16px] placeholder-gray-500 
-                    resize-none border-none outline-none relative z-10
-                    max-md:backdrop-blur-sm"
+                  className="w-[95%] sm:w-[300px] md:w-[400px] lg:w-[496px]
+                  h-[45px] sm:h-[100px] lg:h-[115px]
+                  
+                  p-2 sm:p-4 text-[13px] sm:text-[16px] placeholder-gray-500
+                  resize-none border-none outline-none relative z-10
+                  max-md:backdrop-blur-sm"
                   style={{
-                    borderRadius: "25.559px",
-                    background: "white", // Main background
-                    backdropFilter: "blur(12px)", // Desktop blur
+                    borderRadius: "22px",
+                    background: "white",
+                    backdropFilter: "blur(12px)",
                   }}
                 />
               </div>

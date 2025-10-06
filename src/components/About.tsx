@@ -52,14 +52,20 @@ const About = () => {
           <div className="flex flex-col relative min-h-[400px] sm:min-h-[500px] md:min-h-[580px] lg:min-h-[632px] grow px-4 sm:px-6 md:px-8 lg:px-[74px] max-md:max-w-full max-md:mt-[7px]">
             <img
               src="/images/Blue_back.svg"
-              className="absolute h-full w-full object-cover inset-0 "
+              className="
+              absolute inset-0 
+              h-full w-full 
+              object-contain sm:object-cover   /* ✅ contain on mobile, cover on larger */
+              max-w-[120%] sm:max-w-full 
+              top-4 sm:top-0       /* ✅ extra width for safe fit on small screens */
+            "
               alt="About us background"
             />
             <img
               src="/images/Person.png"
               className="
                   aspect-[0.68] object-contain
-                  w-[86%] xs:w-[75%] sm:w-[85%] md:w-full   /* ✅ full width on mobile */
+                  w-[97%] xs:w-[75%] sm:w-[85%] md:w-full   /* ✅ full width on mobile */
                   scale-100 sm:scale-105 md:scale-110 lg:scale-110
                   z-10
                   mt-[-40px] sm:mt-[-80px] md:mt-[-95px] lg:mt-[-108px]
@@ -71,8 +77,6 @@ const About = () => {
             />
           </div>
         </div>
-
-
       </div>
     </section>
   );

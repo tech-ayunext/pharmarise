@@ -151,7 +151,7 @@ const Footer = () => {
               {/* Back to Top Button */}
               <button
                 onClick={scrollToTop}
-                className="border flex items-center mt-10 gap-2 text-center leading-[35px] px-4 py-2 rounded border-white border-solid hover:bg-white hover:text-[rgba(0,33,69,1)] transition-all w-fit"
+                className="border flex items-center mt-10 gap-2 text-center leading-[35px] px-4 py-2 rounded border-white border-solid  hover:text-[rgba(0,33,69,1)] transition-all w-fit"
                 style={{
                   width: "170px",
                   color: "#FFF",
@@ -159,7 +159,7 @@ const Footer = () => {
                   fontSize: "20px",
                   fontWeight: 300,
                   lineHeight: "175%",
-                }}
+                }}  
               >
                 <span>Back to Top</span>
                 <span className="text-xs">▲</span>
@@ -215,7 +215,7 @@ const Footer = () => {
                         Product
                       </a>
                       <a
-                        href="#contact"
+                        href="/contact"
                         className="block hover:opacity-80 transition-opacity"
                       >
                         Contact Us

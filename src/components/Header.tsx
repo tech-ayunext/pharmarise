@@ -66,12 +66,12 @@ const Header = () => {
               alt="Dropdown arrow"
             />
           </div>
-          <a
-            href="/#contact"
+          <Link
+            to="/contact"
             className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
           >
             Contact
-          </a>
+          </Link>
         </div>
 
         {/* Enquire Button (desktop + mobile) */}
@@ -114,7 +114,7 @@ const Header = () => {
               Product
             </Link>
             <Link
-              to="/#contact"
+              to="/contact"
               className="text-[rgba(13,74,141,1)] text-lg font-medium"
               onClick={() => setMenuOpen(false)}
             >
