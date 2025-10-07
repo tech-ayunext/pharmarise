@@ -58,14 +58,12 @@ const Header = () => {
           >
             About
           </a>
-          <div className="flex items-center gap-1 text-xl text-[rgba(13,74,141,1)] font-medium cursor-pointer">
-            <span>Product</span>
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/56aa8dcd34b1649324d32da398898d78c8d3054e?placeholderIfAbsent=true"
-              className="w-[9px] mt-1"
-              alt="Dropdown arrow"
-            />
-          </div>
+          <Link
+            to="/products"
+            className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
+          >
+            Products
+          </Link>
           <Link
             to="/contact"
             className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
@@ -107,11 +105,11 @@ const Header = () => {
               About
             </Link>
             <Link
-              to="/product"
+              to="/products"
               className="text-[rgba(13,74,141,1)] text-lg font-medium"
               onClick={() => setMenuOpen(false)}
             >
-              Product
+              Products
             </Link>
             <Link
               to="/contact"
