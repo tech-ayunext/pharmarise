@@ -23,6 +23,7 @@ export default {
     },
     extend: {
       fontFamily: {
+        sans: ['"Red Hat Text"', 'sans-serif'],
         mulish: ['Mulish', 'sans-serif'],
         'red-hat-text': ['"Red Hat Text"', 'sans-serif'],
       },

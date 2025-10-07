@@ -2,6 +2,32 @@ import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+// Add custom CSS for animations
+const animationStyles = `
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+  }
+`;
+
+// Inject styles
+if (typeof document !== 'undefined') {
+    const styleSheet = document.createElement("style");
+    styleSheet.innerText = animationStyles;
+    document.head.appendChild(styleSheet);
+}
+
 const Products = () => {
     const products = [
         {
@@ -56,7 +82,7 @@ const Products = () => {
             <div className="relative bg-[#0d4a8d] py-16 md:py-24" style={{ backgroundImage: "url('/images/Product_background.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0d4a8d]/100 from-25% to-[#0d4a8d]/25"></div>
                 <div className="relative z-10 container mx-auto px-4 md:px-8">
-                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in transform transition-all duration-700 hover:scale-105">
                         Products
                     </h1>
                 </div>
@@ -67,8 +93,12 @@ const Products = () => {
                 <div className="container mx-auto px-4 md:px-8">
                     <div className="max-w-6xl mx-auto">
                         <div className="grid gap-8 md:gap-12">
-                            {products.map((product) => (
-                                <div key={product.id} className="bg-white rounded-xl shadow-lg overflow-hidden">
+                            {products.map((product, index) => (
+                                <div
+                                    key={product.id}
+                                    className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-500 hover:shadow-xl hover:scale-[1.02] animate-fade-in"
+                                    style={{ animationDelay: `${index * 0.1}s` }}
+                                >
                                     {/* Desktop Layout */}
                                     <div className="hidden lg:flex relative h-[220px]">
                                         {/* Card Background - Narrower */}
@@ -80,11 +110,11 @@ const Products = () => {
                                         </div>
 
                                         {/* Product Image - Positioned to overflow */}
-                                        <div className="absolute top-1/2 left-3 transform -translate-y-1/2 rounded-xl p-4  z-10">
+                                        <div className="absolute top-1/2 left-3 transform -translate-y-1/2 rounded-xl p-4 z-10 transition-transform duration-300 hover:scale-105">
                                             <img
                                                 src={product.image}
                                                 alt={product.name}
-                                                className="w-[320px] h-[120px] object-contain"
+                                                className="w-[320px] h-[120px] object-contain transition-transform duration-300"
                                             />
                                         </div>
 
@@ -108,11 +138,11 @@ const Products = () => {
                                             {/* Main color area */}
                                             <div className="flex-1 bg-[#0D4A8D] relative flex items-center justify-center">
                                                 {/* Product Image */}
-                                                <div className="bg-white rounded-xl p-4 shadow-lg">
+                                                <div className="bg-white rounded-xl p-4 shadow-lg transition-transform duration-300 hover:scale-105">
                                                     <img
                                                         src={product.image}
                                                         alt={product.name}
-                                                        className="w-[250px] h-[80px] object-contain"
+                                                        className="w-[250px] h-[80px] object-contain transition-transform duration-300"
                                                     />
                                                 </div>
                                             </div>

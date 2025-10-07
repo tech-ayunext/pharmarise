@@ -1,6 +1,81 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+
+// Add custom CSS for animations
+const newAboutAnimationStyles = `
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-fade-in-left {
+    animation: fadeInLeft 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-fade-in-right {
+    animation: fadeInRight 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-fade-in-scale {
+    animation: fadeInScale 0.8s ease-out forwards;
+    opacity: 0;
+  }
+`;
+
+// Inject styles
+if (typeof document !== 'undefined') {
+  const styleSheet = document.createElement("style");
+  styleSheet.innerText = newAboutAnimationStyles;
+  document.head.appendChild(styleSheet);
+}
+
 // Component 1: Hero Section
 const Hero: React.FC = () => {
   return (
@@ -10,7 +85,8 @@ const Hero: React.FC = () => {
         <h1
           className="order-1 md:order-2 text-white text-6xl font-bold tracking-[-1.8px] 
                        md:absolute md:left-[86px] md:top-[86px]
-                       max-md:text-5xl max-md:left-10 max-sm:text-4xl max-sm:left-5 max-sm:mt-4 z-10"
+                       max-md:text-5xl max-md:left-10 max-sm:text-4xl max-sm:left-5 max-sm:mt-4 z-10 animate-fade-in-left transition-transform duration-300 hover:scale-105"
+          style={{ animationDelay: '0.2s' }}
         >
           About Us
         </h1>
@@ -19,7 +95,8 @@ const Hero: React.FC = () => {
         <img
           src="/images/newaboutus.png"
           alt="Hero Background"
-          className="order-2 md:order-1 w-full h-[252px] object-cover md:absolute md:right-0 md:top-0 md:w-[1142px] md:h-[252px] z-0"
+          className="order-2 md:order-1 w-full h-[252px] object-cover md:absolute md:right-0 md:top-0 md:w-[1142px] md:h-[252px] z-0 animate-fade-in-right"
+          style={{ animationDelay: '0.4s' }}
         />
       </div>
     </section>
@@ -58,12 +135,13 @@ const FeaturesGrid: React.FC = () => {
           key={index}
           // The ring classes are added conditionally to highlight the second item
           className={`
-            bg-[#0D4A8D] rounded-xl flex flex-col items-center justify-start text-center p-6 min-h-[160px]
+            bg-[#0D4A8D] rounded-xl flex flex-col items-center justify-start text-center p-6 min-h-[160px] animate-fade-in-up transition-transform duration-300 hover:scale-105 hover:shadow-lg
            
           `}
+          style={{ animationDelay: `${1.2 + index * 0.1}s` }}
         >
           {/* White circle background for the icon */}
-          <div className="bg-white w-14 h-14 rounded-full flex items-center justify-center mb-4">
+          <div className="bg-white w-14 h-14 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 hover:scale-110">
             <CheckmarkIcon />
           </div>
 
@@ -83,19 +161,20 @@ const AboutSection: React.FC = () => {
     <section className="pt-[50px] pb-0 px-[43px] max-md:pt-10 max-md:pb-0 max-md:px-5 max-sm:pt-[30px] max-sm:pb-0 max-sm:px-[15px]">
       <h2
         className="text-[#0D4A8D] text-[55px] font-bold tracking-[-1.65px] max-w-[1001px]  
-                     max-md:text-[42px] max-md:mb-[40px] max-sm:text-[28px] max-sm:mb-[30px]"
+                     max-md:text-[42px] max-md:mb-[40px] max-sm:text-[28px] max-sm:mb-[30px] animate-fade-in-left transition-transform duration-300 hover:scale-105"
+        style={{ animationDelay: '0.2s' }}
       >
         We'll Ensure You Always Get Best Results.
       </h2>
 
       <div className="flex gap-[35px] items-start max-md:flex-col max-md:gap-10 max-sm:gap-[30px]">
         {/* Image Section */}
-        <div className="relative w-full  max-w-[575px] mx-auto max-sm:-mt-10">
+        <div className="relative w-full  max-w-[575px] mx-auto max-sm:-mt-10 animate-fade-in-left" style={{ animationDelay: '0.4s' }}>
           {/* Main Image */}
           <img
             src="/images/person1.png"
             alt="PharmaRise Team"
-            className="relative z-[3] w-full h-auto rounded-[0_0_102px_0] left-[4%]"
+            className="relative z-[3] w-full h-auto rounded-[0_0_102px_0] left-[4%] transition-transform duration-300 hover:scale-105"
           />
 
           {/* Blue Background */}
@@ -128,7 +207,8 @@ const AboutSection: React.FC = () => {
         <div className="flex-1 flex flex-col justify-center pt-20 max-sm:-mt-20">
           <p
             className="text-[#0D4A8D] text-justify text-[25px] font-normal leading-[39.75px] mb-5 
-                max-md:text-[22px] max-sm:text-base"
+                max-md:text-[22px] max-sm:text-base animate-fade-in-right"
+            style={{ animationDelay: '0.6s' }}
           >
             Pharmarise Innovations has been founded in 2024 by Mr Rajendra
             Patkar. A pharmacist by qualification and an MBA from Jamnalal
@@ -192,58 +272,60 @@ const WhyChooseSection: React.FC = () => {
   ];
 
   return (
-   <section className="bg-[#D9EBFF] mt-[100px] px-[43px] py-[102px] max-md:px-5 max-md:py-20 max-sm:px-[15px] max-sm:py-[30px]">
-  {/* Section Heading */}
-  <h2 className="text-[#0D4A8D] text-[55px] font-semibold tracking-[-1.65px] mb-[122px] 
+    <section className="bg-[#D9EBFF] mt-[100px] px-[43px] py-[102px] max-md:px-5 max-md:py-20 max-sm:px-[15px] max-sm:py-[30px]">
+      {/* Section Heading */}
+      <h2 className="text-[#0D4A8D] text-[55px] font-semibold tracking-[-1.65px] mb-[122px] 
                  max-md:text-[42px] max-md:mb-20 
-                 max-sm:text-[28px] max-sm:mb-10 font-['Red_Hat_Text']">
-    Why Choose PharmaRise
-  </h2>
+                 max-sm:text-[28px] max-sm:mb-10 animate-fade-in-up transition-transform duration-300 hover:scale-105"
+        style={{ animationDelay: '0.2s' }}>
+        Why Choose PharmaRise
+      </h2>
 
-  {/* Cards Grid */}
-  <div className="grid grid-cols-[repeat(4,1fr)] gap-[54px] 
+      {/* Cards Grid */}
+      <div className="grid grid-cols-[repeat(4,1fr)] gap-[54px] 
                   max-md:grid-cols-[repeat(2,1fr)] max-md:gap-[30px] 
                   max-sm:grid-cols-[1fr] max-sm:gap-5">
-    {choiceCards.map((card, index) => (
-      <article
-        key={index}
-        className={`w-[316px] h-[429px] relative flex flex-col items-center text-center 
+        {choiceCards.map((card, index) => (
+          <article
+            key={index}
+            className={`w-[316px] h-[429px] relative flex flex-col items-center text-center 
                     ${card.bgColor} px-7 py-[52px] rounded-[21px_0] 
                     border-r-[7px] border-b-[7px] border-solid ${card.borderColor} 
                     max-md:w-full max-md:h-[380px] max-md:px-5 max-md:py-10 
-                    max-sm:w-full max-sm:h-auto max-sm:px-5 max-sm:py-[20px]`}
-      >
-        {/* Content Wrapper */}
-        <div className="flex flex-col items-center max-sm:gap-5 gap-6">
-          {/* Card Heading */}
-          <h3 className="text-[#FFF] text-center font-['Red_Hat_Text'] 
+                    max-sm:w-full max-sm:h-auto max-sm:px-5 max-sm:py-[20px] animate-fade-in-scale transition-transform duration-300 hover:scale-105 hover:shadow-xl`}
+            style={{ animationDelay: `${0.4 + index * 0.1}s` }}
+          >
+            {/* Content Wrapper */}
+            <div className="flex flex-col items-center max-sm:gap-5 gap-6">
+              {/* Card Heading */}
+              <h3 className="text-[#FFF] text-center 
                          text-[30.447px] font-semibold leading-[39.949px] 
                          tracking-[-1.063px] whitespace-pre-line 
                          max-md:text-[28px] 
                          max-sm:text-lg">
-            {card.title}
-          </h3>
+                {card.title}
+              </h3>
 
-          {/* Card Icon */}
-          <div
-            className="flex justify-center items-center 
+              {/* Card Icon */}
+              <div
+                className="flex justify-center items-center 
                        w-[78px] h-[87px] shrink-0 aspect-[78.35/87] 
-                       max-sm:w-[50px] max-sm:h-[55px] mt-6 mb-[-15px]"
-            dangerouslySetInnerHTML={{ __html: card.icon }}
-          />
+                       max-sm:w-[50px] max-sm:h-[55px] mt-6 mb-[-15px] transition-transform duration-300 hover:scale-110"
+                dangerouslySetInnerHTML={{ __html: card.icon }}
+              />
 
-          {/* Card Description */}
-          <p className="text-[#FFF] text-center font-['Red_Hat_Text'] 
+              {/* Card Description */}
+              <p className="text-[#FFF] text-center 
                         text-[23.81px] font-normal leading-[26.833px] 
                         tracking-[-0.714px] 
                         max-md:text-[20px] max-sm:text-sm max-sm:leading-snug">
-            {card.description}
-          </p>
-        </div>
-      </article>
-    ))}
-  </div>
-</section>
+                {card.description}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
 
   );
 };
@@ -255,13 +337,13 @@ const VisionMissionSection: React.FC = () => {
       {/* Desktop: three columns (left title rail, vision, mission with divider). Mobile/Tablet: stacked */}
       <div className="flex items-center gap-16 max-lg:gap-10 max-md:flex-col">
         {/* Left title rail */}
-        <div className="shrink-0 w-[300px] max-md:w-full max-md:mb-8 flex flex-col justify-center self-center">
+        <div className="shrink-0 w-[300px] max-md:w-full max-md:mb-8 flex flex-col justify-center self-center animate-fade-in-left" style={{ animationDelay: '0.2s' }}>
           {/* Desktop stacked */}
-          <div className="hidden max-md:block text-white font-bold tracking-[-2.01px] leading-tight text-[40px] text-center ">
+          <div className="hidden max-md:block text-white font-bold tracking-[-2.01px] leading-tight text-[40px] text-center transition-transform duration-300 hover:scale-105">
             Our Vision & Mission
           </div>
           {/* Desktop stacked */}
-          <div className="text-white font-bold tracking-[-2.01px] leading-tight text-[67px] max-lg:text-5xl max-md:hidden">
+          <div className="text-white font-bold tracking-[-2.01px] leading-tight text-[67px] max-lg:text-5xl max-md:hidden transition-transform duration-300 hover:scale-105">
             <div>Our</div>
             <div>Vision &</div>
             <div>Mission</div>
@@ -271,10 +353,10 @@ const VisionMissionSection: React.FC = () => {
         {/* Right content area: Vision | Mission */}
         <div className="flex-1 flex items-start gap-16 max-lg:gap-10 max-sm:gap-6 max-md:flex-col">
           {/* Vision */}
-          <article className="flex-1 min-w-0 max-sm:-mt-20">
+          <article className="flex-1 min-w-0 max-sm:-mt-20 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             <h3
               className="text-white text-[55px] font-bold tracking-[-1.65px] mb-[30px] 
-                           max-lg:text-[42px] max-md:mb-5 max-sm:text-[32px] max-sm:mb-[15px] mt-5"
+                           max-lg:text-[42px] max-md:mb-5 max-sm:text-[32px] max-sm:mb-[15px] mt-5 transition-transform duration-300 hover:scale-105"
             >
               Vision
             </h3>
@@ -295,10 +377,10 @@ const VisionMissionSection: React.FC = () => {
           <div className="w-px bg-white/50 self-stretch max-md:hidden" />
 
           {/* Mission */}
-          <article className="flex-1 min-w-0">
+          <article className="flex-1 min-w-0 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
             <h3
               className="text-white text-[55px] font-bold tracking-[-1.65px] mb-[30px] 
-                           max-lg:text-[42px] max-md:mb-5 max-sm:text-[32px] max-sm:mb-[15px]"
+                           max-lg:text-[42px] max-md:mb-5 max-sm:text-[32px] max-sm:mb-[15px] transition-transform duration-300 hover:scale-105"
             >
               Mission
             </h3>

@@ -17,7 +17,7 @@ const Innovations = () => {
       id="innovations"
     >
       <h2
-        className="text-[30px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold leading-normal tracking-[-1.8px] text-[#0D4A8D] font-['Red_Hat_Text']
+        className="text-[30px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold leading-normal tracking-[-1.8px] text-[#0D4A8D]
   text-center lg:text-left px-4 sm:px-8 lg:px-0 lg:ml-[122px]"
       >
         Our Innovations

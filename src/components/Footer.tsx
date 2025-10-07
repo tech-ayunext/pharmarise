@@ -155,7 +155,7 @@ const Footer = () => {
                 style={{
                   width: "170px",
                   color: "#FFF",
-                  fontFamily: "Mulish",
+                  fontFamily: '"Red Hat Text"',
                   fontSize: "20px",
                   fontWeight: 300,
                   lineHeight: "175%",
@@ -178,7 +178,7 @@ const Footer = () => {
                       className=" mb-6"
                       style={{
                         color: "#FFF",
-                        fontFamily: "Mulish",
+                        fontFamily: '"Red Hat Text"',
                         fontSize: "20px",
                         fontWeight: 400,
                         lineHeight: "175%",
@@ -190,7 +190,7 @@ const Footer = () => {
                       className="space-y-3"
                       style={{
                         color: "#FFF",
-                        fontFamily: "Mulish",
+                        fontFamily: '"Red Hat Text"',
                         fontSize: "20px",
                         fontWeight: 10,
                         lineHeight: "175%",
