@@ -159,7 +159,7 @@ const Footer = () => {
                   fontSize: "20px",
                   fontWeight: 300,
                   lineHeight: "175%",
-                }}  
+                }}
               >
                 <span>Back to Top</span>
                 <span className="text-xs">▲</span>
@@ -231,7 +231,7 @@ const Footer = () => {
                       className="font-bold mb-6"
                       style={{
                         color: "#FFF",
-                        fontFamily: "Mulish",
+                        fontFamily: '"Red Hat Text"',
                         fontSize: "20px",
                         fontWeight: 400,
                         lineHeight: "175%",
@@ -243,15 +243,15 @@ const Footer = () => {
                       className="space-y-2"
                       style={{
                         color: "#FFF",
-                        fontFamily: "Mulish",
+                        fontFamily: '"Red Hat Text"',
                         fontSize: "20px",
-
+                        fontWeight: 400,
                         lineHeight: "175%",
                       }}
                     >
                       <address className="not-italic">
                         <a
-                          href="https://pharmarise.vercel.app/index.html#"
+                          href=""
                           className="hover:opacity-80 transition-opacity block"
                           target="_blank"
                           rel="noopener noreferrer"

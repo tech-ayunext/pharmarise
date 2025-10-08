@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ContactPageForm from "../components/ContactPageForm";
 
 // Add custom CSS for animations
 const contactPageAnimationStyles = `
@@ -189,56 +190,7 @@ const Contact = () => {
 
             {/* Right Side - Form */}
             <div className="lg:w-1/2 bg-gray-50 p-12 lg:p-16 flex flex-col justify-center animate-fade-in-right" style={{ animationDelay: '0.3s' }}>
-              <form className="space-y-8">
-                <div className="animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    className="w-full px-0 py-3 text-lg text-gray-700 placeholder-gray-500 bg-transparent border-0 border-b-2 border-gray-300 focus:border-[#0d4a8d] focus:outline-none transition-all duration-300 focus:scale-105"
-                  />
-                </div>
-
-                <div className="animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-                  <input
-                    type="text"
-                    placeholder="Service Interest"
-                    className="w-full px-0 py-3 text-lg text-gray-700 placeholder-gray-500 bg-transparent border-0 border-b-2 border-gray-300 focus:border-[#0d4a8d] focus:outline-none transition-all duration-300 focus:scale-105"
-                  />
-                </div>
-
-                <div className="animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    className="w-full px-0 py-3 text-lg text-gray-700 placeholder-gray-500 bg-transparent border-0 border-b-2 border-gray-300 focus:border-[#0d4a8d] focus:outline-none transition-all duration-300 focus:scale-105"
-                  />
-                </div>
-
-                <div className="animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-                  <input
-                    type="tel"
-                    placeholder="Phone No."
-                    className="w-full px-0 py-3 text-lg text-gray-700 placeholder-gray-500 bg-transparent border-0 border-b-2 border-gray-300 focus:border-[#0d4a8d] focus:outline-none transition-all duration-300 focus:scale-105"
-                  />
-                </div>
-
-                <div className="animate-fade-in-up" style={{ animationDelay: '0.9s' }}>
-                  <textarea
-                    placeholder="Message....."
-                    rows={4}
-                    className="w-full px-4 py-3 text-lg text-gray-700 placeholder-gray-500 bg-white border-2 border-gray-300 rounded-lg focus:border-[#0d4a8d] focus:outline-none transition-all duration-300 resize-none focus:scale-105"
-                  />
-                </div>
-
-                <div className="pt-4 animate-fade-in-up" style={{ animationDelay: '1.0s' }}>
-                  <button
-                    type="submit"
-                    className="bg-[#0d4a8d] hover:bg-[#0099cd] text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 text-lg hover:scale-105 hover:shadow-lg transform"
-                  >
-                    Send
-                  </button>
-                </div>
-              </form>
+              <ContactPageForm />
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { useDetailedContactForm, DetailedContactFormData } from "../../hooks/useContactForm";
 
 const contactSchema = z.object({
   message: z.string().optional(),
@@ -14,7 +14,7 @@ const contactSchema = z.object({
   newsletter: z.boolean().optional(),
 });
 
-type ContactFormData = z.infer<typeof contactSchema>;
+type FormData = z.infer<typeof contactSchema>;
 
 const ContactForm = () => {
   const {
@@ -22,22 +22,52 @@ const ContactForm = () => {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<ContactFormData>({
+  } = useForm<FormData>({
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit = (data: ContactFormData) => {
-    console.log("Form submitted:", data);
-    // Here you would typically send the data to your backend
-    alert("Thank you for your message! We will get back to you soon.");
-    reset();
+  const { submitForm, isSubmitting, submitStatus, clearStatus } = useDetailedContactForm();
+
+  const onSubmit = async (data: FormData) => {
+    // Transform the form data to match DetailedContactFormData interface
+    const contactData: DetailedContactFormData = {
+      fullName: data.fullName || '',
+      email: data.email || '',
+      phone: data.phone || '',
+      serviceInterest: data.serviceInterest || '',
+      address: data.address || '',
+      companyName: data.companyName || '',
+      message: data.message,
+      newsletter: data.newsletter,
+    };
+    
+    const success = await submitForm(contactData);
+    if (success) {
+      reset();
+      // Clear status after 5 seconds
+      setTimeout(() => {
+        clearStatus();
+      }, 5000);
+    }
   };
 
   const inputBaseClass =
     "w-full px-4 py-2.5 bg-transparent border-b-2 border-gray-300 focus:border-blue-500 focus:outline-none transition-colors placeholder-gray-500";
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+    <div className="w-full">
+      {/* Status Message */}
+      {submitStatus.type && (
+        <div className={`mb-6 p-4 rounded-lg ${
+          submitStatus.type === 'success' 
+            ? 'bg-green-100 border border-green-400 text-green-700' 
+            : 'bg-red-100 border border-red-400 text-red-700'
+        }`}>
+          {submitStatus.message}
+        </div>
+      )}
+
+      <form onSubmit={handleSubmit(onSubmit)} className="w-full">
       {/* Form Fields Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
         <div>
@@ -162,12 +192,18 @@ const ContactForm = () => {
 
         <button
           type="submit"
-          className="px-6 sm:px-8 py-2 sm:py-2.5 bg-white text-[#0D4A8D] font-medium rounded-lg hover:bg-gray-50 transition-colors border border-[#0D4A8D]"
+          disabled={isSubmitting}
+          className={`px-6 sm:px-8 py-2 sm:py-2.5 font-medium rounded-lg transition-colors border ${
+            isSubmitting 
+              ? 'bg-gray-300 text-gray-500 border-gray-300 cursor-not-allowed' 
+              : 'bg-white text-[#0D4A8D] border-[#0D4A8D] hover:bg-gray-50'
+          }`}
         >
-          Send
+          {isSubmitting ? 'Sending...' : 'Send'}
         </button>
       </div>
     </form>
+    </div>
   );
 };
 
