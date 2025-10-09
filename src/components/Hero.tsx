@@ -1,4 +1,6 @@
 
+import { Link } from "react-router-dom";
+
 // Add custom CSS for animations
 const heroAnimationStyles = `
   @keyframes fadeInUp {
@@ -135,14 +137,16 @@ const Hero = () => {
 
 
 
-          {/* About Us Button */}
-          <div className="mb-6 sm:mb-0">
-            <button
-              className="bg-[#BE2623] text-white font-medium text-center leading-[96.184%] rounded-md hover:bg-opacity-90 transition-all px-4 py-2 sm:px-6 sm:py-3 text-sm lg:text-[14.939px] animate-fade-in-up hover:scale-105 hover:shadow-lg transform"
+          {/* Action Buttons */}
+          <div className="mb-6 sm:mb-0 flex flex-col sm:flex-row gap-4">
+            <Link 
+              to="/new-about"
+              className="bg-[#BE2623] text-white font-medium text-center leading-[96.184%] rounded-md hover:bg-opacity-90 transition-all px-4 py-2 sm:px-6 sm:py-3 text-sm lg:text-[14.939px] animate-fade-in-up hover:scale-105 hover:shadow-lg transform inline-block"
               style={{ animationDelay: '1.2s' }}
             >
               About Us
-            </button>
+            </Link>
+           
           </div>
         </div>
 

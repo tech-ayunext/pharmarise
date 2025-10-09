@@ -62,11 +62,11 @@ if (typeof document !== 'undefined') {
 const Contact = () => {
   return (
     <section
-      className="bg-gradient-to-b from-[#f0f9ff] to-[#e0f2fe] py-8 sm:py-12 lg:py-16"
+      className="bg-white py-8 sm:py-12 lg:py-16"
       id="contact"
     >
       <div className="container mx-auto max-w-[1200px] px-4">
-        <h2 className="text-[#0D4A8D] text-[28px] sm:text-[36px] md:text-[44px] lg:text-5xl font-bold mb-8 sm:mb-10 lg:mb-12 text-left animate-fade-in-left transition-transform duration-300 hover:scale-105" style={{ animationDelay: '0.2s' }}>
+        <h2 className="text-[#0D4A8D] text-[28px] sm:text-[36px] md:text-[44px] lg:text-5xl font-semibold mb-8 sm:mb-10 lg:mb-12 text-left animate-fade-in-left transition-transform duration-300 hover:scale-105" style={{ animationDelay: '0.2s' }}>
           Connect With Us
         </h2>
 

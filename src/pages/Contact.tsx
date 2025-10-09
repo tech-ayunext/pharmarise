@@ -84,16 +84,13 @@ const Contact = () => {
 
       {/* Hero Section */}
       <div className="relative bg-[#0d4a8d] py-16 md:py-24" style={{ backgroundImage: "url('/images/Get in touch.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d4a8d] to-[#0099cd] opacity-90"></div>
-        <div className="relative z-10 container mx-auto px-4 md:px-8">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in-left transition-transform duration-300 hover:scale-105" style={{ animationDelay: '0.2s' }}>
-            Contact Us
-          </h1>
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl animate-fade-in-left" style={{ animationDelay: '0.4s' }}>
-            Get in touch with our team for any inquiries about our pharmaceutical products and services.
-          </p>
-        </div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0d4a8d]/100 from-25% to-[#0d4a8d]/25"></div>
+      <div className="relative z-10 container mx-auto px-4 md:px-8">
+        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in transform transition-all duration-700 hover:scale-105">
+          Contact Us
+        </h1>
       </div>
+    </div>
 
       {/* Company Information Section */}
       <div className="relative w-full bg-[#d9eaff] py-16 md:py-20">

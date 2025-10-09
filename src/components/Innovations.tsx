@@ -23,7 +23,7 @@ const Innovations = () => {
         Our Innovations
       </h2>
 
-      <div className="w-full flex justify-center mt-[70px] sm:mt-[125px] md:mt-[150px] lg:mt-[175px] px-4 relative">
+      <div className="w-full flex justify-center mt-[40px] sm:mt-[125px] md:mt-[150px] lg:mt-[55px] px-4 relative">
         <Swiper
           initialSlide={0}
           modules={[Navigation, Autoplay]}
@@ -58,9 +58,8 @@ const Innovations = () => {
                   <img
                     src={src}
                     alt={`Product ${index + 1}`}
-                    className={`rounded-lg object-contain transition-transform duration-300 w-[200px] h-[140px] sm:w-[250px] sm:h-[175px] md:w-[280px] md:h-[196px] lg:w-[313px] lg:h-[219px] ${
-                      isActive ? "scale-150" : "scale-100 opacity-50"
-                    }`}
+                    className={`rounded-lg object-contain transition-transform duration-300 w-[200px] h-[140px] sm:w-[250px] sm:h-[175px] md:w-[280px] md:h-[196px] lg:w-[313px] lg:h-[219px] ${isActive ? "scale-150" : "scale-100 opacity-50"
+                      }`}
                   />
                 </div>
               )}

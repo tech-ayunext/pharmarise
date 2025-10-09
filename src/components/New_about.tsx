@@ -79,31 +79,19 @@ if (typeof document !== 'undefined') {
 // Component 1: Hero Section
 const Hero: React.FC = () => {
   return (
-    <section className="w-full relative bg-[#0D4A8D]">
-      <div className="flex flex-col md:flex-row w-full h-[252px] relative overflow-hidden">
-        {/* Text first on mobile */}
-        <h1
-          className="order-1 md:order-2 text-white text-6xl font-bold tracking-[-1.8px] 
-                       md:absolute md:left-[86px] md:top-[86px]
-                       max-md:text-5xl max-md:left-10 max-sm:text-4xl max-sm:left-5 max-sm:mt-4 z-10 animate-fade-in-left transition-transform duration-300 hover:scale-105"
-          style={{ animationDelay: '0.2s' }}
-        >
-          About Us
+    <div className="relative bg-[#0d4a8d] py-16 md:py-24" style={{ backgroundImage: "url('/images/newaboutus.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0d4a8d]/100 from-25% to-[#0d4a8d]/25"></div>
+      <div className="relative z-10 container mx-auto px-4 md:px-8">
+        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in transform transition-all duration-700 hover:scale-105">
+          About us
         </h1>
-
-        {/* Hero Image */}
-        <img
-          src="/images/newaboutus.png"
-          alt="Hero Background"
-          className="order-2 md:order-1 w-full h-[252px] object-cover md:absolute md:right-0 md:top-0 md:w-[1142px] md:h-[252px] z-0 animate-fade-in-right"
-          style={{ animationDelay: '0.4s' }}
-        />
       </div>
-    </section>
+    </div>
+
+
   );
 };
 
-// Component 2: Features Grid Section
 const FeaturesGrid: React.FC = () => {
   const features = [
     "Branded Pharmaceuticals",
@@ -355,7 +343,7 @@ const VisionMissionSection: React.FC = () => {
           {/* Vision */}
           <article className="flex-1 min-w-0 max-sm:-mt-20 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             <h3
-              className="text-white text-[55px] font-bold tracking-[-1.65px] mb-[30px] 
+              className="text-white text-[55px] font-semibold tracking-[-1.65px] mb-[30px] 
                            max-lg:text-[42px] max-md:mb-5 max-sm:text-[32px] max-sm:mb-[15px] mt-5 transition-transform duration-300 hover:scale-105"
             >
               Vision
@@ -379,7 +367,7 @@ const VisionMissionSection: React.FC = () => {
           {/* Mission */}
           <article className="flex-1 min-w-0 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
             <h3
-              className="text-white text-[55px] font-bold tracking-[-1.65px] mb-[30px] 
+              className="text-white text-[55px] font-semibold  tracking-[-1.65px] mb-[30px] 
                            max-lg:text-[42px] max-md:mb-5 max-sm:text-[32px] max-sm:mb-[15px] transition-transform duration-300 hover:scale-105"
             >
               Mission

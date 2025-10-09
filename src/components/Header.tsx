@@ -52,12 +52,12 @@ const Header = () => {
           >
             Home
           </a>
-          <a
-            href="/New-about"
+          <Link
+            to="/new-about"
             className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
           >
             About
-          </a>
+          </Link>
           <Link
             to="/products"
             className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
@@ -74,9 +74,12 @@ const Header = () => {
 
         {/* Enquire Button (desktop + mobile) */}
         <div className="flex items-center gap-3 relative z-20">
-          <button className="bg-[rgba(190,38,35,1)] text-xs md:text-sm text-white font-semibold px-4 py-2 rounded-md hover:bg-opacity-90 transition-all">
+          <Link 
+            to="/contact"
+            className="bg-[rgba(190,38,35,1)] text-xs md:text-sm text-white font-semibold px-4 py-2 rounded-md hover:bg-opacity-90 transition-all inline-block"
+          >
             Enquire Now
-          </button>
+          </Link>
 
           {/* Hamburger (mobile only) */}
           <button
@@ -98,7 +101,7 @@ const Header = () => {
               Home
             </Link>
             <Link
-              to="/New-about"
+              to="/new-about"
               className="text-[rgba(13,74,141,1)] text-lg font-medium"
               onClick={() => setMenuOpen(false)}
             >

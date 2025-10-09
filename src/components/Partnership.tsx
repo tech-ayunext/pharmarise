@@ -60,7 +60,7 @@ if (typeof document !== 'undefined') {
 const Partnership = () => {
   return (
     <section className="bg-[rgba(217,235,255,1)] flex w-full flex-col items-stretch pt-[31px] px-4 sm:px-8 md:px-10 lg:px-12 max-md:max-w-full max-md:px-5" id="partnership">
-      <h2 className="text-[rgba(13,74,141,1)] text-[32px] sm:text-[40px] md:text-[50px] lg:text-6xl font-bold tracking-[-1.8px] ml-[20px] sm:ml-[40px] lg:ml-[61px] max-md:max-w-full max-md:text-[40px] animate-fade-in-left transition-transform duration-300 hover:scale-105" style={{ animationDelay: '0.2s' }}>
+      <h2 className="text-[rgba(13,74,141,1)] text-[32px] sm:text-[40px] md:text-[50px] lg:text-6xl font-medium  tracking-[-1.8px] ml-[20px] sm:ml-[40px] lg:ml-[61px] max-md:max-w-full max-md:text-[40px] animate-fade-in-left transition-transform duration-300 hover:scale-105" style={{ animationDelay: '0.2s' }}>
         Why Partner with PharmaRise
       </h2>
 

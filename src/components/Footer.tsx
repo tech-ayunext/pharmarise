@@ -29,12 +29,12 @@ const Footer = () => {
 
               {/* Description */}
               <p
-                className="self-stretch mb-6 max-md:max-w-full"
+                className="self-stretch mb-6 max-md:max-w-full "
                 style={{
                   color: "#FFF",
                   fontFamily: '"Red Hat Text"',
                   fontSize: "20px",
-                  fontWeight: 60,
+                  fontWeight: 500,
                   lineHeight: "175%",
                 }}
               >

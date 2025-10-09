@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Add custom CSS for animations
 const aboutAnimationStyles = `
@@ -76,14 +77,14 @@ const About = () => {
             </div>
 
             {/* Heading */}
-            <h2 className="text-[32px] sm:text-[40px] md:text-[50px] lg:text-[50px] font-bold leading-[40px] sm:leading-[50px] md:leading-[70px] lg:leading-[90px] tracking-[-1.8px] mb-4 sm:mb-6 max-md:text-4xl animate-fade-in-left transition-transform duration-300 hover:scale-105" style={{ animationDelay: '0.4s' }}>
+            <h2 className="text-[#0D4A8D] text-center font-['Red_Hat_Text'] text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-semibold leading-[40px] sm:leading-[50px] md:leading-[70px] lg:leading-[90px] tracking-[-1.8px] mb-4 sm:mb-6 max-md:text-4xl animate-fade-in-left transition-transform duration-300 hover:scale-105" style={{ animationDelay: '0.4s' }}>
               PharmaRise Innovations LLP
             </h2>
 
             {/* Subtext with Mr Rajendra Patkar in red */}
-            <p className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[23px] leading-[24px] sm:leading-[28px] md:leading-[32px] lg:leading-[36px] mb-4 sm:mb-6 animate-fade-in-left" style={{ animationDelay: '0.6s' }}>
+            <p className="text-[#0D4A8D] font-['Red_Hat_Text'] text-[16px] sm:text-[18px] md:text-[20px] lg:text-[23px] font-medium leading-[24px] sm:leading-[28px] md:leading-[32px] lg:leading-[36px] mb-4 sm:mb-6 animate-fade-in-left" style={{ animationDelay: '0.6s' }}>
               Pharmarise Innovations has been founded in 2024 by{" "}
-              <span className="text-[#BE2623] font-medium">
+              <span className="text-[#BE2623] font-['Red_Hat_Text'] font-medium">
                 Mr Rajendra Patkar
               </span>
               . A pharmacist by qualification and an MBA from Jamnalal Bajaj.
@@ -101,9 +102,13 @@ const About = () => {
             </p>
 
             {/* Button */}
-            <button className="bg-[#0D4A8D] text-white text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] px-4 sm:px-5 lg:px-6 py-2 sm:py-2.5 lg:py-3 rounded-lg hover:bg-opacity-90 transition-all animate-fade-in-up hover:scale-105 hover:shadow-lg transform" style={{ animationDelay: '1.0s' }}>
+            <Link
+              to="/new-about"
+              className="bg-[#0D4A8D] text-white text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] px-4 sm:px-5 lg:px-6 py-2 sm:py-2.5 lg:py-3 rounded-lg hover:bg-opacity-90 transition-all animate-fade-in-up hover:scale-105 hover:shadow-lg transform inline-block"
+              style={{ animationDelay: '1.0s' }}
+            >
               Our Story
-            </button>
+            </Link>
           </div>
         </div>
 
