@@ -65,7 +65,7 @@ const Hero = () => {
       className="min-h-screen w-full relative overflow-x-hidden bg-white"
       id="home"
     >
-      {/* Main container */}
+      {/* Main container*/}
       <div className="flex flex-col lg:flex-row min-h-screen w-full">
         {/* Left Content Section */}
         <div className="flex-1 flex flex-col justify-start pt-4 sm:pt-8 lg:pt-16 px-4 sm:px-8 lg:px-12 pb-6 sm:pb-8 lg:pb-12 w-full">
@@ -80,7 +80,7 @@ const Hero = () => {
             </h1>
           </div>
 
-          {/* Tagline */}
+          {/* Tag line */}
           <div className="mb-3 sm:mb-6 lg:mb-3">
             <p
               className="text-[#0D4A8D] font-normal leading-[126%] w-full max-w-[600px] 
@@ -132,11 +132,6 @@ const Hero = () => {
               excellence in the industry.
             </p>
           </div>
-
-
-
-
-
           {/* Action Buttons */}
           <div className="mb-6 sm:mb-0 flex flex-col sm:flex-row gap-4">
             <Link 
