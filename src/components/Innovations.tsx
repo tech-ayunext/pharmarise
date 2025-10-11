@@ -5,12 +5,15 @@ import "swiper/css/navigation";
 import { Navigation, Autoplay } from "swiper/modules"; // ✅ Correct for v10+
 
 const Innovations = () => {
-  const images = [
+  const originalImages = [
     "/images/Product1.png",
     "/images/Product2.png",
     "/images/Product3.png",
     "/images/Product4.png",
   ];
+
+  // Duplicate images multiple times for seamless infinite loop
+  const images = [...originalImages, ...originalImages, ...originalImages];
   return (
     <section
       className="bg-[rgba(217,235,255,1)] flex w-full flex-col items-stretch text-[rgba(13,74,141,1)] font-bold text-center pt-[33px] pb-[122px] max-md:max-w-full max-md:pb-[100px]"
@@ -25,17 +28,20 @@ const Innovations = () => {
 
       <div className="w-full flex justify-center mt-[40px] sm:mt-[125px] md:mt-[150px] lg:mt-[55px] px-4 relative">
         <Swiper
-          initialSlide={0}
+          initialSlide={4} // Start from middle to avoid seeing the beginning
           modules={[Navigation, Autoplay]}
           slidesPerView={1}
           spaceBetween={20}
           centeredSlides={true}
           navigation
-          loop
+          loop={true}
+          loopAdditionalSlides={2}
           autoplay={{
-            delay: 2000,
+            delay: 1200,
             disableOnInteraction: false,
+            pauseOnMouseEnter: true,
           }}
+          speed={600}
           breakpoints={{
             640: {
               slidesPerView: 1,
@@ -52,13 +58,15 @@ const Innovations = () => {
           }}
         >
           {images.map((src, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={`slide-${index}`}>
               {({ isActive }) => (
                 <div className="flex justify-center items-center">
                   <img
                     src={src}
-                    alt={`Product ${index + 1}`}
-                    className={`rounded-lg object-contain transition-transform duration-300 w-[200px] h-[140px] sm:w-[250px] sm:h-[175px] md:w-[280px] md:h-[196px] lg:w-[313px] lg:h-[219px] ${isActive ? "scale-150" : "scale-100 opacity-50"
+                    alt={`Product ${(index % originalImages.length) + 1}`}
+                    className={`rounded-lg object-contain transition-all duration-500 ease-in-out w-[200px] h-[140px] sm:w-[250px] sm:h-[175px] md:w-[280px] md:h-[196px] lg:w-[313px] lg:h-[219px] ${isActive
+                      ? "scale-150 opacity-100 z-10"
+                      : "scale-100 opacity-50 z-0"
                       }`}
                   />
                 </div>
@@ -67,22 +75,34 @@ const Innovations = () => {
           ))}
         </Swiper>
 
-        {/* Add Tailwind classes for small navigation buttons on mobile */}
+        {/* Enhanced styles for infinite loop carousel */}
         <style>{`
           .swiper-button-prev,
           .swiper-button-next {
-            color: #0d4a8d; /* button color */
+            color: #0d4a8d;
+            transition: all 0.3s ease;
+          }
+          .swiper-button-prev:hover,
+          .swiper-button-next:hover {
+            color: #BE2623;
+            transform: scale(1.1);
+          }
+          .swiper-wrapper {
+            transition-timing-function: linear;
+          }
+          .swiper-slide {
+            transition: all 0.5s ease-in-out;
           }
           @media (max-width: 640px) {
             .swiper-button-prev,
             .swiper-button-next {
               width: 20px;
               height: 20px;
-              top: 45%; /* vertical center */
+              top: 45%;
             }
             .swiper-button-prev::after,
             .swiper-button-next::after {
-              font-size: 14px; /* smaller arrow */
+              font-size: 14px;
             }
           }
         `}</style>

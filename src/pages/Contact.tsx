@@ -84,13 +84,13 @@ const Contact = () => {
 
       {/* Hero Section */}
       <div className="relative bg-[#0d4a8d] py-16 md:py-24" style={{ backgroundImage: "url('/images/Get in touch.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0d4a8d]/100 from-25% to-[#0d4a8d]/25"></div>
-      <div className="relative z-10 container mx-auto px-4 md:px-8">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in transform transition-all duration-700 hover:scale-105">
-          Contact Us
-        </h1>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0d4a8d]/100 from-25% to-[#0d4a8d]/25"></div>
+        <div className="relative z-10 container mx-auto px-4 md:px-8">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in transform transition-all duration-700 hover:scale-105">
+            Contact Us
+          </h1>
+        </div>
       </div>
-    </div>
 
       {/* Company Information Section */}
       <div className="relative w-full bg-[#d9eaff] py-16 md:py-20">
@@ -125,18 +125,24 @@ const Contact = () => {
                   <h3 className="text-2xl md:text-3xl font-semibold text-[#0d4a8d] mb-2 tracking-tight transition-transform duration-300 hover:scale-105">
                     Email
                   </h3>
-                  <p className="text-xl md:text-2xl text-[#0d4a8d] font-normal">
+                  <a
+                    href="mailto:support@pharmarise.com"
+                    className="text-xl md:text-2xl text-[#0d4a8d] font-normal hover:text-[#BE2623] transition-colors duration-300 cursor-pointer underline-offset-4 hover:underline"
+                  >
                     support@pharmarise.com
-                  </p>
+                  </a>
                 </div>
 
                 <div className="animate-fade-in-right" style={{ animationDelay: '0.6s' }}>
                   <h3 className="text-2xl md:text-3xl font-semibold text-[#0d4a8d] mb-2 tracking-tight transition-transform duration-300 hover:scale-105">
                     Phone No.
                   </h3>
-                  <p className="text-xl md:text-2xl text-[#0d4a8d] font-normal">
+                  <a
+                    href="tel:+919526526485"
+                    className="text-xl md:text-2xl text-[#0d4a8d] font-normal hover:text-[#BE2623] transition-colors duration-300 cursor-pointer underline-offset-4 hover:underline"
+                  >
                     +91 95265 26485
-                  </p>
+                  </a>
                 </div>
 
                 <div className="animate-fade-in-right" style={{ animationDelay: '0.7s' }}>

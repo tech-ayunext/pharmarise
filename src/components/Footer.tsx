@@ -16,7 +16,7 @@ const Footer = () => {
               {/* Logo */}
               <div className="flex items-center gap-4 mb-6">
                 <img
-                  src="/images/PharmaRise Innovations.png"
+                  src="/images/PharmaRise logo.png"
                   alt="PharmaRise Innovations LLP"
                   style={{
                     width: "377px",

@@ -67,6 +67,195 @@ const newAboutAnimationStyles = `
     animation: fadeInScale 0.8s ease-out forwards;
     opacity: 0;
   }
+
+  /* Enhanced responsive breakpoints for New About page */
+  
+  /* Tablet Portrait (768px - 1024px) */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .about-container-tablet {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    .about-title-tablet {
+      font-size: clamp(42px, 5vw, 48px) !important;
+    }
+    .about-text-tablet {
+      font-size: clamp(18px, 2.5vw, 22px) !important;
+    }
+  }
+
+  /* Large Tablet Landscape (1024px - 1366px) */
+  @media (min-width: 1024px) and (max-width: 1366px) {
+    .about-container-large-tablet {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+    .about-title-large-tablet {
+      font-size: clamp(48px, 4.5vw, 52px) !important;
+    }
+    .about-text-large-tablet {
+      font-size: clamp(20px, 2.3vw, 24px) !important;
+    }
+  }
+
+  /* 14-inch Laptop (1366px - 1440px) */
+  @media (min-width: 1366px) and (max-width: 1440px) {
+    .about-container-14 {
+      padding-left: 3rem;
+      padding-right: 3rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .about-title-14 {
+      font-size: clamp(50px, 4vw, 54px) !important;
+    }
+    .about-text-14 {
+      font-size: clamp(22px, 2vw, 24px) !important;
+    }
+  }
+
+  /* 15-inch Laptop (1440px - 1600px) */
+  @media (min-width: 1440px) and (max-width: 1600px) {
+    .about-container-15 {
+      padding-left: 3.5rem;
+      padding-right: 3.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .about-title-15 {
+      font-size: clamp(52px, 4.2vw, 56px) !important;
+    }
+    .about-text-15 {
+      font-size: clamp(23px, 2.2vw, 25px) !important;
+    }
+  }
+
+  /* 16+ inch Laptops/Desktops (1600px+) */
+  @media (min-width: 1600px) {
+    .about-container-16 {
+      padding-left: 4rem;
+      padding-right: 4rem;
+      max-width: 1536px;
+      margin: 0 auto;
+    }
+    .about-title-16 {
+      font-size: clamp(55px, 4.5vw, 67px) !important;
+    }
+    .about-text-16 {
+      font-size: clamp(24px, 2.5vw, 30px) !important;
+    }
+  }
+
+  /* Card Grid Media Queries */
+  
+  /* Default grid layout */
+  .cards-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  
+  .card-item {
+    width: 100% !important;
+    height: 450px !important;
+    padding: 3rem 2rem !important;
+  }
+  
+  /* Mobile (up to 640px) - 1 card per column (vertical stack) */
+  @media (max-width: 639px) {
+    .cards-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, auto);
+      gap: 1.25rem;
+    }
+    .card-item {
+      width: 100%;
+      height: auto;
+      padding: 1.25rem;
+    }
+  }
+
+  /* Small tablets (640px - 768px) - 2 columns, 2 rows (vertical layout) */
+  @media (min-width: 640px) and (max-width: 767px) {
+    .cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: 1.875rem;
+    }
+    .card-item {
+      width: 100%;
+      height: 350px;
+      padding: 1.5rem;
+    }
+  }
+
+  /* Medium tablets (768px - 1024px) - 2 columns, 2 rows (vertical layout) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: 2rem;
+    }
+    .card-item {
+      width: 100%;
+      height: 380px;
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  /* Laptops (1024px - 1366px) - 4 cards in single row (HORIZONTAL LAYOUT) */
+  @media (min-width: 1024px) and (max-width: 1366px) {
+    .cards-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      grid-template-rows: 1fr !important;
+      gap: 1.5rem !important;
+      max-width: 1250px !important;
+      margin: 0 auto !important;
+    }
+    .card-item {
+      width: 100% !important;
+      height: 400px !important;
+      padding: 2.2rem 1.7rem !important;
+    }
+  }
+
+  /* Large Laptops (1366px - 1536px) - 4 cards in single row (HORIZONTAL LAYOUT) */
+  @media (min-width: 1366px) and (max-width: 1535px) {
+    .cards-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      grid-template-rows: 1fr !important;
+      gap: 2rem !important;
+      max-width: 1350px !important;
+      margin: 0 auto !important;
+    }
+    .card-item {
+      width: 100% !important;
+      height: 420px !important;
+      padding: 2.7rem 1.9rem !important;
+    }
+  }
+
+  /* Extra Large Desktops (1536px+) - 4 cards per row (horizontal layout) */
+  @media (min-width: 1536px) {
+    .cards-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      grid-template-rows: 1fr !important;
+      gap: 3.375rem !important;
+      max-width: 1450px !important;
+      margin: 0 auto !important;
+    }
+    .card-item {
+      width: 100% !important;
+      height: 450px !important;
+      padding: 3.5rem 2rem !important;
+    }
+  }
 `;
 
 // Inject styles
@@ -117,28 +306,38 @@ const FeaturesGrid: React.FC = () => {
     </svg>
   );
   return (
-    <div className="grid grid-cols-2 gap-5 mt-10 sm:grid-cols-2 lg:grid-cols-4">
-      {features.map((feature, index) => (
-        <div
-          key={index}
-          // The ring classes are added conditionally to highlight the second item
-          className={`
-            bg-[#0D4A8D] rounded-xl flex flex-col items-center justify-start text-center p-6 min-h-[160px] animate-fade-in-up transition-transform duration-300 hover:scale-105 hover:shadow-lg
-           
-          `}
-          style={{ animationDelay: `${1.2 + index * 0.1}s` }}
-        >
-          {/* White circle background for the icon */}
-          <div className="bg-white w-14 h-14 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 hover:scale-110">
-            <CheckmarkIcon />
-          </div>
+    <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 
+                      gap-4 sm:gap-5 md:gap-6 lg:gap-6 xl:gap-5 2xl:gap-6
+                      mt-6 sm:mt-8 md:mt-10
+                      max-w-7xl mx-auto">
+        {features.map((feature, index) => (
+          <div
+            key={index}
+            className="bg-[#0D4A8D] rounded-xl flex flex-col items-center justify-center text-center 
+                       p-4 sm:p-5 md:p-6 lg:p-6 xl:p-5 2xl:p-6
+                       min-h-[140px] sm:min-h-[160px] md:min-h-[180px] lg:min-h-[180px] xl:min-h-[160px]
+                       animate-fade-in-up transition-transform duration-300 hover:scale-105 hover:shadow-lg
+                       w-full"
+            style={{ animationDelay: `${1.2 + index * 0.1}s` }}
+          >
+            {/* White circle background for the icon */}
+            <div className="bg-white w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-16 lg:h-16 xl:w-14 xl:h-14
+                            rounded-full flex items-center justify-center 
+                            mb-3 sm:mb-4 md:mb-4 lg:mb-4 xl:mb-3
+                            transition-transform duration-300 hover:scale-110">
+              <CheckmarkIcon />
+            </div>
 
-          {/* Feature text */}
-          <h3 className="text-white text-lg font-bold leading-tight">
-            {feature}
-          </h3>
-        </div>
-      ))}
+            {/* Feature text */}
+            <h3 className="text-white font-bold leading-tight
+                           text-sm sm:text-base md:text-lg lg:text-lg xl:text-base 2xl:text-lg
+                           px-2">
+              {feature}
+            </h3>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
@@ -146,10 +345,13 @@ const FeaturesGrid: React.FC = () => {
 // Component 3: Main About Section with Image and Text
 const AboutSection: React.FC = () => {
   return (
-    <section className="pt-[50px] pb-0 px-[43px] max-md:pt-10 max-md:pb-0 max-md:px-5 max-sm:pt-[30px] max-sm:pb-0 max-sm:px-[15px]">
+    <section className="pt-[50px] pb-0 px-[43px] max-md:pt-10 max-md:pb-0 max-md:px-5 max-sm:pt-[30px] max-sm:pb-0 max-sm:px-[15px]
+                        about-container-tablet about-container-large-tablet about-container-14 about-container-15 about-container-16">
       <h2
-        className="text-[#0D4A8D] text-[55px] font-bold tracking-[-1.65px] max-w-[1001px]  
-                     max-md:text-[42px] max-md:mb-[40px] max-sm:text-[28px] max-sm:mb-[30px] animate-fade-in-left transition-transform duration-300 hover:scale-105"
+        className="text-[#0D4A8D] text-[55px] font-bold tracking-[-1.65px] max-w-[1221px]   
+                     max-md:text-[42px] max-md:mb-[40px] max-sm:text-[28px] max-sm:mb-[30px] 
+                     about-title-tablet about-title-large-tablet about-title-14 about-title-15 about-title-16
+                     animate-fade-in-left transition-transform duration-300 hover:scale-105"
         style={{ animationDelay: '0.2s' }}
       >
         We'll Ensure You Always Get Best Results.
@@ -195,7 +397,9 @@ const AboutSection: React.FC = () => {
         <div className="flex-1 flex flex-col justify-center pt-20 max-sm:-mt-20">
           <p
             className="text-[#0D4A8D] text-justify text-[25px] font-normal leading-[39.75px] mb-5 
-                max-md:text-[22px] max-sm:text-base animate-fade-in-right"
+                max-md:text-[22px] max-sm:text-base 
+                about-text-tablet about-text-large-tablet about-text-14 about-text-15 about-text-16
+                animate-fade-in-right"
             style={{ animationDelay: '0.6s' }}
           >
             Pharmarise Innovations has been founded in 2024 by Mr Rajendra
@@ -260,129 +464,124 @@ const WhyChooseSection: React.FC = () => {
   ];
 
   return (
-    <section className="bg-[#D9EBFF] mt-[100px] px-[43px] py-[102px] max-md:px-5 max-md:py-20 max-sm:px-[15px] max-sm:py-[30px]">
-      {/* Section Heading */}
-      <h2 className="text-[#0D4A8D] text-[55px] font-semibold tracking-[-1.65px] mb-[122px] 
-                 max-md:text-[42px] max-md:mb-20 
-                 max-sm:text-[28px] max-sm:mb-10 animate-fade-in-up transition-transform duration-300 hover:scale-105"
-        style={{ animationDelay: '0.2s' }}>
-        Why Choose PharmaRise
-      </h2>
+    <section className="bg-[#D9EBFF] mt-[100px] py-[102px] max-md:py-20 max-sm:py-[30px]">
+      <div className="px-[43px] max-md:px-5 max-sm:px-[15px]">
+        {/* Section Heading */}
+        <h2 className="text-[#0D4A8D] text-[55px] font-semibold tracking-[-1.65px] mb-[122px] 
+                   max-md:text-[42px] max-md:mb-20 
+                   max-sm:text-[28px] max-sm:mb-10 
+                   about-title-tablet about-title-large-tablet about-title-14 about-title-15 about-title-16
+                   animate-fade-in-up transition-transform duration-300 hover:scale-105"
+          style={{ animationDelay: '0.2s' }}>
+          Why Choose PharmaRise
+        </h2>
 
-      {/* Cards Grid */}
-      <div className="grid grid-cols-[repeat(4,1fr)] gap-[54px] 
-                  max-md:grid-cols-[repeat(2,1fr)] max-md:gap-[30px] 
-                  max-sm:grid-cols-[1fr] max-sm:gap-5">
-        {choiceCards.map((card, index) => (
-          <article
-            key={index}
-            className={`w-[316px] h-[429px] relative flex flex-col items-center text-center 
-                    ${card.bgColor} px-7 py-[52px] rounded-[21px_0] 
-                    border-r-[7px] border-b-[7px] border-solid ${card.borderColor} 
-                    max-md:w-full max-md:h-[380px] max-md:px-5 max-md:py-10 
-                    max-sm:w-full max-sm:h-auto max-sm:px-5 max-sm:py-[20px] animate-fade-in-scale transition-transform duration-300 hover:scale-105 hover:shadow-xl`}
-            style={{ animationDelay: `${0.4 + index * 0.1}s` }}
-          >
-            {/* Content Wrapper */}
-            <div className="flex flex-col items-center max-sm:gap-5 gap-6">
-              {/* Card Heading */}
-              <h3 className="text-[#FFF] text-center 
-                         text-[30.447px] font-semibold leading-[39.949px] 
-                         tracking-[-1.063px] whitespace-pre-line 
-                         max-md:text-[28px] 
-                         max-sm:text-lg">
-                {card.title}
-              </h3>
+        {/* Cards Grid */}
+        <div className="cards-grid">
+          {choiceCards.map((card, index) => (
+            <article
+              key={index}
+              className={`card-item relative flex flex-col items-center text-center 
+                      ${card.bgColor} rounded-[21px_0] 
+                      border-r-[7px] border-b-[7px] border-solid ${card.borderColor} 
+                      animate-fade-in-scale transition-transform duration-300 hover:scale-105 hover:shadow-xl
+                      w-full h-[450px] p-8`}
+              style={{ animationDelay: `${0.4 + index * 0.1}s` }}
+            >
+              {/* Content Wrapper */}
+              <div className="flex flex-col items-center max-sm:gap-5 gap-6">
+                {/* Card Heading */}
+                <h3 className="text-[#FFF] text-center 
+                           text-[30.447px] font-semibold leading-[39.949px] 
+                           tracking-[-1.063px] whitespace-pre-line 
+                           max-md:text-[28px] 
+                           max-sm:text-lg">
+                  {card.title}
+                </h3>
 
-              {/* Card Icon */}
-              <div
-                className="flex justify-center items-center 
-                       w-[78px] h-[87px] shrink-0 aspect-[78.35/87] 
-                       max-sm:w-[50px] max-sm:h-[55px] mt-6 mb-[-15px] transition-transform duration-300 hover:scale-110"
-                dangerouslySetInnerHTML={{ __html: card.icon }}
-              />
+                {/* Card Icon */}
+                <div
+                  className="flex justify-center items-center 
+                         w-[78px] h-[87px] shrink-0 aspect-[78.35/87] 
+                         max-sm:w-[50px] max-sm:h-[55px] mt-6 mb-[-15px] transition-transform duration-300 hover:scale-110"
+                  dangerouslySetInnerHTML={{ __html: card.icon }}
+                />
 
-              {/* Card Description */}
-              <p className="text-[#FFF] text-center 
-                        text-[23.81px] font-normal leading-[26.833px] 
-                        tracking-[-0.714px] 
-                        max-md:text-[20px] max-sm:text-sm max-sm:leading-snug">
-                {card.description}
-              </p>
-            </div>
-          </article>
-        ))}
+                {/* Card Description */}
+                <p className="text-[#FFF] text-center 
+                          text-[23.81px] font-normal leading-[26.833px] 
+                          tracking-[-0.714px] 
+                          max-md:text-[20px] max-sm:text-sm max-sm:leading-snug">
+                  {card.description}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
-
   );
 };
 
 // Component 5: Vision & Mission Section
 const VisionMissionSection: React.FC = () => {
   return (
-    <section className="relative bg-[#009ACD] px-[78px] py-[97px] max-md:px-5 max-md:py-[60px] max-sm:px-[15px] max-sm:py-10">
-      {/* Desktop: three columns (left title rail, vision, mission with divider). Mobile/Tablet: stacked */}
-      <div className="flex items-center gap-16 max-lg:gap-10 max-md:flex-col">
-        {/* Left title rail */}
-        <div className="shrink-0 w-[300px] max-md:w-full max-md:mb-8 flex flex-col justify-center self-center animate-fade-in-left" style={{ animationDelay: '0.2s' }}>
-          {/* Desktop stacked */}
-          <div className="hidden max-md:block text-white font-bold tracking-[-2.01px] leading-tight text-[40px] text-center transition-transform duration-300 hover:scale-105">
-            Our Vision & Mission
+    <section className="relative bg-[#009ACD] py-[97px] max-md:py-[60px] max-sm:py-10">
+      <div className="px-[78px] max-md:px-5 max-sm:px-[15px]">
+        {/* Desktop: three columns (left title rail, vision, mission with divider). Mobile/Tablet: stacked */}
+        <div className="flex items-center gap-16 max-lg:gap-10 max-md:flex-col">
+          {/* Left title rail */}
+          <div className="shrink-0 w-[300px] max-md:w-full max-md:mb-8 flex flex-col justify-center self-center animate-fade-in-left" style={{ animationDelay: '0.2s' }}>
+            {/* Desktop stacked */}
+            <div className="hidden max-md:block text-white font-bold tracking-[-2.01px] leading-tight text-[40px] text-center transition-transform duration-300 hover:scale-105">
+              Our Vision & Mission
+            </div>
+            {/* Desktop stacked */}
+            <div className="text-white font-bold tracking-[-2.01px] leading-tight text-[67px] max-lg:text-5xl max-md:hidden transition-transform duration-300 hover:scale-105">
+              <div>Our</div>
+              <div>Vision &</div>
+              <div>Mission</div>
+            </div>
           </div>
-          {/* Desktop stacked */}
-          <div className="text-white font-bold tracking-[-2.01px] leading-tight text-[67px] max-lg:text-5xl max-md:hidden transition-transform duration-300 hover:scale-105">
-            <div>Our</div>
-            <div>Vision &</div>
-            <div>Mission</div>
+
+          {/* Right content area: Vision | Mission */}
+          <div className="flex-1 flex items-start gap-16 max-lg:gap-10 max-sm:gap-6 max-md:flex-col">
+            {/* Vision */}
+            <article className="flex-1 min-w-0 max-sm:-mt-20 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+              <h3
+                className="text-white text-[55px] font-semibold tracking-[-1.65px] mb-[30px] 
+                             max-lg:text-[42px] max-md:mb-5 max-sm:text-[32px] max-sm:mb-[15px] mt-5 transition-transform duration-300 hover:scale-105"
+              >
+                Vision
+              </h3>
+              <p
+                className="text-white text-justify text-3xl font-normal tracking-[-0.9px] 
+                            max-lg:text-2xl max-sm:text-xl"
+              >
+                Our vision is to be trusted by healthcare professionals by collaborating with renowned pharmaceutical manufacturers, promoting products that meet global standards, and driving sustainable growth through ethical marketing and regulatory compliance.
+              </p>
+            </article>
+
+            {/* Divider */}
+            <div className="hidden max-md:block h-px w-full bg-white/50" />
+            <div className="w-px bg-white/50 self-stretch max-md:hidden" />
+
+            {/* Mission */}
+            <article className="flex-1 min-w-0 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+              <h3
+                className="text-white text-[55px] font-semibold  tracking-[-1.65px] mb-[30px] 
+                             max-lg:text-[42px] max-md:mb-5 max-sm:text-[32px] max-sm:mb-[15px] transition-transform duration-300 hover:scale-105"
+              >
+                Mission
+              </h3>
+              <p
+                className="text-white text-justify text-3xl font-normal tracking-[-0.9px] 
+                            max-lg:text-2xl max-sm:text-xl"
+              >
+                PharmaRise Innovations LLP is dedicated to bridging healthcare gaps by delivering high-quality pharmaceutical products to providers. We ensure innovation, reliability, & accessibility, bringing advanced medical solutions efficiently to healthcare professionals and patients.
+              </p>
+            </article>
           </div>
-        </div>
-
-        {/* Right content area: Vision | Mission */}
-        <div className="flex-1 flex items-start gap-16 max-lg:gap-10 max-sm:gap-6 max-md:flex-col">
-          {/* Vision */}
-          <article className="flex-1 min-w-0 max-sm:-mt-20 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <h3
-              className="text-white text-[55px] font-semibold tracking-[-1.65px] mb-[30px] 
-                           max-lg:text-[42px] max-md:mb-5 max-sm:text-[32px] max-sm:mb-[15px] mt-5 transition-transform duration-300 hover:scale-105"
-            >
-              Vision
-            </h3>
-            <p
-              className="text-white text-justify text-3xl font-normal tracking-[-0.9px] 
-                          max-lg:text-2xl max-sm:text-xl"
-            >
-              Our vision is to be trusted by healthcare professionals by
-              collaborating with renowned pharmaceutical manufacturers,
-              promoting products that meet global standards, and driving
-              sustainable growth through ethical marketing and regulatory
-              compliance.
-            </p>
-          </article>
-
-          {/* Divider */}
-          <div className="hidden max-md:block h-px w-full bg-white/50" />
-          <div className="w-px bg-white/50 self-stretch max-md:hidden" />
-
-          {/* Mission */}
-          <article className="flex-1 min-w-0 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-            <h3
-              className="text-white text-[55px] font-semibold  tracking-[-1.65px] mb-[30px] 
-                           max-lg:text-[42px] max-md:mb-5 max-sm:text-[32px] max-sm:mb-[15px] transition-transform duration-300 hover:scale-105"
-            >
-              Mission
-            </h3>
-            <p
-              className="text-white text-justify text-3xl font-normal tracking-[-0.9px] 
-                          max-lg:text-2xl max-sm:text-xl"
-            >
-              PharmaRise Innovations LLP is dedicated to bridging healthcare
-              gaps by delivering high-quality pharmaceutical products to
-              providers. We ensure innovation, reliability, & accessibility,
-              bringing advanced medical solutions efficiently to healthcare
-              professionals and patients.
-            </p>
-          </article>
         </div>
       </div>
     </section>
