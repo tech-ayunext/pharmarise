@@ -165,21 +165,21 @@ if (typeof document !== 'undefined') {
 const Hero = () => {
   return (
     <section
-      className="min-h-screen w-full relative overflow-x-hidden bg-white"
+      className="min-h-screen w-full relative overflow-x-hidden bg-white -mt-10"
       id="home"
     >
 
 
       {/* Products Section Background - Full width behind everything including video */}
-      <div className="absolute top-[15%] sm:top-[25%] md:top-[25%] lg:top-[30%] xl:top-[22%] 
+      <div className="absolute top-[15%] sm:top-[25%] md:top-[25%] lg:top-[30%] xl:top-[24%] 
                       left-0 right-0 w-full h-[140px] sm:h-[160px] md:h-[170px] lg:h-[189px] 
                       bg-[#0D4A8D] z-5"></div>
 
       {/* Main container - Enhanced responsive */}
-      <div className="flex flex-col lg:flex-row min-h-screen w-full hero-container-14 hero-container-15 hero-container-16 relative z-10">
+      <div className="flex flex-col lg:flex-row min-h-screen w-full hero-container-14 hero-container-15 hero-container-16 relative z-10" style={{ marginTop: '0', paddingTop: '0' }}>
         {/* Left Content Section - Enhanced responsive padding */}
         <div className="flex-1 flex flex-col justify-start 
-                        pt-4 sm:pt-6 md:pt-8 lg:pt-12 xl:pt-16 
+                        pt-8 sm:pt-10 md:pt-12 lg:pt-16 xl:pt-20 
                         px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 
                         pb-6 sm:pb-8 md:pb-10 lg:pb-12 xl:pb-16 w-full
                         relative">
