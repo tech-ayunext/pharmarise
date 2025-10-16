@@ -251,10 +251,11 @@ const heroAnimationStyles = `
   
   /* Large screens margin adjustments */
   
-  @media (min-width: 1280px) {
+  @media (min-width: 1280px)and (max-width: 1365px) {
     .hero-title-large-margin {
+      margin-top:-1rem  !important;
       margin-bottom: 0.5rem !important;
-      margin-top:-4rem;
+     
     }
       .hero-title-13{
        font-size: clamp(43px, 3.2vw, 52px) !important;
@@ -263,7 +264,7 @@ const heroAnimationStyles = `
       margin-bottom: 1rem !important;
     }
     .hero-bg-mid {
-      top: 24.5% !important;
+      top: 20.5% !important;
       height: 160px !important;
     }
        .hero-video-mid {
@@ -324,11 +325,12 @@ const heroAnimationStyles = `
   /* 15-inch Laptop (1440px - 1600px) */
   @media (min-width: 1440px) and (max-width: 1600px) {
     .hero-container-15 {
+    margin-top:0.5rem;
       padding-left: 3rem;
       padding-right: 3rem;
     }
       .hero-bg-mid {
-      top: 25.5% !important;
+      top: 26.5% !important;
       height: 160px !important;
     }
     .hero-title-15 {
