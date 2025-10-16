@@ -286,9 +286,8 @@ const heroAnimationStyles = `
       margin-left: 0 !important;
       padding-left: 0 !important;
       padding-right: 0 !important;
-       height: 480px !important;
+       height: 520px !important;
     }
-      
   }
 
   /* 14-inch Laptop (1366px - 1440px) */
@@ -302,7 +301,7 @@ const heroAnimationStyles = `
       padding-right: 2.5rem;
     }
     .hero-bg-mid {
-      top: 25.5% !important;
+      top: 23.5% !important;
       height: 160px !important;
     }
     .hero-title-14 {
@@ -316,7 +315,7 @@ const heroAnimationStyles = `
     }
     .hero-video-14 {
       max-width: 480px !important;
-      height: 650px !important;
+      height: 550px !important;
     }
     .hero-products-14 {
       margin-left: 180px !important;
