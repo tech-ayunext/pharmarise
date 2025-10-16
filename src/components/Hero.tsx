@@ -286,7 +286,7 @@ const heroAnimationStyles = `
       margin-left: 0 !important;
       padding-left: 0 !important;
       padding-right: 0 !important;
-       height: 520px !important;
+       height: 420px !important;
     }
   }
 
@@ -315,7 +315,7 @@ const heroAnimationStyles = `
     }
     .hero-video-14 {
       max-width: 480px !important;
-      height: 550px !important;
+      height: 450px !important;
     }
     .hero-products-14 {
       margin-left: 180px !important;
