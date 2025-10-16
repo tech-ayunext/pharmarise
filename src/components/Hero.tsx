@@ -288,7 +288,7 @@ const heroAnimationStyles = `
       padding-right: 2.5rem;
     }
     .hero-bg-mid {
-      top: 23.5% !important;
+      top: 21.5% !important;
       height: 160px !important;
     }
     .hero-title-14 {
@@ -309,39 +309,97 @@ const heroAnimationStyles = `
     }
   }
 
-  /* 15-inch Laptop (1440px - 1600px) */
-  @media (min-width: 1440px) and (max-width: 1600px) {
-    .hero-container-15 {
-     margin-top:-3rem  !important;
-      padding-left: 3rem;
-      padding-right: 3rem;
-    }
-      .hero-bg-mid {
-      top: 24.5% !important;
-      height: 160px !important;
-    }
-    .hero-title-15 {
-      font-size: clamp(58px, 4.2vw, 62px) !important;
-    }
-    .hero-tagline-15 {
-      font-size: clamp(30px, 2.8vw, 34px) !important;
-    }
-    .hero-text-15 {
-      font-size: clamp(22px, 2vw, 24px) !important;
-    }
-    .hero-video-15 {
-    margin-top:0;
-      max-width: 490px !important;
-      height: 580px !important;
-    }
-    .hero-products-15 {
-      margin-left: 200px !important;
-    }
-      .bigpara{
-         margin-top:-3rem  !important;
-         font-size: clamp(22px, 2vw, 20px) !important;
-      }
+ /* 🎯 15-inch Laptop — Full HD 1920x1080 
+   Typically reports innerWidth ≈ 9801000, devicePixelRatio ≈ 1.0
+*/
+@media (min-width: 1400px) and (max-width: 1600px),
+       (min-width: 900px) and (max-width: 1020px) and (min-device-pixel-ratio: 1) {
+  .hero-container-15 {
+    margin-top: -40px !important;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
+  .hero-bg-mid {
+    top: 20% !important;
+    height: 160px !important;
+  }
+  .hero-title-15 {
+    font-size: clamp(56px, 4.1vw, 60px) !important;
+  }
+  .hero-tagline-15 {
+    font-size: clamp(28px, 2.7vw, 32px) !important;
+  }
+  .hero-text-15 {
+    font-size: clamp(21px, 1.9vw, 23px) !important;
+  }
+  .hero-video-15 {
+    margin-top: -90px;
+    max-width: 480px !important;
+    height: 620px !important;
+  }
+  .hero-products-15 {
+    margin-left: 180px !important;
+  }
+  .bigpara {
+    margin-top: -3rem !important;
+    font-size: clamp(21px, 1.9vw, 22px) !important;
+  }
+}
+
+/* 💻 16-inch Laptop — WUXGA 1920x1200 
+   Typically reports innerWidth ≈ 850–880, devicePixelRatio ≈ 1.25
+*/
+@media (min-width: 1280px) and (max-width: 1440px),
+       (min-width: 800px) and (max-width: 900px) and (min-device-pixel-ratio: 1.25) {
+  .hero-container-16 {
+    margin-top: -10px !important;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+ 
+  .hero-title-16 {
+    font-size: clamp(60px, 4.5vw, 65px) !important;
+  }
+  .hero-tagline-16 {
+    font-size: clamp(30px, 2.9vw, 34px) !important;
+  }
+  .hero-text-16 {
+    font-size: clamp(22px, 2.1vw, 25px) !important;
+  }
+  .hero-video-16 {
+    margin-top: -100px;
+    max-width: 530px !important;
+    height: 690px !important;
+  }
+  .hero-products-16 {
+    margin-left: 230px !important;
+  }
+  .bigpara {
+    margin-top: -2.5rem !important;
+    font-size: clamp(22px, 2vw, 24px) !important;
+  }
+}
+
+/* 15-inch laptop */
+@media (min-height: 720px) and (max-height: 760px) {
+  .hero-bg-mid {
+    top: 26% !important;
+    height: 160px !important;
+  }
+}
+
+/* 16-inch laptop */
+@media (min-width: 860px) and (max-width: 880px) 
+       and (min-height: 740px) and (max-height: 760px) 
+       and (min-resolution: 192dpi) {  /* DPR 2 ≈ 192dpi */
+  .hero-bg-mid {
+    top: 21% !important;
+    height: 180px !important;
+  }
+}
+   
+
+  
 
   /* 16+ inch Laptops/Desktops (1600px+) */
   @media (min-width: 1600px) {
@@ -349,7 +407,6 @@ const heroAnimationStyles = `
       padding-left: 4rem;
       padding-right: 4rem;
     }
-  
     .hero-title-16 {
       font-size: clamp(62px, 4.5vw, 67px) !important;
     }

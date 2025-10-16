@@ -108,11 +108,11 @@ const Innovations = () => {
         `}</style>
       </div>
 
-      <h3 className="text-[rgba(190,38,35,1)] text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] leading-[30px] sm:leading-[40px] md:leading-[45px] lg:leading-[50px] self-center mt-[60px] sm:mt-[80px] md:mt-[90px] lg:mt-[102px] max-md:mt-10 px-4">
+      <h3 className="text-[rgba(190,38,35,1)] text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] leading-[30px] sm:leading-[40px] md:leading-[45px] lg:leading-[50px]  mt-[60px] sm:mt-[80px] md:mt-[90px] lg:mt-[102px] max-md:mt-10 px-4">
         Description
       </h3>
 
-      <p className="w-full max-w-[1331px] text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-medium leading-[24px] sm:leading-[28px] md:leading-[32px] lg:leading-[39px] text-center mx-auto mt-[5px] px-4 sm:px-8 lg:px-0">
+      <p className="w-full max-w-[1331px] text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-medium leading-[24px] sm:leading-[28px] md:leading-[32px] lg:leading-[39px]  mx-auto mt-[5px] px-4 sm:px-8 lg:px-0">
         A unique natural nutritional supplement for the first-time in India
         containing Garcinia Cambogia with added advantage of Salacia Reticulata
         as compared to other marketed Garcinia products. Salacia along with

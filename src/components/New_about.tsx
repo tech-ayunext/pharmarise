@@ -117,13 +117,13 @@ const newAboutAnimationStyles = `
   /* 15-inch Laptop (1440px - 1600px) */
   @media (min-width: 1440px) and (max-width: 1600px) {
     .about-container-15 {
-      padding-left: 3.5rem;
-      padding-right: 3.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       max-width: 1400px;
       margin: 0 auto;
     }
     .about-title-15 {
-      font-size: clamp(52px, 4.2vw, 56px) !important;
+      font-size: clamp(42px, 4.2vw, 56px) !important;
     }
     .about-text-15 {
       font-size: clamp(23px, 2.2vw, 25px) !important;
@@ -173,7 +173,7 @@ const newAboutAnimationStyles = `
     }
     .card-item {
       width: 100%;
-      height: auto;
+      height: 260px !important;
       padding: 1.25rem;
     }
   }
@@ -230,7 +230,7 @@ const newAboutAnimationStyles = `
       grid-template-columns: repeat(4, 1fr) !important;
       grid-template-rows: 1fr !important;
       gap: 2rem !important;
-      max-width: 1350px !important;
+      max-width: 1250px !important;
       margin: 0 auto !important;
     }
     .card-item {
@@ -252,10 +252,21 @@ const newAboutAnimationStyles = `
     }
     .card-item {
       width: 100% !important;
-      height: 450px !important;
+      height: 480px !important;
       padding: 3.5rem 2rem !important;
     }
   }
+@media (min-width: 1440px) and (max-width: 1600px) {
+  .about-text-15 {
+    font-size: 22px !important;
+    line-height: 36px !important;
+  }
+  .about-container-15 img {
+    max-width: 850px !important;
+  }
+}
+
+  
 `;
 
 // Inject styles
@@ -306,39 +317,39 @@ const FeaturesGrid: React.FC = () => {
     </svg>
   );
   return (
-    <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 
-                      gap-4 sm:gap-5 md:gap-6 lg:gap-6 xl:gap-5 2xl:gap-6
-                      mt-6 sm:mt-8 md:mt-10
-                      max-w-7xl mx-auto">
-        {features.map((feature, index) => (
-          <div
-            key={index}
-            className="bg-[#0D4A8D] rounded-xl flex flex-col items-center justify-center text-center 
-                       p-4 sm:p-5 md:p-6 lg:p-6 xl:p-5 2xl:p-6
-                       min-h-[140px] sm:min-h-[160px] md:min-h-[180px] lg:min-h-[180px] xl:min-h-[160px]
-                       animate-fade-in-up transition-transform duration-300 hover:scale-105 hover:shadow-lg
-                       w-full"
-            style={{ animationDelay: `${1.2 + index * 0.1}s` }}
-          >
-            {/* White circle background for the icon */}
-            <div className="bg-white w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-16 lg:h-16 xl:w-14 xl:h-14
-                            rounded-full flex items-center justify-center 
-                            mb-3 sm:mb-4 md:mb-4 lg:mb-4 xl:mb-3
-                            transition-transform duration-300 hover:scale-110">
-              <CheckmarkIcon />
-            </div>
+    <div className="w-full px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-1">
 
-            {/* Feature text */}
-            <h3 className="text-white font-bold leading-tight
-                           text-sm sm:text-base md:text-lg lg:text-lg xl:text-base 2xl:text-lg
-                           px-2">
-              {feature}
-            </h3>
-          </div>
-        ))}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 
+                  gap-4 sm:gap-5 md:gap-6 lg:gap-6 xl:gap-6 2xl:gap-2
+                  mt-0 sm:mt-8 md:mt-1
+                  w-full mx-auto">
+    {features.map((feature, index) => (
+      <div
+        key={index}
+        className="feature-card bg-[#0D4A8D] rounded-xl flex flex-col items-center justify-center text-center 
+                   p-4 sm:p-5 md:p-6 lg:p-6 xl:p-6 2xl:p-6
+                   min-h-[140px] sm:min-h-[160px] md:min-h-[180px] lg:min-h-[180px] xl:min-h-[180px] 2xl:min-h-[180px]
+                   animate-fade-in-up transition-transform duration-300 hover:scale-105 hover:shadow-lg
+                   w-full max-w-[400px] sm:max-w-[380px] md:max-w-[400px] lg:max-w-[420px] xl:max-w-[440px] 2xl:max-w-[460px]"
+        style={{ animationDelay: `${1.2 + index * 0.1}s` }}
+      >
+        <div className="bg-white w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-16 lg:h-16 xl:w-14 xl:h-14
+                        rounded-full flex items-center justify-center 
+                        mb-3 sm:mb-4 md:mb-4 lg:mb-4 xl:mb-3
+                        transition-transform duration-300 hover:scale-110">
+          <CheckmarkIcon />
+        </div>
+
+        <h3 className="text-white font-semibold leading-tight
+                       text-sm sm:text-base md:text-lg lg:text-lg xl:text-base 2xl:text-lg
+                       px-2">
+          {feature}
+        </h3>
       </div>
-    </div>
+    ))}
+  </div>
+</div>
+
   );
 };
 
@@ -359,7 +370,7 @@ const AboutSection: React.FC = () => {
 
       <div className="flex gap-[35px] items-start max-md:flex-col max-md:gap-10 max-sm:gap-[30px]">
         {/* Image Section */}
-        <div className="relative w-full  max-w-[575px] mx-auto max-sm:-mt-10 animate-fade-in-left" style={{ animationDelay: '0.4s' }}>
+        <div className="relative w-full  max-w-[545px] mx-auto max-sm:-mt-10 animate-fade-in-left" style={{ animationDelay: '0.4s' }}>
           {/* Main Image */}
           <img
             src="/images/person1.png"
@@ -397,7 +408,7 @@ const AboutSection: React.FC = () => {
         <div className="flex-1 flex flex-col justify-center pt-20 max-sm:-mt-20">
           <p
             className="text-[#0D4A8D] text-justify text-[25px] font-normal leading-[39.75px] mb-5 
-                max-md:text-[22px] max-sm:text-base 
+                max-md:text-[20px] max-sm:text-base 
                 about-text-tablet about-text-large-tablet about-text-14 about-text-15 about-text-16
                 animate-fade-in-right"
             style={{ animationDelay: '0.6s' }}
@@ -464,10 +475,10 @@ const WhyChooseSection: React.FC = () => {
   ];
 
   return (
-    <section className="bg-[#D9EBFF] mt-[100px] py-[102px] max-md:py-20 max-sm:py-[30px]">
+    <section className="bg-[#D9EBFF] mt-[50px] py-[102px] max-md:py-20 max-sm:py-[30px]">
       <div className="px-[43px] max-md:px-5 max-sm:px-[15px]">
         {/* Section Heading */}
-        <h2 className="text-[#0D4A8D] text-[55px] font-semibold tracking-[-1.65px] mb-[122px] 
+        <h2 className="text-[#0D4A8D] text-[55px] font-semibold tracking-[-1.65px] mb-[22px] 
                    max-md:text-[42px] max-md:mb-20 
                    max-sm:text-[28px] max-sm:mb-10 
                    about-title-tablet about-title-large-tablet about-title-14 about-title-15 about-title-16
@@ -555,7 +566,7 @@ const VisionMissionSection: React.FC = () => {
                 Vision
               </h3>
               <p
-                className="text-white text-justify text-3xl font-normal tracking-tight
+                className="text-white text-justify text-[28px] font-normal tracking-tight
                             max-lg:text-2xl max-sm:text-xl "
                            
               >
@@ -576,7 +587,7 @@ const VisionMissionSection: React.FC = () => {
                 Mission
               </h3>
               <p
-                className="text-white text-justify text-3xl font-normal tracking-[-0.9px] 
+                className="text-white text-justify text-[28px] font-normal tracking-[-0.9px] 
                             max-lg:text-2xl max-sm:text-xl"
               >
                 PharmaRise Innovations LLP is dedicated to bridging healthcare gaps by delivering high-quality pharmaceutical products to providers. We ensure innovation, reliability, & accessibility, bringing advanced medical solutions efficiently to healthcare professionals and patients.

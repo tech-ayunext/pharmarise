@@ -50,6 +50,44 @@ const aboutAnimationStyles = `
     animation: fadeInRight 0.8s ease-out forwards;
     opacity: 0;
   }
+/* 15-inch Laptop — innerHeight ≈ 735 */
+@media (min-width: 900px) and (max-width: 1020px), (min-height: 720px) and (max-height: 760px) {
+  .about-bg-img {
+    object-fit: cover !important;
+    top: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+  }
+  .about-person-img {
+    margin-top: -30px !important;
+    width: 96% !important;
+   
+    scale: 1 !important;
+  }
+     .about-heading {
+    font-size: 59px !important; /* smaller on 15-inch */
+    line-height: 55px !important;
+  }
+}
+
+/* 16-inch Laptop */
+@media (min-width: 850px) and (max-width: 880px) and (min-height: 740px) and (max-height: 760px) {
+  .about-bg-img {
+    object-fit: cover !important;
+    top: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+  }
+  .about-person-img {
+    margin-top: -95px !important;
+    width: 100% !important;
+    left: 121px !important;
+    scale: 1.1 !important;
+  }
+}
+
+
+
 `;
 
 // Inject styles
@@ -77,7 +115,7 @@ const About = () => {
             </div>
 
             {/* Heading */}
-            <h2 className="text-[#0D4A8D] text-center font-['Red_Hat_Text'] text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-semibold leading-[40px] sm:leading-[50px] md:leading-[70px] lg:leading-[90px] tracking-[-1.8px] mb-4 sm:mb-6 max-md:text-4xl animate-fade-in-left transition-transform duration-300 hover:scale-105" style={{ animationDelay: '0.4s' }}>
+            <h2 className=" about-heading text-[#0D4A8D] text-center font-['Red_Hat_Text'] text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-semibold leading-[40px] sm:leading-[50px] md:leading-[70px] lg:leading-[90px] tracking-[-1.8px] mb-4 sm:mb-6 max-md:text-4xl animate-fade-in-left transition-transform duration-300 hover:scale-105" style={{ animationDelay: '0.4s' }}>
               PharmaRise Innovations LLP
             </h2>
 
@@ -114,33 +152,35 @@ const About = () => {
 
         <div className="w-full lg:w-[47%] ml-0 lg:ml-5 max-md:w-full max-md:ml-0">
           <div className="flex flex-col relative min-h-[400px] sm:min-h-[500px] md:min-h-[580px] lg:min-h-[632px] grow px-4 sm:px-6 md:px-8 lg:px-[74px] max-md:max-w-full max-md:mt-[7px]">
-            <img
-              src="/images/Blue_back.svg"
-              className="
-              absolute inset-0 
-              h-full w-full 
-              object-contain sm:object-cover   /* ✅ contain on mobile, cover on larger */
-              max-w-[120%] sm:max-w-full 
-              top-4 sm:top-0 animate-fade-in-right       /* ✅ extra width for safe fit on small screens */
+           <img
+            src="/images/Blue_back.svg"
+            className="
+              about-bg-img
+              absolute inset-0
+              object-cover
+              w-full h-full 
+              animate-fade-in-right
+               max-md:h-[500px] max-md:object-contain max-md:mr-10
             "
-              alt="About us background"
-              style={{ animationDelay: '0.4s' }}
-            />
-            <img
-              src="/images/Person.png"
-              className="
-                  aspect-[0.68] object-contain
-                  w-[97%] xs:w-[75%] sm:w-[85%] md:w-full   /* ✅ full width on mobile */
-                  scale-100 sm:scale-105 md:scale-110 lg:scale-110
-                  z-10
-                  mt-[-40px] sm:mt-[-80px] md:mt-[-95px] lg:mt-[-73px]
-                  mx-auto lg:ml-[53px]
-                  relative left-12 sm:left-6 animate-fade-in-right transition-transform duration-300 hover:scale-110               /* ✅ shift right on mobile only */
-                  max-md:max-w-full
-                "
-              alt="Company representative"
-              style={{ animationDelay: '0.6s' }}
-            />
+            alt="About us background"
+            style={{ animationDelay: '0.4s' }}
+          />
+
+          <img
+            src="/images/Person.png"
+            className="
+              about-person-img
+              aspect-[0.68] object-contain
+              z-10 w-[96%]
+              
+              relative
+              transition-transform duration-300 hover:scale-110
+              mx-auto ml-[94px]  
+            "
+            alt="Company representative"
+            style={{ animationDelay: '0.6s' }}
+          />
+
           </div>
         </div>
       </div>

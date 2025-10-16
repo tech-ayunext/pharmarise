@@ -48,6 +48,21 @@ const partnershipAnimationStyles = `
     animation: fadeInRight 0.8s ease-out forwards;
     opacity: 0;
   }
+
+  @media screen and (min-width: 900px) and (max-width: 1000px) and (min-height: 700px) and (max-height: 760px) {
+    #partnership h2 {
+      font-size: 32px !important;
+      line-height: 38px !important;
+    }
+    #partnership h3 {
+      font-size: 16px !important;
+      line-height: 20px !important;
+    }
+    #partnership p {
+      font-size: 14px !important;
+      line-height: 18px !important;
+    }
+  }
 `;
 
 // Inject styles
