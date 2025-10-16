@@ -1,7 +1,4 @@
-
 import { Link } from "react-router-dom";
-
-// Add custom CSS for animations and enhanced responsive breakpoints
 const heroAnimationStyles = `
   @keyframes fadeInUp {
     from {
@@ -280,16 +277,6 @@ const heroAnimationStyles = `
     }
   }
   
-  /* Fix video gap at 1356px */
-  @media (min-width: 1350px) and (max-width: 1365px) {
-    .hero-video-mid {
-      margin-left: 0 !important;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-       height: 420px !important;
-    }
-  }
-
   /* 14-inch Laptop (1366px - 1440px) */
   @media (min-width: 1366px) and (max-width: 1440px) {
   .hero-text {
@@ -325,12 +312,12 @@ const heroAnimationStyles = `
   /* 15-inch Laptop (1440px - 1600px) */
   @media (min-width: 1440px) and (max-width: 1600px) {
     .hero-container-15 {
-    margin-top:0.5rem;
+     margin-top:-3rem  !important;
       padding-left: 3rem;
       padding-right: 3rem;
     }
       .hero-bg-mid {
-      top: 26.5% !important;
+      top: 24.5% !important;
       height: 160px !important;
     }
     .hero-title-15 {
@@ -343,12 +330,17 @@ const heroAnimationStyles = `
       font-size: clamp(22px, 2vw, 24px) !important;
     }
     .hero-video-15 {
-      max-width: 520px !important;
-      height: 720px !important;
+    margin-top:0;
+      max-width: 490px !important;
+      height: 580px !important;
     }
     .hero-products-15 {
-      margin-left: 220px !important;
+      margin-left: 200px !important;
     }
+      .bigpara{
+         margin-top:-3rem  !important;
+         font-size: clamp(22px, 2vw, 20px) !important;
+      }
   }
 
   /* 16+ inch Laptops/Desktops (1600px+) */
@@ -447,7 +439,7 @@ const Hero = () => {
                 style={{ animationDelay: '0.6s' }}
               />
 
-              {/* Garci Product - Enhanced responsive sizing with 12px border radius and margins on laptop */}
+           
               <img
                 src="/images/p1.png"
                 alt="Garci Product"
@@ -463,7 +455,7 @@ const Hero = () => {
           {/* Introductory Text - Always visible, positioned after blue div + images */}
           <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-5 relative z-70 hero-intro-mobile hero-intro-mid hero-intro-pre-large mt-6 sm:mt-8 md:mt-6">
             <p
-              className="text-[#0D4A8D] font-normal w-full max-w-[95%] sm:max-w-[90%] md:max-w-[625px] 
+              className="bigpara text-[#0D4A8D] font-normal w-full max-w-[95%] sm:max-w-[90%] md:max-w-[625px] 
                          text-sm xs:text-base sm:text-lg md:text-xl lg:text-xl xl:text-[22px] 2xl:text-[25px]
                          hero-text-tablet hero-text-large-tablet hero-text-14 hero-text-15 hero-text-16
                          leading-[140%] sm:leading-[150%] lg:leading-[160%] xl:leading-[39.75px]
@@ -479,8 +471,6 @@ const Hero = () => {
               excellence in the industry.
             </p>
           </div>
-
-          {/* Action Buttons - Enhanced responsive sizing */}
           <div className="mb-6 sm:mb-8 md:mb-0 flex flex-col xs:flex-row gap-3 sm:gap-4 items-start">
             <Link
               to="/new-about"
@@ -495,26 +485,11 @@ const Hero = () => {
               About Us
             </Link>
           </div>
-
-
         </div>
-
-        {/* Right Video Section - Fully enhanced responsive */}
         <div className="w-full xl:w-auto xl:flex-none flex justify-center items-center hero-video-mid
                         p-3 xs:p-4 sm:p-6 md:p-8 lg:p-6 xl:p-12 2xl:p-16
                         h-auto lg:h-[480px] xl:h-[580px] 2xl:h-[680px] 
                         relative lg:ml-0 xl:ml-[-100px] 2xl:ml-[-120px] z-20">
-
-          {/* Blue background behind video - Enhanced responsive positioning */}
-          {/* <div className="hidden lg:block absolute bg-[#0D4A8D] 
-                          w-[350px] h-[120px] 
-                          md:w-[400px] md:h-[140px] 
-                          lg:w-[450px] lg:h-[160px] 
-                          xl:w-[500px] xl:h-[170px] 
-                          2xl:w-[545px] 2xl:h-[188.5px] 
-                          top-[40%] lg:top-[33%] left-1/2 -translate-x-1/3"></div> */}
-
-          {/* Video container - Fully enhanced responsive sizing */}
           <div
             className="bg-white flex justify-center items-center relative overflow-hidden 
                        w-full max-w-[280px] h-[250px]
@@ -549,5 +524,4 @@ const Hero = () => {
     </section>
   );
 };
-
 export default Hero;
