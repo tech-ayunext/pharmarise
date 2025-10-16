@@ -264,7 +264,7 @@ const heroAnimationStyles = `
       margin-bottom: 1rem !important;
     }
     .hero-bg-mid {
-      top: 20.5% !important;
+      top: 23.5% !important;
       height: 160px !important;
     }
        .hero-video-mid {
@@ -276,7 +276,7 @@ const heroAnimationStyles = `
       .hero-video-15 {
       margin-left:6rem;
       max-width: 420px !important;
-      height: 550px !important;
+      height: 480px !important;
     }
   }
   
