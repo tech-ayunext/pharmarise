@@ -286,6 +286,7 @@ const heroAnimationStyles = `
       margin-left: 0 !important;
       padding-left: 0 !important;
       padding-right: 0 !important;
+       height: 480px !important;
     }
       
   }
