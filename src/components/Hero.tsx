@@ -230,18 +230,18 @@ const heroAnimationStyles = `
     }
    
   .hero-title-large-tablet {
-      font-size: clamp(38px, 5vw, 26px) !important;
+      font-size: clamp(38px, 5vw, 19px) !important;
       line-height: 1.1;
     }
     .hero-tagline-large-tablet {
-      font-size: clamp(24px, 3vw, 30px) !important;
+      font-size: clamp(24px, 3vw, 10px) !important;
     }
     .hero-text-large-tablet {
-      font-size: clamp(18px, 2.3vw, 22px) !important;
+      font-size: clamp(18px, 2.3vw, 15px) !important;
     }
     .hero-video-large-tablet {
-      max-width: 450px !important;
-      height: 500px !important;
+      max-width: 400px !important;
+      height: 490px !important;
     }
   }
 
@@ -443,7 +443,7 @@ const Hero = () => {
       <div className="flex flex-col xl:flex-row hero-container-mid min-h-screen w-full hero-container-14 hero-container-15 hero-container-16 relative z-10">
         {/* Left Content Section - Enhanced responsive padding */}
         <div className="flex-1 flex flex-col justify-start hero-content-mid
-                        pt-8 sm:pt-10 md:pt-12 lg:pt-16 xl:pt-20 
+                        pt-8 sm:pt-10 md:pt-12 lg:pt-6 xl:pt-20 
                         px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 
                         pb-6 sm:pb-8 md:pb-10 lg:pb-12 xl:pb-16 w-full
                         relative">
@@ -540,7 +540,7 @@ const Hero = () => {
               to="/new-about"
               className="bg-[#BE2623] text-white font-medium text-center leading-[96.184%] 
                          rounded-md hover:bg-opacity-90 transition-all 
-                         px-3 py-2 xs:px-4 xs:py-2 sm:px-5 sm:py-2 md:px-6 md:py-2 
+                         px-3 py-2 xs:px-4 xs:py-2 sm:px-5 sm:py-2 md:px-6 md:py-2   
                          text-xs xs:text-sm sm:text-sm md:text-base lg:text-[14.939px]
                          animate-fade-in-up hover:scale-105 hover:shadow-lg transform 
                          inline-flex w-auto whitespace-nowrap"
