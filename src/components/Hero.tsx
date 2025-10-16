@@ -254,13 +254,28 @@ const heroAnimationStyles = `
   @media (min-width: 1280px) {
     .hero-title-large-margin {
       margin-bottom: 0.5rem !important;
+      margin-top:-4rem;
     }
+      .hero-title-13{
+       font-size: clamp(43px, 3.2vw, 52px) !important;
+      }
     .hero-tagline-large-margin {
       margin-bottom: 1rem !important;
     }
     .hero-bg-mid {
-      top: 23.5% !important;
+      top: 22.5% !important;
       height: 160px !important;
+    }
+       .hero-video-mid {
+      margin-top:-100px  !important;
+      margin-left:0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+      .hero-video-15 {
+      margin-left:6rem;
+      max-width: 420px !important;
+      height: 610px !important;
     }
   }
   
@@ -271,16 +286,21 @@ const heroAnimationStyles = `
       padding-left: 0 !important;
       padding-right: 0 !important;
     }
+      
   }
 
   /* 14-inch Laptop (1366px - 1440px) */
   @media (min-width: 1366px) and (max-width: 1440px) {
+  .hero-text {
+      font-size: clamp(18px, 2.3vw, 22px) !important;
+    }
     .hero-container-14 {
+    padding-top:0;
       padding-left: 2.5rem;
       padding-right: 2.5rem;
     }
     .hero-bg-mid {
-      top: 23.5% !important;
+      top: 25.5% !important;
       height: 160px !important;
     }
     .hero-title-14 {
@@ -381,7 +401,7 @@ const Hero = () => {
             <h1
               className="text-[#0D4A8D] font-bold leading-[90%] tracking-tight hero-title-mobile
                          text-[28px] sm:text-[36px] md:text-[42px] lg:text-[50px] xl:text-[58px] 2xl:text-[66.98px]
-                         hero-title-tablet hero-title-large-tablet hero-title-14 hero-title-15 hero-title-16
+                         hero-title-tablet hero-title-large-tablet hero-title-14 hero-title-15 hero-title-16 hero-title-13
                          animate-fade-in-left transition-transform duration-300 hover:scale-105
                          break-words"
               style={{ animationDelay: '0.2s' }}

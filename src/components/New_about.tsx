@@ -555,8 +555,9 @@ const VisionMissionSection: React.FC = () => {
                 Vision
               </h3>
               <p
-                className="text-white text-justify text-3xl font-normal tracking-[-0.9px] 
-                            max-lg:text-2xl max-sm:text-xl"
+                className="text-white text-justify text-3xl font-normal tracking-tight
+                            max-lg:text-2xl max-sm:text-xl "
+                           
               >
                 Our vision is to be trusted by healthcare professionals by collaborating with renowned pharmaceutical manufacturers, promoting products that meet global standards, and driving sustainable growth through ethical marketing and regulatory compliance.
               </p>
