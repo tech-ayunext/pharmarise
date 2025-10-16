@@ -75,7 +75,7 @@ const heroAnimationStyles = `
       right: 0 !important;
       width: 100% !important;
       height: 140px !important;
-      z-index: 5 !important;
+      // z-index: 5 !important;
       position: absolute !important;
     }
     .hero-intro-mobile {
@@ -84,7 +84,7 @@ const heroAnimationStyles = `
       opacity: 1 !important;
       text-align: center !important;
       margin-top: 1.2rem !important;
-      z-index: 70 !important;
+      // z-index: 70 !important;
     }
   }
 
@@ -95,7 +95,7 @@ const heroAnimationStyles = `
     }
     .hero-content-mid {
       order: 1;
-      z-index: 50;
+      // z-index: 50;
       padding: 0 1rem !important;
       padding-bottom: 2rem !important;
     }
@@ -113,7 +113,7 @@ const heroAnimationStyles = `
       right: 0 !important;
       width: 100% !important;
       height: 140px !important;
-      z-index: 5 !important;
+      // z-index: 5 !important;
       position: absolute !important;
     }
     
@@ -122,7 +122,7 @@ const heroAnimationStyles = `
       visibility: visible !important;
       opacity: 1 !important;
       margin-top: 0.5rem !important;
-      z-index: 60 !important;
+      // z-index: 60 !important;
       padding: 0 1rem !important;
     }
        .hero-products-mobile img {
@@ -192,10 +192,12 @@ const heroAnimationStyles = `
 
   /* Large Tablet Landscape (1024px - 1279px) */
   @media (min-width: 1024px) and (max-width: 1280px) {
+    .hero-title-14{
+      margin-top: 1rem !important;
+    }
   .hero-container-15 {
-      padding-top: 3rem;!important;
-      padding-left: 3rem;
-      padding-right: 3rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
   .hero-container-mid {
   
@@ -226,12 +228,11 @@ const heroAnimationStyles = `
       top: 27.5% !important;
       height: 160px !important;
     }
-    .hero-container-15 {
-      padding-top: 2.5rem;!important;
-      padding-left: 3rem;
-      padding-right: 3rem;
+   
+  .hero-title-large-tablet {
+      font-size: clamp(38px, 5vw, 26px) !important;
+      line-height: 1.1;
     }
-  
     .hero-tagline-large-tablet {
       font-size: clamp(24px, 3vw, 30px) !important;
     }
@@ -347,7 +348,7 @@ const heroAnimationStyles = `
 }
 
 /* 💻 16-inch Laptop — WUXGA 1920x1200 
-   Typically reports innerWidth ≈ 850–880, devicePixelRatio ≈ 1.25
+   Typically reports innerWidth ≈ 850-880, devicePixelRatio ≈ 1.25
 */
 @media (min-width: 1280px) and (max-width: 1440px),
        (min-width: 800px) and (max-width: 900px) and (min-device-pixel-ratio: 1.25) {
@@ -433,10 +434,10 @@ const Hero = () => {
       id="home"
     >
       {/* Products Section Background - Full width behind everything including video */}
-      <div className="absolute hero-bg-mid hero-bg-mobile
+      {/* <div className="absolute hero-bg-mid hero-bg-mobile
                       top-[8%] sm:top-[10%] md:top-[15%] lg:top-[30%] xl:top-[22%] 
                       left-0 right-0 w-full h-[140px] sm:h-[160px] md:h-[170px] lg:h-[189px] 
-                      bg-[#0D4A8D] z-5"></div>
+                      bg-[#0D4A8D] z-5"></div> */}
 
       {/* Main container - Enhanced responsive */}
       <div className="flex flex-col xl:flex-row hero-container-mid min-h-screen w-full hero-container-14 hero-container-15 hero-container-16 relative z-10">
@@ -452,7 +453,7 @@ const Hero = () => {
             <h1
               className="text-[#0D4A8D] font-bold leading-[90%] tracking-tight hero-title-mobile
                          text-[28px] sm:text-[36px] md:text-[42px] lg:text-[50px] xl:text-[58px] 2xl:text-[66.98px]
-                         hero-title-tablet hero-title-large-tablet hero-title-14 hero-title-15 hero-title-16 hero-title-13
+                         hero-title-tablet hero-title-large-tablet hero-title-12 hero-title-14 hero-title-15 hero-title-16 hero-title-13
                          animate-fade-in-left transition-transform duration-300 hover:scale-105
                          break-words"
               style={{ animationDelay: '0.2s' }}
@@ -476,41 +477,47 @@ const Hero = () => {
           </div>
 
           {/* Products Section - Images positioned over the full-width background */}
-          <div className="hero-products-mid mt-8 sm:mt-6 md:mt-4 lg:mt-2 xl:mt-3 
-                          mb-4 sm:mb-4 md:mb-5 lg:mb-6 xl:mb-2 relative z-30">
-            <div className="flex hero-products-mobile sm:flex-row justify-center lg:justify-start lg:items-center items-center 
-                            gap-4 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-10 
-                            py-4 sm:py-5 md:py-6 lg:py-8 xl:py-9 
-                            px-4 sm:px-6 md:px-8 lg:pl-8 lg:pr-16 xl:pl-12 xl:pr-20 2xl:pl-16 2xl:pr-24
-                            h-auto sm:h-[160px] md:h-[170px] lg:h-[189px]">
+          {/* Hero products section */}
+          <div className="hero-products-mid relative z-10 2xl:mb-10">
+            {/* Full-width blue background */}
+            <div
+              className="absolute top-0 left-0 z-0 w-[calc(100vw+200px)] -ml-[200px] 
+               bg-[#0D4A8D] 
+               h-[120px] sm:h-[150px] md:h-[170px] lg:h-[189px] xl:h-[180px] 2xl:h-[189px]"
+            ></div>
 
-              {/* CobalFine Product - Enhanced responsive sizing with 12px border radius */}
+            {/* Inner content with padding */}
+            <div
+              className="relative z-10 flex hero-products-mobile sm:flex-row justify-center lg:justify-start items-center
+               gap-4 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-10
+               py-4 sm:py-5 md:py-6 lg:py-8 xl:py-9
+               px-4 sm:px-6 md:px-8 lg:pl-8 lg:pr-16 xl:pl-12 xl:pr-20 2xl:pl-16 2xl:pr-24
+               h-[120px] sm:h-[150px] md:h-[170px] lg:h-[189px] xl:h-[180px] 2xl:h-[189px]"
+            >
+              {/* CobalFine Product */}
               <img
                 src="/images/p3.png"
                 alt="CobalFine Product"
                 className="w-[115px] h-[85px] sm:w-[140px] sm:h-[90px] md:w-[160px] md:h-[100px] lg:w-[240px] lg:h-[120px] xl:w-[280px] xl:h-[130px] 2xl:w-[320px] 2xl:h-[140px]
-                           rounded-[12px] object-contain
-                           lg:mb-4 xl:mb-6
-                           lg:ml-[-60px]
-                           animate-fade-in-up transition-transform duration-300 hover:scale-110"
+                 rounded-[12px] object-contain lg:ml-[-80px]
+                 animate-fade-in-up transition-transform duration-300 hover:scale-110"
                 style={{ animationDelay: '0.6s' }}
               />
 
-           
+              {/* Garci Product */}
               <img
                 src="/images/p1.png"
                 alt="Garci Product"
                 className="w-[115px] h-[85px] sm:w-[140px] sm:h-[90px] md:w-[160px] md:h-[100px] lg:w-[240px] lg:h-[120px] xl:w-[280px] xl:h-[130px] 2xl:w-[320px] 2xl:h-[140px]
-                           rounded-[12px] object-contain
-                           lg:mr-8 xl:mr-12 2xl:mr-16 lg:mb-4 xl:mb-6
-                           animate-fade-in-up transition-transform duration-300 hover:scale-110"
+                 rounded-[12px] object-contain 
+                 animate-fade-in-up transition-transform duration-300 hover:scale-110"
                 style={{ animationDelay: '0.8s' }}
               />
             </div>
           </div>
 
           {/* Introductory Text - Always visible, positioned after blue div + images */}
-          <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-5 relative z-70 hero-intro-mobile hero-intro-mid hero-intro-pre-large mt-6 sm:mt-8 md:mt-6">
+          <div className="mb-2 sm:mb-4 md:mb-8 lg:mb-10 xl:mb-2  relative z-70 hero-intro-mobile hero-intro-mid hero-intro-pre-large mt-6 sm:mt-8 md:mt-6">
             <p
               className="bigpara text-[#0D4A8D] font-normal w-full max-w-[95%] sm:max-w-[90%] md:max-w-[625px] 
                          text-sm xs:text-base sm:text-lg md:text-xl lg:text-xl xl:text-[22px] 2xl:text-[25px]
@@ -533,7 +540,7 @@ const Hero = () => {
               to="/new-about"
               className="bg-[#BE2623] text-white font-medium text-center leading-[96.184%] 
                          rounded-md hover:bg-opacity-90 transition-all 
-                         px-3 py-2 xs:px-4 xs:py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 
+                         px-3 py-2 xs:px-4 xs:py-2 sm:px-5 sm:py-2 md:px-6 md:py-2 
                          text-xs xs:text-sm sm:text-sm md:text-base lg:text-[14.939px]
                          animate-fade-in-up hover:scale-105 hover:shadow-lg transform 
                          inline-flex w-auto whitespace-nowrap"
@@ -561,7 +568,7 @@ const Hero = () => {
                        lg:rounded-b-[180px] xl:rounded-b-[220px] 2xl:rounded-b-[250px]
                        shadow-[0_2px_15px_1px_rgba(0,0,0,0.15)] sm:shadow-[0_3px_20px_1px_rgba(0,0,0,0.2)] 
                        lg:shadow-[0_4px_27px_1px_rgba(0,0,0,0.25)] 
-                       z-10 animate-fade-in-right transition-transform duration-500 hover:scale-105"
+                       z-60 animate-fade-in-right transition-transform duration-500 hover:scale-105"
             style={{ animationDelay: '0.8s' }}
           >
             <video

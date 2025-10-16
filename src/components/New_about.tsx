@@ -566,7 +566,7 @@ const VisionMissionSection: React.FC = () => {
                 Vision
               </h3>
               <p
-                className="text-white text-justify text-[28px] font-normal tracking-tight
+                className="text-white text-left text-[28px] font-normal tracking-tight
                             max-lg:text-2xl max-sm:text-xl "
                            
               >
@@ -587,7 +587,7 @@ const VisionMissionSection: React.FC = () => {
                 Mission
               </h3>
               <p
-                className="text-white text-justify text-[28px] font-normal tracking-[-0.9px] 
+                className="text-white text-left text-[28px] font-normal tracking-[-0.9px] 
                             max-lg:text-2xl max-sm:text-xl"
               >
                 PharmaRise Innovations LLP is dedicated to bridging healthcare gaps by delivering high-quality pharmaceutical products to providers. We ensure innovation, reliability, & accessibility, bringing advanced medical solutions efficiently to healthcare professionals and patients.
