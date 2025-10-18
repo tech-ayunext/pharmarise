@@ -123,26 +123,26 @@ const aboutAnimationStyles = `
     /* === IMAGE ADJUSTMENTS === */
     .about-bg-img {
       object-fit: contain !important;
-      height: 140% !important;
-      width: 140% !important;
-      top: 4% !important;
-      right: -16% !important;
+      height: 130% !important;
+      width: 130% !important;
+      top: 2% !important;
+      right: -18% !important;
       left: auto !important;
-      transform: translateX(2%) scale(2.02) !important;
-      margin-bottom: 5rem !important;
+      transform: translateX(1%) scale(1.6) !important;
+      margin-bottom: 4rem !important;
     }
     
     .about-person-img {
-      width: 98% !important;
-      max-width: 560px !important;
-      margin-top: -35px !important;
-      margin-right: -4rem !important;
+      width: 85% !important;
+      max-width: 450px !important;
+      margin-top: -25px !important;
+      margin-right: -3rem !important;
       margin-left: auto !important;
       scale: 1 !important;
-      transform: translateX(55%) scale(2.02) !important;
+      transform: translateX(40%) scale(1.2) !important;
       position: relative !important;
-      right: -2rem !important;
-      margin-bottom: 6rem !important;
+      right: -1.5rem !important;
+      margin-bottom: 4rem !important;
     }
     
     .about-image-container-tablet {
