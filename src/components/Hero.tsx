@@ -51,7 +51,7 @@ const heroAnimationStyles = `
   /* Mobile-specific adjustments (<640px) */
   @media (max-width: 639px) {
     .hero-title-mobile {
-      margin-top: 0.5rem !important;
+      margin-top: 0rem !important;
     }
     .hero-products-mobile {
       flex-direction: row !important;
@@ -83,7 +83,7 @@ const heroAnimationStyles = `
       visibility: visible !important;
       opacity: 1 !important;
       text-align: center !important;
-      margin-top: 1.2rem !important;
+      margin-top: 0rem !important;
       // z-index: 70 !important;
     }
     
@@ -121,7 +121,7 @@ const heroAnimationStyles = `
     }
     .hero-video-mid {
       order: 2;
-      margin-top: 2rem !important;
+      margin-top: -3rem !important;
       margin-left: 0 !important;
     }
     .hero-bg-mid {
@@ -141,7 +141,7 @@ const heroAnimationStyles = `
       display: block !important;
       visibility: visible !important;
       opacity: 1 !important;
-      margin-top: 0.5rem !important;
+      margin-top: 0rem !important;
       // z-index: 60 !important;
       padding: 0 1rem !important;
     }
@@ -155,7 +155,7 @@ const heroAnimationStyles = `
   /* Specific adjustments for different mid-range breakpoints */
   @media (min-width: 640px) and (max-width: 767px) {
     .hero-container-15 {
-      padding-top: 3rem;!important;
+      padding-top: 0rem !important;
       padding-left: 3rem;
       padding-right: 3rem;
     }
@@ -191,7 +191,7 @@ const heroAnimationStyles = `
     
     /* Container adjustments for tablets */
     .hero-container-15 {
-      padding-top: 1.5rem !important;
+      padding-top: 0rem !important;
       padding-left: 2.5rem !important;
       padding-right: 2.5rem !important;
     }
@@ -211,7 +211,7 @@ const heroAnimationStyles = `
     /* Video section adjustments */
     .hero-video-mid {
       order: 2 !important;
-      margin-top: 1rem !important;
+      margin-top: 0rem !important;
       margin-left: 0 !important;
       padding: 1rem !important;
     }
@@ -280,7 +280,7 @@ const heroAnimationStyles = `
       display: block !important;
       visibility: visible !important;
       opacity: 1 !important;
-      margin-top: 1rem !important;
+      margin-top: 0rem !important;
       padding: 0 1.5rem !important;
     }
     
@@ -571,7 +571,7 @@ const Hero = () => {
       className="min-h-screen w-full relative overflow-x-hidden bg-white pt-[120px] "
       id="home"
     >
-  
+
       <div className="flex flex-col xl:flex-row hero-container-mid min-h-screen w-full hero-container-14 hero-container-15 hero-container-16 relative z-10">
         {/* Left Content Section - Enhanced responsive padding */}
         <div className="flex-1 flex flex-col justify-start hero-content-mid
@@ -638,7 +638,7 @@ const Hero = () => {
 
               {/* Garci Product */}
               <img
-                 src="/images/Product2.png"
+                src="/images/Product2.png"
                 alt="Garci Product"
                 className="w-[115px] h-[85px] sm:w-[140px] sm:h-[90px] md:w-[160px] md:h-[100px] lg:w-[240px] lg:h-[120px] xl:w-[280px] xl:h-[130px] 2xl:w-[320px] 2xl:h-[140px]
                  rounded-[12px] object-contain 

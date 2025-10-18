@@ -130,7 +130,7 @@ const aboutAnimationStyles = `
       width: 100%;
       order: 2;
       margin: 0;
-      margin-bottom: -4.5rem !important;
+      margin-bottom: -9.5rem !important;
       min-height: 500px !important;
     }
     
@@ -141,7 +141,7 @@ const aboutAnimationStyles = `
     }
     
     .about-image-container {
-      margin-bottom: 0 !important;
+      margin-bottom: 6 !important;
     }
   }
 
@@ -212,7 +212,7 @@ const aboutAnimationStyles = `
   /* 🎯 SMALL TABLETS (600px - 767px) */
   @media (min-width: 600px) and (max-width: 767px) {
     .about-image-container {
-      min-height: 380px;
+      min-height: 580px;
       max-height: 480px;
       margin: 0 auto;
       overflow: visible;
@@ -220,7 +220,7 @@ const aboutAnimationStyles = `
     
     .about-combined-img {
       top: -50px;
-      left: 0;
+      left: 33%;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -250,7 +250,7 @@ const aboutAnimationStyles = `
       width: 100%;
       order: 2;
       margin: 0;
-      margin-bottom: 0 !important;
+      margin-bottom: -4.5rem !important;
     }
     
     .about-image-container {

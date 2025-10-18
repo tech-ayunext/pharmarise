@@ -5,10 +5,11 @@ import { Navigation, Autoplay } from "swiper/modules"; // ✅ Correct for v10+
 
 const Innovations = () => {
   const originalImages = [
-    "/images/Product1.png",
-    "/images/Product2.png",
-    "/images/Product3.png",
-    "/images/Product4.png",
+    "/images/Innovations_1.png",
+    "/images/Innovations_2.png",
+    "/images/Innovations_3.png",
+    "/images/Innovations_4.png",
+    "/images/Innovations_5.png",
   ];
 
   // Duplicate images multiple times for seamless infinite loop
@@ -120,8 +121,8 @@ const Innovations = () => {
           /* 🎯 SMALL TABLETS (600px - 767px) */
           @media (min-width: 600px) and (max-width: 767px) {
             .swiper-slide img {
-              width: 160px !important;
-              height: 112px !important;
+              width: 290px !important;
+              height: 132px !important;
             }
             .swiper-slide img.scale-150 {
               transform: scale(1.1) !important;
@@ -141,7 +142,18 @@ const Innovations = () => {
             }
           }
           
+          /* 🎯 MOBILE VIEW - Optimized for mobile devices */
           @media (max-width: 640px) {
+            .swiper-slide img {
+              width: 120px !important;
+              height: 112px !important;
+            }
+            .swiper-slide img.scale-150 {
+              transform: scale(1.8) !important;
+            }
+            .swiper-slide img.scale-100 {
+              transform: scale(0.8) !important;
+            }
             .swiper-button-prev,
             .swiper-button-next {
               width: 20px;
