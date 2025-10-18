@@ -58,6 +58,9 @@ const aboutAnimationStyles = `
   }
   
   section#about {
+    margin-top: -4rem !important;
+    position: relative;
+    z-index: 10;
     padding-top: 4rem !important;
     padding-bottom: 4rem !important;
     min-height: 600px !important;
@@ -84,9 +87,13 @@ const aboutAnimationStyles = `
 
   /* 🎯 MOBILE (320px - 767px) */
   @media (max-width: 767px) {
+    section#about {
+      margin-top: -5rem !important;
+    }
+    
     .about-image-container {
       min-height: 420px;
-      max-height: 550px;
+      max-height: 600px;
       margin: 0 auto;
       overflow: visible;
     }
@@ -104,11 +111,11 @@ const aboutAnimationStyles = `
       flex-direction: column;
       gap: 0;
       padding-bottom: -3rem;
-      min-height: 500px;
+      min-height: 700px !important;
     }
     
     section#about {
-      min-height: 550px !important;
+      min-height: 650px !important;
       padding-top: 3rem !important;
       padding-bottom: 0rem !important;
     }
@@ -124,6 +131,7 @@ const aboutAnimationStyles = `
       order: 2;
       margin: 0;
       margin-bottom: -4.5rem !important;
+      min-height: 500px !important;
     }
     
     /* Remove bottom padding from section */
@@ -139,6 +147,10 @@ const aboutAnimationStyles = `
 
   /* 🎯 TABLET (768px - 1024px) - Same layout as mobile */
   @media (min-width: 768px) and (max-width: 1024px) {
+    section#about {
+      margin-top: -4rem !important;
+    }
+    
     .about-image-container {
       min-height: 600px;
       max-height: 400px;
@@ -299,6 +311,10 @@ const aboutAnimationStyles = `
 
   /* 🎯 DESKTOP (1025px+) */
   @media (min-width: 1025px) {
+    section#about {
+      margin-top: -3rem !important;
+    }
+    
     .about-image-container {
       min-height: 550px;
       max-height: 650px;

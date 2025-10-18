@@ -89,21 +89,21 @@ const newAboutAnimationStyles = `
   /* Mobile specific gap removal */
   @media (max-width: 767px) {
     .hero-section {
-      margin-top: -3rem !important;
+      margin-top: -5rem !important;
     }
   }
   
   /* Tablet specific gap removal */
   @media (min-width: 768px) and (max-width: 1024px) {
     .hero-section {
-      margin-top: -2.5rem !important;
+      margin-top: -4rem !important;
     }
   }
   
   /* Desktop specific gap removal */
   @media (min-width: 1025px) {
     .hero-section {
-      margin-top: -2rem !important;
+      margin-top: -3rem !important;
     }
   }
 
@@ -492,17 +492,29 @@ const newAboutAnimationStyles = `
     padding: 3rem 2rem !important;
   }
   
-  /* Mobile (up to 640px) - 1 card per column (vertical stack) */
+  /* Mobile (up to 640px) - 2 cards per row */
   @media (max-width: 639px) {
     .cards-grid {
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(4, auto);
-      gap: 1.25rem;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: 1rem;
     }
     .card-item {
       width: 100%;
-      height: 260px !important;
-      padding: 1.25rem;
+      height: 360px !important;
+      padding:1rem;
+    }
+    
+    /* Reduce margin-top for card icons in mobile */
+    .about-why-choose-card-icon-tablet {
+      margin-top: 0.5rem !important;
+      margin-bottom: -0.5rem !important;
+    }
+    
+    /* Reduce margin-top for card titles in mobile */
+    .about-why-choose-card-title-tablet {
+      margin-top: 0 !important;
+      margin-bottom: 0.5rem !important;
     }
   }
 
@@ -626,7 +638,7 @@ const newAboutAnimationStyles = `
 @media (max-width: 768px) {
   /* keep the mobile-friendly behavior: image contained and smaller */
   .about-image-container-tablet {
-    min-height: 320px !important;
+    min-height: 330px !important;
     padding: 0.5rem !important;
     display: block !important; /* revert to default flow for small devices */
   }
@@ -730,7 +742,8 @@ const newAboutAnimationStyles = `
 @media (max-width: 640px) {
   .about-image-container {
     max-width: 100%;
-    margin: -10px -10px 0 -1px;
+    margin: -10px -10px -10px 1px;
+    margin-bottom:-6rem !important;
     padding: 0;
   }
   
@@ -839,8 +852,8 @@ const FeaturesGrid: React.FC = () => {
   return (
     <div className="w-full px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-1 about-features-container-tablet">
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 
-                  gap-4 sm:gap-5 md:gap-6 lg:gap-6 xl:gap-6 2xl:gap-2
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 
+                  gap-3 sm:gap-5 md:gap-6 lg:gap-6 xl:gap-6 2xl:gap-2
                   mt-0 sm:mt-8 md:mt-1
                   w-full mx-auto about-features-grid-tablet">
         {features.map((feature, index) => (
