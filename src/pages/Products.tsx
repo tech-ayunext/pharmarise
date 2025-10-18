@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -105,27 +104,29 @@ const Products = () => {
                                 >
                                     {/* Desktop Layout */}
                                     <div className="hidden lg:flex relative h-[220px]">
-                                        {/* Card Background - Narrower */}
-                                        <div className="relative h-full w-[260px] flex rounded-l-xl overflow-hidden">
-                                            {/* 10px stroke with #009ACD */}
-                                            <div className="w-[10px] bg-[#009ACD] h-full"></div>
-                                            {/* Main color area */}
-                                            <div className="flex-1 bg-[#0D4A8D] relative"></div>
-                                        </div>
-
-                                        {/* Product Image - Positioned to overflow */}
-                                        <div className="absolute top-1/2 left-3 transform -translate-y-1/2 rounded-xl p-4 z-10 transition-transform duration-300 hover:scale-105">
+                                        {/* Left Side - Card Background Image */}
+                                        <div className="relative h-full w-[300px] rounded-l-xl overflow-hidden">
                                             <img
-                                                src={product.image}
-                                                alt={product.name}
-                                                className="w-[320px] h-[120px] object-contain transition-transform duration-300"
+                                                src="/images/card_bg.png"
+                                                alt="Card Background"
+                                                className="w-full h-full object-cover"
                                             />
+                                            {/* Product Image Overlay */}
+                                            <div className="absolute inset-0 flex items-center justify-center">
+                                                <div className="rounded-xl p-2 transition-transform duration-300 hover:scale-105">
+                                                    <img
+                                                        src={product.image}
+                                                        alt={product.name}
+                                                        className="w-[320px] h-[200px] object-contain transition-transform duration-300"
+                                                    />
+                                                </div>
+                                            </div>
                                         </div>
 
-                                        {/* Product Details - Full width on right */}
-                                        <div className="flex-1 p-8 pl-20 flex flex-col justify-center">
+                                        {/* Right Side - Description */}
+                                        <div className="flex-1 p-8 flex flex-col justify-center bg-white rounded-r-xl">
 
-                                            <p className="text-[#0D4A8D] leading-relaxed text-base ml-8">
+                                            <p className="text-[#0D4A8D] leading-relaxed text-base">
                                                 {product.description}
                                             </p>
                                         </div>
@@ -133,26 +134,28 @@ const Products = () => {
 
                                     {/* Mobile Layout */}
                                     <div className="lg:hidden">
-                                        {/* Mobile Blue Background with Image */}
-                                        <div className="relative h-[160px] flex rounded-t-xl overflow-hidden">
-                                            {/* 10px stroke with #009ACD */}
-                                            <div className="w-[10px] bg-[#009ACD] h-full"></div>
-                                            {/* Main color area */}
-                                            <div className="flex-1 bg-[#0D4A8D] relative flex items-center justify-center">
-                                                {/* Product Image */}
-                                                <div className="bg-white rounded-xl p-4 shadow-lg transition-transform duration-300 hover:scale-105">
+                                        {/* Mobile Card Background with Image */}
+                                        <div className="relative h-[160px] rounded-t-xl overflow-hidden">
+                                            <img
+                                                src="/images/card_bg.png"
+                                                alt="Card Background"
+                                                className="w-full h-full object-cover"
+                                            />
+                                            {/* Product Image Overlay */}
+                                            <div className="absolute inset-0 flex items-center justify-center">
+                                                <div className="rounded-xl p-4  transition-transform duration-300 hover:scale-105">
                                                     <img
                                                         src={product.image}
                                                         alt={product.name}
-                                                        className="w-[250px] h-[80px] object-contain transition-transform duration-300"
+                                                        className="w-[260px] h-[150px] object-contain transition-transform duration-300"
                                                     />
                                                 </div>
                                             </div>
                                         </div>
 
                                         {/* Mobile Description */}
-                                        <div className="p-6">
-
+                                        <div className="p-6 bg-white rounded-b-xl">
+                                           
                                             <p className="text-[#0D4A8D] leading-relaxed text-sm">
                                                 {product.description}
                                             </p>

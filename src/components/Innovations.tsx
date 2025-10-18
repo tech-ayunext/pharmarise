@@ -1,4 +1,3 @@
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -93,6 +92,55 @@ const Innovations = () => {
           .swiper-slide {
             transition: all 0.5s ease-in-out;
           }
+          
+          /* 🎯 TABLET VIEW - Smaller carousel images */
+          @media (min-width: 768px) and (max-width: 1024px) {
+            .swiper-slide img {
+              width: 180px !important;
+              height: 126px !important;
+            }
+            .swiper-slide img.scale-150 {
+              transform: scale(2.2) !important;
+            }
+            .swiper-slide img.scale-100 {
+              transform: scale(0.9) !important;
+            }
+            .swiper-button-prev,
+            .swiper-button-next {
+              width: 25px;
+              height: 25px;
+              top: 50%;
+            }
+            .swiper-button-prev::after,
+            .swiper-button-next::after {
+              font-size: 16px;
+            }
+          }
+          
+          /* 🎯 SMALL TABLETS (600px - 767px) */
+          @media (min-width: 600px) and (max-width: 767px) {
+            .swiper-slide img {
+              width: 160px !important;
+              height: 112px !important;
+            }
+            .swiper-slide img.scale-150 {
+              transform: scale(1.1) !important;
+            }
+            .swiper-slide img.scale-100 {
+              transform: scale(0.8) !important;
+            }
+            .swiper-button-prev,
+            .swiper-button-next {
+              width: 22px;
+              height: 22px;
+              top: 48%;
+            }
+            .swiper-button-prev::after,
+            .swiper-button-next::after {
+              font-size: 15px;
+            }
+          }
+          
           @media (max-width: 640px) {
             .swiper-button-prev,
             .swiper-button-next {
@@ -112,7 +160,7 @@ const Innovations = () => {
         Description
       </h3>
 
-      <p className="w-full max-w-[1331px] text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-medium leading-[24px] sm:leading-[28px] md:leading-[32px] lg:leading-[39px]  mx-auto mt-[5px] px-4 sm:px-8 lg:px-0">
+      <p className="w-full max-w-[1331px] text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-medium leading-[24px] sm:leading-[28px] md:leading-[32px] lg:leading-[39px]  mx-auto mt-[5px] px-4 sm:px-8 lg:px-0 mb-10">
         A unique natural nutritional supplement for the first-time in India
         containing Garcinia Cambogia with added advantage of Salacia Reticulata
         as compared to other marketed Garcinia products. Salacia along with

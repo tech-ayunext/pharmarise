@@ -568,16 +568,10 @@ if (typeof document !== 'undefined') {
 const Hero = () => {
   return (
     <section
-      className="min-h-screen w-full relative overflow-x-hidden bg-white pt-[120px]"
+      className="min-h-screen w-full relative overflow-x-hidden bg-white pt-[120px] "
       id="home"
     >
-      {/* Products Section Background - Full width behind everything including video */}
-      {/* <div className="absolute hero-bg-mid hero-bg-mobile
-                      top-[8%] sm:top-[10%] md:top-[15%] lg:top-[30%] xl:top-[22%] 
-                      left-0 right-0 w-full h-[140px] sm:h-[160px] md:h-[170px] lg:h-[189px] 
-                      bg-[#0D4A8D] z-5"></div> */}
-
-      {/* Main container - Enhanced responsive */}
+  
       <div className="flex flex-col xl:flex-row hero-container-mid min-h-screen w-full hero-container-14 hero-container-15 hero-container-16 relative z-10">
         {/* Left Content Section - Enhanced responsive padding */}
         <div className="flex-1 flex flex-col justify-start hero-content-mid
@@ -587,7 +581,7 @@ const Hero = () => {
                         relative">
 
           {/* Main Title - Enhanced responsive typography */}
-          <div className="mb-2 sm:mb-1 md:mb-2 lg:mb-2 xl:mb-2 hero-title-large-margin w-full overflow-hidden">
+          <div className="mb-2 sm:mb-1 md:mb-2 lg:mb-2 xl:mb-2 hero-title-large-margin w-full overflow-hidden mt-4 ">
             <h1
               className="text-[#0D4A8D] font-bold leading-[90%] tracking-tight hero-title-mobile
                          text-[28px] sm:text-[36px] md:text-[42px] lg:text-[50px] xl:text-[58px] 2xl:text-[66.98px]
@@ -634,7 +628,7 @@ const Hero = () => {
             >
               {/* CobalFine Product */}
               <img
-                src="/images/p3.png"
+                src="/images/Product1.png"
                 alt="CobalFine Product"
                 className="w-[115px] h-[85px] sm:w-[140px] sm:h-[90px] md:w-[160px] md:h-[100px] lg:w-[240px] lg:h-[120px] xl:w-[280px] xl:h-[130px] 2xl:w-[320px] 2xl:h-[140px]
                  rounded-[12px] object-contain lg:ml-[-80px]
@@ -644,7 +638,7 @@ const Hero = () => {
 
               {/* Garci Product */}
               <img
-                src="/images/p1.png"
+                 src="/images/Product2.png"
                 alt="Garci Product"
                 className="w-[115px] h-[85px] sm:w-[140px] sm:h-[90px] md:w-[160px] md:h-[100px] lg:w-[240px] lg:h-[120px] xl:w-[280px] xl:h-[130px] 2xl:w-[320px] 2xl:h-[140px]
                  rounded-[12px] object-contain 

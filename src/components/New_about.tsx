@@ -68,6 +68,45 @@ const newAboutAnimationStyles = `
     opacity: 0;
   }
 
+  /* 🎯 REMOVE GAP BETWEEN HEADER AND HERO SECTION - ALL DEVICES */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .hero-section {
+    margin-top: -2rem !important;
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Mobile specific gap removal */
+  @media (max-width: 767px) {
+    .hero-section {
+      margin-top: -3rem !important;
+    }
+  }
+  
+  /* Tablet specific gap removal */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .hero-section {
+      margin-top: -2.5rem !important;
+    }
+  }
+  
+  /* Desktop specific gap removal */
+  @media (min-width: 1025px) {
+    .hero-section {
+      margin-top: -2rem !important;
+    }
+  }
+
   /* 🎯 ENHANCED TABLET RESPONSIVENESS (768px - 1024px) */
   
   /* Comprehensive Tablet Support (768px - 1024px) */
@@ -662,6 +701,91 @@ const newAboutAnimationStyles = `
   }
 }
 
+/* 🎯 CLEAN RESPONSIVE IMAGE STYLES */
+
+/* Base container styles */
+.about-image-container {
+  position: relative;
+  z-index: 15;
+  width: 100%;
+  max-width: 545px;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* Base image styles */
+.about-responsive-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.about-responsive-image:hover {
+  transform: scale(1.05);
+}
+
+/* 📱 MOBILE (≤640px) */
+@media (max-width: 640px) {
+  .about-image-container {
+    max-width: 100%;
+    margin: -10px -10px 0 -1px;
+    padding: 0;
+  }
+  
+  .about-responsive-image {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* 💻 TABLET (641px - 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .about-image-container {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 0.5rem;
+  }
+  
+  .about-responsive-image {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* 🖥️ LAPTOP/DESKTOP (1025px - 1366px) */
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .about-image-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .about-responsive-image {
+    width: 100%;
+    max-width: 480px;
+  }
+}
+
+/* 🖥️ LARGE DESKTOP (1367px+) */
+@media (min-width: 1367px) {
+  .about-image-container {
+    max-width: 545px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .about-responsive-image {
+    width: 100%;
+    max-width: 545px;
+  }
+}
+
   
 `;
 
@@ -675,7 +799,7 @@ if (typeof document !== 'undefined') {
 // Component 1: Hero Section
 const Hero: React.FC = () => {
   return (
-    <div className="relative mt-[-1rem] bg-[#0d4a8d] py-16 md:py-24 about-hero-tablet" style={{ backgroundImage: "url('/images/newaboutus.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div className="relative -mt-8 bg-[#0d4a8d] py-16 md:py-20 about-hero-tablet hero-section" style={{ backgroundImage: "url('/images/newaboutus.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="absolute inset-0 bg-gradient-to-r from-[#0d4a8d]/100 from-25% to-[#0d4a8d]/25"></div>
       <div className="relative z-10 container mx-auto px-4 md:px-8">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 about-hero-title-tablet animate-fade-in transform transition-all duration-700 hover:scale-105">
@@ -753,7 +877,7 @@ const FeaturesGrid: React.FC = () => {
 
 const AboutSection: React.FC = () => {
   return (
-    <section className="pt-[50px] pb-0 px-[43px] max-md:pt-10 max-md:pb-0 max-md:px-5 max-sm:pt-[30px] max-sm:pb-0 max-sm:px-[15px]
+    <section className=" pt-[50px] pb-0 px-[43px] max-md:pt-10 max-md:pb-0 max-md:px-5 max-sm:pt-[30px] max-sm:pb-0 max-sm:px-[15px]
                         about-container-tablet about-container-large-tablet about-container-14 about-container-15 about-container-16">
       <h2
         className="text-[#0D4A8D] text-[55px] font-bold tracking-[-1.65px] max-w-[1221px]   
@@ -767,42 +891,16 @@ const AboutSection: React.FC = () => {
 
       <div className="flex gap-[35px] items-start max-md:flex-col max-md:gap-10 max-sm:gap-[30px]">
         {/* Image Section */}
-        <div className="relative w-full  max-w-[545px] mx-auto max-sm:-mt-10 max-sm:-mx-[15px] about-image-container-tablet animate-fade-in-left" style={{ animationDelay: '0.4s' }}>
-          {/* Main Image */}
+        <div className="about-image-container animate-fade-in-left" style={{ animationDelay: '0.4s' }}>
           <img
-            src="/images/person1.png"
+            src="/images/New_about.png"
             alt="PharmaRise Team"
-            className="relative z-[3] w-full h-auto rounded-[0_0_102px_0] left-[4%] max-sm:left-0 about-person-image-tablet transition-transform duration-300 hover:scale-105"
+            className="about-responsive-image"
           />
-
-          {/* Blue Background */}
-          <div className="absolute Blue_bg inset-0 top-[80px] z-[1] bg-[#0D4A8D] rounded-[100px_0]" />
-
-          {/* Border Overlay */}
-          <div
-            className="absolute Blue_bg inset-0 top-[80px] z-[2] rounded-[100px_0] 
-                          border-r-[10px] border-b-[10px] border-[#00ACE5]"
-          />
-
-          {/* Badge */}
-          <div
-            className="absolute top-[18%] left-[3%] z-[2] flex items-center justify-center 
-             w-[166px] h-[166px] bg-[#00ACE5] rounded-[86px_9px_9px_9px] 
-             max-sm:w-[120px] max-sm:h-[105px] max-sm:bottom-4 max-sm:left-[18%] max-sm:top-[22%] max-sm:-translate-x-1/2"
-          >
-            <div className="text-white text-center leading-[105%]">
-              <div className="text-[67px] font-bold max-sm:text-4xl mb-6 max-sm:mb-2">
-                5
-              </div>
-              <div className="text-[25px] font-bold max-sm:text-sm">
-                Years of Excellence
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Text Section */}
-        <div className="flex-1 flex flex-col justify-center pt-20 max-sm:-mt-20 about-text-large-tablet">
+        <div className="flex-1 flex flex-col justify-center pt-20 max-sm:-mt-20 about-text-large-tablet pb-10">
           <p
             className="text-[#0D4A8D] text-justify text-[25px] font-normal leading-[39.75px] mb-5 
                 max-md:text-[20px] max-sm:text-base 
@@ -873,7 +971,7 @@ const WhyChooseSection: React.FC = () => {
 
   return (
     <section className="bg-[#D9EBFF] mt-[50px] py-[102px] max-md:py-20 max-sm:py-[30px]">
-      <div className="px-[43px] max-md:px-5 max-sm:px-[15px] about-why-choose-section-tablet">
+      <div className="px-[43px] max-md:px-5 max-sm:px-[15px] about-why-choose-section-tablet pb-10">
         {/* Section Heading */}
         <h2 className="text-[#0D4A8D] text-[55px] font-semibold tracking-[-1.65px] mb-[22px] 
                    max-md:text-[42px] max-md:mb-20 
@@ -935,7 +1033,7 @@ const WhyChooseSection: React.FC = () => {
 const VisionMissionSection: React.FC = () => {
   return (
     <section className="relative bg-[#009ACD] py-[97px] max-md:py-[60px] max-sm:py-10 about-vision-mission-tablet about-vision-mission-section-compact-tablet">
-      <div className="px-[78px] max-md:px-5 max-sm:px-[15px]">
+      <div className="px-[78px] max-md:px-5 max-sm:px-[15px] pb-10">
         {/* Desktop: three columns (left title rail, vision, mission with divider). Mobile/Tablet: stacked */}
         <div className="flex items-center gap-16 max-lg:gap-10 max-md:flex-col about-vision-mission-container-tablet about-vision-mission-gap-fix-tablet">
           {/* Left title rail */}
