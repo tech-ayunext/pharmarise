@@ -68,19 +68,300 @@ const newAboutAnimationStyles = `
     opacity: 0;
   }
 
-  /* Enhanced responsive breakpoints for New About page */
+  /* 🎯 ENHANCED TABLET RESPONSIVENESS (768px - 1024px) */
   
-  /* Tablet Portrait (768px - 1024px) */
+  /* Comprehensive Tablet Support (768px - 1024px) */
   @media (min-width: 768px) and (max-width: 1024px) {
+    
+    /* === CONTAINER & LAYOUT === */
     .about-container-tablet {
-      padding-left: 2rem;
-      padding-right: 2rem;
+      padding-left: 1.5rem !important;
+      padding-right: 1.5rem !important;
+      max-width: 100% !important;
     }
-    .about-title-tablet {
-      font-size: clamp(42px, 5vw, 48px) !important;
+    
+    /* === HERO SECTION === */
+    .about-hero-tablet {
+      padding: 3rem 1.5rem !important;
+      min-height: 250px !important;
     }
-    .about-text-tablet {
-      font-size: clamp(18px, 2.5vw, 22px) !important;
+    
+    .about-hero-title-tablet {
+      font-size: clamp(36px, 5.2vw, 44px) !important;
+      line-height: clamp(42px, 5.8vw, 50px) !important;
+      margin-bottom: 1rem !important;
+    }
+    
+    /* === MAIN ABOUT SECTION === */
+    .about-main-title-tablet {
+      font-size: clamp(38px, 4.8vw, 46px) !important;
+      line-height: clamp(44px, 5.4vw, 52px) !important;
+      margin-bottom: 2rem !important;
+    }
+    
+    .about-main-text-tablet {
+      font-size: clamp(18px, 2.6vw, 22px) !important;
+      line-height: clamp(26px, 3.4vw, 32px) !important;
+      margin-bottom: 1.5rem !important;
+    }
+    
+    /* === IMAGE SECTION === */
+    .about-image-container-tablet {
+      max-width: 50% !important;
+      margin: 0 auto !important;
+      padding: 1rem !important;
+    }
+      .Blue_bg{
+       max-width: 85% !important;
+        max-height: 70% !important;
+      }
+    
+    .about-person-image-tablet {
+      width: 85% !important;
+      height: auto !important;
+      margin-left: 1rem !important;
+    }
+    
+    .about-badge-tablet {
+      width: 140px !important;
+      height: 140px !important;
+      font-size: 2.5rem !important;
+    }
+    
+    /* === FEATURES GRID === */
+    .about-features-tablet {
+      gap: 1.5rem !important;
+      margin: 2rem 0 !important;
+    }
+    
+    .about-feature-card-tablet {
+      padding: 1.5rem 1rem !important;
+      min-height: 140px !important;
+      font-size: clamp(14px, 2.2vw, 18px) !important;
+    }
+    
+    /* === WHY CHOOSE SECTION === */
+    .about-why-choose-title-tablet {
+      font-size: clamp(38px, 4.8vw, 46px) !important;
+      line-height: clamp(44px, 5.4vw, 52px) !important;
+      margin-bottom: 2rem !important;
+    }
+    
+    .about-why-choose-section-tablet {
+      padding: 2rem 1rem !important;
+      max-width: 95% !important;
+      margin: 0 auto !important;
+    }
+    
+    .about-why-choose-card-tablet {
+      height: 420px !important;
+      padding: 2rem 1.5rem !important;
+    }
+    
+    .about-why-choose-card-title-tablet {
+      font-size: clamp(22px, 3.2vw, 28px) !important;
+      line-height: clamp(26px, 3.6vw, 32px) !important;
+    }
+    
+    .about-why-choose-card-text-tablet {
+      font-size: clamp(16px, 2.4vw, 20px) !important;
+      line-height: clamp(22px, 3vw, 26px) !important;
+    }
+    
+    /* === VISION & MISSION SECTION === */
+    .about-vision-mission-tablet {
+      padding: 3rem 1.5rem !important;
+    }
+    
+    .about-vision-mission-title-tablet {
+      font-size: clamp(36px, 4.6vw, 44px) !important;
+      line-height: clamp(42px, 5.2vw, 50px) !important;
+    }
+    
+    .about-vision-mission-container-tablet {
+      gap: 2rem !important;
+      margin-top: 1rem !important;
+    }
+    
+    .about-vision-mission-left-title-tablet {
+      margin-bottom: 1rem !important;
+      width: 250px !important;
+    }
+    
+    .about-vision-mission-heading-tablet {
+      font-size: clamp(32px, 4.2vw, 40px) !important;
+      line-height: clamp(38px, 4.8vw, 46px) !important;
+      margin-bottom: 1rem !important;
+    }
+    
+    .about-vision-mission-text-tablet {
+      font-size: clamp(18px, 2.6vw, 22px) !important;
+      line-height: clamp(26px, 3.4vw, 32px) !important;
+    }
+    
+    /* === TABLET PORTRAIT SPECIFIC (768px - 900px) === */
+    @media (max-width: 900px) and (orientation: portrait) {
+      .about-main-title-tablet {
+        font-size: clamp(34px, 4.5vw, 42px) !important;
+        line-height: clamp(40px, 5.1vw, 48px) !important;
+      }
+      
+      .about-image-container-tablet {
+        max-width: 95% !important;
+        padding: 0.5rem !important;
+      }
+      
+      .about-person-image-tablet {
+        width: 90% !important;
+        margin-left: 0.5rem !important;
+      }
+      
+      .about-why-choose-section-tablet {
+        padding: 1.5rem 0.5rem !important;
+        max-width: 98% !important;
+      }
+      
+      .about-why-choose-card-tablet {
+        height: 380px !important;
+        padding: 1.5rem 1rem !important;
+      }
+    }
+    
+    /* 🎯 CARD TEXT SIZE REDUCTION FOR TABLETS */
+    .about-why-choose-card-title-tablet {
+      font-size: clamp(18px, 2.6vw, 24px) !important;
+      line-height: clamp(22px, 3vw, 28px) !important;
+      margin-bottom: 1rem !important;
+      letter-spacing: -0.3px !important;
+    }
+    
+    .about-why-choose-card-text-tablet {
+      font-size: clamp(13px, 2vw, 17px) !important;
+      line-height: clamp(18px, 2.6vw, 22px) !important;
+      letter-spacing: 0.1px !important;
+      margin-top: 0.5rem !important;
+    }
+    
+    .about-why-choose-card-icon-tablet {
+      width: clamp(55px, 7.5vw, 70px) !important;
+      height: clamp(65px, 8.5vw, 80px) !important;
+      margin: 0.8rem 0 0.3rem 0 !important;
+    }
+    
+    /* === CARD SPACING ADJUSTMENTS === */
+    .about-why-choose-card-content-tablet {
+      gap: 0.8rem !important;
+      padding: 0.3rem !important;
+    }
+
+    /* 🎯 VISION & MISSION GAP REDUCTION FOR TABLETS */
+    .about-vision-mission-gap-fix-tablet {
+      gap: 1.5rem !important;
+      margin-top: -1rem !important;
+    }
+    
+    .about-vision-mission-left-compact-tablet {
+      width: 200px !important;
+      margin-bottom: 0rem !important;
+      margin-right: 1rem !important;
+    }
+    
+    .about-vision-mission-title-compact-tablet {
+      font-size: clamp(32px, 4.2vw, 40px) !important;
+      line-height: clamp(36px, 4.6vw, 44px) !important;
+      margin-bottom: 0rem !important;
+    }
+    
+    .about-vision-mission-content-compact-tablet {
+      gap: 1rem !important;
+      margin-top: -0.5rem !important;
+    }
+    
+    .about-vision-mission-heading-compact-tablet {
+      font-size: clamp(28px, 3.8vw, 36px) !important;
+      line-height: clamp(32px, 4.2vw, 40px) !important;
+      margin-bottom: 0.8rem !important;
+      margin-top: 0rem !important;
+    }
+    
+    .about-vision-mission-text-compact-tablet {
+      font-size: clamp(16px, 2.4vw, 20px) !important;
+      line-height: clamp(22px, 3vw, 26px) !important;
+      margin-top: 0rem !important;
+    }
+    
+    .about-vision-mission-section-compact-tablet {
+      padding: 2.5rem 1rem !important;
+    }
+
+    /* 🎯 FEATURES GRID OPTIMIZATION FOR TABLETS */
+    .about-features-grid-tablet {
+      gap: 1rem !important;
+      margin-top: 1rem !important;
+      padding: 0 0.5rem !important;
+    }
+    
+    .about-features-card-tablet {
+      min-height: 120px !important;
+      padding: 1rem 0.8rem !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+    }
+    
+    .about-features-icon-tablet {
+      width: 2.5rem !important;
+      height: 2.5rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+    
+    .about-features-text-tablet {
+      font-size: clamp(12px, 2vw, 16px) !important;
+      line-height: 1.3 !important;
+      padding: 0 0.3rem !important;
+    }
+    
+    .about-features-container-tablet {
+      padding: 0.5rem 1rem !important;
+    }
+
+    /* === TABLET LANDSCAPE SPECIFIC (901px - 1024px) === */
+    @media (min-width: 901px) and (orientation: landscape) {
+      .about-main-title-tablet {
+        font-size: clamp(42px, 5.2vw, 50px) !important;
+        line-height: clamp(48px, 5.8vw, 56px) !important;
+      }
+      
+      .about-container-tablet {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+      }
+      
+      .about-why-choose-section-tablet {
+        padding: 2rem 1rem !important;
+        max-width: 96% !important;
+      }
+      
+      .about-why-choose-card-tablet {
+        height: 440px !important;
+        padding: 2.5rem 2rem !important;
+      }
+      
+      .about-vision-mission-tablet {
+        padding: 4rem 2rem !important;
+      }
+      
+      .about-vision-mission-container-tablet {
+        gap: 3rem !important;
+        margin-top: 0.5rem !important;
+      }
+    }
+    
+    /* === ANIMATION TIMING === */
+    .animate-fade-in-up,
+    .animate-fade-in-left,
+    .animate-fade-in-right,
+    .animate-fade-in-scale {
+      animation-duration: 0.7s !important;
     }
   }
 
@@ -91,11 +372,19 @@ const newAboutAnimationStyles = `
       padding-right: 2.5rem;
     }
     .about-title-large-tablet {
-      font-size: clamp(48px, 4.5vw, 52px) !important;
+      font-size: clamp(38px, 4.5vw, 40px) !important;
     }
     .about-text-large-tablet {
-      font-size: clamp(20px, 2.3vw, 24px) !important;
+      margin-left: -2rem;
+      font-size: clamp(15px, 2vw, 12px) !important;
+      letter-spacing: 0.2px;       /* reduce spacing between letters */
+      line-height: 1.8;            /* reduce vertical spacing between lines */
     }
+    .about-why-choose-card-tablet {
+        height: 550px !important;
+        padding: 2.5rem 2rem !important;
+      }
+
   }
 
   /* 14-inch Laptop (1366px - 1440px) */
@@ -222,7 +511,114 @@ const newAboutAnimationStyles = `
       padding: 2.2rem 1.7rem !important;
     }
   }
+@media (max-width: 1024px) {
+  /* Ensure the image container centers its content vertically */
+  .about-image-container-tablet {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.5rem !important;
+    min-height: 40px !important; /* slightly smaller than desktop */
+    position: relative !important;
+    overflow: visible !important;
+  }
 
+  /* Blue background (Blue_back.svg) behaviour on tablets:
+     - keep it covering the area but don't push content off-screen
+     - position slightly to the right so badge/shape remains visible */
+  .about-bg-img,
+  .about-bg-img-large-tablet {
+    position: absolute !important;
+    top: 0 !important;
+    right: -12% !important;        /* pull background a bit off to right */
+    left: auto !important;
+    width: 130% !important;        /* extra width for visual shape without overflow */
+    height: auto !important;       /* allow natural height */
+    max-height: calc(100% + 60px) !important; /* allow some overflow for decorative shape */
+    object-fit: cover !important;
+    transform: translateY(0) !important;
+    z-index: 1 !important;
+  }
+
+  /* Person image sizing and centering on tablets:
+     - moderate scaling (no huge scale)
+     - centered vertically and horizontally inside image container
+     - prevent huge margin-left that was pushing off-screen */
+  .about-person-img,
+  .about-person-img-large-tablet {
+    position: relative !important;
+    z-index: 2 !important;
+    width: 80% !important;            /* responsive width on tablet */
+    max-width: 420px !important;      /* cap width so it doesn't get too big */
+    height: auto !important;
+    margin: 0 auto !important;        /* center horizontally */
+    margin-top: -10px !important;     /* small upward lift for overlap */
+    transform: translateX(0) scale(1) !important; /* reset previous transforms */
+    left: auto !important;
+    right: auto !important;
+  }
+
+  /* If you want slightly different placement for landscape tablets,
+     keep it subtle so layout remains stable */
+  @media (min-width: 900px) and (max-width: 1024px) and (orientation: landscape) {
+    .about-bg-img,
+    .about-bg-img-large-tablet {
+      right: -16% !important;
+      top:21%!important;
+      width: 150% !important;
+      transform: translateX(33%) scale(1.4) !important;
+      margin-bottom:5rem!important;
+    }
+    .about-person-img,
+    .about-person-img-large-tablet {
+      width: 58% !important;
+      max-width: 560px !important;
+      margin-top:75px !important;
+      transform: translateX(51%) scale(1) !important;
+      margin-bottom:5.9rem!important;
+    }
+  }
+}
+
+/* ------------------------------
+   SMALL TABLETS / LARGE PHONES
+   Target: <= 768px (do not break existing mobile rules)
+   ------------------------------ */
+@media (max-width: 768px) {
+  /* keep the mobile-friendly behavior: image contained and smaller */
+  .about-image-container-tablet {
+    min-height: 320px !important;
+    padding: 0.5rem !important;
+    display: block !important; /* revert to default flow for small devices */
+  }
+
+  .about-bg-img,
+  .about-bg-img-large-tablet {
+    position: absolute !important;
+    top: 0 !important;
+    right: -6% !important;
+    left: auto !important;
+    width: 115% !important;
+    height: auto !important;
+    max-height: calc(100% + 40px) !important;
+    object-fit: contain !important; /* keep artwork visible without cropping */
+    transform: none !important;
+    z-index: 0 !important;
+  }
+
+  .about-person-img,
+  .about-person-img-large-tablet {
+    width: 112% !important;
+    max-width: 320px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: -8px !important;
+    transform: none !important;
+    scale: 1 !important;
+    z-index: 2 !important;
+    position: relative !important;
+  }
+}
   /* Large Laptops (1366px - 1536px) - 4 cards in single row (HORIZONTAL LAYOUT) */
   @media (min-width: 1366px) and (max-width: 1535px) {
     .cards-grid {
@@ -279,11 +675,11 @@ if (typeof document !== 'undefined') {
 // Component 1: Hero Section
 const Hero: React.FC = () => {
   return (
-    <div className="relative bg-[#0d4a8d] py-16 md:py-24" style={{ backgroundImage: "url('/images/newaboutus.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div className="relative mt-[-1rem] bg-[#0d4a8d] py-16 md:py-24 about-hero-tablet" style={{ backgroundImage: "url('/images/newaboutus.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="absolute inset-0 bg-gradient-to-r from-[#0d4a8d]/100 from-25% to-[#0d4a8d]/25"></div>
       <div className="relative z-10 container mx-auto px-4 md:px-8">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in transform transition-all duration-700 hover:scale-105">
-          About us
+        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 about-hero-title-tablet animate-fade-in transform transition-all duration-700 hover:scale-105">
+          About
         </h1>
       </div>
     </div>
@@ -317,43 +713,44 @@ const FeaturesGrid: React.FC = () => {
     </svg>
   );
   return (
-    <div className="w-full px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-1">
+    <div className="w-full px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-1 about-features-container-tablet">
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 
                   gap-4 sm:gap-5 md:gap-6 lg:gap-6 xl:gap-6 2xl:gap-2
                   mt-0 sm:mt-8 md:mt-1
-                  w-full mx-auto">
-    {features.map((feature, index) => (
-      <div
-        key={index}
-        className="feature-card bg-[#0D4A8D] rounded-xl flex flex-col items-center justify-center text-center 
+                  w-full mx-auto about-features-grid-tablet">
+        {features.map((feature, index) => (
+          <div
+            key={index}
+            className="feature-card bg-[#0D4A8D] rounded-xl flex flex-col items-center justify-center text-center 
                    p-4 sm:p-5 md:p-6 lg:p-6 xl:p-6 2xl:p-6
                    min-h-[140px] sm:min-h-[160px] md:min-h-[180px] lg:min-h-[180px] xl:min-h-[180px] 2xl:min-h-[180px]
                    animate-fade-in-up transition-transform duration-300 hover:scale-105 hover:shadow-lg
-                   w-full max-w-[400px] sm:max-w-[380px] md:max-w-[400px] lg:max-w-[420px] xl:max-w-[440px] 2xl:max-w-[460px]"
-        style={{ animationDelay: `${1.2 + index * 0.1}s` }}
-      >
-        <div className="bg-white w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-16 lg:h-16 xl:w-14 xl:h-14
+                   w-full max-w-[400px] sm:max-w-[380px] md:max-w-[400px] lg:max-w-[420px] xl:max-w-[440px] 2xl:max-w-[460px]
+                   about-features-card-tablet"
+            style={{ animationDelay: `${1.2 + index * 0.1}s` }}
+          >
+            <div className="bg-white w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-16 lg:h-16 xl:w-14 xl:h-14
                         rounded-full flex items-center justify-center 
                         mb-3 sm:mb-4 md:mb-4 lg:mb-4 xl:mb-3
+                        about-features-icon-tablet
                         transition-transform duration-300 hover:scale-110">
-          <CheckmarkIcon />
-        </div>
+              <CheckmarkIcon />
+            </div>
 
-        <h3 className="text-white font-semibold leading-tight
+            <h3 className="text-white font-semibold leading-tight
                        text-sm sm:text-base md:text-lg lg:text-lg xl:text-base 2xl:text-lg
-                       px-2">
-          {feature}
-        </h3>
+                       px-2 about-features-text-tablet">
+              {feature}
+            </h3>
+          </div>
+        ))}
       </div>
-    ))}
-  </div>
-</div>
+    </div>
 
   );
 };
 
-// Component 3: Main About Section with Image and Text
 const AboutSection: React.FC = () => {
   return (
     <section className="pt-[50px] pb-0 px-[43px] max-md:pt-10 max-md:pb-0 max-md:px-5 max-sm:pt-[30px] max-sm:pb-0 max-sm:px-[15px]
@@ -361,7 +758,7 @@ const AboutSection: React.FC = () => {
       <h2
         className="text-[#0D4A8D] text-[55px] font-bold tracking-[-1.65px] max-w-[1221px]   
                      max-md:text-[42px] max-md:mb-[40px] max-sm:text-[28px] max-sm:mb-[30px] 
-                     about-title-tablet about-title-large-tablet about-title-14 about-title-15 about-title-16
+                     about-main-title-tablet about-title-large-tablet about-title-14 about-title-15 about-title-16
                      animate-fade-in-left transition-transform duration-300 hover:scale-105"
         style={{ animationDelay: '0.2s' }}
       >
@@ -370,26 +767,26 @@ const AboutSection: React.FC = () => {
 
       <div className="flex gap-[35px] items-start max-md:flex-col max-md:gap-10 max-sm:gap-[30px]">
         {/* Image Section */}
-        <div className="relative w-full  max-w-[545px] mx-auto max-sm:-mt-10 animate-fade-in-left" style={{ animationDelay: '0.4s' }}>
+        <div className="relative w-full  max-w-[545px] mx-auto max-sm:-mt-10 max-sm:-mx-[15px] about-image-container-tablet animate-fade-in-left" style={{ animationDelay: '0.4s' }}>
           {/* Main Image */}
           <img
             src="/images/person1.png"
             alt="PharmaRise Team"
-            className="relative z-[3] w-full h-auto rounded-[0_0_102px_0] left-[4%] transition-transform duration-300 hover:scale-105"
+            className="relative z-[3] w-full h-auto rounded-[0_0_102px_0] left-[4%] max-sm:left-0 about-person-image-tablet transition-transform duration-300 hover:scale-105"
           />
 
           {/* Blue Background */}
-          <div className="absolute inset-0 top-[80px] z-[1] bg-[#0D4A8D] rounded-[100px_0]" />
+          <div className="absolute Blue_bg inset-0 top-[80px] z-[1] bg-[#0D4A8D] rounded-[100px_0]" />
 
           {/* Border Overlay */}
           <div
-            className="absolute inset-0 top-[80px] z-[2] rounded-[100px_0] 
+            className="absolute Blue_bg inset-0 top-[80px] z-[2] rounded-[100px_0] 
                           border-r-[10px] border-b-[10px] border-[#00ACE5]"
           />
 
           {/* Badge */}
           <div
-            className="absolute top-[16%] left-[3%] z-[2] flex items-center justify-center 
+            className="absolute top-[18%] left-[3%] z-[2] flex items-center justify-center 
              w-[166px] h-[166px] bg-[#00ACE5] rounded-[86px_9px_9px_9px] 
              max-sm:w-[120px] max-sm:h-[105px] max-sm:bottom-4 max-sm:left-[18%] max-sm:top-[22%] max-sm:-translate-x-1/2"
           >
@@ -405,7 +802,7 @@ const AboutSection: React.FC = () => {
         </div>
 
         {/* Text Section */}
-        <div className="flex-1 flex flex-col justify-center pt-20 max-sm:-mt-20">
+        <div className="flex-1 flex flex-col justify-center pt-20 max-sm:-mt-20 about-text-large-tablet">
           <p
             className="text-[#0D4A8D] text-justify text-[25px] font-normal leading-[39.75px] mb-5 
                 max-md:text-[20px] max-sm:text-base 
@@ -476,12 +873,12 @@ const WhyChooseSection: React.FC = () => {
 
   return (
     <section className="bg-[#D9EBFF] mt-[50px] py-[102px] max-md:py-20 max-sm:py-[30px]">
-      <div className="px-[43px] max-md:px-5 max-sm:px-[15px]">
+      <div className="px-[43px] max-md:px-5 max-sm:px-[15px] about-why-choose-section-tablet">
         {/* Section Heading */}
         <h2 className="text-[#0D4A8D] text-[55px] font-semibold tracking-[-1.65px] mb-[22px] 
                    max-md:text-[42px] max-md:mb-20 
                    max-sm:text-[28px] max-sm:mb-10 
-                   about-title-tablet about-title-large-tablet about-title-14 about-title-15 about-title-16
+                   about-why-choose-title-tablet about-title-large-tablet about-title-14 about-title-15 about-title-16
                    animate-fade-in-up transition-transform duration-300 hover:scale-105"
           style={{ animationDelay: '0.2s' }}>
           Why Choose PharmaRise
@@ -492,7 +889,7 @@ const WhyChooseSection: React.FC = () => {
           {choiceCards.map((card, index) => (
             <article
               key={index}
-              className={`card-item relative flex flex-col items-center text-center 
+              className={`card-item about-why-choose-card-tablet relative flex flex-col items-center text-center 
                       ${card.bgColor} rounded-[21px_0] 
                       border-r-[7px] border-b-[7px] border-solid ${card.borderColor} 
                       animate-fade-in-scale transition-transform duration-300 hover:scale-105 hover:shadow-xl
@@ -500,13 +897,13 @@ const WhyChooseSection: React.FC = () => {
               style={{ animationDelay: `${0.4 + index * 0.1}s` }}
             >
               {/* Content Wrapper */}
-              <div className="flex flex-col items-center max-sm:gap-5 gap-6">
+              <div className="flex flex-col items-center max-sm:gap-5 gap-6 about-why-choose-card-content-tablet">
                 {/* Card Heading */}
                 <h3 className="text-[#FFF] text-center 
                            text-[30.447px] font-semibold leading-[39.949px] 
                            tracking-[-1.063px] whitespace-pre-line 
                            max-md:text-[28px] 
-                           max-sm:text-lg">
+                           max-sm:text-lg about-why-choose-card-title-tablet">
                   {card.title}
                 </h3>
 
@@ -514,7 +911,7 @@ const WhyChooseSection: React.FC = () => {
                 <div
                   className="flex justify-center items-center 
                          w-[78px] h-[87px] shrink-0 aspect-[78.35/87] 
-                         max-sm:w-[50px] max-sm:h-[55px] mt-6 mb-[-15px] transition-transform duration-300 hover:scale-110"
+                         max-sm:w-[50px] max-sm:h-[55px] mt-6 mb-[-15px] about-why-choose-card-icon-tablet transition-transform duration-300 hover:scale-110"
                   dangerouslySetInnerHTML={{ __html: card.icon }}
                 />
 
@@ -522,7 +919,7 @@ const WhyChooseSection: React.FC = () => {
                 <p className="text-[#FFF] text-center 
                           text-[23.81px] font-normal leading-[26.833px] 
                           tracking-[-0.714px] 
-                          max-md:text-[20px] max-sm:text-sm max-sm:leading-snug">
+                          max-md:text-[20px] max-sm:text-sm max-sm:leading-snug about-why-choose-card-text-tablet">
                   {card.description}
                 </p>
               </div>
@@ -537,18 +934,18 @@ const WhyChooseSection: React.FC = () => {
 // Component 5: Vision & Mission Section
 const VisionMissionSection: React.FC = () => {
   return (
-    <section className="relative bg-[#009ACD] py-[97px] max-md:py-[60px] max-sm:py-10">
+    <section className="relative bg-[#009ACD] py-[97px] max-md:py-[60px] max-sm:py-10 about-vision-mission-tablet about-vision-mission-section-compact-tablet">
       <div className="px-[78px] max-md:px-5 max-sm:px-[15px]">
         {/* Desktop: three columns (left title rail, vision, mission with divider). Mobile/Tablet: stacked */}
-        <div className="flex items-center gap-16 max-lg:gap-10 max-md:flex-col">
+        <div className="flex items-center gap-16 max-lg:gap-10 max-md:flex-col about-vision-mission-container-tablet about-vision-mission-gap-fix-tablet">
           {/* Left title rail */}
-          <div className="shrink-0 w-[300px] max-md:w-full max-md:mb-8 flex flex-col justify-center self-center animate-fade-in-left" style={{ animationDelay: '0.2s' }}>
+          <div className="shrink-0 w-[300px] max-md:w-full max-md:mb-8 about-vision-mission-left-title-tablet about-vision-mission-left-compact-tablet flex flex-col justify-center self-center animate-fade-in-left" style={{ animationDelay: '0.2s' }}>
             {/* Desktop stacked */}
             <div className="hidden max-md:block text-white font-bold tracking-[-2.01px] leading-tight text-[40px] text-center transition-transform duration-300 hover:scale-105">
               Our Vision & Mission
             </div>
             {/* Desktop stacked */}
-            <div className="text-white font-bold tracking-[-2.01px] leading-tight text-[67px] max-lg:text-5xl max-md:hidden transition-transform duration-300 hover:scale-105">
+            <div className="text-white font-bold tracking-[-2.01px] leading-tight text-[67px] max-lg:text-5xl max-md:hidden about-vision-mission-title-tablet about-vision-mission-title-compact-tablet transition-transform duration-300 hover:scale-105">
               <div>Our</div>
               <div>Vision &</div>
               <div>Mission</div>
@@ -556,19 +953,19 @@ const VisionMissionSection: React.FC = () => {
           </div>
 
           {/* Right content area: Vision | Mission */}
-          <div className="flex-1 flex items-start gap-16 max-lg:gap-10 max-sm:gap-6 max-md:flex-col">
+          <div className="flex-1 flex items-start gap-16 max-lg:gap-10 max-sm:gap-6 max-md:flex-col about-vision-mission-content-compact-tablet">
             {/* Vision */}
             <article className="flex-1 min-w-0 max-sm:-mt-20 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <h3
                 className="text-white text-[55px] font-semibold tracking-[-1.65px] mb-[30px] 
-                             max-lg:text-[42px] max-md:mb-5 max-sm:text-[32px] max-sm:mb-[15px] mt-5 transition-transform duration-300 hover:scale-105"
+                             max-lg:text-[42px] max-md:mb-5 max-sm:text-[32px] max-sm:mb-[15px] mt-5 about-vision-mission-heading-tablet about-vision-mission-heading-compact-tablet transition-transform duration-300 hover:scale-105"
               >
                 Vision
               </h3>
               <p
                 className="text-white text-left text-[28px] font-normal tracking-tight
-                            max-lg:text-2xl max-sm:text-xl "
-                           
+                            max-lg:text-2xl max-sm:text-xl about-vision-mission-text-tablet about-vision-mission-text-compact-tablet"
+
               >
                 Our vision is to be trusted by healthcare professionals by collaborating with renowned pharmaceutical manufacturers, promoting products that meet global standards, and driving sustainable growth through ethical marketing and regulatory compliance.
               </p>
@@ -582,13 +979,13 @@ const VisionMissionSection: React.FC = () => {
             <article className="flex-1 min-w-0 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
               <h3
                 className="text-white text-[55px] font-semibold  tracking-[-1.65px] mb-[30px] 
-                             max-lg:text-[42px] max-md:mb-5 max-sm:text-[32px] max-sm:mb-[15px] transition-transform duration-300 hover:scale-105"
+                             max-lg:text-[42px] max-md:mb-5 max-sm:text-[32px] max-sm:mb-[15px] about-vision-mission-heading-tablet about-vision-mission-heading-compact-tablet transition-transform duration-300 hover:scale-105"
               >
                 Mission
               </h3>
               <p
                 className="text-white text-left text-[28px] font-normal tracking-[-0.9px] 
-                            max-lg:text-2xl max-sm:text-xl"
+                            max-lg:text-2xl max-sm:text-xl about-vision-mission-text-tablet about-vision-mission-text-compact-tablet"
               >
                 PharmaRise Innovations LLP is dedicated to bridging healthcare gaps by delivering high-quality pharmaceutical products to providers. We ensure innovation, reliability, & accessibility, bringing advanced medical solutions efficiently to healthcare professionals and patients.
               </p>
@@ -605,7 +1002,7 @@ const NewAboutPage: React.FC = () => {
   return (
     <div>
       <Header />
-      <main>
+      <main className="pt-[120px]">
         <Hero />
         <AboutSection />
         <WhyChooseSection />

@@ -86,6 +86,26 @@ const heroAnimationStyles = `
       margin-top: 1.2rem !important;
       // z-index: 70 !important;
     }
+    
+    /* Reduce gap between About Us button and video on mobile */
+    .hero-button-mobile {
+      margin-bottom: 0rem !important; /* Remove bottom margin completely */
+    }
+    
+    .hero-video-mobile {
+      margin-top: -1rem !important; /* Very aggressive pull - doubled from -2rem */
+      padding-top: 0rem !important; /* Remove top padding completely */
+      padding: 0.5rem !important; /* Override all Tailwind padding classes */
+    }
+    
+    /* More specific targeting to override Tailwind classes */
+    div.hero-button-mobile.mb-6 {
+      margin-bottom: 0rem !important;
+    }
+    
+    div.hero-button-mobile.sm\\:mb-8 {
+      margin-bottom: 0rem !important;
+    }
   }
 
   /* Mid-range viewport fixes (640px - 1200px) */
@@ -96,7 +116,7 @@ const heroAnimationStyles = `
     .hero-content-mid {
       order: 1;
       // z-index: 50;
-      padding: 0 1rem !important;
+      padding: 1rem !important;
       padding-bottom: 2rem !important;
     }
     .hero-video-mid {
@@ -166,27 +186,145 @@ const heroAnimationStyles = `
       
   }
 
-  /* Tablet Portrait (768px - 1023px) */
+  /* 🎯 TABLET SPECIFIC MEDIA QUERIES (768px - 1024px) */
   @media (min-width: 768px) and (max-width: 1024px) {
+    
+    /* Container adjustments for tablets */
     .hero-container-15 {
-      padding-top: 3rem;!important;
-      padding-left: 3rem;
-      padding-right: 3rem;
+      padding-top: 1.5rem !important;
+      padding-left: 2.5rem !important;
+      padding-right: 2.5rem !important;
     }
+    
+    /* Main container layout for tablets */
+    .hero-container-mid {
+      flex-direction: column !important;
+      min-height: 95vh !important;
+    }
+    
+    /* Content section adjustments */
+    .hero-content-mid {
+      order: 1 !important;
+      padding: 0 1.5rem 1.5rem 1.5rem !important;
+    }
+    
+    /* Video section adjustments */
+    .hero-video-mid {
+      order: 2 !important;
+      margin-top: 1rem !important;
+      margin-left: 0 !important;
+      padding: 1rem !important;
+    }
+    
+    /* Blue background positioning for tablets */
+    .hero-bg-mid {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      top: 20% !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100% !important;
+      height: 160px !important;
+      position: absolute !important;
+    }
+    
+    /* Typography adjustments for tablets */
     .hero-title-tablet {
-      font-size: clamp(38px, 5vw, 46px) !important;
-      line-height: 1.1;
+      font-size: clamp(42px, 5.2vw, 48px) !important;
+      line-height: 1.1 !important;
+      margin-bottom: 0.75rem !important;
     }
+    
     .hero-tagline-tablet {
-      font-size: clamp(22px, 3.5vw, 28px) !important;
+      font-size: clamp(24px, 3.8vw, 30px) !important;
+      line-height: 1.25 !important;
+      margin-bottom: 1.25rem !important;
     }
+    
     .hero-text-tablet {
-      font-size: clamp(16px, 2.2vw, 20px) !important;
-      line-height: 1.5;
+      font-size: clamp(18px, 2.4vw, 22px) !important;
+      line-height: 1.6 !important;
+      margin-bottom: 1.5rem !important;
     }
+    
+    /* Video container for tablets - reduced height */
     .hero-video-tablet {
-      max-width: 420px !important;
-      height: 380px !important;
+      max-width: 250px !important;
+      height: 260px !important; /* Reduced from 400px */
+      margin: 0 auto !important;
+    }
+    
+    /* Products section for tablets */
+    .hero-products-mobile {
+      height: 160px !important;
+      padding: 2rem 1.5rem !important;
+      gap: 2rem !important;
+      justify-content: center !important;
+    }
+    
+    /* Product images - slightly reduced height */
+    .hero-products-mobile img {
+      width: 240px !important;
+      height: 110px !important; /* Reduced from 120px */
+      object-fit: contain !important;
+    }
+    
+    /* About Us button - remove top margin for tablets */
+    .hero-text-tablet + div {
+      margin-top: 0.5rem !important; /* Reduced from default margin */
+    }
+    
+    /* Intro text for tablets */
+    .hero-intro-mid {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      margin-top: 1rem !important;
+      padding: 0 1.5rem !important;
+    }
+    
+    /* Full-width background adjustment for tablets */
+    .hero-products-mid .absolute {
+      height: 160px !important;
+    }
+    
+    /* Tablet Portrait specific (768px - 900px) */
+    @media (max-width: 900px) and (orientation: portrait) {
+      .hero-title-tablet {
+        font-size: clamp(40px, 5vw, 45px) !important;
+      }
+      .hero-video-tablet {
+        max-width: 400px !important;
+        height: 320px !important; /* Further reduced for portrait */
+      }
+      .hero-products-mobile img {
+        width: 220px !important;
+        height: 100px !important; /* Slightly reduced */
+      }
+    }
+    
+    /* Tablet Landscape specific (901px - 1024px) */
+    @media (min-width: 901px) and (orientation: landscape) {
+      .hero-container-mid {
+        flex-direction: row !important;
+        align-items: flex-start !important;
+      }
+      .hero-content-mid {
+        flex: 1 1 55% !important;
+        padding-right: 2rem !important;
+      }
+      .hero-video-mid {
+        flex: 1 1 45% !important;
+        margin-top: 0 !important;
+      }
+      .hero-bg-mid {
+        top: 25% !important;
+      }
+      .hero-products-mobile {
+        justify-content: flex-start !important;
+        padding-left: 2rem !important;
+      }
     }
   }
 
@@ -430,7 +568,7 @@ if (typeof document !== 'undefined') {
 const Hero = () => {
   return (
     <section
-      className="min-h-screen w-full relative overflow-x-hidden bg-white -mt-4"
+      className="min-h-screen w-full relative overflow-x-hidden bg-white pt-[120px]"
       id="home"
     >
       {/* Products Section Background - Full width behind everything including video */}
@@ -443,9 +581,9 @@ const Hero = () => {
       <div className="flex flex-col xl:flex-row hero-container-mid min-h-screen w-full hero-container-14 hero-container-15 hero-container-16 relative z-10">
         {/* Left Content Section - Enhanced responsive padding */}
         <div className="flex-1 flex flex-col justify-start hero-content-mid
-                        pt-8 sm:pt-10 md:pt-12 lg:pt-6 xl:pt-20 
+                        pt-0 sm:pt-10 md:pt-12 lg:pt-6 xl:pt-20 
                         px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 
-                        pb-6 sm:pb-8 md:pb-10 lg:pb-12 xl:pb-16 w-full
+                        pb-2 sm:pb-8 md:pb-10 lg:pb-12 xl:pb-16 w-full
                         relative">
 
           {/* Main Title - Enhanced responsive typography */}
@@ -517,7 +655,7 @@ const Hero = () => {
           </div>
 
           {/* Introductory Text - Always visible, positioned after blue div + images */}
-          <div className="mb-2 sm:mb-4 md:mb-8 lg:mb-10 xl:mb-2  relative z-70 hero-intro-mobile hero-intro-mid hero-intro-pre-large mt-6 sm:mt-8 md:mt-6">
+          <div className="mb-2 sm:mb-4 md:mb-8 lg:mb-10 xl:mb-2  relative z-70 hero-intro-mobile hero-intro-mid hero-intro-pre-large mt-2 sm:mt-8 md:mt-6">
             <p
               className="bigpara text-[#0D4A8D] font-normal w-full max-w-[95%] sm:max-w-[90%] md:max-w-[625px] 
                          text-sm xs:text-base sm:text-lg md:text-xl lg:text-xl xl:text-[22px] 2xl:text-[25px]
@@ -535,7 +673,7 @@ const Hero = () => {
               excellence in the industry.
             </p>
           </div>
-          <div className="mb-6 sm:mb-8 md:mb-0 flex flex-col xs:flex-row gap-3 sm:gap-4 items-start">
+          <div className="mb-2 sm:mb-8 md:mb-0 hero-button-mobile flex flex-col xs:flex-row gap-3 sm:gap-4 items-start">
             <Link
               to="/new-about"
               className="bg-[#BE2623] text-white font-medium text-center leading-[96.184%] 
@@ -550,10 +688,10 @@ const Hero = () => {
             </Link>
           </div>
         </div>
-        <div className="w-full xl:w-auto xl:flex-none flex justify-center items-center hero-video-mid
-                        p-3 xs:p-4 sm:p-6 md:p-8 lg:p-6 xl:p-12 2xl:p-16
+        <div className="w-full xl:w-auto xl:flex-none flex justify-center items-center hero-video-mid hero-video-mobile
+                        p-1 xs:p-2 sm:p-6 md:p-8 lg:p-6 xl:p-12 2xl:p-16
                         h-auto lg:h-[480px] xl:h-[580px] 2xl:h-[680px] 
-                        relative lg:ml-0 xl:ml-[-100px] 2xl:ml-[-120px] z-20">
+                        relative lg:ml-0 xl:ml-[-100px] 2xl:ml-[-120px] z-20 -mt-4 xs:-mt-2 sm:mt-0">
           <div
             className="bg-white flex justify-center items-center relative overflow-hidden 
                        w-full max-w-[280px] h-[250px]
@@ -577,7 +715,7 @@ const Hero = () => {
                          max-w-[250px] xs:max-w-[270px] sm:max-w-[340px] md:max-w-[380px] 
                          lg:max-w-[400px] xl:max-w-[440px] 2xl:max-w-[472px]
                          max-h-[220px] xs:max-h-[240px] sm:max-h-[300px] md:max-h-[340px] 
-                         lg:max-h-[450px] xl:max-h-[580px] 2xl:max-h-[650px]"
+                         lg:max-h-[450px] xl:max-h-[580px] 2xl:max-h-[650px]  "
               autoPlay
               muted
               loop

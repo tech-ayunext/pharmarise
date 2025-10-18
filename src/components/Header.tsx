@@ -4,7 +4,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-slate-100 relative z-50  ">
+    <header className="bg-slate-100 fixed top-0 left-0 right-0 w-full z-[9999] shadow-md">
       {/* Top contact bar */}
       <div className="bg-[rgba(13,74,141,1)] flex w-full items-center justify-between px-[15px] sm:px-[20px] md:px-[50px] py-[7px]">
         <a

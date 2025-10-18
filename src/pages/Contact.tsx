@@ -83,14 +83,15 @@ const Contact = () => {
       <Header />
 
       {/* Hero Section */}
-      <div className="relative bg-[#0d4a8d] py-16 md:py-24" style={{ backgroundImage: "url('/images/Get in touch.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="relative bg-[#0d4a8d] pt-[120px] pb-16 md:pb-24 min-h-[290px] md:min-h-[380px] flex items-center" style={{ backgroundImage: "url('/images/Get in touch.png')", backgroundSize: 'cover', backgroundPosition: 'center top' }}>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0d4a8d]/100 from-25% to-[#0d4a8d]/25"></div>
-        <div className="relative z-10 container mx-auto px-4 md:px-8">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in transform transition-all duration-700 hover:scale-105">
+        <div className="relative z-10 container mx-auto px-4 md:px-8 w-full mt-[50px]  lg:mt-[100px]">
+          <h1 className="text-4xl md:text-6xl font-bold text-white animate-fade-in transform transition-all duration-700 hover:scale-105">
             Contact Us
           </h1>
         </div>
       </div>
+
 
       {/* Company Information Section */}
       <div className="relative w-full bg-[#d9eaff] py-16 md:py-20">
