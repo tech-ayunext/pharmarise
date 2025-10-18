@@ -564,18 +564,18 @@ const newAboutAnimationStyles = `
     .about-bg-img,
     .about-bg-img-large-tablet {
       right: -16% !important;
-      top:21%!important;
+      top:1%!important;
       width: 150% !important;
-      transform: translateX(33%) scale(1.4) !important;
+      transform: translateX(28%) scale(1.8) !important;
       margin-bottom:5rem!important;
     }
     .about-person-img,
     .about-person-img-large-tablet {
       width: 58% !important;
       max-width: 560px !important;
-      margin-top:75px !important;
-      transform: translateX(51%) scale(1) !important;
-      margin-bottom:5.9rem!important;
+      margin-top:6px !important;
+      transform: translateX(99%) scale(3.2) !important;
+      margin-bottom:8.4rem!important;
     }
   }
 }
