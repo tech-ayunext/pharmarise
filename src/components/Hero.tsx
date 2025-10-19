@@ -454,7 +454,7 @@ const heroAnimationStyles = `
 @media (min-width: 1400px) and (max-width: 1600px),
        (min-width: 900px) and (max-width: 1020px) and (min-device-pixel-ratio: 1) {
   .hero-container-15 {
-    margin-top: -40px !important;
+    margin-top: -50px !important;
     padding-left: 3rem;
     padding-right: 3rem;
   }
@@ -463,7 +463,7 @@ const heroAnimationStyles = `
     height: 160px !important;
   }
   .hero-title-15 {
-    font-size: clamp(56px, 4.1vw, 60px) !important;
+    font-size: clamp(56px, 4.1vw, 59px) !important;
   }
   .hero-tagline-15 {
     font-size: clamp(28px, 2.7vw, 32px) !important;

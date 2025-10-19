@@ -363,6 +363,153 @@ const aboutAnimationStyles = `
       margin-bottom: 0 !important;
     }
   }
+  
+  /* 🎯 15-inch Laptop — Full HD 1920x1080 
+     Typically reports innerWidth ≈ 980-1000, devicePixelRatio ≈ 1.0
+  */
+  @media (min-width: 1400px) and (max-width: 1600px),
+         (min-width: 900px) and (max-width: 1020px) and (min-device-pixel-ratio: 1) {
+    section#about {
+      margin-top: -3.8rem !important;
+      min-height: 720px !important;
+      padding-top: 4.8rem !important;
+      padding-bottom: 4.8rem !important;
+    }
+    
+    .about-image-container {
+      min-height: 500px !important;
+      max-height: 600px !important;
+      border-radius: 16px;
+      margin-top: -130px;
+      margin-bottom: 2.8rem;
+      overflow: visible;
+    }
+    
+    .about-combined-img {
+      top: -145px;
+      width: 143%;
+      height: 138%;
+      left: 7%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    
+    .about-section {
+      flex-direction: row;
+      align-items: center;
+      gap: 3.8rem;
+      margin-bottom: 0;
+      min-height: 540px !important;
+      padding-bottom: 1.8rem;
+    }
+    
+    .about-text-section {
+      width: 57%;
+      flex-shrink: 0;
+      min-height: 420px !important;
+    }
+    
+    .about-image-section {
+      width: 43%;
+      flex-shrink: 0;
+      min-height: 470px !important;
+    }
+    
+    section {
+      padding-bottom: 0 !important;
+      margin-bottom: 0 !important;
+    }
+  }
+
+  /* 💻 16-inch Laptop — WUXGA 1920x1200 
+     Typically reports innerWidth ≈ 850-880, devicePixelRatio ≈ 1.25
+  */
+  @media (min-width: 1280px) and (max-width: 1440px),
+         (min-width: 800px) and (max-width: 900px) and (min-device-pixel-ratio: 1.25) {
+    section#about {
+      margin-top: -4rem !important;
+      min-height: 750px !important;
+      padding-top: 5rem !important;
+      padding-bottom: 5rem !important;
+    }
+    
+    .about-image-container {
+      min-height: 520px !important;
+      max-height: 620px !important;
+      border-radius: 16px;
+      margin-top: -140px;
+      margin-bottom: 3rem;
+      overflow: visible;
+    }
+    
+    .about-combined-img {
+      top: -155px;
+      width: 142%;
+      height: 138%;
+      left: 6%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    
+    .about-section {
+      flex-direction: row;
+      align-items: center;
+      gap: 4rem;
+      margin-bottom: 0;
+      min-height: 560px !important;
+      padding-bottom: 2rem;
+    }
+    
+    .about-text-section {
+      width: 55%;
+      flex-shrink: 0;
+      min-height: 440px !important;
+    }
+    
+    .about-image-section {
+      width: 45%;
+      flex-shrink: 0;
+      min-height: 490px !important;
+    }
+    
+    section {
+      padding-bottom: 0 !important;
+      margin-bottom: 0 !important;
+    }
+  }
+
+  /* 15-inch laptop height specific */
+  @media (min-height: 720px) and (max-height: 760px) {
+    section#about {
+      min-height: 680px !important;
+      padding-top: 4.2rem !important;
+      padding-bottom: 4.2rem !important;
+    }
+    
+    .about-section {
+      min-height: 500px !important;
+    }
+  }
+
+  /* 16-inch laptop height specific */
+  @media (min-width: 860px) and (max-width: 880px) 
+         and (min-height: 740px) and (max-height: 760px) 
+         and (min-resolution: 192dpi) {  /* DPR 2 ≈ 192dpi */
+    section#about {
+      min-height: 720px !important;
+      padding-top: 4.5rem !important;
+      padding-bottom: 4.5rem !important;
+    }
+    
+    .about-image-container {
+      min-height: 510px !important;
+      max-height: 610px !important;
+    }
+    
+    .about-section {
+      min-height: 540px !important;
+    }
+  }
 
   /* 🎯 LARGE DESKTOP (1440px+) */
   @media (min-width: 1440px) {
@@ -371,12 +518,12 @@ const aboutAnimationStyles = `
    }
     .about-image-container {
       min-height: 470px;
-      margin-top: -180px;
+      margin-top: -210px;
     }
     .about-section {
       gap: 4rem;
       min-height: 500px;
-      padding-bottom: 1em;
+      padding-bottom: 1rem;
     }
     
     section#about {
@@ -412,12 +559,12 @@ const About = () => {
             </div>
 
             {/* Heading */}
-            <h2 className="text-[#0D4A8D] text-left font-['Red_Hat_Text'] text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight mb-6 animate-fade-in-left transition-transform duration-300 hover:scale-105" style={{ animationDelay: '0.4s' }}>
+            <h2 className="text-[#0D4A8D] text-left font-['Red_Hat_Text'] text-2xl sm:text-4xl md:text-5xl lg:text-4xl font-semibold leading-tight tracking-tight mb-6 animate-fade-in-left transition-transform duration-300 hover:scale-105" style={{ animationDelay: '0.4s' }}>
               PharmaRise Innovations LLP
             </h2>
 
             {/* Subtext with Mr Rajendra Patkar in red */}
-            <p className="text-[#0D4A8D] font-['Red_Hat_Text'] text-base sm:text-lg md:text-xl lg:text-2xl font-medium leading-relaxed mb-6 animate-fade-in-left" style={{ animationDelay: '0.6s' }}>
+            <p className="text-[#0D4A8D] font-['Red_Hat_Text'] text-base sm:text-lg md:text-xl lg:text-xl font-medium leading-relaxed mb-6 animate-fade-in-left" style={{ animationDelay: '0.6s' }}>
               Pharmarise Innovations has been founded in 2024 by{" "}
               <span className="text-[#BE2623] font-['Red_Hat_Text'] font-medium">
                 Mr Rajendra Patkar
@@ -426,7 +573,7 @@ const About = () => {
             </p>
 
             {/* Description */}
-            <p className="text-[#0D4A8D] text-justify font-normal leading-relaxed text-sm sm:text-base md:text-lg lg:text-xl mb-6 animate-fade-in-left" style={{ animationDelay: '0.8s' }}>
+            <p className="text-[#0D4A8D] text-justify font-normal leading-relaxed text-sm sm:text-base md:text-lg lg:text-l mb-6 animate-fade-in-left" style={{ animationDelay: '0.8s' }}>
               He has launched many innovative products and has headed top pharma
               companies like Wockhardt, Jb Chemicals, & RPG where, he led major
               brand innovations. He has a vision to deliver innovative brands
@@ -439,7 +586,7 @@ const About = () => {
             {/* Button */}
             <Link
               to="/new-about"
-              className="bg-[#0D4A8D] text-white text-sm sm:text-base md:text-lg px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all animate-fade-in-up hover:scale-105 hover:shadow-lg transform inline-block"
+              className="bg-[#0D4A8D] text-white text-sm sm:text-base md:text-lg px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all animate-fade-in-up hover:scale-105 hover:shadow-lg transform inline-block"
               style={{ animationDelay: '1.0s' }}
             >
               Our Story
