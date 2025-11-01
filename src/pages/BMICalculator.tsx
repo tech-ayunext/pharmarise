@@ -221,7 +221,7 @@ const BMICalculator = () => {
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
 
                             {/* Left Side - Input Controls */}
-                            <div className="space-y-6 order-2 lg:order-1">
+                            <div className="space-y-6 order-1 lg:order-1">
                                 {/* Gender Selection */}
                                 <div>
                                     <div className="flex gap-3 mb-6">
@@ -326,7 +326,7 @@ const BMICalculator = () => {
                             </div>
 
                             {/* Center - Human Figure SVG */}
-                            <div className="flex justify-center order-1 lg:order-2">
+                            <div className="flex justify-center order-2 lg:order-2">
                                 <div className="relative transform hover:scale-110 transition-transform duration-500 ease-out">
                                     <img
                                         src={getBMISvg()}
