@@ -1,0 +1,124 @@
+/* BMI Calculator Slider Styles */
+.bmi-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.bmi-slider:hover {
+    opacity: 1;
+}
+
+.bmi-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    border: 3px solid #0d4a8d;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.bmi-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    border: 3px solid #0d4a8d;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.bmi-slider::-webkit-slider-track {
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.bmi-slider::-moz-range-track {
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+}
+
+/* BMI Calculator Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes expandWidth {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes countUp {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

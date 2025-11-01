@@ -181,14 +181,14 @@ const ContactForm = () => {
 
       {/* Newsletter and Submit */}
       <div className="flex flex-col items-center gap-4">
-        <label className="flex items-center gap-2 text-gray-700">
+        {/* <label className="flex items-center gap-2 text-gray-700">
           <input
             {...register("newsletter")}
             type="checkbox"
             className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
           />
           <span> Signup</span>
-        </label>
+        </label> */}
 
         <button
           type="submit"

@@ -50,486 +50,171 @@ const aboutAnimationStyles = `
     opacity: 0;
   }
 
-  /* 🎯 REMOVE GAPS BETWEEN SECTIONS */
-  section {
-    margin: 0 !important;
-    padding-top: 3rem !important;
-    padding-bottom: 0 !important;
-  }
-  
+  /* 🎯 FLUID RESPONSIVE SECTION STYLING */
   section#about {
-    margin-top: -4rem !important;
+    margin: 0 !important;
     position: relative;
-    z-index: 10;
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
-    min-height: 600px !important;
+    z-index: 1;
+    padding-top: clamp(1rem, 3vw, 3rem) !important;
+    padding-bottom: clamp(1rem, 3vw, 3rem) !important;
+    min-height: auto !important;
+    background: white !important;
+    overflow: hidden;
   }
 
-  /* 🎯 IMAGE CONTAINER - Higher z-index for visibility and overlap */
+  /* 🎯 FLUID LAYOUT CONTAINER */
+  .about-section {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 4vw, 4rem);
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* 🎯 FLUID TEXT SECTION */
+  .about-text-section {
+    flex: 1;
+    min-width: 0;
+    padding-right: clamp(1rem, 2vw, 2rem);
+  }
+
+  /* 🎯 FLUID IMAGE SECTION */
+  .about-image-section {
+    flex: 0 0 auto;
+    width: clamp(300px, 40vw, 500px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 🎯 IMAGE CONTAINER - Fluid responsive container */
   .about-image-container {
     position: relative;
-    z-index: 15;
+    z-index: 2;
     overflow: visible;
-    margin-top: -60px;
-  }
-
-  /* 🎯 COMBINED IMAGE - Scaled larger to prevent hair cutoff */
-  .about-combined-img {
-    position: absolute;
-    top: -40px;
-    left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
+    max-width: 100%;
   }
 
-  /* 🎯 MOBILE (320px - 767px) */
-  @media (max-width: 767px) {
-    section#about {
-      margin-top: -5rem !important;
-    }
-    
-    .about-image-container {
-      min-height: 420px;
-      max-height: 600px;
-      margin: 0 auto;
-      overflow: visible;
-    }
-    
-    .about-combined-img {
-      top: -70px;
-      left: 2;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
-    
+  /* 🎯 COMBINED IMAGE - Fully responsive image */
+  .about-combined-img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: clamp(8px, 1vw, 20px);
+    box-shadow: 0 clamp(5px, 1vw, 15px) clamp(15px, 3vw, 40px) rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .about-combined-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 clamp(8px, 1.5vw, 20px) clamp(25px, 4vw, 60px) rgba(0, 0, 0, 0.15);
+  }
+
+  /* 🎯 FLUID TYPOGRAPHY */
+  .about-title {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: clamp(1rem, 2vw, 2rem);
+  }
+
+  .about-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    line-height: 1.4;
+    margin-bottom: clamp(1rem, 2vw, 2rem);
+  }
+
+  .about-description {
+    font-size: clamp(0.875rem, 2vw, 1.125rem);
+    line-height: 1.6;
+    margin-bottom: clamp(1rem, 2vw, 2rem);
+  }
+
+  .about-button {
+    font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+    padding: clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 2rem);
+    border-radius: clamp(6px, 0.5vw, 12px);
+  }
+
+  /* 🎯 MOBILE-FIRST RESPONSIVE BREAKPOINTS */
+  @media (max-width: 768px) {
     .about-section {
       flex-direction: column;
-      gap: 0;
-      padding-bottom: -3rem;
-      min-height: 700px !important;
-    }
-    
-    section#about {
-      min-height: 650px !important;
-      padding-top: 3rem !important;
-      padding-bottom: 0rem !important;
+      text-align: center;
     }
     
     .about-text-section {
-      width: 100%;
       order: 1;
-      margin-bottom: 1rem;
-    }
-    
-    .about-image-section {
-      width: 100%;
-      order: 2;
-      margin: 0;
-      margin-bottom: -9.5rem !important;
-      min-height: 500px !important;
-    }
-    
-    /* Remove bottom padding from section */
-    section {
-      padding-bottom: 0 !important;
-      margin-bottom: 0 !important;
-    }
-    
-    .about-image-container {
-      margin-bottom: 6 !important;
-    }
-  }
-
-  /* 🎯 TABLET (768px - 1024px) - Same layout as mobile */
-  @media (min-width: 768px) and (max-width: 1024px) {
-    section#about {
-      margin-top: -4rem !important;
-    }
-    
-    .about-image-container {
-      min-height: 600px;
-      max-height: 400px;
-      border-radius: 12px;
-      margin: 0 auto;
-      overflow: visible;
-      max-width: 500px;
-    }
-    
-    .about-combined-img {
-      top: -120px;
-      left: 53%;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
-    
-    .about-section {
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
-      padding-bottom: 4rem;
-      min-height: 600px;
-    }
-    
-    section#about {
-      min-height: 650px !important;
-      padding-top: 4rem !important;
-      padding-bottom: 4rem !important;
-    }
-    
-    .about-text-section {
-      width: 100%;
-      order: 1;
-      margin-bottom: 1.5rem;
+      padding-right: 0;
       text-align: left;
     }
     
     .about-image-section {
-      width: 100%;
       order: 2;
-      max-width: 500px;
-      margin: 0;
-      margin-bottom: 0 !important;
-    }
-    
-    /* Remove bottom padding from section */
-    section {
-      padding-bottom: 0 !important;
-      margin-bottom: 0 !important;
-    }
-    
-    .about-image-container {
-      margin-bottom: 0 !important;
-    }
-  }
-
-  /* 🎯 SMALL TABLETS (600px - 767px) */
-  @media (min-width: 600px) and (max-width: 767px) {
-    .about-image-container {
-      min-height: 580px;
-      max-height: 480px;
-      margin: 0 auto;
-      overflow: visible;
+      width: clamp(280px, 80vw, 400px);
+      margin-top: clamp(1rem, 3vw, 2rem);
     }
     
     .about-combined-img {
-      top: -50px;
-      left: 33%;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
+      border-radius: clamp(8px, 2vw, 16px);
+    }
+  }
+
+  /* 🎯 TABLET AND SMALL DESKTOP */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .about-section {
+      flex-direction: row;
+      align-items: flex-start;
     }
     
+    .about-text-section {
+      flex: 1 1 60%;
+    }
+    
+    .about-image-section {
+      flex: 0 0 40%;
+      width: clamp(300px, 35vw, 400px);
+    }
+  }
+
+  /* 🎯 LARGE SCREENS */
+  @media (min-width: 1025px) {
+    .about-section {
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    .about-text-section {
+      flex: 1 1 55%;
+    }
+    
+    .about-image-section {
+      flex: 0 0 45%;
+      width: clamp(350px, 40vw, 550px);
+    }
+  }
+
+  /* 🎯 ULTRA-WIDE SCREENS */
+  @media (min-width: 1600px) {
+    .about-section {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .about-image-section {
+      width: clamp(400px, 35vw, 600px);
+    }
+  }
+
+  /* 🎯 CONTAINER QUERIES FOR MODERN BROWSERS */
+  @container (max-width: 768px) {
     .about-section {
       flex-direction: column;
-      gap: 0;
-      padding-bottom: 3rem;
-      min-height: 550px;
-    }
-    
-    section#about {
-      min-height: 600px !important;
-      padding-top: 3.5rem !important;
-      padding-bottom: 3.5rem !important;
-    }
-    
-    .about-text-section {
-      width: 100%;
-      order: 1;
-      margin-bottom: 1rem;
-    }
-    
-    .about-image-section {
-      width: 100%;
-      order: 2;
-      margin: 0;
-      margin-bottom: -4.5rem !important;
-    }
-    
-    .about-image-container {
-      margin-bottom: -18% !important;
-    }
-    
-    section {
-      padding-bottom: 0 !important;
-      margin-bottom: 0 !important;
-    }
-  }
-
-  /* 🎯 SPECIFIC RESOLUTION 1241px */
-  @media (min-width: 1241px) and (max-width: 1241px) {
-    .about-image-container {
-      min-height: 520px;
-      max-height: 620px;
-      border-radius: 16px;
-      margin-top: -80px;
-      margin-bottom: 2rem;
-      overflow: visible;
-    }
-    
-    .about-combined-img {
-      top: -50px;
-      left: 0;
-      width: 130%;
-      height: 130%;
-      object-fit: cover;
-      object-position: center top;
-    }
-    
-    .about-section {
-      flex-direction: row;
-      align-items: center;
-      gap: 2.5rem;
-      margin-bottom: 0;
-      min-height: 650px;
-      padding-bottom: 4rem;
-    }
-    
-    section#about {
-      min-height: 700px !important;
-      padding-top: 4rem !important;
-      padding-bottom: 4rem !important;
-    }
-    
-    .about-text-section {
-      width: 60%;
-      flex-shrink: 0;
-    }
-    
-    .about-image-section {
-      width: 40%;
-      flex-shrink: 0;
-    }
-  }
-
-  /* 🎯 DESKTOP (1025px+) */
-  @media (min-width: 1025px) {
-    section#about {
-      margin-top: -3rem !important;
-    }
-    
-    .about-image-container {
-      min-height: 550px;
-      max-height: 650px;
-      border-radius: 16px;
-      margin-top: -100px;
-      margin-bottom: 2rem;
-      overflow: visible;
-    }
-    
-    .about-combined-img {
-      top: -135px;
-      width: 140%;
-      height: 137%;
-      left:6%;
-      object-fit: cover;
-      object-position: center top;
-    }
-    
-    .about-section {
-      flex-direction: row;
-      align-items: center;
-      gap: 3rem;
-      margin-bottom: 0;
-      min-height: 500px;
-      padding-bottom: 1rem;
-    }
-    
-    section#about {
-      min-height: 750px !important;
-      padding-top: 5rem !important;
-      padding-bottom: 5rem !important;
-    }
-    
-    .about-text-section {
-      width: 58%;
-      flex-shrink: 0;
-    }
-    
-    .about-image-section {
-      width: 42%;
-      flex-shrink: 0;
-    }
-    
-    section {
-      padding-bottom: 0 !important;
-      margin-bottom: 0 !important;
-    }
-  }
-  
-  /* 🎯 15-inch Laptop — Full HD 1920x1080 
-     Typically reports innerWidth ≈ 980-1000, devicePixelRatio ≈ 1.0
-  */
-  @media (min-width: 1400px) and (max-width: 1600px),
-         (min-width: 900px) and (max-width: 1020px) and (min-device-pixel-ratio: 1) {
-    section#about {
-      margin-top: -3.8rem !important;
-      min-height: 720px !important;
-      padding-top: 4.8rem !important;
-      padding-bottom: 4.8rem !important;
-    }
-    
-    .about-image-container {
-      min-height: 500px !important;
-      max-height: 600px !important;
-      border-radius: 16px;
-      margin-top: -130px;
-      margin-bottom: 2.8rem;
-      overflow: visible;
-    }
-    
-    .about-combined-img {
-      top: -145px;
-      width: 143%;
-      height: 138%;
-      left: 7%;
-      object-fit: cover;
-      object-position: center top;
-    }
-    
-    .about-section {
-      flex-direction: row;
-      align-items: center;
-      gap: 3.8rem;
-      margin-bottom: 0;
-      min-height: 540px !important;
-      padding-bottom: 1.8rem;
-    }
-    
-    .about-text-section {
-      width: 57%;
-      flex-shrink: 0;
-      min-height: 420px !important;
-    }
-    
-    .about-image-section {
-      width: 43%;
-      flex-shrink: 0;
-      min-height: 470px !important;
-    }
-    
-    section {
-      padding-bottom: 0 !important;
-      margin-bottom: 0 !important;
-    }
-  }
-
-  /* 💻 16-inch Laptop — WUXGA 1920x1200 
-     Typically reports innerWidth ≈ 850-880, devicePixelRatio ≈ 1.25
-  */
-  @media (min-width: 1280px) and (max-width: 1440px),
-         (min-width: 800px) and (max-width: 900px) and (min-device-pixel-ratio: 1.25) {
-    section#about {
-      margin-top: -4rem !important;
-      min-height: 750px !important;
-      padding-top: 5rem !important;
-      padding-bottom: 5rem !important;
-    }
-    
-    .about-image-container {
-      min-height: 520px !important;
-      max-height: 620px !important;
-      border-radius: 16px;
-      margin-top: -140px;
-      margin-bottom: 3rem;
-      overflow: visible;
-    }
-    
-    .about-combined-img {
-      top: -155px;
-      width: 142%;
-      height: 138%;
-      left: 6%;
-      object-fit: cover;
-      object-position: center top;
-    }
-    
-    .about-section {
-      flex-direction: row;
-      align-items: center;
-      gap: 4rem;
-      margin-bottom: 0;
-      min-height: 560px !important;
-      padding-bottom: 2rem;
-    }
-    
-    .about-text-section {
-      width: 55%;
-      flex-shrink: 0;
-      min-height: 440px !important;
-    }
-    
-    .about-image-section {
-      width: 45%;
-      flex-shrink: 0;
-      min-height: 490px !important;
-    }
-    
-    section {
-      padding-bottom: 0 !important;
-      margin-bottom: 0 !important;
-    }
-  }
-
-  /* 15-inch laptop height specific */
-  @media (min-height: 720px) and (max-height: 760px) {
-    section#about {
-      min-height: 680px !important;
-      padding-top: 4.2rem !important;
-      padding-bottom: 4.2rem !important;
-    }
-    
-    .about-section {
-      min-height: 500px !important;
-    }
-  }
-
-  /* 16-inch laptop height specific */
-  @media (min-width: 860px) and (max-width: 880px) 
-         and (min-height: 740px) and (max-height: 760px) 
-         and (min-resolution: 192dpi) {  /* DPR 2 ≈ 192dpi */
-    section#about {
-      min-height: 720px !important;
-      padding-top: 4.5rem !important;
-      padding-bottom: 4.5rem !important;
-    }
-    
-    .about-image-container {
-      min-height: 510px !important;
-      max-height: 610px !important;
-    }
-    
-    .about-section {
-      min-height: 540px !important;
-    }
-  }
-
-  /* 🎯 LARGE DESKTOP (1440px+) */
-  @media (min-width: 1440px) {
-   .about-combined-img {
-    margin-bottom:11rem;
-   }
-    .about-image-container {
-      min-height: 470px;
-      margin-top: -210px;
-    }
-    .about-section {
-      gap: 4rem;
-      min-height: 500px;
-      padding-bottom: 1rem;
-    }
-    
-    section#about {
-      min-height: 450px !important;
-      padding-top: 1rem !important;
-      padding-bottom: 1rem !important;
     }
   }
 `;
@@ -544,7 +229,7 @@ if (typeof document !== 'undefined') {
 const About = () => {
   return (
     <section
-      className="bg-white w-full py-0 px-4 sm:px-8 md:px-12 lg:px-20"
+      className="bg-white w-full py-0 pl-4 sm:pl-8 md:pl-12 lg:pl-20 pr-0"
       id="about"
     >
       <div className="flex about-section">
@@ -559,12 +244,12 @@ const About = () => {
             </div>
 
             {/* Heading */}
-            <h2 className="text-[#0D4A8D] text-left font-['Red_Hat_Text'] text-2xl sm:text-4xl md:text-5xl lg:text-4xl font-semibold leading-tight tracking-tight mb-6 animate-fade-in-left transition-transform duration-300 hover:scale-105" style={{ animationDelay: '0.4s' }}>
+            <h2 className="about-title text-[#0D4A8D] text-left font-['Red_Hat_Text'] font-semibold leading-tight tracking-tight animate-fade-in-left transition-transform duration-300 hover:scale-105" style={{ animationDelay: '0.4s' }}>
               PharmaRise Innovations LLP
             </h2>
 
             {/* Subtext with Mr Rajendra Patkar in red */}
-            <p className="text-[#0D4A8D] font-['Red_Hat_Text'] text-base sm:text-lg md:text-xl lg:text-xl font-medium leading-relaxed mb-6 animate-fade-in-left" style={{ animationDelay: '0.6s' }}>
+            <p className="about-subtitle text-[#0D4A8D] font-['Red_Hat_Text'] font-medium leading-relaxed animate-fade-in-left" style={{ animationDelay: '0.6s' }}>
               Pharmarise Innovations has been founded in 2024 by{" "}
               <span className="text-[#BE2623] font-['Red_Hat_Text'] font-medium">
                 Mr Rajendra Patkar
@@ -573,7 +258,7 @@ const About = () => {
             </p>
 
             {/* Description */}
-            <p className="text-[#0D4A8D] text-justify font-normal leading-relaxed text-sm sm:text-base md:text-lg lg:text-l mb-6 animate-fade-in-left" style={{ animationDelay: '0.8s' }}>
+            <p className="about-description text-[#0D4A8D] text-justify font-normal leading-relaxed animate-fade-in-left" style={{ animationDelay: '0.8s' }}>
               He has launched many innovative products and has headed top pharma
               companies like Wockhardt, Jb Chemicals, & RPG where, he led major
               brand innovations. He has a vision to deliver innovative brands
@@ -586,7 +271,7 @@ const About = () => {
             {/* Button */}
             <Link
               to="/new-about"
-              className="bg-[#0D4A8D] text-white text-sm sm:text-base md:text-lg px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all animate-fade-in-up hover:scale-105 hover:shadow-lg transform inline-block"
+              className="about-button bg-[#0D4A8D] text-white hover:bg-opacity-90 transition-all animate-fade-in-up hover:scale-105 hover:shadow-lg transform inline-block"
               style={{ animationDelay: '1.0s' }}
             >
               Our Story

@@ -158,6 +158,12 @@ const Header = () => {
             Products
           </Link>
           <Link
+            to="/bmi-calculator"
+            className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
+          >
+            BMI Calculator
+          </Link>
+          <Link
             to="/contact"
             className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
           >
@@ -206,6 +212,13 @@ const Header = () => {
               onClick={() => setMenuOpen(false)}
             >
               Products
+            </Link>
+            <Link
+              to="/bmi-calculator"
+              className="text-[rgba(13,74,141,1)] text-lg font-medium"
+              onClick={() => setMenuOpen(false)}
+            >
+              BMI Calculator
             </Link>
             <Link
               to="/contact"

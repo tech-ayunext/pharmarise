@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 
 const heroAnimationStyles = `
-  /* 🎯 OPTIMIZED FLUID RESPONSIVE HERO STYLES */
+  /* 🎯 MODERN FULLY RESPONSIVE HERO STYLES */
   
-  /* Animations */
+  /* Reset and base styles */
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Smooth animations */
   @keyframes fadeInUp {
     from {
       opacity: 0;
@@ -52,149 +57,191 @@ const heroAnimationStyles = `
     opacity: 0;
   }
   
-  /* 🎯 FLUID HERO CONTAINER */
-  .hero-fluid-container {
+  /* 🎯 MODERN HERO CONTAINER */
+  .hero-modern-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    gap: clamp(1rem, 4vw, 3rem);
+    gap: clamp(2rem, 5vw, 4rem);
     min-height: 100vh;
     padding: clamp(1rem, 4vw, 5rem);
-    padding-top: clamp(8rem, 12vh, 12rem);
-    align-items: start;
-    max-width: 100vw;
-    overflow-x: hidden;
+    padding-top: clamp(8rem, 15vh, 10rem);
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
   }
   
-  /* 🎯 RESPONSIVE GRID LAYOUT */
+  /* Desktop layout */
   @media (min-width: 1024px) {
-    .hero-fluid-container {
-      grid-template-columns: 1fr 0.8fr;
-      grid-template-rows: 1fr;
-      gap: clamp(2rem, 5vw, 4rem);
+    .hero-modern-container {
+      grid-template-columns: 1.2fr 1fr;
       align-items: center;
+      gap: clamp(3rem, 6vw, 5rem);
     }
   }
   
-  /* 🎯 FLUID TYPOGRAPHY */
-  .hero-title-fluid {
-    font-size: clamp(1.75rem, 6vw, 4.2rem);
-    line-height: clamp(2rem, 6.5vw, 4.5rem);
-    margin-bottom: clamp(0.5rem, 2vw, 1rem);
+  /* 🎯 MODERN TYPOGRAPHY */
+  .hero-title-modern {
+    font-size: clamp(2rem, 7vw, 4.5rem);
+    line-height: clamp(2.2rem, 7.5vw, 5rem);
     font-weight: 700;
     color: #0D4A8D;
+    margin-bottom: clamp(0.75rem, 2vw, 1.25rem);
     letter-spacing: -0.02em;
   }
   
-  .hero-tagline-fluid {
-    font-size: clamp(1.125rem, 3.5vw, 2.2rem);
-    line-height: clamp(1.375rem, 4vw, 2.6rem);
-    margin-bottom: clamp(1rem, 3vw, 2rem);
+  .hero-tagline-modern {
+    font-size: clamp(1.25rem, 4vw, 2.5rem);
+    line-height: clamp(1.5rem, 4.5vw, 3rem);
     color: #0D4A8D;
     font-weight: 400;
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
   }
   
-  .hero-text-fluid {
-    font-size: clamp(0.875rem, 2.5vw, 1.5rem);
-    line-height: clamp(1.25rem, 3.5vw, 2.25rem);
-    margin-bottom: clamp(1rem, 2vw, 2rem);
+  .hero-text-modern {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    line-height: clamp(1.5rem, 3.5vw, 1.875rem);
     color: #0D4A8D;
-    font-weight: 400;
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+    max-width: 90%;
   }
   
-  .hero-button-fluid {
-    font-size: clamp(0.875rem, 2vw, 1.125rem);
-    padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 3vw, 2rem);
-    border-radius: clamp(0.375rem, 1vw, 0.5rem);
+  .hero-button-modern {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-weight: 500;
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2.5rem);
+    background-color: #BE2623;
+    color: white;
+    border-radius: clamp(0.5rem, 1vw, 0.75rem);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 clamp(2px, 0.5vw, 4px) clamp(8px, 2vw, 16px) rgba(190, 38, 35, 0.2);
   }
   
-  /* 🎯 FLUID PRODUCTS SECTION */
-  .hero-products-fluid {
+  .hero-button-modern:hover {
+    background-color: #a01f1c;
+    transform: translateY(-2px);
+    box-shadow: 0 clamp(4px, 1vw, 8px) clamp(16px, 4vw, 32px) rgba(190, 38, 35, 0.3);
+  }
+  
+  /* 🎯 MODERN PRODUCTS SECTION */
+  .hero-products-modern {
     position: relative;
-    margin: clamp(1rem, 3vw, 2rem) 0;
-    z-index: 10;
+    margin: clamp(2rem, 4vw, 3rem) 0;
+    padding: clamp(1.5rem, 3vw, 2.5rem) 0;
+    background: linear-gradient(135deg, #0D4A8D 0%, #1a5ba3 100%);
+    border-radius: clamp(1rem, 2vw, 1.5rem);
+    overflow: hidden;
   }
   
-  .hero-products-bg-fluid {
+  .hero-products-modern::before {
+    content: '';
     position: absolute;
     top: 0;
-    left: calc(-1 * clamp(1rem, 4vw, 5rem));
-    right: calc(-1 * clamp(1rem, 4vw, 5rem));
-    width: calc(100% + 2 * clamp(1rem, 4vw, 5rem));
-    height: clamp(7.5rem, 15vh, 12rem);
-    background-color: #0D4A8D;
-    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+    pointer-events: none;
   }
   
-  .hero-products-container-fluid {
-    position: relative;
-    z-index: 2;
+  .hero-products-container-modern {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: clamp(1rem, 3vw, 2.5rem);
+    gap: clamp(1.5rem, 4vw, 3rem);
     padding: clamp(1rem, 3vw, 2rem);
-    height: clamp(7.5rem, 15vh, 12rem);
+    position: relative;
+    z-index: 2;
   }
   
   @media (min-width: 1024px) {
-    .hero-products-container-fluid {
+    .hero-products-container-modern {
       justify-content: flex-start;
       padding-left: clamp(2rem, 4vw, 3rem);
     }
   }
   
-  /* 🎯 ENHANCED LEFT MARGIN FOR 125% ZOOM AND LARGER SCREENS */
-  @media (min-width: 1280px) {
-    .hero-products-container-fluid {
-      padding-left: clamp(3rem, 6vw, 5rem);
-      margin-left: clamp(1rem, 3vw, 2rem);
-    }
-  }
-  
-  .hero-products-container-fluid img {
-    width: clamp(7rem, 20vw, 20rem);
-    height: clamp(5rem, 12vw, 8.75rem);
+  .hero-products-container-modern img {
+    width: clamp(8rem, 22vw, 18rem);
+    height: clamp(6rem, 16vw, 12rem);
     object-fit: contain;
-    border-radius: clamp(0.5rem, 1vw, 0.75rem);
-    transition: transform 0.3s ease;
+    border-radius: clamp(0.75rem, 1.5vw, 1rem);
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 clamp(4px, 1vw, 8px) clamp(12px, 3vw, 24px) rgba(0,0,0,0.2));
   }
   
-  .hero-products-container-fluid img:hover {
-    transform: scale(1.05);
+  .hero-products-container-modern img:hover {
+    transform: translateY(-4px) scale(1.05);
+    filter: drop-shadow(0 clamp(8px, 2vw, 16px) clamp(24px, 6vw, 48px) rgba(0,0,0,0.3));
   }
   
-  /* 🎯 FLUID VIDEO SECTION */
-  .hero-video-fluid {
+  /* 🎯 MODERN IMAGE/VIDEO SECTION */
+  .hero-media-modern {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-  }
-  
-  .hero-video-container-fluid {
     position: relative;
-    width: clamp(17.5rem, 40vw, 32.5rem);
-    height: clamp(15rem, 45vw, 45rem);
-    background: white;
-    border-radius: 0 0 clamp(6rem, 12vw, 15rem) clamp(6rem, 12vw, 15rem);
-    box-shadow: 0 clamp(0.125rem, 0.5vw, 0.25rem) clamp(0.9375rem, 3vw, 1.6875rem) clamp(0.0625rem, 0.2vw, 0.0625rem) rgba(0,0,0,0.15);
+  }
+  
+  .hero-media-container-modern {
+    position: relative;
+    width: 100%;
+    max-width: clamp(20rem, 50vw, 35rem);
+    aspect-ratio: 16/20;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: clamp(1rem, 2vw, 1.5rem);
     overflow: hidden;
-    transition: transform 0.5s ease;
+    box-shadow: 0 clamp(8px, 2vw, 16px) clamp(32px, 8vw, 64px) rgba(13, 74, 141, 0.15);
+    transition: all 0.5s ease;
   }
   
-  .hero-video-container-fluid:hover {
-    transform: scale(1.02);
+  .hero-media-container-modern:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 clamp(16px, 4vw, 32px) clamp(64px, 16vw, 128px) rgba(13, 74, 141, 0.25);
   }
   
-  .hero-video-container-fluid video {
+  .hero-media-container-modern video,
+  .hero-media-container-modern img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
   }
   
-  /* 🎯 ACCESSIBILITY & PERFORMANCE */
+  .hero-media-container-modern:hover video,
+  .hero-media-container-modern:hover img {
+    transform: scale(1.02);
+  }
+  
+  /* 🎯 RESPONSIVE ADJUSTMENTS */
+  @media (max-width: 768px) {
+    .hero-modern-container {
+      text-align: center;
+      padding-top: clamp(6rem, 12vh, 8rem);
+    }
+    
+    .hero-text-modern {
+      max-width: 100%;
+    }
+    
+    .hero-products-container-modern {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  
+  @media (min-width: 1600px) {
+    .hero-products-container-modern {
+      justify-content: center;
+    }
+  }
+  
+  /* 🎯 ACCESSIBILITY */
   @media (prefers-reduced-motion: reduce) {
     .animate-fade-in-up,
     .animate-fade-in-left,
@@ -203,49 +250,24 @@ const heroAnimationStyles = `
       opacity: 1;
     }
     
-    .hero-video-container-fluid:hover,
-    .hero-products-container-fluid img:hover {
+    .hero-media-container-modern:hover,
+    .hero-products-container-modern img:hover,
+    .hero-button-modern:hover {
       transform: none;
-    }
-  }
-  
-  /* 🎯 HIGH DPI DISPLAYS */
-  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .hero-video-container-fluid {
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
     }
   }
   
   /* 🎯 PRINT STYLES */
   @media print {
-    .hero-video-fluid {
+    .hero-media-modern {
       display: none;
     }
     
-    .hero-products-bg-fluid {
+    .hero-products-modern {
       background: none;
       border: 2px solid #0D4A8D;
     }
   }
-  
-  /* 🎯 CENTER PRODUCT IMAGES ONLY ABOVE 125% ZOOM (1600px+) */
-  @media (min-width: 1600px) {
-    .hero-products-mobile {
-      justify-content: center !important;
-      padding-left: clamp(1rem, 3vw, 2rem) !important;
-      padding-right: clamp(1rem, 3vw, 2rem) !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-    }
-    
-    /* Remove any negative margins from individual images */
-    .hero-products-mobile img {
-      margin-left: 0 !important;
-    }
-  }
-
-
 `;
 
 // Inject styles
@@ -258,143 +280,125 @@ if (typeof document !== 'undefined') {
 const Hero = () => {
   return (
     <section
-      className="min-h-screen w-full relative overflow-x-hidden bg-white pt-[120px] "
+      className="min-h-screen w-full relative overflow-x-hidden pt-[80px]"
+      style={{ backgroundColor: 'rgba(217, 235, 255, 1)' }}
       id="home"
     >
-
-      <div className="flex flex-col xl:flex-row hero-container-mid min-h-screen w-full hero-container-14 hero-container-15 hero-container-16 relative z-10">
-        {/* Left Content Section - Enhanced responsive padding */}
-        <div className="flex-1 flex flex-col justify-start hero-content-mid
+      {/* White inner container */}
+      <div className="bg-white mx-4 sm:mx-6 md:mx-8 lg:mx-12 xl:mx-16 2xl:mx-20 my-8 sm:my-12 md:my-16 lg:my-20 xl:my-24 2xl:my-28 rounded-2xl sm:rounded-3xl lg:rounded-[2rem] xl:rounded-[2.5rem] shadow-sm">
+        <div className="flex flex-col xl:flex-row hero-container-mid w-full hero-container-14 hero-container-15 hero-container-16 relative z-10">
+          {/* Left Content Section - Enhanced responsive padding */}
+          <div className="flex-1 flex flex-col justify-start hero-content-mid
                         pt-0 sm:pt-10 md:pt-12 lg:pt-6 xl:pt-20 
                         px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 
-                        pb-2 sm:pb-8 md:pb-10 lg:pb-12 xl:pb-16 w-full
+                        pb-1 sm:pb-4 md:pb-6 lg:pb-8 xl:pb-10 w-full
                         relative">
 
-          {/* Main Title - Enhanced responsive typography */}
-          <div className="mb-2 sm:mb-1 md:mb-2 lg:mb-2 xl:mb-2 hero-title-large-margin w-full overflow-hidden mt-4 ">
-            <h1
-              className="text-[#0D4A8D] font-bold leading-[90%] tracking-tight hero-title-mobile
-                         text-[28px] sm:text-[36px] md:text-[42px] lg:text-[50px] xl:text-[58px] 2xl:text-[66.98px]
+            {/* Main Title - Enhanced responsive typography */}
+            <div className="mb-2 sm:mb-1 md:mb-2 lg:mb-2 xl:mb-2 hero-title-large-margin w-full overflow-hidden mt-1 lg:mt-1 xl:mt-1">
+              <h1
+                className="text-[#0D4A8D] font-bold leading-[90%] tracking-tight hero-title-mobile
+                         text-[24px] sm:text-[28px] md:text-[36px] lg:text-[42px] xl:text-[50px] 2xl:text-[58px]
                          hero-title-tablet hero-title-large-tablet hero-title-12 hero-title-14 hero-title-15 hero-title-16 hero-title-13
                          animate-fade-in-left transition-transform duration-300 hover:scale-105
                          break-words"
-              style={{ animationDelay: '0.2s' }}
-            >
-              PharmaRise Innovations
-            </h1>
-          </div>
+                style={{ animationDelay: '0.2s' }}
+              >
+                PharmaRise Innovations
+              </h1>
+            </div>
 
-          {/* Tagline - Enhanced responsive typography */}
-          <div className="mb-3 sm:mb-4 md:mb-5 lg:mb-6 xl:mb-4 hero-tagline-large-margin">
-            <p
-              className="text-[#0D4A8D] font-normal leading-[126%] w-full max-w-[90%] md:max-w-[600px]
-                         text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[35px]
+            {/* Tagline - Enhanced responsive typography */}
+            <div className="mb-3 sm:mb-4 md:mb-5 lg:mb-6 xl:mb-4 hero-tagline-large-margin">
+              <p
+                className="text-[#0D4A8D] font-normal leading-[126%] w-full max-w-[90%] md:max-w-[600px]
+                         text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] xl:text-[28px] 2xl:text-[32px]
                          hero-tagline-tablet hero-tagline-large-tablet hero-tagline-14 hero-tagline-15 hero-tagline-16
                          animate-fade-in-left transition-all duration-300
                          break-words"
-              style={{ animationDelay: '0.4s' }}
-            >
-              Innovations for a healthy life
-            </p>
-          </div>
+                style={{ animationDelay: '0.4s' }}
+              >
+                Innovations for a healthy life
+              </p>
+            </div>
 
-          {/* Products Section - Images positioned over the full-width background */}
-          {/* Hero products section */}
-          <div className="hero-products-mid relative z-10 2xl:mb-10">
-            {/* Full-width blue background */}
-            <div
-              className="absolute top-0 left-0 z-0 w-[calc(100vw+200px)] -ml-[200px] 
-               bg-[#0D4A8D] 
-               h-[120px] sm:h-[150px] md:h-[170px] lg:h-[189px] xl:h-[180px] 2xl:h-[189px]"
-            ></div>
+            {/* Products Section - Images positioned over the full-width background */}
+            {/* Hero products section */}
+            <div className="hero-products-mid relative z-10 2xl:mb-10">
+              {/* Full-width blue background */}
 
-            {/* Inner content with padding */}
-            <div
-              className="relative z-10 flex hero-products-mobile sm:flex-row justify-center lg:justify-start items-center
+
+              {/* Inner content with padding */}
+              <div
+                className="relative z-10 flex hero-products-mobile sm:flex-row justify-center lg:justify-start items-center
                gap-4 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-10
                py-4 sm:py-5 md:py-6 lg:py-8 xl:py-9
                px-4 sm:px-6 md:px-8 lg:pl-8 lg:pr-16 xl:pl-12 xl:pr-20 2xl:pl-16 2xl:pr-24
                h-[120px] sm:h-[150px] md:h-[170px] lg:h-[189px] xl:h-[180px] 2xl:h-[189px]"
-            >
-              {/* CobalFine Product */}
-              <img
-                src="/images/Product1.png"
-                alt="CobalFine Product"
-                className="w-[115px] h-[85px] sm:w-[140px] sm:h-[90px] md:w-[160px] md:h-[100px] lg:w-[240px] lg:h-[120px] xl:w-[280px] xl:h-[130px] 2xl:w-[320px] 2xl:h-[140px]
+              >
+                {/* CobalFine Product */}
+                <img
+                  src="/images/Product1.png"
+                  alt="CobalFine Product"
+                  className="w-[115px] h-[85px] sm:w-[140px] sm:h-[90px] md:w-[160px] md:h-[100px] lg:w-[240px] lg:h-[120px] xl:w-[280px] xl:h-[130px] 2xl:w-[320px] 2xl:h-[140px]
                  rounded-[12px] object-contain lg:ml-[-80px]
                  animate-fade-in-up transition-transform duration-300 hover:scale-110"
-                style={{ animationDelay: '0.6s' }}
-              />
+                  style={{ animationDelay: '0.6s' }}
+                />
 
-              {/* Garci Product */}
-              <img
-                src="/images/Product2.png"
-                alt="Garci Product"
-                className="w-[115px] h-[85px] sm:w-[140px] sm:h-[90px] md:w-[160px] md:h-[100px] lg:w-[240px] lg:h-[120px] xl:w-[280px] xl:h-[130px] 2xl:w-[320px] 2xl:h-[140px]
+                {/* Garci Product */}
+                <img
+                  src="/images/Product2.png"
+                  alt="Garci Product"
+                  className="w-[115px] h-[85px] sm:w-[140px] sm:h-[90px] md:w-[160px] md:h-[100px] lg:w-[240px] lg:h-[120px] xl:w-[280px] xl:h-[130px] 2xl:w-[320px] 2xl:h-[140px]
                  rounded-[12px] object-contain 
                  animate-fade-in-up transition-transform duration-300 hover:scale-110"
-                style={{ animationDelay: '0.8s' }}
-              />
+                  style={{ animationDelay: '0.8s' }}
+                />
+              </div>
             </div>
-          </div>
 
-          {/* Introductory Text - Always visible, positioned after blue div + images */}
-          <div className="mb-2 sm:mb-4 md:mb-8 lg:mb-10 xl:mb-2  relative z-70 hero-intro-mobile hero-intro-mid hero-intro-pre-large mt-2 sm:mt-8 md:mt-6">
-            <p
-              className="bigpara text-[#0D4A8D] font-normal w-full max-w-[95%] sm:max-w-[90%] md:max-w-[625px] 
-                         text-sm xs:text-base sm:text-lg md:text-xl lg:text-xl xl:text-[22px] 2xl:text-[25px]
+            {/* Introductory Text - Always visible, positioned after blue div + images */}
+            <div className="mb-2 sm:mb-4 md:mb-8 lg:mb-10 xl:mb-2  relative z-70 hero-intro-mobile hero-intro-mid hero-intro-pre-large mt-1 sm:mt-4 md:mt-3 lg:mt-2 xl:mt-1">
+              <p
+                className="bigpara text-[#0D4A8D] font-normal w-full max-w-[95%] sm:max-w-[90%] md:max-w-[625px] 
+                         text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[22px]
                          hero-text-tablet hero-text-large-tablet hero-text-14 hero-text-15 hero-text-16
                          leading-[140%] sm:leading-[150%] lg:leading-[160%] xl:leading-[39.75px]
                          tracking-normal lg:tracking-wide 
                          font-sans lg:font-['Red_Hat_Text'] 
                          animate-fade-in-left transition-all duration-300 relative z-70
                          block md:block lg:block xl:block 2xl:block"
-              style={{ animationDelay: '1.0s' }}
-            >
-              For the first time in India, PharmaRise proudly introduces two
-              unique & innovative products, set to redefine healthcare
-              possibilities, improve patient outcomes, & establish benchmarks of
-              excellence in the industry.
-            </p>
-          </div>
-          <div className="mb-2 sm:mb-8 md:mb-0 hero-button-mobile flex flex-col xs:flex-row gap-3 sm:gap-4 items-start">
-            <Link
-              to="/new-about"
-              className="bg-[#BE2623] text-white font-medium text-center leading-[96.184%] 
+                style={{ animationDelay: '1.0s' }}
+              >
+                For the first time in India, PharmaRise proudly introduces two
+                unique & innovative products, set to redefine healthcare
+                possibilities, improve patient outcomes, & establish benchmarks of
+                excellence in the industry.
+              </p>
+            </div>
+            <div className="mb-1 sm:mb-4 md:mb-0 hero-button-mobile flex flex-col xs:flex-row gap-3 sm:gap-4 items-start">
+              <Link
+                to="/new-about"
+                className="bg-[#BE2623] text-white font-medium text-center leading-[96.184%] 
                          rounded-md hover:bg-opacity-90 transition-all 
                          px-3 py-2 xs:px-4 xs:py-2 sm:px-5 sm:py-2 md:px-6 md:py-2   
                          text-xs xs:text-sm sm:text-sm md:text-base lg:text-[14.939px]
                          animate-fade-in-up hover:scale-105 hover:shadow-lg transform 
                          inline-flex w-auto whitespace-nowrap"
-              style={{ animationDelay: '1.2s' }}
-            >
-              About Us
-            </Link>
+                style={{ animationDelay: '1.2s' }}
+              >
+                About Us
+              </Link>
+            </div>
           </div>
-        </div>
-        <div className="w-full xl:w-auto xl:flex-none flex justify-center items-center hero-video-mid hero-video-mobile
+          <div className="w-full xl:w-auto xl:flex-none flex justify-center items-start hero-video-mid hero-video-mobile
                         p-1 xs:p-2 sm:p-6 md:p-8 lg:p-6 xl:p-12 2xl:p-16
                         h-auto lg:h-[480px] xl:h-[580px] 2xl:h-[680px] 
-                        relative lg:ml-0 xl:ml-[-100px] 2xl:ml-[-120px] z-20 -mt-4 xs:-mt-2 sm:mt-0">
-          <div
-            className="bg-white flex justify-center items-center relative overflow-hidden 
-                       w-full max-w-[280px] h-[250px]
-                       xs:max-w-[300px] xs:h-[270px]
-                       sm:max-w-[380px] sm:h-[340px] 
-                       md:max-w-[420px] md:h-[380px]
-                       lg:max-w-[400px] lg:h-[400px]
-                       xl:max-w-[480px] xl:h-[650px]
-                       2xl:max-w-[520px] 2xl:h-[720px]
-                       hero-video-tablet hero-video-large-tablet hero-video-14 hero-video-15
-                       rounded-b-[100px] sm:rounded-b-[120px] md:rounded-b-[140px] 
-                       lg:rounded-b-[180px] xl:rounded-b-[220px] 2xl:rounded-b-[250px]
-                       shadow-[0_2px_15px_1px_rgba(0,0,0,0.15)] sm:shadow-[0_3px_20px_1px_rgba(0,0,0,0.2)] 
-                       lg:shadow-[0_4px_27px_1px_rgba(0,0,0,0.25)] 
-                       z-60 animate-fade-in-right transition-transform duration-500 hover:scale-105"
-            style={{ animationDelay: '0.8s' }}
-          >
+                        relative lg:ml-0 xl:ml-[-100px] 2xl:ml-[-120px] z-20 -mt-18 sm:-mt-12 md:-mt-16 lg:-mt-20 xl:-mt-4 2xl:-mt-16">
+
             <video
-              src="/images/PR PRODUCT Hero sec.mp4"
+              src="/images/PH Product U shape 2.mp4"
               className="w-full h-auto object-cover transition-transform duration-300
                          max-w-[250px] xs:max-w-[270px] sm:max-w-[340px] md:max-w-[380px] 
                          lg:max-w-[400px] xl:max-w-[440px] 2xl:max-w-[472px]
@@ -404,6 +408,7 @@ const Hero = () => {
               muted
               loop
             />
+
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import NewAboutPage from "./components/New_about";
 import Contact from "./pages/Contact";
 import Products from "./pages/Products";
+import BMICalculator from "./pages/BMICalculator";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/new-about" element={<NewAboutPage />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/bmi-calculator" element={<BMICalculator />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
