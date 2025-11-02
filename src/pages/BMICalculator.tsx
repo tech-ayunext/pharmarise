@@ -149,12 +149,23 @@ const BMICalculator = () => {
     };
 
     const getBMISvg = () => {
-        if (!category) return '/Normal.svg'; // Default
-        if (category === 'Underweight') return '/Underweight.svg';
-        if (category === 'Normal weight') return '/Normal.svg';
-        if (category === 'Overweight') return '/Overweight.svg';
-        if (category === 'Obese') return '/Obese.svg';
-        return '/Normal.svg'; // Fallback
+        if (!category) {
+            return gender === 'female' ? '/NormalWoman.svg' : '/Normal.svg'; // Default
+        }
+
+        if (gender === 'female') {
+            if (category === 'Underweight') return '/UnderweightWomen.svg';
+            if (category === 'Normal weight') return '/NormalWoman.svg';
+            if (category === 'Overweight') return '/OverweightWomen.svg';
+            if (category === 'Obese') return '/ObeseWomen.svg';
+            return '/NormalWoman.svg'; // Fallback for female
+        } else {
+            if (category === 'Underweight') return '/Underweight.svg';
+            if (category === 'Normal weight') return '/Normal.svg';
+            if (category === 'Overweight') return '/Overweight.svg';
+            if (category === 'Obese') return '/Obese.svg';
+            return '/Normal.svg'; // Fallback for male
+        }
     };
 
     return (
