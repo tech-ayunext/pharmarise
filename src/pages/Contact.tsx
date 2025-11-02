@@ -94,75 +94,68 @@ const Contact = () => {
 
 
       {/* Company Information Section */}
-      <div className="relative w-full bg-[#d9eaff] py-16 md:py-20">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-semibold text-[#0d4a8d] mb-8 tracking-tight animate-fade-in-up transition-transform duration-300 hover:scale-105" style={{ animationDelay: '0.2s' }}>
-              Company Information
-            </h2>
-            <div className="w-full h-px bg-[#0d4a8d] mb-16 animate-fade-in-up" style={{ animationDelay: '0.3s' }}></div>
-
-            <div className="flex flex-col lg:flex-row gap-16 lg:gap-20 items-start">
-              <div className="flex-shrink-0 w-full lg:w-auto animate-fade-in-left" style={{ animationDelay: '0.4s' }}>
-                <div
-                  className="w-full h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[521px] lg:h-[521px] mx-auto lg:mx-0 rounded-lg overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300 hover:scale-105"
-                  onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=PharmaRise+Innovations+LLP+Office+No.+3(403),+4th+Floor,+E-+Wing,+Tandice+69,+CTS+No.+250(1-6),+251(1-7),+AK+Road,+Gundavali,+Andheri+(East),+Mumbai+-+400059,+Maharashtra,+India', '_blank')}
-                >
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.8!2d72.8777!3d19.1136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDA2JzQ5LjAiTiA3MsKwNTInMzkuNyJF!5e0!3m2!1sen!2sin!4v1635000000000!5m2!1sen!2sin&q=Office+No.+3(403),+4th+Floor,+E-+Wing,+Tandice+69,+CTS+No.+250(1-6),+251(1-7),+AK+Road,+Gundavali,+Andheri+(East),+Mumbai+-+400059,+Maharashtra,+India"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="PharmaRise Innovations LLP Location"
-                  />
+      <div className="relative w-full bg-[#d9eaff] py-8 md:py-12 lg:py-16">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            {/* Contact Information Section */}
+            <div className="bg-white rounded-lg shadow-sm p-6 md:p-8 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              {/* Email Section */}
+              <div className="flex items-start gap-4 mb-6">
+                <div className="flex-shrink-0 mt-1">
+                  <svg className="w-6 h-6 text-[#0d4a8d]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                  </svg>
                 </div>
-              </div>
-
-              <div className="flex-1 space-y-12">
-                <div className="animate-fade-in-right" style={{ animationDelay: '0.5s' }}>
-                  <h3 className="text-2xl md:text-3xl font-semibold text-[#0d4a8d] mb-2 tracking-tight transition-transform duration-300 hover:scale-105">
+                <div className="flex-1">
+                  <h3 className="text-xl md:text-2xl font-semibold text-[#0d4a8d] mb-2">
                     Email
                   </h3>
                   <a
-                    href="mailto:support@pharmarise.com"
-                    className="text-xl md:text-2xl text-[#0d4a8d] font-normal hover:text-[#BE2623] transition-colors duration-300 cursor-pointer underline-offset-4 hover:underline"
+                    href="mailto:salesoffice@pharmarise.in"
+                    className="text-base md:text-lg text-[#6b7280] hover:text-[#0d4a8d] transition-colors duration-300 cursor-pointer"
                   >
-                    support@pharmarise.com
+                    salesoffice@pharmarise.in
                   </a>
                 </div>
+              </div>
 
-                <div className="animate-fade-in-right" style={{ animationDelay: '0.6s' }}>
-                  <h3 className="text-2xl md:text-3xl font-semibold text-[#0d4a8d] mb-2 tracking-tight transition-transform duration-300 hover:scale-105">
-                    Phone No.
-                  </h3>
-                  <a
-                    href="tel:+919526526485"
-                    className="text-xl md:text-2xl text-[#0d4a8d] font-normal hover:text-[#BE2623] transition-colors duration-300 cursor-pointer underline-offset-4 hover:underline"
-                  >
-                    +91 95265 26485
-                  </a>
+              {/* Divider Line */}
+              <div className="w-full h-px bg-[#0D4A8D80] mb-6"></div>
+
+              {/* Office Address Section */}
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 mt-1">
+                  <svg className="w-6 h-6 text-[#0d4a8d]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                  </svg>
                 </div>
-
-                <div className="animate-fade-in-right" style={{ animationDelay: '0.7s' }}>
-                  <h3 className="text-2xl md:text-3xl font-semibold text-[#0d4a8d] mb-2 tracking-tight transition-transform duration-300 hover:scale-105">
-                    Registered Office
+                <div className="flex-1">
+                  <h3 className="text-xl md:text-2xl font-semibold text-[#0d4a8d] mb-2">
+                    Office Address
                   </h3>
-                  <p className="text-xl md:text-2xl text-[#0d4a8d] font-normal leading-relaxed">
-                    Plot 17, Flat 604, Floor-6, Ganangiri Avenue, Samta Nagar, Pokhran Road, Thane West, Thane, Maharashtra, India - 400604
+                  <p className="text-base md:text-lg text-[#6b7280] leading-relaxed">
+                    Office No. 3(403), 4th Floor, E- Wing, Tandice 69, CTS No. 250(1-6), 251(1-7), AK Road, Gundavali, Andheri (East), Mumbai - 400059, Maharashtra, India.
                   </p>
                 </div>
+              </div>
+            </div>
 
-                <div className="animate-fade-in-right" style={{ animationDelay: '0.8s' }}>
-                  <h3 className="text-2xl md:text-3xl font-semibold text-[#0d4a8d] mb-2 tracking-tight transition-transform duration-300 hover:scale-105">
-                    LLPIN
-                  </h3>
-                  <p className="text-xl md:text-2xl text-[#0d4a8d] font-normal">
-                    ACH-4818
-                  </p>
-                </div>
+            {/* Map Section */}
+            <div className="bg-white rounded-lg shadow-sm overflow-hidden animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+              <div
+                className="w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] cursor-pointer hover:opacity-90 transition-opacity duration-300"
+                onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=Office+No.+3(403),+4th+Floor,+E-+Wing,+Tandice+69,+CTS+No.+250(1-6),+251(1-7),+AK+Road,+Gundavali,+Andheri+(East),+Mumbai+-+400059,+Maharashtra,+India', '_blank')}
+              >
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.8!2d72.8777!3d19.1136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDA2JzQ5LjAiTiA3MsKwNTInMzkuNyJF!5e0!3m2!1sen!2sin!4v1635000000000!5m2!1sen!2sin&q=Office+No.+3(403),+4th+Floor,+E-+Wing,+Tandice+69,+CTS+No.+250(1-6),+251(1-7),+AK+Road,+Gundavali,+Andheri+(East),+Mumbai+-+400059,+Maharashtra,+India"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="PharmaRise Innovations LLP Location"
+                />
               </div>
             </div>
           </div>

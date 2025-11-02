@@ -256,9 +256,7 @@ const Footer = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          Office No. 3(403), 4th Floor, E- Wing, Tandice 69, CTS
-                          No. 250(1-6), 251(1-7), AK Road, Gundavali, Andheri
-                          (East), Mumbai - 400059, Maharashtra, India.
+                          Office No. 3(403), 4th Floor, E- Wing, Tandice 69, CTS No. 250(1-6), 251(1-7), AK Road, Gundavali, Andheri (East), Mumbai - 400059, Maharashtra, India.
                         </a>
                         <a
                           href="mailto:salesoffice@pharmarise.in"
