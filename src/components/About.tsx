@@ -59,7 +59,9 @@ const aboutAnimationStyles = `
     padding-bottom: clamp(1rem, 3vw, 3rem) !important;
     min-height: auto !important;
     background: white !important;
-    overflow: hidden;
+    overflow: visible;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /* 🎯 FLUID LAYOUT CONTAINER */
@@ -143,25 +145,65 @@ const aboutAnimationStyles = `
 
   /* 🎯 MOBILE-FIRST RESPONSIVE BREAKPOINTS */
   @media (max-width: 768px) {
+    section#about {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+      padding-top: 2rem !important;
+      padding-bottom: 2rem !important;
+    }
+    
     .about-section {
       flex-direction: column;
       text-align: center;
+      gap: 1.5rem;
     }
     
     .about-text-section {
       order: 1;
       padding-right: 0;
       text-align: left;
+      width: 100%;
     }
     
     .about-image-section {
       order: 2;
-      width: clamp(280px, 80vw, 400px);
-      margin-top: clamp(1rem, 3vw, 2rem);
+      width: 100%;
+      max-width: 350px;
+      margin: 0 auto;
+      margin-top: 1rem;
+      margin-bottom: 3rem;
     }
     
     .about-combined-img {
       border-radius: clamp(8px, 2vw, 16px);
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .about-title {
+      font-size: clamp(1.25rem, 5vw, 2rem);
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+    
+    .about-subtitle {
+      font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    
+    .about-description {
+      font-size: clamp(0.8rem, 3vw, 1rem);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+    
+    .about-button {
+      font-size: clamp(0.8rem, 3vw, 1rem);
+      padding: 0.75rem 1.5rem;
+      display: inline-block;
+      text-align: center;
     }
   }
 
@@ -211,6 +253,41 @@ const aboutAnimationStyles = `
     }
   }
 
+  /* 🎯 EXTRA SMALL MOBILE DEVICES */
+  @media (max-width: 480px) {
+    section#about {
+      padding-left: 0.75rem !important;
+      padding-right: 0.75rem !important;
+    }
+    
+    .about-image-section {
+      margin-bottom: 5.5rem;
+    }
+    
+    .about-title {
+      font-size: 1.5rem;
+      line-height: 1.2;
+    }
+    
+    .about-subtitle {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    
+    .about-description {
+      font-size: 0.875rem;
+      line-height: 1.5;
+      text-align: left;
+    }
+    
+    .about-button {
+      font-size: 0.875rem;
+      padding: 0.625rem 1.25rem;
+      width: auto;
+      display: inline-block;
+    }
+  }
+
   /* 🎯 CONTAINER QUERIES FOR MODERN BROWSERS */
   @container (max-width: 768px) {
     .about-section {
@@ -229,7 +306,7 @@ if (typeof document !== 'undefined') {
 const About = () => {
   return (
     <section
-      className="bg-white w-full py-0 pl-4 sm:pl-8 md:pl-12 lg:pl-20 pr-0"
+      className="bg-white w-full py-0 pl-4 sm:pl-8 md:pl-12 lg:pl-20 pr-4 sm:pr-8 md:pr-12 lg:pr-0"
       id="about"
     >
       <div className="flex about-section">

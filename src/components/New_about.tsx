@@ -743,7 +743,7 @@ const newAboutAnimationStyles = `
   .about-image-container {
     max-width: 100%;
     margin: -10px -10px -10px 1px;
-    margin-bottom:-6rem !important;
+    margin-bottom: 3rem !important;
     padding: 0;
   }
   
@@ -760,6 +760,7 @@ const newAboutAnimationStyles = `
   .about-image-container {
     max-width: 450px;
     margin: 0 auto;
+    margin-bottom: 2rem;
     padding: 0.5rem;
   }
   
