@@ -295,7 +295,7 @@ const Hero = () => {
                         relative">
 
             {/* Main Title - Enhanced responsive typography */}
-            <div className="mb-2 sm:mb-1 md:mb-2 lg:mb-2 xl:mb-2 hero-title-large-margin w-full overflow-hidden mt-1 lg:mt-1 xl:mt-1">
+            <div className="mb-2 sm:mb-1 md:mb-2 lg:mb-2 xl:mb-2 hero-title-large-margin w-full overflow-hidden mt-7 lg:mt-1 xl:mt-1">
               <h1
                 className="text-[#0D4A8D] font-bold leading-[90%] tracking-tight hero-title-mobile
                          text-[24px] sm:text-[28px] md:text-[36px] lg:text-[42px] xl:text-[50px] 2xl:text-[58px]

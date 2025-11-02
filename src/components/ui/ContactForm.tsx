@@ -8,9 +8,9 @@ const contactSchema = z.object({
   fullName: z.string().min(2, "Full name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(10, "Phone number must be at least 10 digits"),
-  serviceInterest: z.string().min(1, "Please select a service interest"),
+  product: z.string().min(1, "Please select a product"),
+  quantity: z.string().min(1, "Please enter quantity").refine((val) => !isNaN(Number(val)) && Number(val) > 0, "Quantity must be a positive number"),
   address: z.string().min(5, "Address must be at least 5 characters"),
-  companyName: z.string().min(2, "Company name must be at least 2 characters"),
   newsletter: z.boolean().optional(),
 });
 
@@ -34,9 +34,9 @@ const ContactForm = () => {
       fullName: data.fullName || '',
       email: data.email || '',
       phone: data.phone || '',
-      serviceInterest: data.serviceInterest || '',
+      serviceInterest: data.product || '', // Map product to serviceInterest for backend compatibility
       address: data.address || '',
-      companyName: data.companyName || '',
+      companyName: data.quantity || '', // Map quantity to companyName for backend compatibility
       message: data.message,
       newsletter: data.newsletter,
     };
@@ -113,20 +113,18 @@ const ContactForm = () => {
 
         <div className="relative w-full">
           <select
-            {...register("serviceInterest")}
+            {...register("product")}
             className={`${inputBaseClass} appearance-none w-full pr-8 cursor-pointer`}
             defaultValue=""
           >
             {/* Placeholder */}
             <option value="" disabled hidden>
-              Service Interest
+              Product
             </option>
 
             {/* Actual options */}
-            <option value="product-development">Product Development</option>
-            <option value="marketing">Marketing</option>
-            <option value="consultation">Consultation</option>
-            <option value="partnership">Partnership</option>
+            <option value="CobalFine 6G">CobalFine 6G</option>
+            <option value="GarciBIO">GarciBIO</option>
           </select>
 
           {/* SVG Arrow on the right */}
@@ -145,9 +143,25 @@ const ContactForm = () => {
             </svg>
           </div>
 
-          {errors.serviceInterest && (
+          {errors.product && (
             <span className="text-red-500 text-xs mt-1 block">
-              {errors.serviceInterest.message}
+              {errors.product.message}
+            </span>
+          )}
+        </div>
+
+        <div>
+          <input
+            {...register("quantity")}
+            type="number"
+            min="1"
+            step="1"
+            placeholder="Quantity"
+            className={inputBaseClass}
+          />
+          {errors.quantity && (
+            <span className="text-red-500 text-xs mt-1">
+              {errors.quantity.message}
             </span>
           )}
         </div>
@@ -161,19 +175,6 @@ const ContactForm = () => {
           {errors.address && (
             <span className="text-red-500 text-xs mt-1">
               {errors.address.message}
-            </span>
-          )}
-        </div>
-
-        <div>
-          <input
-            {...register("companyName")}
-            placeholder="Company Name"
-            className={inputBaseClass}
-          />
-          {errors.companyName && (
-            <span className="text-red-500 text-xs mt-1">
-              {errors.companyName.message}
             </span>
           )}
         </div>

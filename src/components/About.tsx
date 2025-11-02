@@ -327,7 +327,7 @@ const About = () => {
 
             {/* Subtext with Mr Rajendra Patkar in red */}
             <p className="about-subtitle text-[#0D4A8D] font-['Red_Hat_Text'] font-medium leading-relaxed animate-fade-in-left" style={{ animationDelay: '0.6s' }}>
-              Pharmarise Innovations has been founded in 2024 by{" "}
+              Pharmarise Innovations has been founded in 2024 by<br />
               <span className="text-[#BE2623] font-['Red_Hat_Text'] font-medium">
                 Mr Rajendra Patkar
               </span>
