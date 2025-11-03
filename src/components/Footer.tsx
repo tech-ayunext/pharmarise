@@ -7,7 +7,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[rgba(0,33,69,1)] flex w-full flex-col items-stretch pt-[100px] sm:pt-[120px] lg:pt-[137px] pb-[27px] px-4 sm:px-8 lg:px-14 max-md:max-w-full max-md:pt-[100px] max-md:px-5">
+    <footer className="bg-[rgba(0,33,69,1)] flex w-full flex-col items-stretch pt-[50px] sm:pt-[70px] lg:pt-[77px] pb-[27px] px-4 sm:px-8 lg:px-14 max-md:max-w-full max-md:pt-[100px] max-md:px-5">
       <div className="self-center w-full max-w-[1353px] max-md:max-w-full">
         <div className="gap-5 flex max-md:flex-col max-md:items-stretch">
           {/* Left Column - Logo, Description, Social Icons, Back to Top */}
@@ -145,23 +145,24 @@ const Footer = () => {
                   </svg>
                 </a>
               </div>
+              <div className="hidden md:flex justify-start mt-6">
+                <button
+                  onClick={scrollToTop}
+                  className="border flex items-center gap-2 text-center leading-[35px] px-4 py-2 rounded border-white border-solid  hover:text-[rgba(0,33,69,1)] transition-all w-fit"
+                  style={{
+                    width: "170px",
+                    color: "#FFF",
+                    fontFamily: '"Red Hat Text"',
+                    fontSize: "20px",
+                    fontWeight: 300,
+                    lineHeight: "175%",
+                  }}
+                >
+                  <span>Back to Top</span>
+                  <span className="text-xs">▲</span>
+                </button>
+              </div>
 
-              {/* Back to Top Button */}
-              <button
-                onClick={scrollToTop}
-                className="border flex items-center mt-10 gap-2 text-center leading-[35px] px-4 py-2 rounded border-white border-solid  hover:text-[rgba(0,33,69,1)] transition-all w-fit"
-                style={{
-                  width: "170px",
-                  color: "#FFF",
-                  fontFamily: '"Red Hat Text"',
-                  fontSize: "20px",
-                  fontWeight: 300,
-                  lineHeight: "175%",
-                }}
-              >
-                <span>Back to Top</span>
-                <span className="text-xs">▲</span>
-              </button>
             </div>
           </div>
 
@@ -274,6 +275,25 @@ const Footer = () => {
                           salesoffice@pharmarise.in
                         </a>
                       </address>
+
+                      {/* Back to Top Button - Mobile only - After email */}
+                      <div className="flex justify-center mt-6 md:hidden">
+                        <button
+                          onClick={scrollToTop}
+                          className="border flex items-center gap-2 text-center leading-[35px] px-4 py-2 rounded border-white border-solid hover:bg-white hover:text-[rgba(0,33,69,1)] transition-all w-fit"
+                          style={{
+                            width: "170px",
+                            color: "#FFF",
+                            fontFamily: '"Red Hat Text"',
+                            fontSize: "20px",
+                            fontWeight: 300,
+                            lineHeight: "175%",
+                          }}
+                        >
+                          <span>Back to Top</span>
+                          <span className="text-xs">▲</span>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -285,6 +305,9 @@ const Footer = () => {
 
       {/* Divider Line */}
       <div className="border shrink-0 h-px mt-[45px] border-white border-solid max-md:max-w-full max-md:mt-10" />
+
+      {/* Back to Top Button - Desktop/Laptop only - Before copyright */}
+
 
       {/* Copyright */}
       <div

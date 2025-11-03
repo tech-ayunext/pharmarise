@@ -427,7 +427,7 @@ const BMICalculator = () => {
 
                     <div className="relative w-full overflow-hidden rounded-[66.265px] bg-white p-[32.3px] animate-fade-in-up transition-transform duration-300 hover:scale-[1.02]" style={{ animationDelay: '0.4s' }}>
                         {/* Top section with background image */}
-                        <div className="relative w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[378.659px] overflow-hidden rounded-t-[33.965px] border-2 border-[#D9EBFF]">
+                        <div className="relative w-full h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] overflow-hidden rounded-t-[33.965px] border-2 border-[#D9EBFF]">
                             {/* Background image */}
                             <img
                                 src="/images/Get in touch.png"
@@ -469,19 +469,7 @@ const BMICalculator = () => {
                                         }}
                                     />
                                     {/* Actual textarea */}
-                                    <textarea
-                                        placeholder="Message....."
-                                        className="w-[95%] sm:w-[300px] md:w-[400px] lg:w-[496px]
-                                        h-[45px] sm:h-[100px] lg:h-[115px]
-                                        p-2 sm:p-4 text-[13px] sm:text-[16px] placeholder-gray-500
-                                        resize-none border-none outline-none relative z-10
-                                        max-md:backdrop-blur-sm transition-transform duration-300 hover:scale-105 focus:scale-105"
-                                        style={{
-                                            borderRadius: "22px",
-                                            background: "white",
-                                            backdropFilter: "blur(12px)",
-                                        }}
-                                    />
+
                                 </div>
                             </div>
                         </div>

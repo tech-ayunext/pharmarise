@@ -92,7 +92,7 @@ const Products = () => {
             </div>
 
             {/* Products Section */}
-            <div className="py-16 md:py-20 bg-[#D9EBFF]">
+            <div className="py-4 sm:py-8 md:py-20 bg-[#D9EBFF]">
                 <div className="container mx-auto px-4 md:px-8">
                     <div className="max-w-6xl mx-auto">
                         <div className="grid gap-8 md:gap-12">

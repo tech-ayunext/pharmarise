@@ -248,7 +248,7 @@ const Partnership = () => {
                 />
                 <h3 className="leading-none partnership-item-heading-tablet">India Formulation & Consultation</h3>
               </div>
-              <p className="text-[rgba(0,52,109,1)] text-[16px] sm:text-[18px] md:text-[19px] lg:text-[21px] partnership-item-text-tablet font-normal leading-[28px] sm:leading-[32px] md:leading-[35px] lg:leading-[37px] tracking-[-0.64px] max-md:max-w-full animate-fade-in-right" style={{ animationDelay: '1.1s' }}>
+              <p className="text-[rgba(0,52,109,1)] text-[16px] sm:text-[18px] md:text-[19px] lg:text-[21px] partnership-item-text-tablet font-normal leading-[28px] sm:leading-[32px] md:leading-[35px] lg:leading-[37px] tracking-[-0.64px] max-md:max-w-full animate-fade-in-right pb-10" style={{ animationDelay: '1.1s' }}>
                 Our robust logistics and 24/7 service ensure your products reach every corner efficiently.
               </p>
 

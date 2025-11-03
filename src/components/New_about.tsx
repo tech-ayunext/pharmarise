@@ -89,7 +89,7 @@ const newAboutAnimationStyles = `
   /* Mobile specific gap removal */
   @media (max-width: 767px) {
     .hero-section {
-      margin-top: -5rem !important;
+      margin-top: -1rem !important;
     }
   }
   
@@ -103,7 +103,7 @@ const newAboutAnimationStyles = `
   /* Desktop specific gap removal */
   @media (min-width: 1025px) {
     .hero-section {
-      margin-top: -3rem !important;
+      margin-top: 0rem !important;
     }
   }
 
@@ -234,8 +234,8 @@ const newAboutAnimationStyles = `
     }
     
     .about-vision-mission-text-tablet {
-      font-size: clamp(18px, 2.6vw, 22px) !important;
-      line-height: clamp(26px, 3.4vw, 32px) !important;
+      font-size: clamp(16px, 2.2vw, 20px) !important;
+      line-height: clamp(22px, 2.8vw, 26px) !important;
     }
     
     /* === TABLET PORTRAIT SPECIFIC (768px - 900px) === */
@@ -324,8 +324,8 @@ const newAboutAnimationStyles = `
     }
     
     .about-vision-mission-text-compact-tablet {
-      font-size: clamp(16px, 2.4vw, 20px) !important;
-      line-height: clamp(22px, 3vw, 26px) !important;
+      font-size: clamp(14px, 2vw, 18px) !important;
+      line-height: clamp(20px, 2.4vw, 24px) !important;
       margin-top: 0rem !important;
     }
     
@@ -490,6 +490,10 @@ const newAboutAnimationStyles = `
     width: 100% !important;
     height: 450px !important;
     padding: 3rem 2rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: center !important;
   }
   
   /* Mobile (up to 640px) - 2 cards per row */
@@ -500,9 +504,13 @@ const newAboutAnimationStyles = `
       gap: 1rem;
     }
     .card-item {
-      width: 100%;
+      width: 100% !important;
       height: 360px !important;
-      padding:1rem;
+      padding: 1rem !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      align-items: center !important;
     }
     
     /* Reduce margin-top for card icons in mobile */
@@ -526,9 +534,9 @@ const newAboutAnimationStyles = `
       gap: 1.875rem;
     }
     .card-item {
-      width: 100%;
-      height: 350px;
-      padding: 1.5rem;
+      width: 100% !important;
+      height: 390px !important;
+      padding: 1.5rem !important;
     }
   }
 
@@ -540,9 +548,9 @@ const newAboutAnimationStyles = `
       gap: 2rem;
     }
     .card-item {
-      width: 100%;
-      height: 380px;
-      padding: 2rem 1.5rem;
+      width: 100% !important;
+      height: 400px !important;
+      padding: 2rem 1.5rem !important;
     }
   }
 
@@ -558,7 +566,7 @@ const newAboutAnimationStyles = `
     }
     .card-item {
       width: 100% !important;
-      height: 400px !important;
+      height: 430px !important;
       padding: 2.2rem 1.7rem !important;
     }
   }
@@ -682,7 +690,7 @@ const newAboutAnimationStyles = `
     }
     .card-item {
       width: 100% !important;
-      height: 420px !important;
+      height: 450px !important;
       padding: 2.7rem 1.9rem !important;
     }
   }
@@ -707,6 +715,7 @@ const newAboutAnimationStyles = `
   .about-text-15 {
     font-size: 22px !important;
     line-height: 36px !important;
+    
   }
   .about-container-15 img {
     max-width: 850px !important;
@@ -723,6 +732,24 @@ const newAboutAnimationStyles = `
   max-width: 545px;
   margin: 0 auto;
   overflow: visible;
+  flex-shrink: 0;
+}
+
+/* 🎯 UNIVERSAL ANTI-OVERLAP RULES */
+@media (min-width: 768px) {
+  .about-image-container {
+    margin-right: 2rem !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .about-text-large-tablet {
+    margin-left: 1rem !important;
+    padding-left: 1rem !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
 }
 
 /* Base image styles */
@@ -742,16 +769,27 @@ const newAboutAnimationStyles = `
 @media (max-width: 640px) {
   .about-image-container {
     max-width: 100%;
-    margin: -10px -10px -10px 1px;
-    margin-bottom: 3rem !important;
-    padding: 0;
+    margin: 0 auto;
+    margin-bottom: 0rem !important;
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
   }
   
   .about-responsive-image {
     width: 100%;
-    max-width: 320px;
+    max-width: 280px;
     margin: 0 auto;
     display: block;
+    position: relative;
+  }
+  
+  /* Force text section to stay below image */
+  .about-text-large-tablet {
+    margin-top: 0rem !important;
+    padding-top: 0.5rem !important;
+    position: relative;
+    z-index: 2;
   }
 }
 
@@ -760,29 +798,73 @@ const newAboutAnimationStyles = `
   .about-image-container {
     max-width: 450px;
     margin: 0 auto;
-    margin-bottom: 2rem;
-    padding: 0.5rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    position: relative;
   }
   
   .about-responsive-image {
     width: 100%;
-    max-width: 400px;
+    max-width: 380px;
     margin: 0 auto;
     display: block;
+    position: relative;
+  }
+  
+  /* Ensure text section has proper spacing on tablets */
+  .about-text-large-tablet {
+    margin-top: 1.5rem !important;
+    padding-left: 1.5rem !important;
   }
 }
 
 /* 🖥️ LAPTOP/DESKTOP (1025px - 1366px) */
 @media (min-width: 1025px) and (max-width: 1366px) {
   .about-image-container {
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 450px;
+    margin: 0;
+    margin-right: 2rem;
     padding: 1rem;
+    flex-shrink: 0;
+    position: relative;
   }
   
   .about-responsive-image {
     width: 100%;
-    max-width: 480px;
+    max-width: 420px;
+    position: relative;
+  }
+  
+  /* Ensure text section has proper spacing and never overlaps */
+  .about-text-large-tablet {
+    margin-left: 1rem !important;
+    padding-left: 1rem !important;
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+/* 🖥️ SPECIFIC FIX FOR 1366×768 RESOLUTION */
+@media (min-width: 1366px) and (max-width: 1366px) and (min-height: 768px) and (max-height: 768px) {
+  .about-image-container {
+    max-width: 400px;
+    margin: 0;
+    margin-right: 3rem;
+    padding: 0.5rem;
+    flex-shrink: 0;
+  }
+  
+  .about-responsive-image {
+    width: 100%;
+    max-width: 380px;
+  }
+  
+  .about-text-large-tablet {
+    margin-left: 2rem !important;
+    padding-left: 1.5rem !important;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
   }
 }
 
@@ -813,7 +895,7 @@ if (typeof document !== 'undefined') {
 // Component 1: Hero Section
 const Hero: React.FC = () => {
   return (
-    <div className="relative -mt-8 bg-[#0d4a8d] py-16 md:py-20 about-hero-tablet hero-section" style={{ backgroundImage: "url('/images/newaboutus.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div className="relative -mt-8 bg-[#0d4a8d] py-8 sm:py-12 md:py-20 about-hero-tablet hero-section" style={{ backgroundImage: "url('/images/newaboutus.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="absolute inset-0 bg-gradient-to-r from-[#0d4a8d]/100 from-25% to-[#0d4a8d]/25"></div>
       <div className="relative z-10 container mx-auto px-4 md:px-8">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 about-hero-title-tablet animate-fade-in transform transition-all duration-700 hover:scale-105">
@@ -891,7 +973,7 @@ const FeaturesGrid: React.FC = () => {
 
 const AboutSection: React.FC = () => {
   return (
-    <section className=" pt-[50px] pb-0 px-[43px] max-md:pt-10 max-md:pb-0 max-md:px-5 max-sm:pt-[30px] max-sm:pb-0 max-sm:px-[15px]
+    <section className="pt-[20px] sm:pt-[30px] md:pt-[50px] pb-0 px-[43px] max-md:pt-8 max-md:pb-0 max-md:px-5 max-sm:pt-[15px] max-sm:pb-0 max-sm:px-[15px]
                         about-container-tablet about-container-large-tablet about-container-14 about-container-15 about-container-16">
       <h2
         className="text-[#0D4A8D] text-[55px] font-bold tracking-[-1.65px] max-w-[1221px]   
@@ -903,9 +985,9 @@ const AboutSection: React.FC = () => {
         We'll Ensure You Always Get Best Results.
       </h2>
 
-      <div className="flex gap-[35px] items-start max-md:flex-col max-md:gap-10 max-sm:gap-[30px]">
+      <div className="flex gap-[35px] items-start max-md:flex-col max-md:gap-10 max-sm:gap-[30px] min-h-0 overflow-hidden">
         {/* Image Section */}
-        <div className="about-image-container animate-fade-in-left" style={{ animationDelay: '0.4s' }}>
+        <div className="w-full md:w-1/2 lg:w-2/5 flex-shrink-0 about-image-container animate-fade-in-left" style={{ animationDelay: '0.4s' }}>
           <img
             src="/images/New_about.png"
             alt="PharmaRise Team"
@@ -914,7 +996,7 @@ const AboutSection: React.FC = () => {
         </div>
 
         {/* Text Section */}
-        <div className="flex-1 flex flex-col justify-center pt-20 max-sm:-mt-20 about-text-large-tablet pb-10">
+        <div className="w-full md:w-1/2 lg:w-3/5 flex flex-col justify-center pt-20 max-md:pt-8 max-sm:pt-4 about-text-large-tablet pb-10">
           <p
             className="text-[#0D4A8D] text-justify text-[25px] font-normal leading-[39.75px] mb-5 
                 max-md:text-[20px] max-sm:text-base 
@@ -984,7 +1066,7 @@ const WhyChooseSection: React.FC = () => {
   ];
 
   return (
-    <section className="bg-[#D9EBFF] mt-[50px] py-[102px] max-md:py-20 max-sm:py-[30px]">
+    <section className="bg-[#D9EBFF] mt-[20px] sm:mt-[30px] md:mt-[50px] py-[40px] sm:py-[60px] md:py-[102px] max-md:py-20 max-sm:py-[20px]">
       <div className="px-[43px] max-md:px-5 max-sm:px-[15px] about-why-choose-section-tablet pb-10">
         {/* Section Heading */}
         <h2 className="text-[#0D4A8D] text-[55px] font-semibold tracking-[-1.65px] mb-[22px] 
@@ -1046,7 +1128,7 @@ const WhyChooseSection: React.FC = () => {
 // Component 5: Vision & Mission Section
 const VisionMissionSection: React.FC = () => {
   return (
-    <section className="relative bg-[#009ACD] py-[97px] max-md:py-[60px] max-sm:py-10 about-vision-mission-tablet about-vision-mission-section-compact-tablet">
+    <section className="relative bg-[#009ACD] py-[40px] sm:py-[60px] md:py-[97px] max-md:py-[40px] max-sm:py-8 about-vision-mission-tablet about-vision-mission-section-compact-tablet">
       <div className="px-[78px] max-md:px-5 max-sm:px-[15px] pb-10">
         {/* Desktop: three columns (left title rail, vision, mission with divider). Mobile/Tablet: stacked */}
         <div className="flex items-center gap-16 max-lg:gap-10 max-md:flex-col about-vision-mission-container-tablet about-vision-mission-gap-fix-tablet">
@@ -1067,16 +1149,16 @@ const VisionMissionSection: React.FC = () => {
           {/* Right content area: Vision | Mission */}
           <div className="flex-1 flex items-start gap-16 max-lg:gap-10 max-sm:gap-6 max-md:flex-col about-vision-mission-content-compact-tablet">
             {/* Vision */}
-            <article className="flex-1 min-w-0 max-sm:-mt-20 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <article className="flex-1 min-w-0 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <h3
                 className="text-white text-[55px] font-semibold tracking-[-1.65px] mb-[30px] 
-                             max-lg:text-[42px] max-md:mb-5 max-sm:text-[32px] max-sm:mb-[15px] mt-5 about-vision-mission-heading-tablet about-vision-mission-heading-compact-tablet transition-transform duration-300 hover:scale-105"
+                             max-lg:text-[42px] max-md:mb-5 max-sm:text-[32px] max-sm:mb-[15px] about-vision-mission-heading-tablet about-vision-mission-heading-compact-tablet transition-transform duration-300 hover:scale-105"
               >
                 Vision
               </h3>
               <p
-                className="text-white text-left text-[28px] font-normal tracking-tight
-                            max-lg:text-2xl max-sm:text-xl about-vision-mission-text-tablet about-vision-mission-text-compact-tablet"
+                className="text-white text-left text-[22px] font-normal tracking-tight leading-[1.4]
+                            max-lg:text-lg max-sm:text-base about-vision-mission-text-tablet about-vision-mission-text-compact-tablet"
 
               >
                 Our vision is to be trusted by healthcare professionals by collaborating with renowned pharmaceutical manufacturers, promoting products that meet global standards, and driving sustainable growth through ethical marketing and regulatory compliance.
@@ -1096,8 +1178,8 @@ const VisionMissionSection: React.FC = () => {
                 Mission
               </h3>
               <p
-                className="text-white text-left text-[28px] font-normal tracking-[-0.9px] 
-                            max-lg:text-2xl max-sm:text-xl about-vision-mission-text-tablet about-vision-mission-text-compact-tablet"
+                className="text-white text-left text-[22px] font-normal tracking-[-0.9px] leading-[1.4]
+                            max-lg:text-lg max-sm:text-base about-vision-mission-text-tablet about-vision-mission-text-compact-tablet"
               >
                 PharmaRise Innovations LLP is dedicated to bridging healthcare gaps by delivering high-quality pharmaceutical products to providers. We ensure innovation, reliability, & accessibility, bringing advanced medical solutions efficiently to healthcare professionals and patients.
               </p>
