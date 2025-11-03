@@ -438,7 +438,7 @@ const newAboutAnimationStyles = `
       font-size: clamp(50px, 4vw, 54px) !important;
     }
     .about-text-14 {
-      font-size: clamp(22px, 2vw, 24px) !important;
+      font-size: clamp(18px, 2vw, 18px) !important;
     }
   }
 
@@ -866,6 +866,39 @@ const newAboutAnimationStyles = `
     min-width: 0;
     overflow: hidden;
   }
+  
+  /* FeaturesGrid optimizations for 1366x768 */
+  .about-features-container-tablet {
+    padding: 0 8px !important;
+    margin-top: -8px !important;
+  }
+  
+  .about-features-grid-tablet {
+    gap: 8px !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    justify-items: center !important;
+  }
+  
+  .about-features-card-tablet {
+    min-height: 90px !important;
+    max-height: 90px !important;
+    padding: 8px 6px !important;
+    max-width: 180px !important;
+    width: 180px !important;
+  }
+  
+  .about-features-icon-tablet {
+    width: 16px !important;
+    height: 16px !important;
+    margin-bottom: 3px !important;
+  }
+  
+  .about-features-text-tablet {
+    font-size: 8px !important;
+    line-height: 0.9 !important;
+    padding: 0 1px !important;
+    font-weight: 700 !important;
+  }
 }
 
 /* 🖥️ LARGE DESKTOP (1367px+) */
@@ -917,8 +950,8 @@ const FeaturesGrid: React.FC = () => {
   ];
   const CheckmarkIcon = () => (
     <svg
-      width="24"
-      height="24"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -933,10 +966,10 @@ const FeaturesGrid: React.FC = () => {
     </svg>
   );
   return (
-    <div className="w-full px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-1 about-features-container-tablet">
+    <div className="w-full px-0 sm:px-2 md:px-3 lg:px-4 xl:px-6 2xl:px-1 about-features-container-tablet">
 
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 
-                  gap-3 sm:gap-5 md:gap-6 lg:gap-6 xl:gap-6 2xl:gap-2
+                  gap-3 sm:gap-4 md:gap-4 lg:gap-4 xl:gap-4 2xl:gap-3
                   mt-0 sm:mt-8 md:mt-1
                   w-full mx-auto about-features-grid-tablet">
         {features.map((feature, index) => (
@@ -946,20 +979,20 @@ const FeaturesGrid: React.FC = () => {
                    p-4 sm:p-5 md:p-6 lg:p-6 xl:p-6 2xl:p-6
                    min-h-[140px] sm:min-h-[160px] md:min-h-[180px] lg:min-h-[180px] xl:min-h-[180px] 2xl:min-h-[180px]
                    animate-fade-in-up transition-transform duration-300 hover:scale-105 hover:shadow-lg
-                   w-full max-w-[400px] sm:max-w-[380px] md:max-w-[400px] lg:max-w-[420px] xl:max-w-[440px] 2xl:max-w-[460px]
+                   w-full max-w-[450px] sm:max-w-[420px] md:max-w-[450px] lg:max-w-[480px] xl:max-w-[200px] 2xl:max-w-[220px]
                    about-features-card-tablet"
             style={{ animationDelay: `${1.2 + index * 0.1}s` }}
           >
-            <div className="bg-white w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-16 lg:h-16 xl:w-14 xl:h-14
+            <div className="bg-white w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-12 lg:h-12 xl:w-10 xl:h-10
                         rounded-full flex items-center justify-center 
-                        mb-3 sm:mb-4 md:mb-4 lg:mb-4 xl:mb-3
+                        mb-2 sm:mb-3 md:mb-3 lg:mb-3 xl:mb-2
                         about-features-icon-tablet
                         transition-transform duration-300 hover:scale-110">
               <CheckmarkIcon />
             </div>
 
             <h3 className="text-white font-semibold leading-tight
-                       text-sm sm:text-base md:text-lg lg:text-lg xl:text-base 2xl:text-lg
+                       text-xs sm:text-sm md:text-base lg:text-base xl:text-sm 2xl:text-base
                        px-2 about-features-text-tablet">
               {feature}
             </h3>
@@ -985,9 +1018,9 @@ const AboutSection: React.FC = () => {
         We'll Ensure You Always Get Best Results.
       </h2>
 
-      <div className="flex gap-[35px] items-start max-md:flex-col max-md:gap-10 max-sm:gap-[30px] min-h-0 overflow-hidden">
+      <div className="flex gap-[25px] items-start max-md:flex-col max-md:gap-10 max-sm:gap-[30px] min-h-0 overflow-hidden">
         {/* Image Section */}
-        <div className="w-full md:w-1/2 lg:w-2/5 flex-shrink-0 about-image-container animate-fade-in-left" style={{ animationDelay: '0.4s' }}>
+        <div className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 about-image-container animate-fade-in-left" style={{ animationDelay: '0.4s' }}>
           <img
             src="/images/New_about.png"
             alt="PharmaRise Team"
@@ -995,8 +1028,8 @@ const AboutSection: React.FC = () => {
           />
         </div>
 
-        {/* Text Section */}
-        <div className="w-full md:w-1/2 lg:w-3/5 flex flex-col justify-center pt-20 max-md:pt-8 max-sm:pt-4 about-text-large-tablet pb-10">
+        {/* Text Section - Moved more to the left with increased width */}
+        <div className="w-full md:w-1/2 lg:w-2/3 flex flex-col justify-center pt-20 max-md:pt-8 max-sm:pt-4 about-text-large-tablet pb-10 -ml-4">
           <p
             className="text-[#0D4A8D] text-justify text-[25px] font-normal leading-[39.75px] mb-5 
                 max-md:text-[20px] max-sm:text-base 
