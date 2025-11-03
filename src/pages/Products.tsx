@@ -52,7 +52,7 @@ const Products = () => {
         {
             id: 4,
             name: "RosNano",
-            image: "/images/p2.png",
+            image: "/images/rosnano.png",
             description: "RosNano is an innovative first time in India product which has Nanoparticle size based Rosuvastatin formulation stabilized in Cyclodextrin. Rosuvastatin is poorly soluble drug & hence low bioavailability (less drug reaches to blood circulation.) his improves the solubility & stability of poorly soluble. the particle size of rosuvastatin is 2-20 micron as compared to 200-400 micron of conventional marketed Rosuvastatin brands. This innovation ensures improved bioavailability of Rosuvastatin by 2 fold for enhanced efficacy, safety & reducing its dosage load for required effect.."
         },
         {

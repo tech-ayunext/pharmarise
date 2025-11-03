@@ -14,14 +14,12 @@ const Footer = () => {
           <div className="w-full lg:w-6/12 max-md:w-full max-md:ml-0">
             <div className="flex grow flex-col max-md:max-w-full max-md:mt-10">
               {/* Logo */}
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-start mb-6 justify-center sm:justify-start">
                 <img
-                  src="/images/PharmaRise logo.png"
+                  src="/images/PharmaRise logo_footer.png"
                   alt="PharmaRise Innovations LLP"
+                  className="max-w-[400px] sm:max-w-[450px] md:max-w-[500px] lg:max-w-[550px] xl:max-w-[600px] h-auto object-contain"
                   style={{
-                    width: "377px",
-                    height: "83px",
-                    flexShrink: 0,
                     aspectRatio: "377 / 83",
                   }}
                 />

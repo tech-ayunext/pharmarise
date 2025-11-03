@@ -72,13 +72,37 @@ const ContactPageForm = () => {
                     )}
                 </div>
 
-                <div className="animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-                    <input
+                <div className="animate-fade-in-up relative" style={{ animationDelay: '0.6s' }}>
+                    <select
                         {...register("serviceInterest")}
-                        type="text"
-                        placeholder="Service Interest"
-                        className="w-full px-0 py-3 text-lg text-gray-700 placeholder-gray-500 bg-transparent border-0 border-b-2 border-gray-300 focus:border-[#0d4a8d] focus:outline-none transition-all duration-300 focus:scale-105"
-                    />
+                        className="w-full px-0 py-3 text-lg text-gray-700 bg-transparent border-0 border-b-2 border-gray-300 focus:border-[#0d4a8d] focus:outline-none transition-all duration-300 focus:scale-105 appearance-none cursor-pointer pr-8"
+                        defaultValue=""
+                    >
+                        <option value="" disabled hidden className="text-gray-500">
+                            Service Interest
+                        </option>
+                        <option value="Product Development">Product Development</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Consultation">Consultation</option>
+                        <option value="Partnership">Partnership</option>
+                    </select>
+                    
+                    {/* Custom dropdown arrow */}
+                    <div className="absolute top-1/2 right-2 transform -translate-y-1/2 pointer-events-none">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="8"
+                            viewBox="0 0 12 8"
+                            fill="none"
+                        >
+                            <path
+                                d="M6 7.5L0.5 1.5H11.5L6 7.5Z"
+                                fill="#6B7280"
+                            />
+                        </svg>
+                    </div>
+                    
                     {errors.serviceInterest && (
                         <span className="text-red-500 text-sm mt-1 block">
                             {errors.serviceInterest.message}
