@@ -277,7 +277,7 @@ const Footer = () => {
                       </address>
 
                       {/* Back to Top Button - Mobile only - After email */}
-                      <div className="flex justify-center mt-6 md:hidden">
+                      <div className="flex justify-start mt-6 md:hidden">
                         <button
                           onClick={scrollToTop}
                           className="border flex items-center gap-2 text-center leading-[35px] px-4 py-2 rounded border-white border-solid hover:bg-white hover:text-[rgba(0,33,69,1)] transition-all w-fit"
