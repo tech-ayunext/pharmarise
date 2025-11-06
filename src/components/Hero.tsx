@@ -403,10 +403,14 @@ const Hero = () => {
                          max-w-[250px] xs:max-w-[270px] sm:max-w-[340px] md:max-w-[380px] 
                          lg:max-w-[400px] xl:max-w-[440px] 2xl:max-w-[472px]
                          max-h-[220px] xs:max-h-[240px] sm:max-h-[300px] md:max-h-[340px] 
-                         lg:max-h-[450px] xl:max-h-[580px] 2xl:max-h-[650px]  "
+                         lg:max-h-[450px] xl:max-h-[580px] 2xl:max-h-[650px]"
               autoPlay
               muted
               loop
+              controls={false}
+              disablePictureInPicture
+              controlsList="nodownload nofullscreen noremoteplayback"
+              style={{ pointerEvents: 'none' }}
             />
 
           </div>

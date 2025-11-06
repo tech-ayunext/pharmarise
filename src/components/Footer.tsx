@@ -14,13 +14,14 @@ const Footer = () => {
           <div className="w-full lg:w-6/12 max-md:w-full max-md:ml-0">
             <div className="flex grow flex-col max-md:max-w-full max-md:mt-10">
               {/* Logo */}
-              <div className="flex items-start mb-6 justify-start sm:justify-start">
+
+              <div className="flex items-start mb-6 justify-start ml-[-30px]  lg:ml-[-54px] ">
                 <img
                   src="/images/PharmaRise logo_footer.png"
                   alt="PharmaRise Innovations LLP"
-                  className="max-w-[400px] sm:max-w-[450px] md:max-w-[500px] lg:max-w-[550px] xl:max-w-[600px] h-auto object-contain"
+                  className="max-w-[250px] sm:max-w-[280px] md:max-w-[320px] lg:max-w-[350px] xl:max-w-[380px] h-auto object-contain"
                   style={{
-                    aspectRatio: "377 / 83",
+                    aspectRatio: "327 / 123",
                   }}
                 />
               </div>
@@ -43,7 +44,7 @@ const Footer = () => {
 
               {/* Social Media Icons */}
               <div className="flex gap-[53px] items-center">
-               
+
 
                 {/* Instagram */}
                 <a
@@ -100,8 +101,8 @@ const Footer = () => {
                   </svg>
                 </a>
 
-                {/* Twitter / X */}
-               
+
+
               </div>
               <div className="hidden md:flex justify-start mt-6">
                 <button

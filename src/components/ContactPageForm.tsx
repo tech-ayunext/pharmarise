@@ -6,7 +6,9 @@ import { useContactForm, ContactFormData } from "../hooks/useContactForm";
 const contactSchema = z.object({
     fullName: z.string().min(2, "Full name must be at least 2 characters"),
     email: z.string().email("Please enter a valid email address"),
-    phone: z.string().min(10, "Phone number must be at least 10 digits"),
+    phone: z.string()
+        .regex(/^\d{11}$/, "Phone number must be exactly 11 digits")
+        .length(11, "Phone number must be exactly 11 digits"),
     serviceInterest: z.string().min(1, "Please specify your service interest"),
     message: z.string().optional(),
 });
@@ -128,7 +130,12 @@ const ContactPageForm = () => {
                     <input
                         {...register("phone")}
                         type="tel"
-                        placeholder="Phone No."
+                        placeholder="Phone No"
+                        maxLength={10}
+                        onInput={(e) => {
+                            const target = e.target as HTMLInputElement;
+                            target.value = target.value.replace(/[^0-9]/g, '');
+                        }}
                         className="w-full px-0 py-3 text-lg text-gray-700 placeholder-gray-500 bg-transparent border-0 border-b-2 border-gray-300 focus:border-[#0d4a8d] focus:outline-none transition-all duration-300 focus:scale-105"
                     />
                     {errors.phone && (

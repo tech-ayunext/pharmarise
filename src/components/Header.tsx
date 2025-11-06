@@ -1,7 +1,50 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleEnquireNowClick = () => {
+    if (location.pathname === '/contact') {
+      // If already on contact page, just scroll to form
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start' 
+        });
+      }
+    } else {
+      // Navigate to contact page and then scroll to form
+      navigate('/contact');
+      // Use setTimeout to ensure the page has loaded before scrolling
+      setTimeout(() => {
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+          contactForm.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+          });
+        }
+      }, 300);
+    }
+  };
+
+  // Handle direct navigation to contact page with hash
+  useEffect(() => {
+    if (location.pathname === '/contact' && location.hash === '#contact-form') {
+      setTimeout(() => {
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+          contactForm.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+          });
+        }
+      }, 100);
+    }
+  }, [location]);
 
   return (
     <header className="bg-slate-100 fixed top-0 left-0 right-0 w-full z-[9999] shadow-md">
@@ -22,36 +65,11 @@ const Header = () => {
         </a>
 
         <div className="flex gap-[15px] sm:gap-[20px] md:gap-[33px] items-center">
-          {/* LinkedIn */}
-          <a
-            href="https://www.linkedin.com/company/pharmarise"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:opacity-80 transition-opacity"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px] md:w-[20px] md:h-[20px]"
-              viewBox="0 0 40 40"
-              fill="none"
-            >
-              <g clipPath="url(#clip0_1_318)">
-                <path
-                  d="M37.0391 0H2.95312C1.32031 0 0 1.28906 0 2.88281V37.1094C0 38.7031 1.32031 40 2.95312 40H37.0391C38.6719 40 40 38.7031 40 37.1172V2.88281C40 1.28906 38.6719 0 37.0391 0ZM11.8672 34.0859H5.92969V14.9922H11.8672V34.0859ZM8.89844 12.3906C6.99219 12.3906 5.45312 10.8516 5.45312 8.95312C5.45312 7.05469 6.99219 5.51562 8.89844 5.51562C10.7969 5.51562 12.3359 7.05469 12.3359 8.95312C12.3359 10.8438 10.7969 12.3906 8.89844 12.3906ZM34.0859 34.0859H28.1562V24.8047C28.1562 22.5938 28.1172 19.7422 25.0703 19.7422C21.9844 19.7422 21.5156 22.1562 21.5156 24.6484V34.0859H15.5938V14.9922H21.2812V17.6016H21.3594C22.1484 16.1016 24.0859 14.5156 26.9688 14.5156C32.9766 14.5156 34.0859 18.4688 34.0859 23.6094V34.0859Z"
-                  fill="white"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_1_318">
-                  <rect width="40" height="40" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-          </a>
+          
 
           {/* Instagram */}
           <a
-            href="https://www.instagram.com/pharmarise"
+            href="https://www.instagram.com/pharmarise.innovation/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:opacity-80 transition-opacity"
@@ -86,7 +104,7 @@ const Header = () => {
 
           {/* Facebook */}
           <a
-            href="https://www.facebook.com/pharmarise"
+            href="https://www.facebook.com/profile.php?id=61583402821644"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:opacity-80 transition-opacity"
@@ -104,25 +122,8 @@ const Header = () => {
             </svg>
           </a>
 
-          {/* Twitter / X */}
-          <a
-            href="https://x.com/pharmarise"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:opacity-80 transition-opacity"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px] md:w-[20px] md:h-[20px]"
-              viewBox="0 0 38 34"
-              fill="none"
-            >
-              <path
-                d="M29.5438 0.17334H35.1663L22.8829 14.2125L37.3333 33.3166H26.0187L17.1567 21.7301L7.01657 33.3166H1.39071L14.529 18.3002L0.666656 0.17334H12.2685L20.279 10.7639L29.5438 0.17334ZM27.5705 29.9513H30.686L10.5756 3.36189H7.23242L27.5705 29.9513Z"
-                fill="white"
-              />
-            </svg>
-          </a>
+        
+         
         </div>
       </div>
 
@@ -173,12 +174,12 @@ const Header = () => {
 
         {/* Enquire Button (desktop + mobile) */}
         <div className="flex items-center gap-3 relative z-20">
-          <Link
-            to="/contact"
-            className="bg-[rgba(190,38,35,1)] text-xs md:text-sm text-white font-semibold px-4 py-2 rounded-md hover:bg-opacity-90 transition-all inline-block"
+          <button
+            onClick={handleEnquireNowClick}
+            className="bg-[rgba(190,38,35,1)] text-xs md:text-sm text-white font-semibold px-4 py-2 rounded-md hover:bg-opacity-90 transition-all inline-block cursor-pointer"
           >
             Enquire Now
-          </Link>
+          </button>
 
           {/* Hamburger (mobile only) */}
           <button

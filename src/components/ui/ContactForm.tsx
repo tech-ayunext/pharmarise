@@ -7,7 +7,9 @@ const contactSchema = z.object({
   message: z.string().optional(),
   fullName: z.string().min(2, "Full name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
-  phone: z.string().min(10, "Phone number must be at least 10 digits"),
+  phone: z.string()
+    .regex(/^\d{11}$/, "Phone number must be exactly 11 digits")
+    .length(11, "Phone number must be exactly 11 digits"),
   product: z.string().min(1, "Please select a product"),
   quantity: z.string().min(1, "Please enter quantity").refine((val) => !isNaN(Number(val)) && Number(val) > 0, "Quantity must be a positive number"),
   address: z.string().min(5, "Address must be at least 5 characters"),
@@ -100,7 +102,12 @@ const ContactForm = () => {
             <input
               {...register("phone")}
               type="tel"
-              placeholder="Phone No."
+              placeholder="Phone No"
+              maxLength={10}
+              onInput={(e) => {
+                const target = e.target as HTMLInputElement;
+                target.value = target.value.replace(/[^0-9]/g, '');
+              }}
               className={inputBaseClass}
             />
             {errors.phone && (

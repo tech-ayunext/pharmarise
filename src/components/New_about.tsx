@@ -928,10 +928,10 @@ if (typeof document !== 'undefined') {
 // Component 1: Hero Section
 const Hero: React.FC = () => {
   return (
-    <div className="relative -mt-8 bg-[#0d4a8d] py-8 sm:py-12 md:py-20 about-hero-tablet hero-section" style={{ backgroundImage: "url('/images/newaboutus.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div className="relative -mt-8 bg-[#0d4a8d] py-8 sm:py-12 md:py-8 about-hero-tablet hero-section" style={{ backgroundImage: "url('/images/newaboutus.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="absolute inset-0 bg-gradient-to-r from-[#0d4a8d]/100 from-25% to-[#0d4a8d]/25"></div>
       <div className="relative z-10 container mx-auto px-4 md:px-8">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 about-hero-title-tablet animate-fade-in transform transition-all duration-700 hover:scale-105">
+        <h1 className="text-4xl md:text-6xl font-bold text-white mb-2 about-hero-title-tablet animate-fade-in transform transition-all duration-700 hover:scale-105">
           About
         </h1>
       </div>

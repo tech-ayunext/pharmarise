@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ContactPageForm from "../components/ContactPageForm";
@@ -78,19 +78,34 @@ if (typeof document !== 'undefined') {
 }
 
 const Contact = () => {
+  // Handle scrolling to contact form when page loads with hash
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash === '#contact-form') {
+      setTimeout(() => {
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+          contactForm.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 500); // Longer delay to ensure page is fully loaded
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
-
-      {/* Hero Section */}
-      <div className="relative bg-[#0d4a8d] pt-[120px] pb-16 md:pb-24 min-h-[290px] md:min-h-[380px] flex items-center" style={{ backgroundImage: "url('/images/Get in touch.png')", backgroundSize: 'cover', backgroundPosition: 'center top' }}>
+      <div className="relative bg-[#0d4a8d] pt-[120px] pb-8 md:pb-12 min-h-[200px] md:min-h-[250px] flex items-center" style={{ backgroundImage: "url('/images/Get in touch.png')", backgroundSize: 'cover', backgroundPosition: 'center top' }}>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0d4a8d]/100 from-25% to-[#0d4a8d]/25"></div>
-        <div className="relative z-10 container mx-auto px-4 md:px-8 w-full mt-[50px]  lg:mt-[100px]">
+        <div className="relative z-10 container mx-auto px-4 md:px-8 w-full mt-[20px] lg:mt-[40px]">
           <h1 className="text-4xl md:text-6xl font-bold text-white animate-fade-in transform transition-all duration-700 hover:scale-105">
             Contact Us
           </h1>
         </div>
-      </div>
+      </div> 
+
 
 
       {/* Company Information Section */}
@@ -134,7 +149,7 @@ const Contact = () => {
                     Office Address
                   </h3>
                   <p className="text-base md:text-lg text-[#6b7280] leading-relaxed">
-                    Office No. 3(403), 4th Floor, E- Wing, Tandice 69, CTS No. 250(1-6), 251(1-7), AK Road, Gundavali, Andheri (East), Mumbai - 400059, Maharashtra, India.
+                    Office No. 3(403), 4th Floor, E- Wing, Tandice 69, 4V95+4GQ, Gundavali, Andheri East, Mumbai, Maharashtra 400093, India.
                   </p>
                 </div>
               </div>
@@ -144,17 +159,18 @@ const Contact = () => {
             <div className="bg-white rounded-lg shadow-sm overflow-hidden animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
               <div
                 className="w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] cursor-pointer hover:opacity-90 transition-opacity duration-300"
-                onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=Office+No.+3(403),+4th+Floor,+E-+Wing,+Tandice+69,+CTS+No.+250(1-6),+251(1-7),+AK+Road,+Gundavali,+Andheri+(East),+Mumbai+-+400059,+Maharashtra,+India', '_blank')}
+                onClick={() => window.open('https://www.google.com/maps/place/Tandice+69,+4V95%2B4GQ,+Gundavali,+Andheri+East,+Mumbai,+Maharashtra+400093/@19.1179955,72.8555337,17z', '_blank')}
               >
+                {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d870.9195988124038!2d72.85840526737995!3d19.117943787863663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9f3abfa2117%3A0x2b45ec0cddff7af7!2sTandice%2069!5e1!3m2!1sen!2sin!4v1762448046764!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.8!2d72.8777!3d19.1136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDA2JzQ5LjAiTiA3MsKwNTInMzkuNyJF!5e0!3m2!1sen!2sin!4v1635000000000!5m2!1sen!2sin&q=Office+No.+3(403),+4th+Floor,+E-+Wing,+Tandice+69,+CTS+No.+250(1-6),+251(1-7),+AK+Road,+Gundavali,+Andheri+(East),+Mumbai+-+400059,+Maharashtra,+India"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d870.9195988124038!2d72.85840526737995!3d19.117943787863663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9f3abfa2117%3A0x2b45ec0cddff7af7!2sTandice%2069!5e1!3m2!1sen!2sin!4v1762448046764!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="PharmaRise Innovations LLP Location"
+                  title="Tandice 69 - 4V95+4GQ, Gundavali, Andheri East, Mumbai"
                 />
               </div>
             </div>
@@ -186,7 +202,7 @@ const Contact = () => {
             </div>
 
             {/* Right Side - Form */}
-            <div className="lg:w-1/2 bg-gray-50 p-12 lg:p-16 flex flex-col justify-center animate-fade-in-right" style={{ animationDelay: '0.3s' }}>
+            <div id="contact-form" className="lg:w-1/2 bg-gray-50 p-12 lg:p-16 flex flex-col justify-center animate-fade-in-right" style={{ animationDelay: '0.3s' }}>
               <ContactPageForm />
             </div>
           </div>

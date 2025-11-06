@@ -171,16 +171,15 @@ const BMICalculator = () => {
     return (
         <div className="min-h-screen">
             <Header />
-
-            {/* Hero Section */}
-            <div className="relative bg-[#0d4a8d] pt-[120px] pb-16 md:pb-24 min-h-[290px] md:min-h-[380px] flex items-center" style={{ backgroundImage: "url('/images/BMI.png')", backgroundSize: 'cover', backgroundPosition: 'center top' }}>
+            <div className="relative bg-[#0d4a8d] pt-[120px] pb-8 md:pb-12 min-h-[200px] md:min-h-[250px] flex items-center" style={{ backgroundImage: "url('/images/BMI.png')", backgroundSize: 'cover', backgroundPosition: 'center top' }}>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0d4a8d]/100 from-25% to-[#0d4a8d]/25"></div>
-                <div className="relative z-10 container mx-auto px-4 md:px-8 w-full mt-[50px]  lg:mt-[100px]">
+                <div className="relative z-10 container mx-auto px-4 md:px-8 w-full mt-[20px] lg:mt-[40px]">
                     <h1 className="text-4xl md:text-6xl font-bold text-white animate-fade-in transform transition-all duration-700 hover:scale-105">
                         BMI Calculator
                     </h1>
                 </div>
             </div>
+           
 
             {/* Information Section */}
             <section className="pt-8 sm:pt-12 lg:pt-16 pb-2 bg-[#F1F5F9]">

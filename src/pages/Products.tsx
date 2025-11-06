@@ -81,11 +81,10 @@ const Products = () => {
             <Header />
 
             {/* Hero Section */}
-            <div className="relative bg-[#0d4a8d] pt-[120px] pb-16 md:pb-24 min-h-[290px] md:min-h-[380px] flex items-center" style={{ backgroundImage: "url('/images/Product_background.png')", backgroundSize: 'cover', backgroundPosition: 'center top' }}>
+            <div className="relative bg-[#0d4a8d] pt-[120px] pb-8 md:pb-12 min-h-[200px] md:min-h-[250px] flex items-center" style={{ backgroundImage: "url('/images/Product_background.png')", backgroundSize: 'cover', backgroundPosition: 'center top' }}>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0d4a8d]/100 from-25% to-[#0d4a8d]/25"></div>
-                <div className="relative z-10 container mx-auto px-4 md:px-8 w-full mt-[50px]  lg:mt-[100px]">
+                <div className="relative z-10 container mx-auto px-4 md:px-8 w-full mt-[20px] lg:mt-[40px]">
                     <h1 className="text-4xl md:text-6xl font-bold text-white animate-fade-in transform transition-all duration-700 hover:scale-105">
-
                         Products
                     </h1>
                 </div>
@@ -155,7 +154,7 @@ const Products = () => {
 
                                         {/* Mobile Description */}
                                         <div className="p-6 bg-white rounded-b-xl">
-                                           
+
                                             <p className="text-[#0D4A8D] leading-relaxed text-sm">
                                                 {product.description}
                                             </p>
