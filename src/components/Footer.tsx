@@ -13,7 +13,7 @@ const Footer = () => {
           {/* Left Column - Logo, Description, Social Icons, Back to Top */}
           <div className="w-full lg:w-6/12 max-md:w-full max-md:ml-0">
             <div className="flex grow flex-col max-md:max-w-full max-md:mt-10">
-              {/* Logo */}
+         
 
               <div className="flex items-start mb-6 justify-start ml-[-30px]  lg:ml-[-54px] ">
                 <img
