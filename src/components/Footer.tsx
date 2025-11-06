@@ -266,8 +266,6 @@ const Footer = () => {
       <div className="border shrink-0 h-px mt-[45px] border-white border-solid max-md:max-w-full max-md:mt-10" />
 
 
-
-      {/* Copyright */}
       <div
         className="text-center self-center mt-7 max-md:max-w-full"
         style={{
