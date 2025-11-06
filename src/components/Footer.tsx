@@ -43,36 +43,11 @@ const Footer = () => {
 
               {/* Social Media Icons */}
               <div className="flex gap-[53px] items-center">
-                {/* LinkedIn */}
-                <a
-                  href="https://www.linkedin.com/company/pharmarise"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                  >
-                    <g clipPath="url(#clip0_1_318)">
-                      <path
-                        d="M37.0391 0H2.95312C1.32031 0 0 1.28906 0 2.88281V37.1094C0 38.7031 1.32031 40 2.95312 40H37.0391C38.6719 40 40 38.7031 40 37.1172V2.88281C40 1.28906 38.6719 0 37.0391 0ZM11.8672 34.0859H5.92969V14.9922H11.8672V34.0859ZM8.89844 12.3906C6.99219 12.3906 5.45312 10.8516 5.45312 8.95312C5.45312 7.05469 6.99219 5.51562 8.89844 5.51562C10.7969 5.51562 12.3359 7.05469 12.3359 8.95312C12.3359 10.8438 10.7969 12.3906 8.89844 12.3906ZM34.0859 34.0859H28.1562V24.8047C28.1562 22.5938 28.1172 19.7422 25.0703 19.7422C21.9844 19.7422 21.5156 22.1562 21.5156 24.6484V34.0859H15.5938V14.9922H21.2812V17.6016H21.3594C22.1484 16.1016 24.0859 14.5156 26.9688 14.5156C32.9766 14.5156 34.0859 18.4688 34.0859 23.6094V34.0859Z"
-                        fill="white"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_1_318">
-                        <rect width="40" height="40" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </a>
+               
 
                 {/* Instagram */}
                 <a
-                  href="https://www.instagram.com/pharmarise"
+                  href=" https://www.instagram.com/pharmarise.innovation/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -107,7 +82,7 @@ const Footer = () => {
 
                 {/* Facebook */}
                 <a
-                  href="https://www.facebook.com/pharmarise"
+                  href="https://www.facebook.com/profile.php?id=61583402821644"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -126,24 +101,7 @@ const Footer = () => {
                 </a>
 
                 {/* Twitter / X */}
-                <a
-                  href="https://x.com/pharmarise"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="38"
-                    height="34"
-                    viewBox="0 0 38 34"
-                    fill="none"
-                  >
-                    <path
-                      d="M29.5438 0.17334H35.1663L22.8829 14.2125L37.3333 33.3166H26.0187L17.1567 21.7301L7.01657 33.3166H1.39071L14.529 18.3002L0.666656 0.17334H12.2685L20.279 10.7639L29.5438 0.17334ZM27.5705 29.9513H30.686L10.5756 3.36189H7.23242L27.5705 29.9513Z"
-                      fill="white"
-                    />
-                  </svg>
-                </a>
+               
               </div>
               <div className="hidden md:flex justify-start mt-6">
                 <button
@@ -250,7 +208,7 @@ const Footer = () => {
                     >
                       <address className="not-italic">
                         <a
-                          href=""
+                          href="https://maps.app.goo.gl/qkfmcxB9nJSXcgSa9"
                           className="hover:opacity-80 transition-opacity block"
                           target="_blank"
                           rel="noopener noreferrer"
@@ -286,7 +244,7 @@ const Footer = () => {
                             color: "#FFF",
                             fontFamily: '"Red Hat Text"',
                             fontSize: "20px",
-                            
+
                             fontWeight: 300,
                             lineHeight: "175%",
                           }}
@@ -323,7 +281,7 @@ const Footer = () => {
       >
         <span className="font-normal">© Copyright ©2025 </span>
         <a
-          href="https://pharmarise.vercel.app/index.html"
+          href="https://maps.app.goo.gl/qkfmcxB9nJSXcgSa9"
           className="font-normal text-white hover:opacity-80 transition-opacity"
           target="_blank"
           rel="noopener noreferrer"
