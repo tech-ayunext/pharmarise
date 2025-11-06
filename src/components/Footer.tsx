@@ -265,7 +265,6 @@ const Footer = () => {
       {/* Divider Line */}
       <div className="border shrink-0 h-px mt-[45px] border-white border-solid max-md:max-w-full max-md:mt-10" />
 
-      {/* Back to Top Button - Desktop/Laptop only - Before copyright */}
 
 
       {/* Copyright */}
