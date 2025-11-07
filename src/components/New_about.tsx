@@ -1029,7 +1029,7 @@ const AboutSection: React.FC = () => {
         </div>
 
         {/* Text Section - Moved more to the left with increased width */}
-        <div className="w-full md:w-1/2 lg:w-2/3 flex flex-col justify-center pt-20 max-md:pt-8 max-sm:pt-4 about-text-large-tablet pb-10 -ml-4">
+        <div className="w-full md:w-1/2 lg:w-2/3 flex flex-col justify-center pt-20 max-md:pt-8 max-sm:pt-4 about-text-large-tablet pb-10 ">
           <p
             className="text-[#0D4A8D] text-justify text-[25px] font-normal leading-[39.75px] mb-5 
                 max-md:text-[20px] max-sm:text-base 
