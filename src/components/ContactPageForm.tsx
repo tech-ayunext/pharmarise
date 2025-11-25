@@ -7,8 +7,8 @@ const contactSchema = z.object({
     fullName: z.string().min(2, "Full name must be at least 2 characters"),
     email: z.string().email("Please enter a valid email address"),
     phone: z.string()
-        .regex(/^\d{11}$/, "Phone number must be exactly 11 digits")
-        .length(11, "Phone number must be exactly 11 digits"),
+        .regex(/^\d{10}$/, "Phone number must be exactly 10 digits")
+        .length(10, "Phone number must be exactly 10 digits"),
     serviceInterest: z.string().min(1, "Please specify your service interest"),
     message: z.string().optional(),
 });

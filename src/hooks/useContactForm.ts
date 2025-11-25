@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import mockEmailService from '../services/mockEmailService';
+import emailService from '../services/emailService';
 
 // Contact form data interfaces (matching the API)
 export interface ContactFormData {
@@ -29,11 +29,8 @@ export const useContactForm = () => {
     setSubmitStatus({ type: null, message: '' });
 
     try {
-      // Check if we're in development mode or if API is available
-      const isDevelopment = import.meta.env.DEV;
-      
-      // Use mock service (logs to console)
-      const result = await mockEmailService.sendContactEmail(data);
+      // Send email using EmailJS
+      const result = await emailService.sendContactEmail(data);
       setSubmitStatus({
         type: result.success ? 'success' : 'error',
         message: result.message
@@ -63,7 +60,7 @@ export const useContactForm = () => {
 };
 
 // Hook for detailed contact form
-export const useDetailedContactForm = () => {
+export const useDetailedContactForm = (useBmiTemplate: boolean = false) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
     type: 'success' | 'error' | null;
@@ -75,11 +72,8 @@ export const useDetailedContactForm = () => {
     setSubmitStatus({ type: null, message: '' });
 
     try {
-      // Check if we're in development mode or if API is available
-      const isDevelopment = import.meta.env.DEV;
-      
-      // Use mock service (logs to console)
-      const result = await mockEmailService.sendDetailedContactEmail(data);
+      // Send email using EmailJS
+      const result = await emailService.sendDetailedContactEmail(data, useBmiTemplate);
       setSubmitStatus({
         type: result.success ? 'success' : 'error',
         message: result.message

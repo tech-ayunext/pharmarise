@@ -8,17 +8,20 @@ const contactSchema = z.object({
   fullName: z.string().min(2, "Full name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
   phone: z.string()
-    .regex(/^\d{11}$/, "Phone number must be exactly 11 digits")
-    .length(11, "Phone number must be exactly 11 digits"),
+    .regex(/^\d{10}$/, "Phone number must be exactly 10 digits")
+    .length(10, "Phone number must be exactly 10 digits"),
   product: z.string().min(1, "Please select a product"),
   quantity: z.string().min(1, "Please enter quantity").refine((val) => !isNaN(Number(val)) && Number(val) > 0, "Quantity must be a positive number"),
   address: z.string().min(5, "Address must be at least 5 characters"),
-  newsletter: z.boolean().optional(),
 });
 
 type FormData = z.infer<typeof contactSchema>;
 
-const ContactForm = () => {
+interface ContactFormProps {
+  useBmiTemplate?: boolean;
+}
+
+const ContactForm = ({ useBmiTemplate = false }: ContactFormProps) => {
   const {
     register,
     handleSubmit,
@@ -28,7 +31,7 @@ const ContactForm = () => {
     resolver: zodResolver(contactSchema),
   });
 
-  const { submitForm, isSubmitting, submitStatus, clearStatus } = useDetailedContactForm();
+  const { submitForm, isSubmitting, submitStatus, clearStatus } = useDetailedContactForm(useBmiTemplate);
 
   const onSubmit = async (data: FormData) => {
     // Transform the form data to match DetailedContactFormData interface
@@ -40,7 +43,6 @@ const ContactForm = () => {
       address: data.address || '',
       companyName: data.quantity || '', // Map quantity to companyName for backend compatibility
       message: data.message,
-      newsletter: data.newsletter,
     };
 
     const success = await submitForm(contactData);
@@ -61,8 +63,8 @@ const ContactForm = () => {
       {/* Status Message */}
       {submitStatus.type && (
         <div className={`mb-6 p-4 rounded-lg ${submitStatus.type === 'success'
-            ? 'bg-green-100 border border-green-400 text-green-700'
-            : 'bg-red-100 border border-red-400 text-red-700'
+          ? 'bg-green-100 border border-green-400 text-green-700'
+          : 'bg-red-100 border border-red-400 text-red-700'
           }`}>
           {submitStatus.message}
         </div>
@@ -188,21 +190,14 @@ const ContactForm = () => {
 
         {/* Newsletter and Submit */}
         <div className="flex flex-col items-center gap-4">
-          {/* <label className="flex items-center gap-2 text-gray-700">
-          <input
-            {...register("newsletter")}
-            type="checkbox"
-            className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
-          />
-          <span> Signup</span>
-        </label> */}
+
 
           <button
             type="submit"
             disabled={isSubmitting}
             className={`px-6 sm:px-8 py-2 sm:py-2.5 font-medium rounded-lg transition-colors border ${isSubmitting
-                ? 'bg-gray-300 text-gray-500 border-gray-300 cursor-not-allowed'
-                : 'bg-white text-[#0D4A8D] border-[#0D4A8D] hover:bg-gray-50'
+              ? 'bg-gray-300 text-gray-500 border-gray-300 cursor-not-allowed'
+              : 'bg-white text-[#0D4A8D] border-[#0D4A8D] hover:bg-gray-50'
               }`}
           >
             {isSubmitting ? 'Sending...' : 'Send'}

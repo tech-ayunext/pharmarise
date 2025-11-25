@@ -474,7 +474,7 @@ const BMICalculator = () => {
                         </div>
                         {/* Bottom section with form fields */}
                         <div className="p-4 sm:p-6 md:p-8 lg:p-12 animate-fade-in-up" style={{ animationDelay: '1.0s' }}>
-                            <ContactForm />
+                            <ContactForm useBmiTemplate={true} />
                         </div>
                     </div>
                 </div>
