@@ -6,13 +6,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import NewAboutPage from "./components/New_about";
+import NewAboutPage from "./components/new_about";
 import Contact from "./pages/Contact";
 import Products from "./pages/Products";
 import BMICalculator from "./pages/BMICalculator";
-
 const queryClient = new QueryClient();
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>

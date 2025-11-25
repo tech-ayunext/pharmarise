@@ -50,7 +50,6 @@ class EmailService {
           message: 'Email service is not configured. Please contact the administrator.'
         };
       }
-
       // Validate required fields
       if (!data.fullName || !data.email || !data.phone || !data.serviceInterest) {
         return {
@@ -58,7 +57,6 @@ class EmailService {
           message: 'Please fill in all required fields.'
         };
       }
-
       // Validate email format
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(data.email)) {

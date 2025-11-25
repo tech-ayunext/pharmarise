@@ -5,7 +5,8 @@ import Innovations from '@/components/Innovations';
 import About from '@/components/About';
 import Partnership from '@/components/Partnership';
 import Footer from '@/components/Footer';
-import New_about from '@/components/New_about';
+import New_about from '@/components/new_about';
+ 
 
 const Index = () => {
   return (

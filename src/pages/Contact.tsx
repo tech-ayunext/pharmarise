@@ -90,10 +90,14 @@ const Contact = () => {
             block: 'start'
           });
         }
-      }, 500); // Longer delay to ensure page is fully loaded
+      }, 500); 
     }
   }, []);
 
+
+
+
+  
   return (
     <div className="min-h-screen bg-white">
       <Header />
