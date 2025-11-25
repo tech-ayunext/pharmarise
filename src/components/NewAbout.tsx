@@ -2,7 +2,8 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 
-// Add custom CSS for animations
+// Add custom CSS for animation
+//new about us 
 const newAboutAnimationStyles = `
   @keyframes fadeInUp {
     from {
