@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ContactForm from '../components/ui/ContactForm';
@@ -97,12 +98,14 @@ if (typeof document !== 'undefined') {
 }
 
 const BMICalculator = () => {
+    const navigate = useNavigate();
     const [weight, setWeight] = useState('');
     const [height, setHeight] = useState('');
     const [bmi, setBmi] = useState<number | null>(null);
     const [category, setCategory] = useState('');
     const [gender, setGender] = useState('male');
     const [unit, setUnit] = useState('metric');
+
 
     const calculateBMI = () => {
         if (weight && height) {
@@ -400,15 +403,32 @@ const BMICalculator = () => {
                                     </div>
                                 </div>
 
-                                {/* Health Message */}
+                                {/* Health Message with Product Image */}
                                 {bmi && category && (
-                                    <div className="bg-gray-50 rounded-xl p-4 text-left">
-                                        <p className="text-gray-600 text-sm leading-relaxed">
-                                            {category === 'Underweight' && "You are underweight for your height. It's important to aim to keep within your healthy weight range. Being in the healthy weight range will improve your body's ability to fight off infection or illness."}
-                                            {category === 'Normal weight' && "You are within the normal weight range for your height. Maintain your healthy lifestyle with balanced nutrition and regular exercise."}
-                                            {category === 'Overweight' && "You are overweight for your height. Consider adopting healthier eating habits and increasing physical activity."}
-                                            {category === 'Obese' && "You are in the obese category for your height. Consult with a healthcare professional for personalized advice."}
-                                        </p>
+                                    <div className="space-y-2">
+                                        <div className="bg-gray-50 rounded-xl p-4 text-left">
+                                            <p className="text-gray-600 text-sm leading-relaxed">
+                                                {category === 'Underweight' && "You are underweight for your height, and keeping yourself in a healthy range will help your body stay stronger against infections. To support this, you can consider adding Cobalfine 6G to your routine for better nutrition and energy"}
+                                                {category === 'Normal weight' && "You are within the normal weight range for your height. Maintain your healthy lifestyle with balanced nutrition and regular exercise."}
+                                                {category === 'Overweight' && "You are overweight for your height. Consider adopting healthier eating habits and increasing physical activity."}
+                                                {category === 'Obese' && "You are in the obese category for your height, so it's best to consult a healthcare professional for guidance. Along with that, you can consider Garcibio as a supportive option for managing weight."}
+                                            </p>
+                                        </div>
+                                        
+                                        {/* Product Image for Underweight and Obese */}
+                                        {(category === 'Underweight' || category === 'Obese') && (
+                                            <div className="flex justify-center">
+                                                <img
+                                                    src={category === 'Underweight' ? '/images/cobalFine_6g_popup.jpg' : '/images/Garci_Bio_popup.jpg'}
+                                                    alt={category === 'Underweight' ? 'Cobalfine 6G' : 'Garcibio'}
+                                                    className=" w-40 h-40 sm:w-48 sm:h-48 object-contain transition-all duration-300 cursor-pointer hover:scale-105"
+                                                    onClick={() => {
+                                                        const productId = category === 'Underweight' ? 2 : 1; // CobalFine 6G = 2, GarciBIO = 1
+                                                        navigate(`/products#product-${productId}`);
+                                                    }}
+                                                />
+                                            </div>
+                                        )}
                                     </div>
                                 )}
                             </div>

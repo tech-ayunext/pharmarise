@@ -98,6 +98,7 @@ const Products = () => {
                             {products.map((product, index) => (
                                 <div
                                     key={product.id}
+                                    id={`product-${product.id}`}
                                     className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-500 hover:shadow-xl hover:scale-[1.02] animate-fade-in"
                                     style={{ animationDelay: `${index * 0.1}s` }}
                                 >
