@@ -40,6 +40,15 @@ const contactAnimationStyles = `
   }
 }
 
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.8s ease-out forwards;
   opacity: 0;
@@ -53,6 +62,10 @@ const contactAnimationStyles = `
 .animate-fade-in-right {
   animation: fadeInRight 0.8s ease-out forwards;
   opacity: 0;
+}
+
+.animate-breathe {
+  animation: breathe 2s ease-in-out infinite;
 }
 
 /* Modern Slider Styling */
@@ -421,7 +434,7 @@ const BMICalculator = () => {
                                                 <img
                                                     src={category === 'Underweight' ? '/images/cobalFine_6g_popup.jpg' : '/images/Garci_Bio_popup.jpg'}
                                                     alt={category === 'Underweight' ? 'Cobalfine 6G' : 'Garcibio'}
-                                                    className=" w-40 h-40 sm:w-48 sm:h-48 object-contain transition-all duration-300 cursor-pointer hover:scale-105"
+                                                    className=" w-40 h-40 sm:w-48 sm:h-48 object-contain transition-all duration-300 cursor-pointer hover:scale-105 animate-breathe"
                                                     onClick={() => {
                                                         const productId = category === 'Underweight' ? 2 : 1; // CobalFine 6G = 2, GarciBIO = 1
                                                         navigate(`/products#product-${productId}`);
