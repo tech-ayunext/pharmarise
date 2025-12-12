@@ -428,7 +428,7 @@ const BMICalculator = () => {
                                             </p>
                                         </div>
                                         
-                                        {/* Product Image for Underweight and Obese  ads*/}
+                                        {/* Product Image for Underweight and Obese  added breathing effect */}
                                         {(category === 'Underweight' || category === 'Obese') && (
                                             <div className="flex justify-center">
                                                 <img
