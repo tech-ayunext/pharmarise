@@ -10,6 +10,7 @@ import NewAboutPage from "./components/NewAbout";
 import Contact from "./pages/Contact";
 import Products from "./pages/Products";
 import BMICalculator from "./pages/BMICalculator";
+import GarciBioDetail from "./pages/GarciBioDetail";
 const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -21,6 +22,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/new-about" element={<NewAboutPage />} />
+          <Route path="/products/garcibio" element={<GarciBioDetail />} />
           <Route path="/products" element={<Products />} />
           <Route path="/bmi-calculator" element={<BMICalculator />} />
           <Route path="/contact" element={<Contact />} />

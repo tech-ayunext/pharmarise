@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -28,7 +29,7 @@ if (typeof document !== 'undefined') {
 }
 
 const Products = () => {
-
+    const navigate = useNavigate();
 
     const products = [
         {
@@ -99,9 +100,19 @@ const Products = () => {
                                 <div
                                     key={product.id}
                                     id={`product-${product.id}`}
-                                    className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-500 hover:shadow-xl hover:scale-[1.02] animate-fade-in"
+                                    className={`bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-500 hover:shadow-xl hover:scale-[1.02] animate-fade-in relative ${product.id === 1 ? 'cursor-pointer group' : ''}`}
                                     style={{ animationDelay: `${index * 0.1}s` }}
+                                    onClick={product.id === 1 ? () => navigate('/products/garcibio') : undefined}
                                 >
+                                    {/* View Details overlay for GarciBIO */}
+                                    {product.id === 1 && (
+                                        <div className="absolute top-4 right-4 z-20 bg-[#0D4A8D] text-white text-xs font-bold px-4 py-2 rounded-full opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 shadow-lg flex items-center gap-1.5">
+                                            View Details
+                                            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                                            </svg>
+                                        </div>
+                                    )}
                                     {/* Desktop Layout */}
                                     <div className="hidden lg:flex relative h-[220px]">
                                         {/* Left Side - Card Background Image */}
