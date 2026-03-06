@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -27,9 +28,27 @@ const ContactForm = ({ useBmiTemplate = false }: ContactFormProps) => {
     handleSubmit,
     formState: { errors },
     reset,
+    setValue,
+    watch,
   } = useForm<FormData>({
     resolver: zodResolver(contactSchema),
   });
+
+  const [productOpen, setProductOpen] = useState(false);
+  const productRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const onDocClick = (event: MouseEvent) => {
+      if (productRef.current && !productRef.current.contains(event.target as Node)) {
+        setProductOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", onDocClick);
+    return () => document.removeEventListener("mousedown", onDocClick);
+  }, []);
+
+  const selectedProduct = watch("product");
 
   const { submitForm, isSubmitting, submitStatus, clearStatus } = useDetailedContactForm(useBmiTemplate);
 
@@ -56,7 +75,7 @@ const ContactForm = ({ useBmiTemplate = false }: ContactFormProps) => {
   };
 
   const inputBaseClass =
-    "w-full px-4 py-2.5 bg-transparent border-b-2 border-gray-300 focus:border-blue-500 focus:outline-none transition-colors placeholder-gray-500";
+    "w-full px-4 py-3.5 bg-white border border-[#CBD5E1] rounded-xl text-[#0D4A8D] placeholder-[#7A8798] shadow-sm focus:border-[#0D4A8D] focus:ring-4 focus:ring-[#0D4A8D]/10 focus:outline-none transition-all duration-300";
 
   return (
     <div className="w-full">
@@ -72,7 +91,7 @@ const ContactForm = ({ useBmiTemplate = false }: ContactFormProps) => {
 
       <form onSubmit={handleSubmit(onSubmit)} className="w-full">
         {/* Form Fields Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-6 sm:mb-8">
           <div>
             <input
               {...register("fullName")}
@@ -119,37 +138,46 @@ const ContactForm = ({ useBmiTemplate = false }: ContactFormProps) => {
             )}
           </div>
 
-          <div className="relative w-full">
-            <select
-              {...register("product")}
-              className={`${inputBaseClass} appearance-none w-full pr-8 cursor-pointer`}
-              defaultValue=""
+          <div className={`relative w-full ${productOpen ? 'z-[80]' : 'z-10'}`} ref={productRef}>
+            <input type="hidden" {...register("product")} />
+
+            <button
+              type="button"
+              className={`${inputBaseClass} text-left flex items-center justify-between ${productOpen ? 'border-[#0D4A8D] ring-4 ring-[#0D4A8D]/10' : ''}`}
+              onClick={() => setProductOpen((prev) => !prev)}
             >
-              {/* Placeholder */}
-              <option value="" disabled hidden>
-                Product
-              </option>
-
-              {/* Actual options */}
-              <option value="CobalFine 6G">GarciBIO</option>
-              <option value="GarciBIO">CobalFine 6G</option>
-            </select>
-
-            {/* SVG Arrow on the right */}
-            <div className="absolute top-1/2 right-2 transform -translate-y-1/2 pointer-events-none">
+              <span className={selectedProduct ? 'text-[#0D4A8D]' : 'text-[#7A8798]'}>
+                {selectedProduct || 'Product'}
+              </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="9"
-                height="8"
-                viewBox="0 0 9 8"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
                 fill="none"
+                className={`transition-transform duration-200 ${productOpen ? 'rotate-180' : ''}`}
               >
-                <path
-                  d="M4.35216 7.46338L8.45126 0.363532H0.25306L4.35216 7.46338Z"
-                  fill="#191A23"
-                />
+                <path d="M7 10l5 5 5-5" stroke="#5C6F8D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </div>
+            </button>
+
+            {productOpen && (
+              <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-[90] rounded-xl border border-[#CBD5E1] bg-white shadow-xl overflow-hidden max-h-56 overflow-y-auto">
+                {["GarciBIO", "CobalFine 6G"].map((option) => (
+                  <button
+                    key={option}
+                    type="button"
+                    className="w-full px-4 py-3 text-left text-[#0D4A8D] hover:bg-[#EAF2FF] transition-colors"
+                    onClick={() => {
+                      setValue("product", option, { shouldValidate: true, shouldDirty: true });
+                      setProductOpen(false);
+                    }}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+            )}
 
             {errors.product && (
               <span className="text-red-500 text-xs mt-1 block">
@@ -195,9 +223,9 @@ const ContactForm = ({ useBmiTemplate = false }: ContactFormProps) => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`px-6 sm:px-8 py-2 sm:py-2.5 font-medium rounded-lg transition-colors border ${isSubmitting
+            className={`px-7 sm:px-9 py-3 font-semibold rounded-xl transition-all duration-300 border shadow-sm ${isSubmitting
               ? 'bg-gray-300 text-gray-500 border-gray-300 cursor-not-allowed'
-              : 'bg-white text-[#0D4A8D] border-[#0D4A8D] hover:bg-gray-50'
+              : 'bg-[#0D4A8D] text-white border-[#0D4A8D] hover:bg-[#0a3d73] hover:shadow-md hover:-translate-y-0.5'
               }`}
           >
             {isSubmitting ? 'Sending...' : 'Send'}

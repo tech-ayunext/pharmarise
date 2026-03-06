@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -21,9 +22,27 @@ const ContactPageForm = () => {
         handleSubmit,
         formState: { errors },
         reset,
+        setValue,
+        watch,
     } = useForm<FormData>({
         resolver: zodResolver(contactSchema),
     });
+
+    const [serviceOpen, setServiceOpen] = useState(false);
+    const serviceRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        const onDocClick = (event: MouseEvent) => {
+            if (serviceRef.current && !serviceRef.current.contains(event.target as Node)) {
+                setServiceOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", onDocClick);
+        return () => document.removeEventListener("mousedown", onDocClick);
+    }, []);
+
+    const selectedService = watch("serviceInterest");
 
     const { submitForm, isSubmitting, submitStatus, clearStatus } = useContactForm();
 
@@ -59,13 +78,13 @@ const ContactPageForm = () => {
                 </div>
             )}
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                 <div className="animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
                     <input
                         {...register("fullName")}
                         type="text"
                         placeholder="Full Name"
-                        className="w-full px-0 py-3 text-lg text-gray-700 placeholder-gray-500 bg-transparent border-0 border-b-2 border-gray-300 focus:border-[#0d4a8d] focus:outline-none transition-all duration-300 focus:scale-105"
+                        className="w-full px-4 py-3.5 text-base text-[#0D4A8D] placeholder-[#7A8798] bg-white border border-[#CBD5E1] rounded-xl shadow-sm focus:border-[#0D4A8D] focus:ring-4 focus:ring-[#0D4A8D]/10 focus:outline-none transition-all duration-300"
                     />
                     {errors.fullName && (
                         <span className="text-red-500 text-sm mt-1 block">
@@ -74,36 +93,50 @@ const ContactPageForm = () => {
                     )}
                 </div>
 
-                <div className="animate-fade-in-up relative" style={{ animationDelay: '0.6s' }}>
-                    <select
-                        {...register("serviceInterest")}
-                        className="w-full px-0 py-3 text-lg text-gray-700 bg-transparent border-0 border-b-2 border-gray-300 focus:border-[#0d4a8d] focus:outline-none transition-all duration-300 focus:scale-105 appearance-none cursor-pointer pr-8"
-                        defaultValue=""
+                <div
+                    className={`animate-fade-in-up relative ${serviceOpen ? 'z-[80]' : 'z-10'}`}
+                    style={{ animationDelay: '0.6s' }}
+                    ref={serviceRef}
+                >
+                    <input type="hidden" {...register("serviceInterest")} />
+
+                    <button
+                        type="button"
+                        className={`w-full px-4 py-3.5 text-base bg-white border border-[#CBD5E1] rounded-xl shadow-sm focus:outline-none transition-all duration-300 text-left flex items-center justify-between ${serviceOpen ? 'border-[#0D4A8D] ring-4 ring-[#0D4A8D]/10' : ''}`}
+                        onClick={() => setServiceOpen((prev) => !prev)}
                     >
-                        <option value="" disabled hidden className="text-gray-500">
-                            Service Interest
-                        </option>
-                        <option value="Product Development">Product Development</option>
-                        <option value="Marketing">Marketing</option>
-                        <option value="Consultation">Consultation</option>
-                        <option value="Partnership">Partnership</option>
-                    </select>
-                    
-                    {/* Custom dropdown arrow */}
-                    <div className="absolute top-1/2 right-2 transform -translate-y-1/2 pointer-events-none">
+                        <span className={selectedService ? 'text-[#0D4A8D]' : 'text-[#7A8798]'}>
+                            {selectedService || 'Service Interest'}
+                        </span>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="12"
-                            height="8"
-                            viewBox="0 0 12 8"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
                             fill="none"
+                            className={`transition-transform duration-200 ${serviceOpen ? 'rotate-180' : ''}`}
                         >
-                            <path
-                                d="M6 7.5L0.5 1.5H11.5L6 7.5Z"
-                                fill="#6B7280"
-                            />
+                            <path d="M7 10l5 5 5-5" stroke="#5C6F8D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
-                    </div>
+                    </button>
+
+                    {serviceOpen && (
+                        <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-[90] rounded-xl border border-[#CBD5E1] bg-white shadow-xl overflow-hidden max-h-56 overflow-y-auto">
+                            {["Product Development", "Marketing", "Consultation", "Partnership"].map((option) => (
+                                <button
+                                    key={option}
+                                    type="button"
+                                    className="w-full px-4 py-3 text-left text-[#0D4A8D] hover:bg-[#EAF2FF] transition-colors"
+                                    onClick={() => {
+                                        setValue("serviceInterest", option, { shouldValidate: true, shouldDirty: true });
+                                        setServiceOpen(false);
+                                    }}
+                                >
+                                    {option}
+                                </button>
+                            ))}
+                        </div>
+                    )}
                     
                     {errors.serviceInterest && (
                         <span className="text-red-500 text-sm mt-1 block">
@@ -117,7 +150,7 @@ const ContactPageForm = () => {
                         {...register("email")}
                         type="email"
                         placeholder="Email Address"
-                        className="w-full px-0 py-3 text-lg text-gray-700 placeholder-gray-500 bg-transparent border-0 border-b-2 border-gray-300 focus:border-[#0d4a8d] focus:outline-none transition-all duration-300 focus:scale-105"
+                        className="w-full px-4 py-3.5 text-base text-[#0D4A8D] placeholder-[#7A8798] bg-white border border-[#CBD5E1] rounded-xl shadow-sm focus:border-[#0D4A8D] focus:ring-4 focus:ring-[#0D4A8D]/10 focus:outline-none transition-all duration-300"
                     />
                     {errors.email && (
                         <span className="text-red-500 text-sm mt-1 block">
@@ -136,7 +169,7 @@ const ContactPageForm = () => {
                             const target = e.target as HTMLInputElement;
                             target.value = target.value.replace(/[^0-9]/g, '');
                         }}
-                        className="w-full px-0 py-3 text-lg text-gray-700 placeholder-gray-500 bg-transparent border-0 border-b-2 border-gray-300 focus:border-[#0d4a8d] focus:outline-none transition-all duration-300 focus:scale-105"
+                        className="w-full px-4 py-3.5 text-base text-[#0D4A8D] placeholder-[#7A8798] bg-white border border-[#CBD5E1] rounded-xl shadow-sm focus:border-[#0D4A8D] focus:ring-4 focus:ring-[#0D4A8D]/10 focus:outline-none transition-all duration-300"
                     />
                     {errors.phone && (
                         <span className="text-red-500 text-sm mt-1 block">
@@ -150,7 +183,7 @@ const ContactPageForm = () => {
                         {...register("message")}
                         placeholder="Message..."
                         rows={4}
-                        className="w-full px-4 py-3 text-lg text-gray-700 placeholder-gray-500 bg-white border-2 border-gray-300 rounded-lg focus:border-[#0d4a8d] focus:outline-none transition-all duration-300 resize-none focus:scale-105"
+                        className="w-full px-4 py-3.5 text-base text-[#0D4A8D] placeholder-[#7A8798] bg-white border border-[#CBD5E1] rounded-xl shadow-sm focus:border-[#0D4A8D] focus:ring-4 focus:ring-[#0D4A8D]/10 focus:outline-none transition-all duration-300 resize-none"
                     />
                     {errors.message && (
                         <span className="text-red-500 text-sm mt-1 block">
@@ -159,13 +192,13 @@ const ContactPageForm = () => {
                     )}
                 </div>
 
-                <div className="pt-4 animate-fade-in-up" style={{ animationDelay: '1.0s' }}>
+                <div className="pt-3 animate-fade-in-up" style={{ animationDelay: '1.0s' }}>
                     <button
                         type="submit"
                         disabled={isSubmitting}
-                        className={`font-semibold py-3 px-8 rounded-lg transition-all duration-300 text-lg hover:scale-105 hover:shadow-lg transform ${isSubmitting
+                        className={`font-semibold py-3 px-8 rounded-xl transition-all duration-300 text-base hover:shadow-lg transform ${isSubmitting
                             ? 'bg-gray-400 text-gray-600 cursor-not-allowed'
-                            : 'bg-[#0d4a8d] hover:bg-[#0099cd] text-white'
+                            : 'bg-[#0d4a8d] hover:bg-[#0a3d73] text-white hover:-translate-y-0.5'
                             }`}
                     >
                         {isSubmitting ? 'Sending...' : 'Send'}
