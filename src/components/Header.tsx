@@ -47,12 +47,12 @@ const Header = () => {
   }, [location]);
 
   return (
-    <header className="bg-slate-100 fixed top-0 left-0 right-0 w-full z-[9999] shadow-md">
+    <header className="site-header bg-slate-100 fixed top-0 left-0 right-0 w-full z-[9999] shadow-md">
       {/* Top contact bar */}
-      <div className="bg-[rgba(13,74,141,1)] flex w-full items-center justify-between px-[15px] sm:px-[20px] md:px-[50px] py-[7px]">
+      <div className="site-header-topbar bg-[rgba(13,74,141,1)] flex w-full items-center justify-between px-3 sm:px-5 md:px-7 lg:px-10 xl:px-12 py-2">
         <a
           href="mailto:salesoffice@pharmarise.in"
-          className="hover:opacity-80 transition-opacity flex items-center gap-1 sm:gap-2 mt-2"
+          className="hover:opacity-80 transition-opacity flex items-center gap-1 sm:gap-2"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -64,7 +64,7 @@ const Header = () => {
           <span className="text-xs sm:text-sm md:text-base text-white">salesoffice@pharmarise.in</span>
         </a>
 
-        <div className="flex gap-[15px] sm:gap-[20px] md:gap-[33px] items-center">
+        <div className="flex gap-3 sm:gap-4 md:gap-6 items-center">
           
 
           {/* Instagram */}
@@ -128,68 +128,68 @@ const Header = () => {
       </div>
 
       {/* Main navigation */}
-      <nav className="bg-[#F5F5FF] z-10 flex w-full items-center justify-between px-5 md:px-[37px] py-[13px] relative">
+      <nav className="site-header-nav bg-[#F5F5FF] z-10 flex w-full items-center justify-between px-4 sm:px-5 md:px-6 lg:px-8 xl:px-10 py-3 relative">
         {/* Logo */}
         <Link to="/">
           <img
             src="/images/PharmaRise logo.png"
-            className="w-[180px] md:w-[264px] object-contain cursor-pointer"
+            className="w-[170px] sm:w-[190px] md:w-[210px] lg:w-[235px] xl:w-[264px] object-contain cursor-pointer"
             alt="PharmaRise logo"
           />
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="site-header-desktop-nav hidden xl:flex items-center gap-6 2xl:gap-8">
           <Link
             to="/"
-            className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
+            className="text-[rgba(13,74,141,1)] text-lg 2xl:text-xl font-medium hover:opacity-80 transition-opacity"
           >
             Home
           </Link>
           <Link
             to="/new-about"
-            className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
+            className="text-[rgba(13,74,141,1)] text-lg 2xl:text-xl font-medium hover:opacity-80 transition-opacity"
           >
             About
           </Link>
           <Link
             to="/products"
-            className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
+            className="text-[rgba(13,74,141,1)] text-lg 2xl:text-xl font-medium hover:opacity-80 transition-opacity"
           >
             Products
           </Link>
           <Link
             to="/products/garcibio"
-            className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
+            className="text-[rgba(13,74,141,1)] text-lg 2xl:text-xl font-medium hover:opacity-80 transition-opacity"
           >
             GarciBIO
           </Link>
           <Link
             to="/bmi-calculator"
-            className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
+            className="text-[rgba(13,74,141,1)] text-lg 2xl:text-xl font-medium hover:opacity-80 transition-opacity"
           >
             BMI Calculator
           </Link>
           <Link
             to="/contact"
-            className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
+            className="text-[rgba(13,74,141,1)] text-lg 2xl:text-xl font-medium hover:opacity-80 transition-opacity"
           >
             Contact
           </Link>
         </div>
 
         {/* Enquire Button (desktop + mobile) */}
-        <div className="flex items-center gap-3 relative z-20">
+        <div className="site-header-actions flex items-center gap-3 relative z-20">
           <button
             onClick={handleEnquireNowClick}
-            className="bg-[rgba(190,38,35,1)] text-xs md:text-sm text-white font-semibold px-4 py-2 rounded-md hover:bg-opacity-90 transition-all inline-block cursor-pointer"
+            className="site-header-enquire bg-[rgba(190,38,35,1)] text-xs sm:text-sm text-white font-semibold px-3 sm:px-4 py-2 rounded-md hover:bg-opacity-90 transition-all inline-block cursor-pointer"
           >
             Enquire Now
           </button>
 
           {/* Hamburger (mobile only) */}
           <button
-            className="md:hidden text-[rgba(13,74,141,1)] text-2xl font-bold focus:outline-none"
+            className="xl:hidden text-[rgba(13,74,141,1)] text-2xl font-bold focus:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             ☰
@@ -198,7 +198,7 @@ const Header = () => {
 
         {/* Mobile Dropdown */}
         {menuOpen && (
-          <div className="absolute top-full left-0 w-full bg-white flex flex-col items-start gap-4 p-5 shadow-md md:hidden">
+          <div className="absolute top-full left-0 w-full bg-white flex flex-col items-start gap-4 p-5 shadow-md xl:hidden">
             <Link
               to="/"
               className="text-[rgba(13,74,141,1)] text-lg font-medium"

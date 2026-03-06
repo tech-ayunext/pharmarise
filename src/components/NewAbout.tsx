@@ -980,7 +980,7 @@ const FeaturesGrid: React.FC = () => {
                    p-4 sm:p-5 md:p-6 lg:p-6 xl:p-6 2xl:p-6
                    min-h-[140px] sm:min-h-[160px] md:min-h-[180px] lg:min-h-[180px] xl:min-h-[180px] 2xl:min-h-[180px]
                    animate-fade-in-up transition-transform duration-300 hover:scale-105 hover:shadow-lg
-                   w-full max-w-[450px] sm:max-w-[420px] md:max-w-[450px] lg:max-w-[480px] xl:max-w-[200px] 2xl:max-w-[220px]
+                   w-full max-w-[450px] sm:max-w-[420px] md:max-w-[450px] lg:max-w-[480px] xl:max-w-full 2xl:max-w-full
                    about-features-card-tablet"
             style={{ animationDelay: `${1.2 + index * 0.1}s` }}
           >

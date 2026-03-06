@@ -8,7 +8,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[rgba(0,33,69,1)] flex w-full flex-col items-stretch pt-[50px] sm:pt-[70px] lg:pt-[77px] pb-[27px] px-4 sm:px-8 lg:px-14 max-md:max-w-full max-md:pt-[100px] max-md:px-5">
+    <footer className="bg-[rgba(0,33,69,1)] flex w-full flex-col items-stretch pt-[50px] sm:pt-[70px] lg:pt-[77px] pb-[27px] px-4 sm:px-8 lg:px-14 max-md:max-w-full max-md:pt-[56px] max-md:px-5">
       <div className="self-center w-full max-w-[1353px] max-md:max-w-full">
         <div className="gap-5 flex max-md:flex-col max-md:items-stretch">
           {/* Left Column - Logo, Description, Social Icons, Back to Top */}
@@ -16,7 +16,7 @@ const Footer = () => {
             <div className="flex grow flex-col max-md:max-w-full max-md:mt-10">
          
 
-              <div className="flex items-start mb-6 justify-start ml-[-30px]  lg:ml-[-54px] ">
+              <div className="flex items-start mb-6 justify-start ml-0 lg:ml-[-24px]">
                 <img
                   src="/images/PharmaRise logo_footer.png"
                   alt="PharmaRise Innovations LLP"

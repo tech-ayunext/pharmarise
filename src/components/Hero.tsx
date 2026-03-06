@@ -280,22 +280,22 @@ if (typeof document !== 'undefined') {
 const Hero = () => {
   return (
     <section
-      className="min-h-screen w-full relative overflow-x-hidden pt-[80px]"
+      className="hero-sweep min-h-screen w-full relative overflow-x-hidden pt-24 lg:pt-28"
       style={{ backgroundColor: 'rgba(217, 235, 255, 1)' }}
       id="home"
     >
       {/* White inner container */}
-      <div className="bg-white mx-4 sm:mx-6 md:mx-8 lg:mx-12 xl:mx-16 2xl:mx-20 my-8 sm:my-12 md:my-16 lg:my-20 xl:my-24 2xl:my-28 rounded-2xl sm:rounded-3xl lg:rounded-[2rem] xl:rounded-[2.5rem] shadow-sm">
-        <div className="flex flex-col xl:flex-row hero-container-mid w-full hero-container-14 hero-container-15 hero-container-16 relative z-10">
+      <div className="hero-sweep-shell bg-white mx-4 sm:mx-6 md:mx-8 lg:mx-10 xl:mx-14 2xl:mx-16 my-6 sm:my-8 md:my-10 lg:my-12 xl:my-14 rounded-2xl sm:rounded-3xl lg:rounded-[2rem] xl:rounded-[2.5rem] shadow-sm">
+        <div className="hero-sweep-layout flex flex-col xl:flex-row hero-container-mid w-full hero-container-14 hero-container-15 hero-container-16 relative z-10">
           {/* Left Content Section - Enhanced responsive padding */}
-          <div className="flex-1 flex flex-col justify-start hero-content-mid
-                        pt-0 sm:pt-10 md:pt-12 lg:pt-6 xl:pt-20 
+          <div className="hero-sweep-content flex-1 flex flex-col justify-start hero-content-mid
+                        pt-4 sm:pt-8 md:pt-10 lg:pt-8 xl:pt-12 
                         px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 
-                        pb-1 sm:pb-4 md:pb-6 lg:pb-8 xl:pb-10 w-full
+                        pb-4 sm:pb-6 md:pb-8 lg:pb-10 xl:pb-10 w-full
                         relative">
 
             {/* Main Title - Enhanced responsive typography */}
-            <div className="mb-2 sm:mb-1 md:mb-2 lg:mb-2 xl:mb-2 hero-title-large-margin w-full overflow-hidden mt-7 lg:mt-1 xl:mt-1">
+            <div className="mb-2 sm:mb-2 md:mb-3 lg:mb-3 xl:mb-3 hero-title-large-margin w-full overflow-hidden mt-1">
               <h1
                 className="text-[#0D4A8D] font-bold leading-[90%] tracking-tight hero-title-mobile
                          text-[24px] sm:text-[28px] md:text-[36px] lg:text-[42px] xl:text-[50px] 2xl:text-[58px]
@@ -324,24 +324,24 @@ const Hero = () => {
 
             {/* Products Section - Images positioned over the full-width background */}
             {/* Hero products section */}
-            <div className="hero-products-mid relative z-10 2xl:mb-10">
+            <div className="hero-products-mid relative z-10 mt-1 sm:mt-2 lg:mt-3">
               {/* Full-width blue background */}
 
 
               {/* Inner content with padding */}
               <div
-                className="relative z-10 flex hero-products-mobile sm:flex-row justify-center lg:justify-start items-center
+                className="hero-sweep-products-row relative z-10 flex hero-products-mobile sm:flex-row justify-center lg:justify-start items-center
                gap-4 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-10
                py-4 sm:py-5 md:py-6 lg:py-8 xl:py-9
                px-4 sm:px-6 md:px-8 lg:pl-8 lg:pr-16 xl:pl-12 xl:pr-20 2xl:pl-16 2xl:pr-24
-               h-[120px] sm:h-[150px] md:h-[170px] lg:h-[189px] xl:h-[180px] 2xl:h-[189px]"
+               min-h-[120px] sm:min-h-[150px] md:min-h-[170px] lg:min-h-[189px] xl:min-h-[190px]"
               >
                 {/* CobalFine Product */}
                 <img
                   src="/images/Product1.png"
                   alt="CobalFine Product"
-                  className="w-[115px] h-[85px] sm:w-[140px] sm:h-[90px] md:w-[160px] md:h-[100px] lg:w-[240px] lg:h-[120px] xl:w-[280px] xl:h-[130px] 2xl:w-[320px] 2xl:h-[140px]
-                 rounded-[12px] object-contain lg:ml-[-80px]
+                  className="w-[115px] h-[85px] sm:w-[140px] sm:h-[90px] md:w-[160px] md:h-[100px] lg:w-[220px] lg:h-[118px] xl:w-[260px] xl:h-[130px] 2xl:w-[300px] 2xl:h-[140px]
+                 rounded-[12px] object-contain
                  animate-fade-in-up transition-transform duration-300 hover:scale-110"
                   style={{ animationDelay: '0.6s' }}
                 />
@@ -350,7 +350,7 @@ const Hero = () => {
                 <img
                   src="/images/Product2.png"
                   alt="Garci Product"
-                  className="w-[115px] h-[85px] sm:w-[140px] sm:h-[90px] md:w-[160px] md:h-[100px] lg:w-[240px] lg:h-[120px] xl:w-[280px] xl:h-[130px] 2xl:w-[320px] 2xl:h-[140px]
+                  className="w-[115px] h-[85px] sm:w-[140px] sm:h-[90px] md:w-[160px] md:h-[100px] lg:w-[220px] lg:h-[118px] xl:w-[260px] xl:h-[130px] 2xl:w-[300px] 2xl:h-[140px]
                  rounded-[12px] object-contain 
                  animate-fade-in-up transition-transform duration-300 hover:scale-110"
                   style={{ animationDelay: '0.8s' }}
@@ -359,7 +359,7 @@ const Hero = () => {
             </div>
 
             {/* Introductory Text - Always visible, positioned after blue div + images */}
-            <div className="mb-2 sm:mb-4 md:mb-8 lg:mb-10 xl:mb-2  relative z-70 hero-intro-mobile hero-intro-mid hero-intro-pre-large mt-1 sm:mt-4 md:mt-3 lg:mt-2 xl:mt-1">
+            <div className="mb-3 sm:mb-5 md:mb-6 lg:mb-8 xl:mb-6 relative z-70 hero-intro-mobile hero-intro-mid hero-intro-pre-large mt-2 sm:mt-4 md:mt-4 lg:mt-3">
               <p
                 className="bigpara text-[#0D4A8D] font-normal w-full max-w-[95%] sm:max-w-[90%] md:max-w-[625px] 
                          text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[22px]
@@ -392,18 +392,18 @@ const Hero = () => {
               </Link>
             </div>
           </div>
-          <div className="w-full xl:w-auto xl:flex-none flex justify-center items-start hero-video-mid hero-video-mobile
-                        p-1 xs:p-2 sm:p-6 md:p-8 lg:p-6 xl:p-12 2xl:p-16
-                        h-auto lg:h-[480px] xl:h-[580px] 2xl:h-[680px] 
-                        relative lg:ml-0 xl:ml-[-100px] 2xl:ml-[-120px] z-20 -mt-18 sm:-mt-12 md:-mt-16 lg:-mt-20 xl:-mt-4 2xl:-mt-16">
+          <div className="hero-sweep-media w-full xl:w-auto xl:flex-none flex justify-center items-center hero-video-mid hero-video-mobile
+                        p-3 sm:p-5 md:p-7 lg:p-6 xl:p-8 2xl:p-10
+                        h-auto lg:min-h-[420px] xl:min-h-[500px] 2xl:min-h-[560px]
+                        relative z-20 mt-2 sm:mt-3 md:mt-4 lg:mt-2 xl:mt-0">
 
             <video
               src="/images/PH Product U shape 2.mp4"
-              className="w-full h-auto object-cover transition-transform duration-300
+              className="w-full h-auto object-contain transition-transform duration-300
                          max-w-[250px] xs:max-w-[270px] sm:max-w-[340px] md:max-w-[380px] 
-                         lg:max-w-[400px] xl:max-w-[440px] 2xl:max-w-[472px]
+                         lg:max-w-[390px] xl:max-w-[430px] 2xl:max-w-[460px]
                          max-h-[220px] xs:max-h-[240px] sm:max-h-[300px] md:max-h-[340px] 
-                         lg:max-h-[450px] xl:max-h-[580px] 2xl:max-h-[650px]"
+                         lg:max-h-[430px] xl:max-h-[520px] 2xl:max-h-[580px]"
               autoPlay
               muted
               loop
