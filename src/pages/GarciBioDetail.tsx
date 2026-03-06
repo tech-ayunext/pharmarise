@@ -140,9 +140,12 @@ const GarciBioDetail = () => {
             title: "Appetite Control",
             description: "GarciBIO supports appetite control through the action of HCA (Hydroxycitric Acid) from Garcinia Cambogia, helping reduce cravings and caloric intake.",
             icon: (
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
-                    <path d="M8 12h8" /><path d="M12 8v8" />
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 11h16" />
+                    <path d="M6 11c0 3.866 2.239 7 6 7s6-3.134 6-7" />
+                    <path d="M9 7.5c0-1.1.9-2 2-2" />
+                    <path d="M12.5 6.5c0-1.1.9-2 2-2" />
+                    <path d="M16 7.8c.9-.2 1.7-.7 2.2-1.5" />
                 </svg>
             ),
             ref: "Evid Based Complementary Alternat Med 2013, Article Id751658"
@@ -151,9 +154,12 @@ const GarciBioDetail = () => {
             title: "Visceral Fat Reduction",
             description: "GarciBIO reduces abdominal visceral fat, the dangerous fat around internal organs, leading to improved metabolic health and reduced waist circumference.",
             icon: (
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M6 20V4" /><path d="M18 20V4" /><path d="M6 12h12" />
-                    <path d="M6 8l3-4" /><path d="M6 16l3 4" /><path d="M18 8l-3-4" /><path d="M18 16l-3 4" />
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M7.5 4.5c-1.7 1.8-2.8 4.4-2.8 7.5s1.1 5.7 2.8 7.5" />
+                    <path d="M16.5 4.5c1.7 1.8 2.8 4.4 2.8 7.5s-1.1 5.7-2.8 7.5" />
+                    <path d="M9 10.5c1 .9 2 .9 3 .9s2 0 3-.9" />
+                    <path d="M9 13.5c1 .9 2 .9 3 .9s2 0 3-.9" />
+                    <path d="M12 8v8" />
                 </svg>
             ),
             ref: "Curr Ther Res 2003; 64:551-567"
@@ -162,8 +168,13 @@ const GarciBioDetail = () => {
             title: "Carbohydrate Metabolism",
             description: "GarciBIO has Salacia Reticulata which reduces carbohydrate metabolism, limiting the breakdown and absorption of carbohydrates for better weight management.",
             icon: (
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M7 17L17 7" /><path d="M17 17V7H7" />
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="7" cy="8" r="2" />
+                    <circle cx="17" cy="8" r="2" />
+                    <circle cx="12" cy="16" r="2.2" />
+                    <path d="M8.8 9.1l2 4.8" />
+                    <path d="M15.2 9.1l-2 4.8" />
+                    <path d="M9 8h6" />
                 </svg>
             ),
             ref: "Nutr J. 2015; 27:14:21"
