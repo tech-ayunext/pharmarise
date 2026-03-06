@@ -284,34 +284,32 @@ const GarciBioDetail = () => {
                                     </div>
                                     <p className="text-gray-400 text-xs mt-3">* along with diet and exercise, in overweight patients</p>
                                 </div>
-                                {/* Formulation */}
-                                <p className="text-[#0D4A8D] text-base sm:text-lg font-medium mb-6 leading-relaxed">
-                                    Garcinia Cambogia extract (HCA 50%) 400 mg &amp;<br className="hidden sm:block" />
-                                    Salacia Reticulata extract 200 mg
-                                </p>
-
-                                {/* Description */}
-                                <p className="text-[#0D4A8D]/70 text-sm sm:text-base leading-relaxed mb-6">
-                                    A unique natural nutritional supplement for the first-time in India containing Garcinia Cambogia with added advantage of Salacia Reticulata. Formulated with science-backed ingredients, free from artificial additives.
-                                </p>
-
-
-
-
-
-                                {/* CTA */}
-                                <button
-                                    onClick={() => navigate('/contact')}
-                                    className="group inline-flex items-center gap-3 px-8 py-4 bg-[#0D4A8D] text-white font-bold rounded-full shadow-lg hover:shadow-xl hover:bg-[#0a3d75] transition-all duration-300 text-base"
-                                >
-                                    Enquire Now
-                                    <span className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
-                                        <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                                        </svg>
-                                    </span>
-                                </button>
                             </div>
+                        </div>
+                    </div>
+
+                    {/* Full-width details row to avoid empty left area */}
+                    <div className="mt-8 md:mt-10 garci-fade-up" style={{ animationDelay: '0.5s' }}>
+                        <div className="max-w-6xl mx-auto text-center px-4 sm:px-6">
+                            <p className="text-[#0D4A8D] text-lg sm:text-xl md:text-2xl font-semibold leading-relaxed mb-4">
+                                Garcinia Cambogia extract (HCA 50%) 400 mg &amp; <span className="block sm:inline">Salacia Reticulata extract 200 mg</span>
+                            </p>
+
+                            <p className="text-[#0D4A8D]/80 text-base sm:text-lg md:text-xl leading-relaxed mb-8 max-w-5xl mx-auto">
+                                A unique natural nutritional supplement for the first-time in India containing Garcinia Cambogia with added advantage of Salacia Reticulata. Formulated with science-backed ingredients, free from artificial additives.
+                            </p>
+
+                            <button
+                                onClick={() => navigate('/contact')}
+                                className="group inline-flex items-center gap-3 px-8 py-4 bg-[#0D4A8D] text-white font-bold rounded-full shadow-lg hover:shadow-xl hover:bg-[#0a3d75] transition-all duration-300 text-base"
+                            >
+                                Enquire Now
+                                <span className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                                    <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </span>
+                            </button>
                         </div>
                     </div>
                 </div>

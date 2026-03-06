@@ -159,6 +159,12 @@ const Header = () => {
             Products
           </Link>
           <Link
+            to="/products/garcibio"
+            className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
+          >
+            GarciBIO
+          </Link>
+          <Link
             to="/bmi-calculator"
             className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
           >
@@ -213,6 +219,13 @@ const Header = () => {
               onClick={() => setMenuOpen(false)}
             >
               Products
+            </Link>
+            <Link
+              to="/products/garcibio"
+              className="text-[rgba(13,74,141,1)] text-lg font-medium"
+              onClick={() => setMenuOpen(false)}
+            >
+              GarciBIO
             </Link>
             <Link
               to="/bmi-calculator"
