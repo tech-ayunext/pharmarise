@@ -119,6 +119,13 @@ const BMICalculator = () => {
     const [gender, setGender] = useState('male');
     const [unit, setUnit] = useState('metric');
 
+    const scrollToCalculator = () => {
+        const target = document.getElementById('bmi-calculator-panel');
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
 
     const calculateBMI = () => {
         if (weight && height) {
@@ -198,17 +205,58 @@ const BMICalculator = () => {
            
 
             {/* Information Section */}
-            <section className="pt-8 sm:pt-12 lg:pt-16 pb-2 bg-[#F1F5F9]">
+            <section className="pt-8 sm:pt-10 lg:pt-12 pb-6 sm:pb-8 bg-gradient-to-b from-[#F0F6FF] to-[#EAF2FF]">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-                    {/* What does BMI mean? */}
-                    <div className="mb-8 sm:mb-10 lg:mb-12 opacity-0 animate-[fadeInUp_0.6s_ease-out_0.2s_forwards]">
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#BE2623] mb-2 relative hover:scale-[1.02] transition-transform duration-300">
-                            About BMI
-                            <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#BE2623] animate-[expandWidth_0.8s_ease-out_0.4s_forwards]"></div>
-                        </h2>
-                        <p className="text-[#0D4A8D] text-base sm:text-lg lg:text-xl leading-relaxed mt-4 sm:mt-6 opacity-0 animate-[fadeIn_0.6s_ease-out_0.6s_forwards]">
-                            Body Mass Index (BMI) estimates whether your weight is healthy for your height. While it’s a useful guide, it doesn’t measure body fat and may not apply to children, pregnant women, athletes, or some ethnic groups. To find your BMI, choose your gender and unit, enter your height and weight, and click Calculate to see your result.
-                        </p>
+                    <div className="rounded-3xl border border-[#D8E7FF] bg-white shadow-md p-5 sm:p-7 lg:p-8 opacity-0 animate-[fadeInUp_0.6s_ease-out_0.2s_forwards]">
+                        <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-6 lg:gap-8 items-start">
+                            <div>
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0D4A8D]/10 text-[#0D4A8D] text-xs sm:text-sm font-semibold mb-3">
+                                    Quick Health Snapshot
+                                </div>
+
+                                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0D4A8D] mb-3">
+                                    Check Your BMI in Less Than 30 Seconds
+                                </h2>
+
+                                <p className="text-[#0D4A8D]/90 text-base sm:text-lg leading-relaxed mb-4">
+                                    BMI helps you understand whether your current weight is in a healthy range for your height. Use this quick tool to get your BMI category, ideal weight estimate, and simple guidance.
+                                </p>
+
+                                <div className="flex flex-wrap gap-2 sm:gap-3 mb-5">
+                                    <span className="px-3 py-1.5 rounded-full bg-[#EAF2FF] text-[#0D4A8D] text-xs sm:text-sm font-semibold">Choose Gender</span>
+                                    <span className="px-3 py-1.5 rounded-full bg-[#EAF2FF] text-[#0D4A8D] text-xs sm:text-sm font-semibold">Set Height & Weight</span>
+                                    <span className="px-3 py-1.5 rounded-full bg-[#EAF2FF] text-[#0D4A8D] text-xs sm:text-sm font-semibold">Get Instant Result</span>
+                                </div>
+
+                                <button
+                                    onClick={scrollToCalculator}
+                                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0D4A8D] text-white font-bold text-sm sm:text-base hover:bg-[#0a3d73] transition-all duration-300 hover:shadow-lg"
+                                >
+                                    Start BMI Check
+                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div className="bg-[#F5F9FF] border border-[#D9E7FF] rounded-2xl p-4 sm:p-5">
+                                <h3 className="text-[#BE2623] text-lg sm:text-xl font-bold mb-3">Before You Start</h3>
+                                <ul className="space-y-2.5 text-[#0D4A8D] text-sm sm:text-base leading-relaxed">
+                                    <li className="flex items-start gap-2">
+                                        <span className="mt-1 w-1.5 h-1.5 rounded-full bg-[#0D4A8D]"></span>
+                                        BMI is a guide, not a complete body-fat assessment.
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <span className="mt-1 w-1.5 h-1.5 rounded-full bg-[#0D4A8D]"></span>
+                                        Results may vary for athletes, pregnant women, and children.
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <span className="mt-1 w-1.5 h-1.5 rounded-full bg-[#0D4A8D]"></span>
+                                        Use your result as a starting point for healthier decisions.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
 
@@ -240,7 +288,7 @@ const BMICalculator = () => {
             </section>
 
             {/* Modern BMI Calculator Section */}
-            <section className="py-16 sm:py-20 lg:py-10 bg-white">
+            <section id="bmi-calculator-panel" className="py-10 sm:py-12 lg:py-10 bg-white">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
                     {/* Calculator Card Container */}
                     <div className="bg-white rounded-3xl   p-6 sm:p-8 lg:p-12 opacity-0 animate-[fadeInUp_0.8s_ease-out_0.2s_forwards]">
