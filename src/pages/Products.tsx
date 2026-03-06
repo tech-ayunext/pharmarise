@@ -36,13 +36,13 @@ const Products = () => {
             id: 1,
             name: "GarciBIO",
             image: "/images/p1.png",
-            description: "A unique natural nutritional supplement for the first-time in India containing Garcinia Cambogia with added advantage of Salacia Reticulata as compared to other marketed Garcinia products. Salacia along with Garcinia in GarciBIO offers significant synergistic effects in overweight patients. Multiple pathways of action make GarciBIO preferred choice for weight reduction. Indian vegetarian population can take it without any hesitation as it available in Veg capsules."
+            description: "A unique natural nutritional supplement for the first-time in India containing Garcinia Cambogia with added advantage of Salacia Reticulata as compared to other marketed Garcinia products. Multiple pathways of action make GarciBIO preferred choice for weight reduction of 6Kg in 9 days with Veg Capsule"
         },
         {
             id: 2,
             name: "CobalFine 6G",
             image: "/images/p3.png",
-            description: "CobalFine 6G is Veg tablet formulation with unique 6G Extract along with perfect ratio of Curcumin and Piperine which reduces stress to maintains youthfulness."
+            description: "CobalFine 6G is Veg tablet formulation with 6 unique extract along with perfect ratio of Curcumin and Piperine which reduces stress to maintains youthfulness."
         },
         {
             id: 3,
