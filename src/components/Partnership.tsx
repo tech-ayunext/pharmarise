@@ -221,7 +221,7 @@ const Partnership = () => {
                 <h3 className="leading-none partnership-item-heading-tablet">Innovative Products</h3>
               </div>
               <p className="text-[rgba(0,52,109,1)] text-[16px] sm:text-[18px] md:text-[19px] lg:text-[21px] partnership-item-text-tablet font-normal leading-[24px] sm:leading-[28px] md:leading-[30px] lg:leading-[31px] tracking-[-0.64px] mt-1.5 max-md:max-w-full animate-fade-in-right" style={{ animationDelay: '0.7s' }}>
-                Experienced professionals driving brand growth & deeper market penetration for your products.
+                Experienced professionals driving brand growth and deeper market penetration for your products.
               </p>
 
               {/* Box 2 */}
@@ -232,10 +232,10 @@ const Partnership = () => {
                   className="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] md:w-[32px] md:h-[32px] lg:w-[34.453px] lg:h-[34.453px] partnership-icon-tablet flex-shrink-0 mr-3 sm:mr-4 mt-1 transition-transform duration-300 hover:scale-110"
                   style={{ aspectRatio: '34.45/34.45' }}
                 />
-                <h3 className="leading-none partnership-item-heading-tablet">Learning & Development Solutions</h3>
+                <h3 className="leading-none partnership-item-heading-tablet">Learning and Development Solutions</h3>
               </div>
               <p className="text-[rgba(0,52,109,1)] text-[16px] sm:text-[18px] md:text-[19px] lg:text-[21px] partnership-item-text-tablet font-normal leading-[24px] sm:leading-[28px] md:leading-[30px] lg:leading-[31px] tracking-[-0.64px] max-md:max-w-full animate-fade-in-right" style={{ animationDelay: '0.9s' }}>
-                Experienced professionals driving brand growth & deeper market penetration for your products.
+                Experienced professionals driving brand growth and deeper market penetration for your products.
               </p>
 
               {/* Box 3 */}
@@ -246,7 +246,7 @@ const Partnership = () => {
                   className="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] md:w-[32px] md:h-[32px] lg:w-[34.453px] lg:h-[34.453px] partnership-icon-tablet flex-shrink-0 mr-3 sm:mr-4 mt-1 transition-transform duration-300 hover:scale-110"
                   style={{ aspectRatio: '34.45/34.45' }}
                 />
-                <h3 className="leading-none partnership-item-heading-tablet">India Formulation & Consultation</h3>
+                <h3 className="leading-none partnership-item-heading-tablet">Indian Formulation and Consultation</h3>
               </div>
               <p className="text-[rgba(0,52,109,1)] text-[16px] sm:text-[18px] md:text-[19px] lg:text-[21px] partnership-item-text-tablet font-normal leading-[28px] sm:leading-[32px] md:leading-[35px] lg:leading-[37px] tracking-[-0.64px] max-md:max-w-full animate-fade-in-right pb-10" style={{ animationDelay: '1.1s' }}>
                 Our robust logistics and 24/7 service ensure your products reach every corner efficiently.

@@ -124,7 +124,7 @@ const Contact = () => {
 
                 {/* Actual textarea */}
                 <textarea
-                  placeholder="Message....."
+                  placeholder="Message..."
                   className="w-[95%] sm:w-[300px] md:w-[400px] lg:w-[496px]
                   h-[45px] sm:h-[100px] lg:h-[115px]
                   

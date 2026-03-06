@@ -130,7 +130,7 @@ const ContactPageForm = () => {
                     <input
                         {...register("phone")}
                         type="tel"
-                        placeholder="Phone No"
+                        placeholder="Phone Number"
                         maxLength={10}
                         onInput={(e) => {
                             const target = e.target as HTMLInputElement;
@@ -148,7 +148,7 @@ const ContactPageForm = () => {
                 <div className="animate-fade-in-up" style={{ animationDelay: '0.9s' }}>
                     <textarea
                         {...register("message")}
-                        placeholder="Message....."
+                        placeholder="Message..."
                         rows={4}
                         className="w-full px-4 py-3 text-lg text-gray-700 placeholder-gray-500 bg-white border-2 border-gray-300 rounded-lg focus:border-[#0d4a8d] focus:outline-none transition-all duration-300 resize-none focus:scale-105"
                     />

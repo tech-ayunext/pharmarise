@@ -130,22 +130,22 @@ const Header = () => {
       {/* Main navigation */}
       <nav className="bg-[#F5F5FF] z-10 flex w-full items-center justify-between px-5 md:px-[37px] py-[13px] relative">
         {/* Logo */}
-        <a href="/">
+        <Link to="/">
           <img
             src="/images/PharmaRise logo.png"
             className="w-[180px] md:w-[264px] object-contain cursor-pointer"
             alt="PharmaRise logo"
           />
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"
           >
             Home
-          </a>
+          </Link>
           <Link
             to="/new-about"
             className="text-[rgba(13,74,141,1)] text-xl font-medium hover:opacity-80 transition-opacity"

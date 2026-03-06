@@ -372,8 +372,8 @@ const Hero = () => {
                 style={{ animationDelay: '1.0s' }}
               >
                 For the first time in India, PharmaRise proudly introduces two
-                unique & innovative products, set to redefine healthcare
-                possibilities, improve patient outcomes, & establish benchmarks of
+                unique and innovative products, set to redefine healthcare
+                possibilities, improve patient outcomes, and establish benchmarks of
                 excellence in the industry.
               </p>
             </div>

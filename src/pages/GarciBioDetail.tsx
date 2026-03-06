@@ -132,7 +132,6 @@ const FeatureBadge = ({ text, icon, delay, position }: {
     </div>
 );
 
-
 const GarciBioDetail = () => {
     const navigate = useNavigate();
 
@@ -171,11 +170,27 @@ const GarciBioDetail = () => {
         }
     ];
 
-    const certifications = [
-        { name: "WHO GMP Certified", color: "#0D4A8D" },
-        { name: "USDA Organic", color: "#2D8B3E" },
-        { name: "ISO 22000:2018", color: "#C62828" },
-        { name: "Halal Certified", color: "#1B5E20" }
+    const certificationLogos = [
+        {
+            title: 'Hazard Analysis',
+            subtitle: 'Critical Control Point',
+            image: '/images/cert-haccp.png'
+        },
+        {
+            title: 'Food Safety',
+            subtitle: 'Management System',
+            image: '/images/cert-iso-22000.png'
+        },
+        {
+            title: 'Good Manufacturing',
+            subtitle: 'Practice',
+            image: '/images/cert-gmp.png'
+        },
+        {
+            title: 'Registrar Corp',
+            subtitle: 'USA',
+            image: '/images/cert-registrar-corp.png'
+        }
     ];
 
     return (
@@ -210,7 +225,7 @@ const GarciBioDetail = () => {
                     <div className="text-center mb-4 md:mb-8 garci-fade-up">
                         <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-tight">
                             <span className="text-[#0D4A8D]">NATURAL CARE</span>{' '}
-                            <span className="garci-gradient-text">  REAL RESULTS..</span>
+                            <span className="garci-gradient-text"> REAL RESULTS.</span>
                         </h2>
                     </div>
 
@@ -296,7 +311,7 @@ const GarciBioDetail = () => {
                             </p>
 
                             <p className="text-[#0D4A8D]/80 text-base sm:text-lg md:text-xl leading-relaxed mb-8 max-w-5xl mx-auto">
-                                A unique natural nutritional supplement for the first-time in India containing Garcinia Cambogia with added advantage of Salacia Reticulata. Formulated with science-backed ingredients, free from artificial additives.
+                                A unique natural nutritional supplement, first in India, containing Garcinia Cambogia with the added advantage of Salacia Reticulata. Formulated with science-backed ingredients and free from artificial additives.
                             </p>
 
                             <button
@@ -627,30 +642,28 @@ const GarciBioDetail = () => {
             <section className="py-12 sm:py-16 bg-white">
                 <div className="container mx-auto px-4 md:px-8 max-w-5xl">
                     <h2 className="text-2xl sm:text-3xl font-bold text-[#0D4A8D] text-center mb-3 garci-fade-up">
-                        Manufactured at Plant with Following Certifications
+                        Manufactured at a Plant with the Following Certifications
                     </h2>
                     <p className="text-[#0D4A8D]/50 text-sm text-center mb-10 garci-fade-up" style={{ animationDelay: '0.1s' }}>
                         Quality assurance backed by international standards
                     </p>
 
-                    <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 md:gap-12">
-                        {certifications.map((cert, index) => (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-7">
+                        {certificationLogos.map((cert, index) => (
                             <div
-                                key={index}
-                                className="garci-fade-up flex flex-col items-center gap-3 group"
+                                key={cert.title}
+                                className="garci-fade-up bg-[#F2F4F7] rounded-xl px-4 py-5 flex flex-col items-center text-center border border-[#0D4A8D]/10"
                                 style={{ animationDelay: `${0.2 + index * 0.1}s` }}
                             >
-                                <div
-                                    className="w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
-                                    style={{ backgroundColor: cert.color + '15', border: `2.5px solid ${cert.color}` }}
-                                >
-                                    <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" viewBox="0 0 24 24" stroke={cert.color} strokeWidth="1.8">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                    </svg>
+                                <div className="w-full max-w-[170px] h-[165px] bg-transparent rounded-lg overflow-hidden mb-4 flex items-center justify-center">
+                                    <img
+                                        src={cert.image}
+                                        alt={`${cert.title} ${cert.subtitle}`}
+                                        className="w-full h-full object-contain"
+                                    />
                                 </div>
-                                <span className="text-xs sm:text-sm font-semibold text-center" style={{ color: cert.color }}>
-                                    {cert.name}
-                                </span>
+                                <p className="text-[#0D4A8D] font-bold text-[19px] leading-tight">{cert.title}</p>
+                                <p className="text-[#0D4A8D] font-bold text-[19px] leading-tight mt-1">{cert.subtitle}</p>
                             </div>
                         ))}
                     </div>

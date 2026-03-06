@@ -421,25 +421,42 @@ const BMICalculator = () => {
                                     <div className="space-y-2">
                                         <div className="bg-gray-50 rounded-xl p-4 text-left">
                                             <p className="text-gray-600 text-sm leading-relaxed">
-                                                {category === 'Underweight' && "You are underweight for your height, and keeping yourself in a healthy range will help your body stay stronger against infections. To support this, you can consider adding Cobalfine 6G to your routine for better nutrition and energy"}
+                                                {category === 'Underweight' && "You are underweight for your height, and staying within a healthy range will help your body remain stronger against infections. To support this, you can consider adding CobalFine 6G to your routine for better nutrition and energy."}
                                                 {category === 'Normal weight' && "You are within the normal weight range for your height. Maintain your healthy lifestyle with balanced nutrition and regular exercise."}
-                                                {category === 'Overweight' && "You are overweight for your height. Consider adopting healthier eating habits and increasing physical activity."}
-                                                {category === 'Obese' && "You are in the obese category for your height, so it's best to consult a healthcare professional for guidance. Along with that, you can consider Garcibio as a supportive option for managing weight."}
+                                                {category === 'Overweight' && "You are overweight for your height. Consider adopting healthier eating habits and increasing physical activity. You can also consider GarciBIO as a supportive option for managing weight."}
+                                                {category === 'Obese' && "You are in the obese category for your height, so it's best to consult a healthcare professional for guidance. Along with that, you can consider GarciBIO as a supportive option for managing weight."}
                                             </p>
                                         </div>
                                         
                                         {/* Product Image for Underweight and Obese  added breathing effect */}
-                                        {(category === 'Underweight' || category === 'Obese') && (
+                                        {(category === 'Underweight' || category === 'Overweight' || category === 'Obese') && (
                                             <div className="flex justify-center">
-                                                <img
-                                                    src={category === 'Underweight' ? '/images/cobalFine_6g_popup.jpg' : '/images/Garci_Bio_popup.jpg'}
-                                                    alt={category === 'Underweight' ? 'Cobalfine 6G' : 'Garcibio'}
-                                                    className=" w-40 h-40 sm:w-48 sm:h-48 object-contain transition-all duration-300 cursor-pointer hover:scale-105 animate-breathe"
-                                                    onClick={() => {
-                                                        const productId = category === 'Underweight' ? 2 : 1; // CobalFine 6G = 2, GarciBIO = 1
-                                                        navigate(`/products#product-${productId}`);
-                                                    }}
-                                                />
+                                                <div className="relative flex flex-col items-center">
+                                                    {(category === 'Overweight' || category === 'Obese') && (
+                                                        <div className="mb-3 flex flex-col items-center">
+                                                            <button
+                                                                onClick={() => navigate('/products/garcibio')}
+                                                                className="text-[#0D4A8D] text-sm sm:text-base md:text-lg font-semibold italic leading-snug text-center hover:text-[#009ACD] transition-colors"
+                                                            >
+                                                                Click bottle to get more details
+                                                            </button>
+                                                        </div>
+                                                    )}
+
+                                                    <img
+                                                        src={category === 'Underweight' ? '/images/cobalFine_6g_popup.jpg' : '/images/Garci_Bio_popup.jpg'}
+                                                        alt={category === 'Underweight' ? 'CobalFine 6G' : 'GarciBIO'}
+                                                        className="w-40 h-40 sm:w-48 sm:h-48 object-contain transition-all duration-300 cursor-pointer hover:scale-105 animate-breathe"
+                                                        onClick={() => {
+                                                            if (category === 'Overweight' || category === 'Obese') {
+                                                                navigate('/products/garcibio');
+                                                                return;
+                                                            }
+
+                                                            navigate('/products#product-2');
+                                                        }}
+                                                    />
+                                                </div>
                                             </div>
                                         )}
                                     </div>

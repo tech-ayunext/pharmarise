@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // Clean CSS for single combined image
@@ -116,6 +117,27 @@ const aboutAnimationStyles = `
   .about-combined-img:hover {
     transform: scale(1.02);
     box-shadow: 0 clamp(8px, 1.5vw, 20px) clamp(25px, 4vw, 60px) rgba(0, 0, 0, 0.15);
+  }
+
+  /* Scroll reveal animation */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    will-change: opacity, transform;
+  }
+
+  .scroll-reveal.from-left {
+    transform: translateX(-30px);
+  }
+
+  .scroll-reveal.from-right {
+    transform: translateX(30px);
+  }
+
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translate(0, 0);
   }
 
   /* 🎯 FLUID TYPOGRAPHY */
@@ -304,6 +326,27 @@ if (typeof document !== 'undefined') {
 }
 
 const About = () => {
+  useEffect(() => {
+    const targets = document.querySelectorAll<HTMLElement>('#about .scroll-reveal');
+    if (!targets.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    targets.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
       className="bg-white w-full py-0 pl-4 sm:pl-8 md:pl-12 lg:pl-20 pr-4 sm:pr-8 md:pr-12 lg:pr-0"
@@ -313,7 +356,7 @@ const About = () => {
         <div className="about-text-section">
           <div className="flex flex-col items-start text-[#0D4A8D] font-medium">
             {/* About Us Label with red underline */}
-            <div className="mb-6 relative animate-fade-in-left" style={{ animationDelay: '0.2s' }}>
+            <div className="mb-6 relative scroll-reveal from-left">
               <p className="text-lg sm:text-xl md:text-2xl font-medium">
                 About Us
               </p>
@@ -321,35 +364,35 @@ const About = () => {
             </div>
 
             {/* Heading */}
-            <h2 className="about-title text-[#0D4A8D] text-left font-['Red_Hat_Text'] font-semibold leading-tight tracking-tight animate-fade-in-left transition-transform duration-300 hover:scale-105" style={{ animationDelay: '0.4s' }}>
+            <h2 className="about-title text-[#0D4A8D] text-left font-['Red_Hat_Text'] font-semibold leading-tight tracking-tight transition-transform duration-300 hover:scale-105 scroll-reveal from-left" style={{ transitionDelay: '0.05s' }}>
               PharmaRise Innovations LLP
             </h2>
 
             {/* Subtext with Mr Rajendra Patkar in red */}
-            <p className="about-subtitle text-[#0D4A8D] font-['Red_Hat_Text'] font-medium leading-relaxed animate-fade-in-left" style={{ animationDelay: '0.6s' }}>
-              Pharmarise Innovations has been founded in 2024 by<br />
+            <p className="about-subtitle text-[#0D4A8D] font-['Red_Hat_Text'] font-medium leading-relaxed scroll-reveal from-left" style={{ transitionDelay: '0.1s' }}>
+              PharmaRise Innovations was founded in 2024 by<br />
               <span className="text-[#BE2623] font-['Red_Hat_Text'] font-medium">
-                Mr Rajendra Patkar
+                Mr. Rajendra Patkar
               </span>
-              . A pharmacist by qualification and an MBA from Jamnalal Bajaj.
+              . He is a pharmacist by qualification and holds an MBA from Jamnalal Bajaj.
             </p>
 
             {/* Description */}
-            <p className="about-description text-[#0D4A8D] text-justify font-normal leading-relaxed animate-fade-in-left" style={{ animationDelay: '0.8s' }}>
+            <p className="about-description text-[#0D4A8D] text-justify font-normal leading-relaxed scroll-reveal from-left" style={{ transitionDelay: '0.15s' }}>
               He has launched many innovative products and has headed top pharma
-              companies like Wockhardt, Jb Chemicals, & RPG where, he led major
+              companies like Wockhardt, JB Chemicals, and RPG, where he led major
               brand innovations. He has a vision to deliver innovative brands
-              that lead to better patient outcomes. Many of the brands are first
-              time in India showing that small companies can deliver big
-              Innovations. We always keep in mind the better patient outcomes in
-              all our Innovations.
+              that lead to better patient outcomes. Many of these brands are
+              first-time innovations in India, showing that small companies can
+              deliver big innovations. We always keep better patient outcomes in
+              mind in all our innovations.
             </p>
 
             {/* Button */}
             <Link
               to="/new-about"
-              className="about-button bg-[#0D4A8D] text-white hover:bg-opacity-90 transition-all animate-fade-in-up hover:scale-105 hover:shadow-lg transform inline-block"
-              style={{ animationDelay: '1.0s' }}
+              className="about-button bg-[#0D4A8D] text-white hover:bg-opacity-90 transition-all hover:scale-105 hover:shadow-lg transform inline-block scroll-reveal"
+              style={{ transitionDelay: '0.2s' }}
             >
               Our Story
             </Link>
@@ -360,9 +403,9 @@ const About = () => {
           <div className="about-image-container">
             <img
               src="/images/Blue_back.png"
-              className="about-combined-img animate-fade-in-right"
+              className="about-combined-img scroll-reveal from-right"
               alt="About us - Mr Rajendra Patkar"
-              style={{ animationDelay: '0.4s' }}
+              style={{ transitionDelay: '0.1s' }}
             />
           </div>
         </div>

@@ -1038,15 +1038,15 @@ const AboutSection: React.FC = () => {
                 animate-fade-in-right"
             style={{ animationDelay: '0.6s' }}
           >
-            Pharmarise Innovations has been founded in 2024 by Mr Rajendra
-            Patkar. A pharmacist by qualification and an MBA from Jamnalal
-            Bajaj. He has launched many innovative products and has headed top
-            pharma companies like Wockhardt, Jb Chemicals, & RPG where, he led
-            major brand innovations. He has a vision to deliver innovative
-            brands that lead to better patient outcomes. Many of the brands are
-            first time in India showing that small companies can deliver big
-            Innovations. We always keep in mind the better patient outcomes in
-            all our Innovations.
+            PharmaRise Innovations was founded in 2024 by Mr. Rajendra
+            Patkar. He is a pharmacist by qualification and holds an MBA from
+            Jamnalal Bajaj. He has launched many innovative products and has
+            led top pharmaceutical companies like Wockhardt, JB Chemicals, and
+            RPG, where he drove major brand innovations. He has a vision to
+            deliver innovative brands that lead to better patient outcomes.
+            Many of these brands are first-time innovations in India, showing
+            that small companies can deliver big innovations. We always keep
+            better patient outcomes in mind in all our innovations.
           </p>
           <FeaturesGrid />
         </div>
@@ -1068,7 +1068,7 @@ const WhyChooseSection: React.FC = () => {
   const choiceCards: ChoiceCard[] = [
     {
       title: "High Quality Products",
-      description: "We work alongside with trusted pharmaceutical producers.",
+      description: "We work with trusted pharmaceutical manufacturers.",
       bgColor: "bg-[#0D4A8D]",
       borderColor: "border-r-[#009ACD] border-b-[#009ACD]",
       icon: '<svg width="87" height="87" viewBox="0 0 87 87" fill="none" xmlns="http://www.w3.org/2000/svg" class="card-icon" style="width: 87px; height: 87px; margin-bottom: 40px"> <path d="M48.2126 29.3987L52.9976 38.9687C53.6501 40.2737 55.3901 41.5787 56.8401 41.7962L65.5039 43.2461C71.0501 44.1886 72.3551 48.1762 68.3676 52.1637L61.6251 58.9062C60.5014 60.0299 59.8488 62.2412 60.2113 63.8362L62.1327 72.2099C63.6552 78.8074 60.1389 81.3812 54.3027 77.9374L46.1826 73.1162C44.6963 72.2462 42.3039 72.2462 40.8177 73.1162L32.6976 77.9374C26.8613 81.3812 23.3451 78.8074 24.8676 72.2099L26.7889 63.8362C27.1514 62.2774 26.4989 60.0662 25.3751 58.9062L18.6327 52.1637C14.6452 48.1762 15.9501 44.1524 21.4963 43.2461L30.1601 41.7962C31.6101 41.5424 33.3501 40.2737 34.0026 38.9687L38.7877 29.3987C41.3614 24.2149 45.6388 24.2149 48.2126 29.3987Z" stroke="white" stroke-width="5.4375" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M21.75 32.625V7.25" stroke="white" stroke-width="5.4375" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M65.25 32.625V7.25" stroke="white" stroke-width="5.4375" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M43.5 14.5V7.25" stroke="white" stroke-width="5.4375" stroke-linecap="round" stroke-linejoin="round"></path> </svg>',
@@ -1084,7 +1084,7 @@ const WhyChooseSection: React.FC = () => {
     {
       title: "Professional Learning Solution",
       description:
-        "We provide training to keep healthcare professionals skilled & updated.",
+        "We provide training to keep healthcare professionals skilled and up to date.",
       bgColor: "bg-[#0D4A8D]",
       borderColor: "border-r-[#009ACD] border-b-[#009ACD]",
       icon: '<svg width="85" height="94" viewBox="0 0 85 94" fill="none" xmlns="http://www.w3.org/2000/svg" class="card-icon" style="width: 87px; height: 87px; margin-bottom: 40px"> <path d="M68.2909 76.5396H64.9829C61.5007 76.5396 58.1926 77.889 55.7551 80.3265L48.312 87.6828C44.9169 91.0344 39.3889 91.0344 35.9938 87.6828L28.5506 80.3265C26.1131 77.889 22.7616 76.5396 19.3229 76.5396H16.0584C8.83288 76.5396 3.00024 70.7507 3.00024 63.6122V16.124C3.00024 8.98551 8.83288 3.19653 16.0584 3.19653H68.2909C75.5164 3.19653 81.3491 8.98551 81.3491 16.124V63.6122C81.3491 70.7071 75.5164 76.5396 68.2909 76.5396Z" stroke="white" stroke-width="6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M20.4097 34.3168C20.4097 30.2688 23.7177 26.9604 27.7658 26.9604C31.8138 26.9604 35.1219 30.2688 35.1219 34.3168C35.1219 42.4999 23.5001 43.3704 20.932 51.1618C20.4096 52.7723 21.759 54.3828 23.4566 54.3828H35.1219" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M59.7591 54.3395V29.4856C59.7591 28.3539 59.0192 27.3526 57.931 27.0479C56.8428 26.7432 55.6676 27.1785 55.0583 28.136C51.9243 33.1852 48.5291 38.9308 45.5693 43.98C45.0905 44.807 45.0905 45.8952 45.5693 46.7222C46.0481 47.5492 46.9622 48.0713 47.9633 48.0713H63.9378" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path> </svg>',
@@ -1215,7 +1215,7 @@ const VisionMissionSection: React.FC = () => {
                 className="text-white text-left text-[22px] font-normal tracking-[-0.9px] leading-[1.4]
                             max-lg:text-lg max-sm:text-base about-vision-mission-text-tablet about-vision-mission-text-compact-tablet"
               >
-                PharmaRise Innovations LLP is dedicated to bridging healthcare gaps by delivering high-quality pharmaceutical products to providers. We ensure innovation, reliability & accessibility, bringing advanced medical solutions efficiently to healthcare professionals and patients.
+                PharmaRise Innovations LLP is dedicated to bridging healthcare gaps by delivering high-quality pharmaceutical products to providers. We ensure innovation, reliability and accessibility, bringing advanced medical solutions efficiently to healthcare professionals and patients.
               </p>
             </article>
           </div>

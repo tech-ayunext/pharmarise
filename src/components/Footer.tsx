@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 const Footer = () => {
@@ -154,30 +155,30 @@ const Footer = () => {
                         lineHeight: "175%",
                       }}
                     >
-                      <a
-                        href="#home"
+                      <Link
+                        to="/#home"
                         className="block hover:opacity-80 transition-opacity"
                       >
                         Home
-                      </a>
-                      <a
-                        href="#about"
+                      </Link>
+                      <Link
+                        to="/#about"
                         className="block hover:opacity-80 transition-opacity"
                       >
                         About Us
-                      </a>
-                      <a
-                        href="#innovations"
+                      </Link>
+                      <Link
+                        to="/#innovations"
                         className="block hover:opacity-80 transition-opacity"
                       >
-                        Product
-                      </a>
-                      <a
-                        href="/contact"
+                        Products
+                      </Link>
+                      <Link
+                        to="/contact"
                         className="block hover:opacity-80 transition-opacity"
                       >
                         Contact Us
-                      </a>
+                      </Link>
                     </nav>
                   </div>
                 </div>
@@ -195,7 +196,7 @@ const Footer = () => {
                         lineHeight: "175%",
                       }}
                     >
-                      Contact info
+                      Contact Info
                     </h4>
                     <div
                       className="space-y-2"
@@ -277,7 +278,7 @@ const Footer = () => {
           lineHeight: "175%",
         }}
       >
-        <span className="font-normal">© Copyright ©2025 </span>
+        <span className="font-normal">© 2025 </span>
         <a
           href="https://maps.app.goo.gl/qkfmcxB9nJSXcgSa9"
           className="font-normal text-white hover:opacity-80 transition-opacity"
@@ -286,7 +287,7 @@ const Footer = () => {
         >
           PharmaRise
         </a>
-        <span className="font-normal">. All Rights Reserved Copyright</span>
+        <span className="font-normal">. All rights reserved.</span>
       </div>
     </footer>
   );

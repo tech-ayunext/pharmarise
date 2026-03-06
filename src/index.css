@@ -106,6 +106,41 @@ All colors MUST be HSL.
     font-family: 'Red Hat Text', sans-serif;
   }
 }
+
+/* Global subtle motion system */
+.gm-reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.gm-reveal.gm-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+a,
+button {
+  transition: transform 0.26s ease, box-shadow 0.26s ease, opacity 0.26s ease, background-color 0.26s ease, color 0.26s ease;
+}
+
+button:hover,
+a:hover {
+  transform: translateY(-0.5px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gm-reveal,
+  .gm-reveal.gm-visible,
+  a,
+  button {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
 .clip-diagonal {
   clip-path: polygon(100% 0, 100% 100%, 0 100%, 100% 0);
 }

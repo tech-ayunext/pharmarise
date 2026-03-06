@@ -104,7 +104,7 @@ const ContactForm = ({ useBmiTemplate = false }: ContactFormProps) => {
             <input
               {...register("phone")}
               type="tel"
-              placeholder="Phone No"
+              placeholder="Phone Number"
               maxLength={10}
               onInput={(e) => {
                 const target = e.target as HTMLInputElement;

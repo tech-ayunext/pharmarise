@@ -10,11 +10,11 @@ const Innovations = () => {
   const innovationsData = [
     {
       image: "/images/Innovations_1.png",
-      description: "A unique natural nutritional supplement for the first time in India containing Garcinia Cambogia with added advantage of Salacia Reticulata as compared to other marketed Garcinia products. Salacia along with Garcinia in GarciBIO offers significant synergistic effects in overweight patients. Multiple pathways of action make GarciBIO the preferred choice for weight reduction. Indian vegetarian population can take it without hesitation as it is available in Veg capsules."
+      description: "A unique natural nutritional supplement, first in India, containing Garcinia Cambogia with the added advantage of Salacia Reticulata compared with other marketed Garcinia products. Salacia, along with Garcinia in GarciBIO, offers significant synergistic effects in overweight patients. Multiple pathways of action make GarciBIO the preferred choice for weight reduction. The Indian vegetarian population can take it without hesitation, as it is available in vegetarian capsules."
     },
     {
       image: "/images/Innovations_2.png",
-      description: "A triple drug therapy containing Metformin, Glimepride, and Voglibose. The advanced formulation enables Biognide GV1 to disintegrate faster as compared to other marketed brands."
+      description: "A triple-drug therapy containing Metformin, Glimepiride, and Voglibose. The advanced formulation enables Biognide GV1 to disintegrate faster compared with other marketed brands."
     },
     {
       image: "/images/Innovations_3.png",
@@ -22,7 +22,7 @@ const Innovations = () => {
     },
     {
       image: "/images/Innovations_4.png",
-      description: "RosNano is an innovative, first-time-in-India product with Nanoparticle size-based Rosuvastatin formulation stabilized in Cyclodextrin. Since Rosuvastatin is poorly soluble and has low bioavailability, this innovation improves its solubility and stability. The particle size is 2–20 microns compared to 200–400 microns in conventional brands, ensuring 2× better bioavailability, enhanced efficacy, safety, and reduced dosage load."
+      description: "RosNano is an innovative, first-in-India product with a nanoparticle-size-based Rosuvastatin formulation stabilized in cyclodextrin. Since Rosuvastatin is poorly soluble and has low bioavailability, this innovation improves its solubility and stability. The particle size is 2-20 microns compared with 200-400 microns in conventional brands, ensuring twofold better bioavailability, enhanced efficacy, improved safety, and a reduced dosage load."
     },
     {
       image: "/images/Innovations_5.png",
@@ -52,7 +52,7 @@ const Innovations = () => {
           navigation
           loop={true}
           autoplay={{
-            delay: 4000,
+            delay: 1000,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
