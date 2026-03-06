@@ -1016,7 +1016,7 @@ const AboutSection: React.FC = () => {
                      animate-fade-in-left transition-transform duration-300 hover:scale-105"
         style={{ animationDelay: '0.2s' }}
       >
-        We'll Ensure You Always Get Best Results.
+        We'll Ensure You Always Get The Best Results.
       </h2>
 
       <div className="flex gap-[25px] items-start max-md:flex-col max-md:gap-10 max-sm:gap-[30px] min-h-0 overflow-hidden">
@@ -1068,7 +1068,7 @@ const WhyChooseSection: React.FC = () => {
   const choiceCards: ChoiceCard[] = [
     {
       title: "High Quality Products",
-      description: "We work alongside trusted pharmaceutical producers.",
+      description: "We work alongside with trusted pharmaceutical producers.",
       bgColor: "bg-[#0D4A8D]",
       borderColor: "border-r-[#009ACD] border-b-[#009ACD]",
       icon: '<svg width="87" height="87" viewBox="0 0 87 87" fill="none" xmlns="http://www.w3.org/2000/svg" class="card-icon" style="width: 87px; height: 87px; margin-bottom: 40px"> <path d="M48.2126 29.3987L52.9976 38.9687C53.6501 40.2737 55.3901 41.5787 56.8401 41.7962L65.5039 43.2461C71.0501 44.1886 72.3551 48.1762 68.3676 52.1637L61.6251 58.9062C60.5014 60.0299 59.8488 62.2412 60.2113 63.8362L62.1327 72.2099C63.6552 78.8074 60.1389 81.3812 54.3027 77.9374L46.1826 73.1162C44.6963 72.2462 42.3039 72.2462 40.8177 73.1162L32.6976 77.9374C26.8613 81.3812 23.3451 78.8074 24.8676 72.2099L26.7889 63.8362C27.1514 62.2774 26.4989 60.0662 25.3751 58.9062L18.6327 52.1637C14.6452 48.1762 15.9501 44.1524 21.4963 43.2461L30.1601 41.7962C31.6101 41.5424 33.3501 40.2737 34.0026 38.9687L38.7877 29.3987C41.3614 24.2149 45.6388 24.2149 48.2126 29.3987Z" stroke="white" stroke-width="5.4375" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M21.75 32.625V7.25" stroke="white" stroke-width="5.4375" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M65.25 32.625V7.25" stroke="white" stroke-width="5.4375" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M43.5 14.5V7.25" stroke="white" stroke-width="5.4375" stroke-linecap="round" stroke-linejoin="round"></path> </svg>',
@@ -1215,7 +1215,7 @@ const VisionMissionSection: React.FC = () => {
                 className="text-white text-left text-[22px] font-normal tracking-[-0.9px] leading-[1.4]
                             max-lg:text-lg max-sm:text-base about-vision-mission-text-tablet about-vision-mission-text-compact-tablet"
               >
-                PharmaRise Innovations LLP is dedicated to bridging healthcare gaps by delivering high-quality pharmaceutical products to providers. We ensure innovation, reliability, & accessibility, bringing advanced medical solutions efficiently to healthcare professionals and patients.
+                PharmaRise Innovations LLP is dedicated to bridging healthcare gaps by delivering high-quality pharmaceutical products to providers. We ensure innovation, reliability & accessibility, bringing advanced medical solutions efficiently to healthcare professionals and patients.
               </p>
             </article>
           </div>
