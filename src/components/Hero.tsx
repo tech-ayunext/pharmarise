@@ -393,17 +393,16 @@ const Hero = () => {
             </div>
           </div>
           <div className="hero-sweep-media w-full xl:w-auto xl:flex-none flex justify-center items-center hero-video-mid hero-video-mobile
-                        p-3 sm:p-5 md:p-7 lg:p-6 xl:p-8 2xl:p-10
-                        h-auto lg:min-h-[420px] xl:min-h-[500px] 2xl:min-h-[560px]
-                        relative z-20 mt-2 sm:mt-3 md:mt-4 lg:mt-2 xl:mt-0">
+                        px-2 sm:px-4 md:px-6 lg:px-4 xl:px-6
+                        py-2 sm:py-3 md:py-4 lg:py-2 xl:py-4
+                        h-auto min-h-0
+                        relative z-20 mt-0 sm:mt-2 md:mt-2 lg:mt-1 xl:mt-0">
 
             <video
               src="/images/PH Product U shape 2.mp4"
-              className="w-full h-auto object-contain transition-transform duration-300
-                         max-w-[250px] xs:max-w-[270px] sm:max-w-[340px] md:max-w-[380px] 
-                         lg:max-w-[390px] xl:max-w-[430px] 2xl:max-w-[460px]
-                         max-h-[220px] xs:max-h-[240px] sm:max-h-[300px] md:max-h-[340px] 
-                         lg:max-h-[430px] xl:max-h-[520px] 2xl:max-h-[580px]"
+              className="w-[240px] sm:w-[300px] md:w-[340px] lg:w-[360px] xl:w-[400px] 2xl:w-[430px]
+                         h-[280px] sm:h-[340px] md:h-[390px] lg:h-[430px] xl:h-[500px] 2xl:h-[540px]
+                         object-cover rounded-2xl shadow-lg transition-transform duration-300"
               autoPlay
               muted
               loop

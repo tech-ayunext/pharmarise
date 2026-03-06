@@ -32,7 +32,7 @@ const Innovations = () => {
 
   return (
     <section
-      className="bg-[rgba(217,235,255,1)] flex w-full flex-col items-stretch text-[rgba(13,74,141,1)] font-bold text-center pt-[33px] pb-[122px] max-md:max-w-full max-md:pb-[100px]"
+      className="bg-[rgba(217,235,255,1)] flex w-full flex-col items-stretch text-[rgba(13,74,141,1)] font-bold text-center pt-[33px] pb-[72px] max-md:max-w-full max-md:pb-[56px]"
       id="innovations"
     >
       <h2
@@ -43,7 +43,7 @@ const Innovations = () => {
       </h2>
 
       {/* Simplified Carousel */}
-      <div className="w-full flex justify-center mt-[40px] sm:mt-[125px] md:mt-[150px] lg:mt-[55px] px-4 relative">
+      <div className="w-full flex justify-center mt-[28px] sm:mt-[52px] md:mt-[62px] lg:mt-[44px] px-4 relative">
         <Swiper
           modules={[Navigation, Autoplay]}
           slidesPerView={1}
@@ -98,11 +98,11 @@ const Innovations = () => {
       </div>
 
       {/* Description Section */}
-      <div className="w-full text-center mt-[60px] sm:mt-[80px] md:mt-[90px] lg:mt-[102px] px-4">
+      <div className="w-full text-center mt-[22px] sm:mt-[28px] md:mt-[34px] lg:mt-[40px] px-4">
         <h3 className="text-[#BE2623] text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] leading-[30px] sm:leading-[40px] md:leading-[45px] lg:leading-[50px] font-bold mb-4">
           Description
         </h3>
-        <div className="min-h-[200px] flex items-start justify-center">
+        <div className="min-h-[96px] sm:min-h-[110px] md:min-h-[120px] flex items-start justify-center">
           <p
             className="text-[#0D4A8D] text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-medium leading-[24px] sm:leading-[28px] md:leading-[32px] lg:leading-[39px] max-w-[1331px] mx-auto transition-opacity duration-300"
             style={{ opacity: 1 }}

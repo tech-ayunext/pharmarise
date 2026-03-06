@@ -499,10 +499,10 @@ const BMICalculator = () => {
                                         Get in touch
                                     </h3>
                                     <p className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-lg font-light text-white/90">
-                                        Partner with PharmaRise today and take
+                                        For exclusive offers
                                     </p>
                                     <p className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-lg font-light text-white/90">
-                                        your products to new heights.
+                                       
                                     </p>
                                 </div>
                                 {/* Right side - Message textarea */}
