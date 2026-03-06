@@ -10,7 +10,7 @@ const Innovations = () => {
   const innovationsData = [
     {
       image: "/images/Innovations_1.png",
-      description: "A unique natural nutritional supplement, first in India, containing Garcinia Cambogia with the added advantage of Salacia Reticulata compared with other marketed Garcinia products. Salacia, along with Garcinia in GarciBIO, offers significant synergistic effects in overweight patients. Multiple pathways of action make GarciBIO the preferred choice for weight reduction. The Indian vegetarian population can take it without hesitation, as it is available in vegetarian capsules."
+      description: "A unique natural nutritional supplement, first in India, containing Garcinia Cambogia with the added advantage of Salacia Reticulata compared to other marketed Garcinia products. Multiple pathways of action make GarciBIO the preferred choice for weight reduction of 6 kg in 90 days with vegetarian capsules."
     },
     {
       image: "/images/Innovations_2.png",
@@ -18,15 +18,15 @@ const Innovations = () => {
     },
     {
       image: "/images/Innovations_3.png",
-      description: "CobalFine 6G is a Veg tablet formulation with unique 6G Extract along with the perfect ratio of Curcumin and Piperine which reduces stress and maintains youthfulness."
+      description: "CobalFine 6G is a vegetarian tablet formulation with six unique extracts, along with the perfect ratio of Curcumin and Piperine, which helps reduce stress and maintain youthfulness."
     },
     {
       image: "/images/Innovations_4.png",
-      description: "RosNano is an innovative, first-in-India product with a nanoparticle-size-based Rosuvastatin formulation stabilized in cyclodextrin. Since Rosuvastatin is poorly soluble and has low bioavailability, this innovation improves its solubility and stability. The particle size is 2-20 microns compared with 200-400 microns in conventional brands, ensuring twofold better bioavailability, enhanced efficacy, improved safety, and a reduced dosage load."
+      description: "RosNano is an innovative, first-in-India product with a nanoparticle-size-based Rosuvastatin formulation stabilized with a unique ingredient. Rosuvastatin is a poorly soluble drug and therefore has low bioavailability (less of the drug reaches the bloodstream). This innovation improves solubility and ensures twofold improvement in Rosuvastatin bioavailability for enhanced efficacy and safety, while reducing dosage load for the required effect."
     },
     {
       image: "/images/Innovations_5.png",
-      description: "We are the second company to market a unique combination containing both the bioactive forms of Vitamin B12. The addition of Adenosylcobalamin — the only other bioactive form — makes CobalFine a completely bioactive product. This unique formula quickly became the preferred choice among doctors."
+      description: "We are the second company to market a unique combination containing both bioactive forms of B12. The addition of Adenosylcobalamin, the only other bioactive form of B12, makes CobalFine a completely bioactive product. The unique formula of CobalFine has become a preferred choice among doctors in a very short time."
     }
   ];
 
