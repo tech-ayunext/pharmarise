@@ -39,6 +39,12 @@ const Products = () => {
             description: "A unique natural nutritional supplement, first in India, containing Garcinia Cambogia with the added advantage of Salacia Reticulata compared to other marketed Garcinia products. Multiple pathways of action make GarciBIO the preferred choice for weight reduction of 6 kg in 90 days with vegetarian capsules."
         },
         {
+            id: 8,
+            name: "CobalFine FP",
+            image: "/images/p2.png",
+            description: "CobalFine FP is a nutraceutical blend of plant protein and inulin fibre designed to support digestive balance and metabolic wellness. Enriched with moringa, gymnema and green tea extracts plus essential vitamins, it helps manage blood glucose spikes and maintain good gut health through a smooth, easy-to-mix daily nutrition drink."
+        },
+        {
             id: 2,
             name: "CobalFine 6G",
             image: "/images/p3.png",

@@ -13,6 +13,12 @@ const Innovations = () => {
       description: "A unique natural nutritional supplement, first in India, containing Garcinia Cambogia with the added advantage of Salacia Reticulata compared to other marketed Garcinia products. Multiple pathways of action make GarciBIO the preferred choice for weight reduction of 6 kg in 90 days with vegetarian capsules."
     },
     {
+      image: "/images/FPlogo.png",
+      useBlendMode: true,
+      roundedImage: true,
+      description: "CobalFine FP is a nutraceutical blend of plant protein and inulin fibre designed to support digestive balance and metabolic wellness. Enriched with moringa, gymnema and green tea extracts plus essential vitamins, it helps manage blood glucose spikes and maintain good gut health through a smooth, easy-to-mix daily nutrition drink."
+    },
+    {
       image: "/images/Innovations_2.png",
       description: "A triple-drug therapy containing Metformin, Glimepiride, and Voglibose. The advanced formulation enables Biognide GV1 to disintegrate faster compared with other marketed brands."
     },
@@ -43,7 +49,7 @@ const Innovations = () => {
       </h2>
 
       {/* Simplified Carousel */}
-      <div className="w-full flex justify-center mt-[28px] sm:mt-[52px] md:mt-[62px] lg:mt-[44px] px-4 relative">
+      <div className="w-full flex justify-center mt-[28px] sm:mt-[52px] md:mt-[62px] lg:mt-[44px] px-4 relative overflow-hidden">
         <Swiper
           modules={[Navigation, Autoplay]}
           slidesPerView={1}
@@ -82,14 +88,18 @@ const Innovations = () => {
             <SwiperSlide key={index}>
               {({ isActive }) => (
                 <div className="flex justify-center items-center">
+                  <div
+                    className={`rounded-2xl overflow-hidden flex items-center justify-center transition-all duration-500 ease-in-out w-[240px] h-[165px] sm:w-[290px] sm:h-[200px] md:w-[320px] md:h-[224px] lg:w-[360px] lg:h-[252px] ${isActive
+                      ? "scale-[1.2] opacity-100 z-20"
+                      : "scale-[0.9] opacity-70 z-10"
+                      }`}
+                  >
                   <img
                     src={item.image}
                     alt={`Innovation ${index + 1}`}
-                    className={`rounded-xl object-contain transition-all duration-500 ease-in-out w-[200px] h-[140px] sm:w-[250px] sm:h-[175px] md:w-[280px] md:h-[196px] lg:w-[313px] lg:h-[219px] ${isActive
-                      ? "scale-150 opacity-100 z-10 "
-                      : "scale-100 opacity-50 z-0"
-                      }`}
+                    className={`max-w-full max-h-full object-contain ${item.useBlendMode ? "mix-blend-multiply" : ""} ${item.roundedImage ? "rounded-2xl" : ""}`}
                   />
+                  </div>
                 </div>
               )}
             </SwiperSlide>
@@ -141,12 +151,6 @@ const Innovations = () => {
         }
         
         @media (max-width: 640px) {
-          .swiper-slide img.scale-150 {
-            transform: scale(1.8) !important;
-          }
-          .swiper-slide img.scale-100 {
-            transform: scale(0.8) !important;
-          }
           .swiper-button-prev,
           .swiper-button-next {
             width: 20px !important;
@@ -160,14 +164,7 @@ const Innovations = () => {
           }
         }
         
-        @media (min-width: 768px) and (max-width: 1024px) {
-          .swiper-slide img.scale-150 {
-            transform: scale(2.2) !important;
-          }
-          .swiper-slide img.scale-100 {
-            transform: scale(0.9) !important;
-          }
-        }
+        @media (min-width: 768px) and (max-width: 1024px) {}
       `}</style>
     </section>
   );
